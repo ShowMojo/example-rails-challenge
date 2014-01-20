@@ -1,0 +1,8 @@
+<h1>Failed Charges</h1>
+<%= render :partial => 'charge', locals: {name: "failed", charges: @charges.failed} %>
+
+<h1>Disputed Charges</h1>
+<%= render :partial => 'charge', locals: {name: "disputed", charges: @charges.disputed} %>
+
+<h1>Successful Charges</h1>
+<%= render :partial => 'charge', locals: {name: "successful", charges: @charges.successful} %>

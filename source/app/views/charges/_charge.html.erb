@@ -1,0 +1,14 @@
+<table id="<%= name %>">
+  <tr>
+    <th>Customer</th>
+    <th>Ammount</th>
+    <th>Date</th>
+  </tr>
+  <% charges.each do |charge| %>
+    <tr>
+      <td><%= charge.customer.name %></td>
+      <td><%= charge.ammount %></td>
+      <td><%= l charge.created_at, format: :long %></td>
+    </tr>
+  <% end %>
+</table>
