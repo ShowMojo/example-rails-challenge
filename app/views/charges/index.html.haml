@@ -1,29 +1,28 @@
-%h1 Listing charges
+%h1 Failed Charges
+%ol.failed-charges
+  - @charges.where(paid: false).each do |charge|
+    %li
+      = charge.customer.first_name
+      = charge.customer.last_name
+      = charge.amount
+      = charge.created
 
-%table
-  %tr
-    %th Paid
-    %th Created
-    %th Amount
-    %th Currency
-    %th Refunded
-    %th Customer
-    %th
-    %th
-    %th
+%h1 Disputed Charges
+%ol.disputed-charges
+  - @charges.where(paid: true, refunded: true).each do |charge|
+    %li
+      = charge.customer.first_name
+      = charge.customer.last_name
+      = charge.amount
+      = charge.created
 
-  - @charges.each do |charge|
-    %tr
-      %td= charge.paid
-      %td= charge.created
-      %td= charge.amount
-      %td= charge.currency
-      %td= charge.refunded
-      %td= charge.customer
-      %td= link_to 'Show', charge
-      %td= link_to 'Edit', edit_charge_path(charge)
-      %td= link_to 'Destroy', charge, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
+%h1 Successful Charges
+%ol
+  - @charges.where(paid: true, refunded: true).each do |charge|
+    %li
+      = charge.customer.first_name
+      = charge.customer.last_name
+      = charge.amount
+      = charge.created
 
 = link_to 'New Charge', new_charge_path
