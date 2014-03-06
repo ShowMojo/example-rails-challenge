@@ -17,8 +17,8 @@
       = charge.created
 
 %h1 Successful Charges
-%ol
-  - @charges.where(paid: true, refunded: true).each do |charge|
+%ol.successful-charges
+  - @charges.where(paid: true, refunded: false).each do |charge|
     %li
       = charge.customer.first_name
       = charge.customer.last_name
