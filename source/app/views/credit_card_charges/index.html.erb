@@ -1,0 +1,77 @@
+<h1>Successful Charges</h1>
+
+<table id="successful">
+  <thead>
+    <tr>
+      <th>Amount</th>
+      <th>Customer</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% CreditCardCharge.successful.each do |credit_card_charge| %>
+      <tr class="s">
+        <td><%= number_to_currency credit_card_charge.amount, precision:price_precision(credit_card_charge.amount) %></td>
+        <td><%= credit_card_charge.customer %></td>
+        <td><%= credit_card_charge.created_at.strftime('%B %e, %Y %I:%M')  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>Failed Charges</h1>
+<table id="failed">
+  <thead>
+    <tr>
+      <th>Amount</th>
+      <th>Customer</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% CreditCardCharge.failed.each do |credit_card_charge| %>
+      <tr class="f">
+        <td><%= number_to_currency credit_card_charge.amount, precision:price_precision(credit_card_charge.amount) %></td>
+        <td><%= credit_card_charge.customer %></td>
+        <td><%= credit_card_charge.created_at.strftime('%B %e, %Y %I:%M')  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<h1>Disputed Charges</h1>
+<table id="disputed">
+  <thead>
+    <tr>
+      <th>Amount</th>
+      <th>Customer</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% CreditCardCharge.disputed.each do |credit_card_charge| %>
+      <tr class="d">
+        <td><%= number_to_currency credit_card_charge.amount, precision:price_precision(credit_card_charge.amount) %></td>
+        <td><%= credit_card_charge.customer %></td>
+        <td><%= credit_card_charge.created_at.strftime('%B %e, %Y %I:%M')  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Credit card charge', new_credit_card_charge_path %>
