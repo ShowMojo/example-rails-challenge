@@ -1,0 +1,40 @@
+.failed
+  %h1 Failed charges
+  %table.charges
+    %thead
+      %th Customer
+      %th Amount
+      %th Date
+    %tbody
+      - @failed_charges.each do |charge|
+        %tr
+          %td #{charge.customer.full_name}
+          %td $#{charge.amount/100}.#{(charge.amount % 100).to_s.rjust(2, '0')}
+          %td #{Time.at(charge.created).strftime("%B %-d, %Y")}
+.disputed
+  %h1 Disputed charges
+  %table.charges
+    %thead
+      %th Customer
+      %th Amount
+      %th Date
+    %tbody
+      - @disputed_charges.each do |charge|
+        %tr
+          %td #{charge.customer.full_name}
+          %td $#{charge.amount/100}.#{(charge.amount % 100).to_s.rjust(2, '0')}
+          %td #{Time.at(charge.created).strftime("%B %-d, %Y")}
+.successful
+  %h1 Successful charges
+  %table.charges
+    %thead
+      %th Customer
+      %th Amount
+      %th Date
+    %tbody
+      - @succ_charges.each do |charge|
+        %tr
+          %td #{charge.customer.full_name}
+          %td $#{charge.amount/100}.#{(charge.amount % 100).to_s.rjust(2, '0')}
+          %td #{Time.at(charge.created).strftime("%B %-d, %Y")}
+
