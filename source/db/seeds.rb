@@ -25,35 +25,51 @@ customers = Customer.all
 
 # Creating successful charges
 10.times do |i|
-	charge = Charge.create(paid: true, amount: rand(1, 5000), refunded: false, currency: "usd")
+	charge = Charge.new(created: rand(5.years).ago.to_i, paid: true, amount: rand(1..5000), refunded: false, currency: "usd")
 	if i < 5
-		charge.customers << customers[0]
+		charge.customer = customers[0]
 	elsif i < 8
-		charge.customers << customers[1]
+		charge.customer = customers[1]
 	elsif i < 9
-		charge.customers << customers[2]
+		charge.customer = customers[2]
 	else
-		charge.customers << customers[3]
+		charge.customer = customers[3]
 	end
+
+	if charge.valid?
+		charge.save
+	end
+
+	puts i
 end
 
 # Creating failed charges
 5.times do |i|
-	charge = Charge.create(paid: false, amount: rand(1, 5000), refunded: false, currency: "usd")
+	charge = Charge.new(created: rand(5.years).ago.to_i, paid: false, amount: rand(1..5000), refunded: false, currency: "usd")
 	if i < 3
-		charge.customers << customers[2]
+		charge.customer = customers[2]
 	else
-		charge.customers << customers[3]
+		charge.customer = customers[3]
 	end
+
+	if charge.valid?
+		charge.save
+	end
+	puts i.to_s + " : " + charge.valid?.to_s
 end
 
 # Creating disputed charges
 5.times do |i|
-	charge = Charge.create(paid: true, amount: rand(1, 5000), refunded: true, currency: "usd")
+	charge = Charge.new(created: rand(5.years).ago.to_i, paid: true, amount: rand(1..5000), refunded: true, currency: "usd")
 	if i < 3
-		charge.customers << customers[0]
+		charge.customer = customers[0]
 	else
-		charge.customers << customers[1]
+		charge.customer = customers[1]
 	end
+
+	if charge.valid?
+		charge.save
+	end
+	puts i
 end
 # End of Aron's code.
