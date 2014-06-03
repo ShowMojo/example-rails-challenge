@@ -39,8 +39,6 @@ customers = Customer.all
 	if charge.valid?
 		charge.save
 	end
-
-	puts i
 end
 
 # Creating failed charges
@@ -55,7 +53,6 @@ end
 	if charge.valid?
 		charge.save
 	end
-	puts i.to_s + " : " + charge.valid?.to_s
 end
 
 # Creating disputed charges
@@ -70,6 +67,5 @@ end
 	if charge.valid?
 		charge.save
 	end
-	puts i
 end
 # End of Aron's code.
