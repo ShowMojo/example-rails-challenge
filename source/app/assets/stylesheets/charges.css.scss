@@ -1,0 +1,19 @@
+// Place all the styles related to the Charges controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+table > tbody.charges {
+	border: solid 1px;
+}
+
+table.fail {
+	background-color: #FF0000;
+}
+
+table.disput {
+	background-color: #FF5400;
+}
+
+table.success {
+	background-color: #7bd454;
+}
