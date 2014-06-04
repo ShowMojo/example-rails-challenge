@@ -4,26 +4,20 @@
 
 <% if @failed_charges.size > 0 %>
 <h1>Failed Charges</h1>
-<table>
+<table class="fail charges" border="1">
   <thead>
     <tr>
       <th>Customer Name</th>
       <th>Amount</th>
       <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
-  <tbody class="fail charges">
+  <tbody>
     <% @failed_charges.each do |charge| %>
       <tr>
-        <td><%= charge.customer.first_name + " " + charge.customer.last_name %></td>
+        <td><%= charge.customer.full_name %></td>
         <td><%= charge.amount %></td>
         <td><%= charge.created %></td>
-        <td><%= link_to 'Show', charge %></td>
-        <td><%= link_to 'Edit', edit_charge_path(charge) %></td>
-        <td><%= link_to 'Destroy', charge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -33,26 +27,20 @@
 
 <% if @disputed_charges.size > 0 %>
 <h1>Disputed Charges</h1>
-<table>
+<table class="disput charges" border="1">
   <thead>
     <tr>
       <th>Customer Name</th>
       <th>Amount</th>
       <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
-  <tbody class="disput charges">
+  <tbody>
     <% @disputed_charges.each do |charge| %>
       <tr>
-        <td><%= charge.customer.first_name + " " + charge.customer.last_name %></td>
+        <td><%= charge.customer.full_name %></td>
         <td><%= charge.amount %></td>
         <td><%= charge.created %></td>
-        <td><%= link_to 'Show', charge %></td>
-        <td><%= link_to 'Edit', edit_charge_path(charge) %></td>
-        <td><%= link_to 'Destroy', charge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -62,26 +50,20 @@
 
 <% if @successful_charges.size > 0 %>
 <h1>Successful Charges</h1>
-<table>
+<table class="success  charges" border="1">
   <thead>
     <tr>
       <th>Customer Name</th>
       <th>Amount</th>
       <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
-  <tbody class="success  charges">
+  <tbody>
     <% @successful_charges.each do |charge| %>
       <tr>
-        <td><%= charge.customer.first_name + " " + charge.customer.last_name %></td>
+        <td><%= charge.customer.full_name %></td>
         <td><%= charge.amount %></td>
         <td><%= charge.created %></td>
-        <td><%= link_to 'Show', charge %></td>
-        <td><%= link_to 'Edit', edit_charge_path(charge) %></td>
-        <td><%= link_to 'Destroy', charge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

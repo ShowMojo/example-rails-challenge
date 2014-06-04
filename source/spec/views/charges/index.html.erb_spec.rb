@@ -16,18 +16,18 @@ RSpec.describe "charges/index", :type => :view do
   end
 
   it "should have three lists on the screen." do
-    assert_select "table>tbody.charges", :count => 3
+    assert_select "table.charges", :count => 3
   end
 
   it "should have 10 items in successful charges list" do
-    assert_select "table > tbody.success > tr", :count => 10
+    assert_select "table.success > tbody > tr", :count => 10
   end
 
   it "should have 5 items in failed charges list" do
-    assert_select "table > tbody.fail > tr", :count => 5
+    assert_select "table.fail > tbody > tr", :count => 5
   end
 
   it "should have 5 items in disputed charges list" do
-    assert_select "table > tbody.disput > tr", :count => 5
+    assert_select "table.disput > tbody > tr", :count => 5
   end
 end

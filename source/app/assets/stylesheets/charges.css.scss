@@ -6,14 +6,14 @@ table > tbody.charges {
 	border: solid 1px;
 }
 
-table > tbody.fail tr {
+table.fail {
 	background-color: #FF0000;
 }
 
-table > tbody.disput tr {
+table.disput {
 	background-color: #FF5400;
 }
 
-table > tbody.success tr {
+table.success {
 	background-color: #7bd454;
 }
