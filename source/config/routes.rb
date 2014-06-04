@@ -1,9 +1,10 @@
-Source::Application.routes.draw do
-  resources :customers
-
-  resources :charges
+Aron::Application.routes.draw do
 
   root :to => 'charges#index'
+  
+  resources :charges
+
+  resources :customers
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

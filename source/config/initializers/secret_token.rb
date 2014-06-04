@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Source::Application.config.secret_key_base = '8269b382f566d258d4c31b725a2d9b0b91352d3b4adf3574bb988219238feeaaa975e1e2f4edc43db6d6fac7f29cb911684348892817aa8cc48c223b0c3c4655'
+Aron::Application.config.secret_key_base = 'd54ecd3e5dbd1ac217a7db1820a66eb60cc3fc8b235a6de921c9af405716f72dfa89341849d1fb223da5e5d98b3bdc2e08ab03d5202a1196392a9674873de8dd'

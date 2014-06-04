@@ -39,8 +39,12 @@ RSpec.describe ChargesController, :type => :controller do
   describe "GET index" do
     it "assigns all charges as @charges" do
       charge = Charge.create! valid_attributes
+      # assign(:failed_charges, Charge.failed_charges)
       get :index, {}, valid_session
       expect(assigns(:charges)).to eq([charge])
+      expect(assigns(:failed_charges)).to eq([charge])
+      expect(assigns(:disputed_charges)).to eq([charge])
+      expect(assigns(:successful_charges)).to eq([charge])
     end
   end
 

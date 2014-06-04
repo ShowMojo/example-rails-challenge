@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Source::Application.load_tasks
+Aron::Application.load_tasks

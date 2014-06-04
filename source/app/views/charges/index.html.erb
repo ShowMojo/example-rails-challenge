@@ -2,6 +2,7 @@
 
 <br>
 
+<% if @failed_charges.size > 0 %>
 <h1>Failed Charges</h1>
 <table>
   <thead>
@@ -14,7 +15,7 @@
       <th></th>
     </tr>
   </thead>
-  <tbody class="fail">
+  <tbody class="fail charges">
     <% @failed_charges.each do |charge| %>
       <tr>
         <td><%= charge.customer.first_name + " " + charge.customer.last_name %></td>
@@ -27,8 +28,10 @@
     <% end %>
   </tbody>
 </table>
-
 <br />
+<% end %>
+
+<% if @disputed_charges.size > 0 %>
 <h1>Disputed Charges</h1>
 <table>
   <thead>
@@ -41,7 +44,7 @@
       <th></th>
     </tr>
   </thead>
-  <tbody class="disput">
+  <tbody class="disput charges">
     <% @disputed_charges.each do |charge| %>
       <tr>
         <td><%= charge.customer.first_name + " " + charge.customer.last_name %></td>
@@ -54,8 +57,10 @@
     <% end %>
   </tbody>
 </table>
-
 <br />
+<% end %>
+
+<% if @successful_charges.size > 0 %>
 <h1>Successful Charges</h1>
 <table>
   <thead>
@@ -68,7 +73,7 @@
       <th></th>
     </tr>
   </thead>
-  <tbody class="success">
+  <tbody class="success  charges">
     <% @successful_charges.each do |charge| %>
       <tr>
         <td><%= charge.customer.first_name + " " + charge.customer.last_name %></td>
@@ -81,3 +86,4 @@
     <% end %>
   </tbody>
 </table>
+<% end %>

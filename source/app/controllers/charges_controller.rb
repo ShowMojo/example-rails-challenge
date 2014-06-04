@@ -4,7 +4,7 @@ class ChargesController < ApplicationController
   # GET /charges
   # GET /charges.json
   def index
-    # @charges = Charge.all
+    @charges = Charge.all
     @failed_charges = Charge.failed_charges
     @disputed_charges = Charge.disputed_charges
     @successful_charges = Charge.successful_charges
@@ -72,6 +72,6 @@ class ChargesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def charge_params
-      params[:charge]
+      params.require(:charge).permit(:created, :paid, :amount, :refunded, :customer_id)
     end
 end

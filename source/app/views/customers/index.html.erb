@@ -3,6 +3,8 @@
 <table>
   <thead>
     <tr>
+      <th>First name</th>
+      <th>Last name</th>
       <th></th>
       <th></th>
       <th></th>
@@ -12,6 +14,8 @@
   <tbody>
     <% @customers.each do |customer| %>
       <tr>
+        <td><%= customer.first_name %></td>
+        <td><%= customer.last_name %></td>
         <td><%= link_to 'Show', customer %></td>
         <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
         <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>

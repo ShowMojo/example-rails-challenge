@@ -1,3 +1,3 @@
 # Be sure to restart your server when you modify this file.
 
-Source::Application.config.session_store :cookie_store, key: '_source_session'
+Aron::Application.config.session_store :cookie_store, key: '_Aron_session'

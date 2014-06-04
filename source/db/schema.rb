@@ -17,12 +17,14 @@ ActiveRecord::Schema.define(version: 1) do
     t.integer  "created"
     t.boolean  "paid"
     t.float    "amount"
-    t.string   "currency"
     t.boolean  "refunded"
+    t.string   "currency"
     t.integer  "customer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "charges", ["customer_id"], name: "index_charges_on_customer_id"
 
   create_table "customers", force: true do |t|
     t.string   "first_name"
