@@ -1,0 +1,18 @@
+- @charges.each do |group_name, charges|
+  .col-md-6.col-md-offset-1
+    %h1 #{ group_name.capitalize } Charges
+    %table{ class: "table #{ group_name }" }
+      %thead
+        %th ID
+        %th First Name
+        %th Last Name
+        %th Amount
+        %th Date
+      %tbody
+        - charges.each do |charge|
+          %tr
+            %td= charge.id
+            %td= charge.customer.first_name
+            %td= charge.customer.last_name
+            %td= charge.amount
+            %td= charge.created_at
