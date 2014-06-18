@@ -1,0 +1,44 @@
+<%= form_for @charge, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :created, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :created, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :paid, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :paid, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :amount, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :amount, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :currency, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :currency, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :refunded, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :refunded, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :customer_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :customer_id, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                charges_path, :class => 'btn' %>
+  </div>
+<% end %>
