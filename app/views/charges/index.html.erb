@@ -1,0 +1,104 @@
+<%- model_class = Charge -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+
+<h1>Failed Charges</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Customer name</th>
+      <th>Charge amount</th>
+      <th>Fail date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @failed_charges.each do |charge| %>
+      <tr class="failed_charge">
+        <td><%= charge.customer.fullname %></td>
+        <td><%= number_to_currency(charge.amount) %></td>
+        <td><%= charge.fail_date %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_charge_path(charge), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      charge_path(charge),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<hr>
+
+<%#= link_to t('.new', :default => t("helpers.links.new")),
+            new_charge_path,
+            :class => 'btn btn-primary' %>
+
+<h1>Disputed Charges</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Customer name</th>
+      <th>Charge amount</th>
+      <th>Dispute date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @failed_charges.each do |charge| %>
+      <tr class="disputed_charge">
+        <td><%= charge.customer.fullname %></td>
+        <td><%= number_to_currency(charge.amount) %></td>
+        <td><%= charge.fail_date %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_charge_path(charge), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      charge_path(charge),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<hr>
+
+<h1>Successful Charges</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Customer name</th>
+      <th>Charge amount</th>
+      <th>Transaction date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @successful_charges.each do |charge| %>
+      <tr class="successful_charge">
+        <td><%= charge.customer.fullname %></td>
+        <td><%= number_to_currency(charge.amount) %></td>
+        <td><%=l charge.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_charge_path(charge), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      charge_path(charge),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<hr>
