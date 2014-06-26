@@ -1,0 +1,12 @@
+%table{ class: class_name }
+	%thead
+		%tr
+			%th Customer
+			%th Created
+			%th{ class: "numeric" } Amount
+	%tbody
+		- charges.each do |charge|
+			%tr
+				%td= charge.customer.fullname
+				%td= charge.created.to_formatted_s(:short)
+				%td{ class: "numeric" }= number_to_currency( charge.amount/100.0 )
