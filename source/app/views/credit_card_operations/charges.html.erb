@@ -1,0 +1,12 @@
+<h1>Failed charges</h1>
+<%= render "list", operations: @failed_operations, row_class: 'failed' %>
+
+<h1>Disputed Charges</h1>
+<%= render "list", operations: @disputed_operations, row_class: 'disputed' %>
+
+<h1>Successful Charges</h1>
+<%= render "list", operations: @successful_operations, row_class: '' %>
+
+<br>
+
+<%= link_to 'Back', root_path %>

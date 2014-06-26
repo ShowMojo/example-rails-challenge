@@ -1,0 +1,8 @@
+<ul>
+  <% operations.each do |credit_card_operation| %>
+      <li class="<%= row_class %>">
+        <%= credit_card_operation.user.name_with_initial %>,
+        <%= credit_card_operation.amount %>
+      </li>
+  <% end %>
+</ul>

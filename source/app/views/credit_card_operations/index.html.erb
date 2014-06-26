@@ -1,0 +1,34 @@
+<h1>Listing credit card operations</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Paid</th>
+    <th>Amount</th>
+    <th>Currency</th>
+    <th>Refunded</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @credit_card_operations.each do |credit_card_operation| %>
+      <tr>
+        <td><%= credit_card_operation.paid %></td>
+        <td><%= credit_card_operation.amount %></td>
+        <td><%= credit_card_operation.currency %></td>
+        <td><%= credit_card_operation.refunded %></td>
+        <td><%= link_to 'Show', credit_card_operation %></td>
+        <td><%= link_to 'Edit', edit_credit_card_operation_path(credit_card_operation) %></td>
+        <td><%= link_to 'Destroy', credit_card_operation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Credit card operation', new_credit_card_operation_path %> |
+<%= link_to 'Back', root_path %>

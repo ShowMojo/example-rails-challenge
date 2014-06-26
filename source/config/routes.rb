@@ -1,4 +1,10 @@
 Source::Application.routes.draw do
+  root 'welcome#index'
+  resources :users
+
+  resources :credit_card_operations
+  get 'charges' => 'credit_card_operations#charges'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
