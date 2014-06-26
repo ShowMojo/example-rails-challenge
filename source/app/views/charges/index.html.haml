@@ -1,0 +1,10 @@
+.grid-el-3
+	%h1 Failed Charges
+	= render 'charge_table', class_name: "failed", charges: @failed_charges
+.grid-el-3
+	%h1 Disputed Charges
+	= render 'charge_table', class_name: "disputed", charges: @disputed_charges
+.grid-el-3
+	%h1 Successful Charges
+	= render 'charge_table', class_name: "success", charges: @success_charges
+
