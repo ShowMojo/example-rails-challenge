@@ -5,6 +5,10 @@ capybara-*.html
 .rspec
 /.bundle
 /vendor/bundle
+<<<<<<< HEAD
+/source/vendor/bundle
+=======
+>>>>>>> cf6df201205bbf4a416e26123f92394895eb4bdf
 /log/*
 /tmp/*
 /db/*.sqlite3
@@ -13,4 +17,8 @@ capybara-*.html
 /spec/tmp/*
 **.orig
 rerun.txt
+<<<<<<< HEAD
 pickle-email-*.html
+=======
+pickle-email-*.html
+>>>>>>> cf6df201205bbf4a416e26123f92394895eb4bdf
