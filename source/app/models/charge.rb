@@ -4,4 +4,6 @@ class Charge < ActiveRecord::Base
   scope :successful, -> { where(paid: true, refunded: false) }
   scope :disputed, -> { where(paid: true, refunded: true) }
   scope :failed, -> { where(paid: false) }
+
+  delegate :name, to: :customer, prefix: true
 end

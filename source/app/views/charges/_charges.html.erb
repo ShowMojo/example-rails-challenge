@@ -1,0 +1,7 @@
+<h1><%= title %></h1>
+
+<ul class="<%= list_class %>">
+  <% charges.each do |c| %>
+    <li><span><%= "#{c.customer_name} &middot; #{c.amount} #{c.currency} &middot; #{c.updated_at.to_date}".html_safe %></span></li>
+  <% end %>
+</ul>

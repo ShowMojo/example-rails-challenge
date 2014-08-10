@@ -1,3 +1,15 @@
 // Place all the styles related to the Charges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ul {
+  &.failed li span {
+    background: #FF0000;
+    color: white;
+  }
+  &.disputed li span {
+    background: #FF5400;
+    color: white;
+  }
+}
+
