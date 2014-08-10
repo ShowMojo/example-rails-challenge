@@ -1,0 +1,3 @@
+Fabricator(:customer) do
+
+end
