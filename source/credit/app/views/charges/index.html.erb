@@ -1,0 +1,38 @@
+<div class="list list1">
+  <h1> Failed charges</h1>
+  <table>
+    <% Charge.failed_transactions.each do |charge| %>
+      <tr>
+        <td><%= charge.customer.first_name%></td>
+        <td><%= number_to_currency(charge.amount) %></td>
+        <td><%= charge.created.strftime('%m/%d/%y') %></td>
+      </tr>
+    <%end %>
+  </table>
+</div>
+
+<div class="list list2">
+  <h1> Disputed charges</h1>
+  <table>
+    <% Charge.dispute_transactions.each do |charge| %>
+      <tr>
+        <td><%= charge.customer.first_name%></td>
+        <td><%= number_to_currency(charge.amount) %></td>
+        <td><%= charge.created.strftime('%m/%d/%y') %></td>
+      </tr>
+    <%end %>
+  </table>
+</div>
+
+<div class="list list3">
+  <h1> Successful charges</h1>
+  <table>
+    <% Charge.successful_transactions.each do |charge| %>
+      <tr>
+        <td><%= charge.customer.first_name%></td>
+        <td><%= number_to_currency(charge.amount) %></td>
+        <td><%= charge.created.strftime('%m/%d/%y') %></td>
+      </tr>
+    <%end %>
+  </table>
+</div>
