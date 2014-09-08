@@ -1,0 +1,15 @@
+<tr><td collspan=6><h1><%=charges_type%></h1></td></tr>
+<tr>
+  <th>Customer Name</th>
+  <th>Amount</th>
+  <th>Created At</th>
+</tr>
+<% charges.each do |charge| %>
+	<tr bgcolor="<%=background_color%>">
+	  <td><%= "#{charge.customer.first_name} #{charge.customer.last_name}"  %></td>
+	  <td><%= charge.amount %></td>
+	  <td><%= charge.created_at.strftime("%Y-%m-%d") %></td>
+	</tr>  
+<% end %>
+
+
