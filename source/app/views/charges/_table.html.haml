@@ -1,0 +1,11 @@
+%table{class: table_class}
+  %thead
+    %th Name
+    %th Charge amount
+    %th Failed Date
+  %tbody
+    - charges.each do |charge|
+      %tr
+        %td= charge.customer_fullname
+        %td= charge.amount
+        %td= charge.created

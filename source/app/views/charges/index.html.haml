@@ -1,0 +1,8 @@
+%h1 Failed Charges
+= render 'table', table_class: 'failed', charges: @failed_charges
+
+%h1 Disputed Charges
+= render 'table', table_class: 'disputed', charges: @disputed_charges
+
+%h1 Successful Charges
+= render 'table', table_class: 'successful', charges: @successful_charges
