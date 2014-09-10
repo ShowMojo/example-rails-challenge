@@ -1,0 +1,7 @@
+<table>
+  <tbody>
+    <%= render partial: "charges_list",  locals: {charges: @failed_charges, background_color: "#FF0000", charges_type: "Failed Charges"} %>
+    <%= render partial: "charges_list",  locals: {charges: @disputed_charges, background_color: "#FF5400", charges_type: "Disputed Charges"} %>
+    <%= render partial: "charges_list",  locals: {charges: @successfull_charges, background_color: "", charges_type: "Successful Charges"} %>
+  </tbody>
+</table>
