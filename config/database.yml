@@ -1,0 +1,32 @@
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: example-rails-challenge_production
+  host: localhost
+  pool: 5
+  username: postgres
+  password:
+  timeout: 5000
+  min_messages: WARNING
+
+development:
+  adapter: postgresql
+  min_messages: WARNING
+  encoding: unicode
+  username: postgres
+  host: localhost
+  password:
+  pool: 5
+  timeout: 5000
+  database: example-rails-challenge_development
+
+test:
+  adapter: postgresql
+  min_messages: WARNING
+  encoding: unicode
+  username: postgres
+  host: localhost
+  password:
+  pool: 5
+  timeout: 5000
+  database: example-rails-challenge_test
