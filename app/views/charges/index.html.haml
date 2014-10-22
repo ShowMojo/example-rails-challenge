@@ -1,0 +1,11 @@
+.charge-table.failed
+  %h1 Failed Charges
+  = render partial: 'charges_table',  locals: { charges: @charges.failed }
+
+.charge-table.disputed
+  %h1 Disputed Charges
+  = render partial: 'charges_table',  locals: { charges: @charges.disputed }
+
+.charge-table.successful
+  %h1 Successful Charges
+  = render partial: 'charges_table',  locals: { charges: @charges.successed }

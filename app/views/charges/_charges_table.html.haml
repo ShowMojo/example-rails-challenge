@@ -1,0 +1,10 @@
+%table
+  %tr
+    %th Customer
+    %th Amount
+    %th Date
+  - charges.each do |charge|
+    %tr.charge-row-value
+      %td= charge.customer.full_name
+      %td= charge.amount
+      %td= DateTime.strptime(charge.created.to_s,'%s')

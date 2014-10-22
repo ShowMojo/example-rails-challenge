@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2876493625">
+    <data-source source="LOCAL" name="Rails example-rails-challenge: development" uuid="8d6fe3cc-64ca-47eb-8e4e-b248f078de3c">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/example-rails-challenge_development</jdbc-url>
+      <user-name>postgres</user-name>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails example-rails-challenge: test" uuid="9d7c998d-496c-4d3b-beb5-2bae5b40aac3">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/example-rails-challenge_test</jdbc-url>
+      <user-name>postgres</user-name>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails example-rails-challenge: production" uuid="9ed56a4f-a62b-4ea1-99ca-0db10459d8fd">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/example-rails-challenge_production</jdbc-url>
+      <user-name>postgres</user-name>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails example-rails-challenge: staging" uuid="d6ed0cdc-edc2-4ef0-80a9-45f18c3c58ff">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/cardrive</jdbc-url>
+      <user-name>cardrive</user-name>
+      <user-password>dfc9dfcbdfd8dfcedfd8dfc3dfdcdfcf</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

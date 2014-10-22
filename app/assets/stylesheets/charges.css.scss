@@ -1,0 +1,15 @@
+.charge-table {
+  width: 30%;
+  display: inline-block;
+  margin-left: 2%
+}
+.failed {
+  tr.charge-row-value {
+    background-color: #FF0000;
+  }
+}
+.disputed {
+  tr.charge-row-value {
+    background-color: #FF5400;
+  }
+}
