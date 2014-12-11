@@ -10,6 +10,7 @@ class CreditsController < ApplicationController
   # GET /credits/1
   # GET /credits/1.json
   def show
+  	
   end
 
   # GET /credits/new
