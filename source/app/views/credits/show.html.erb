@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Paid:</strong>
+  <%= @credit.paid %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @credit.amount %>
+</p>
+
+<p>
+  <strong>Currency:</strong>
+  <%= @credit.currency %>
+</p>
+
+<p>
+  <strong>Refunded:</strong>
+  <%= @credit.refunded %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @credit.customer_id %>
+</p>
+
+<%= link_to 'Edit', edit_credit_path(@credit) %> |
+<%= link_to 'Back', credits_path %>
