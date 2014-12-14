@@ -5,7 +5,9 @@ class ChargesController < ApplicationController
   # GET /charges.json
   def index
     @charges = Charge.all
+    
     @information = Credit.all
+    
   end
 
   # GET /charges/1
