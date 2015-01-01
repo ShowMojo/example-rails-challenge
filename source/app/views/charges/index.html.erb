@@ -1,0 +1,66 @@
+<h1>Successfull Transactions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Amount</th>
+      <th>Currency</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @charges.successful_transaction.each do |charge| %>
+      <tr class="successful">
+        <td><%= "#{charge.customer.first_name} #{charge.customer.last_name}" %></td>
+        <td><%= charge.amount %></td>
+        <td><%= charge.currency %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<h1>Failed Transactions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Amount</th>
+      <th>Currency</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @charges.failed_transaction.each do |charge| %>
+      <tr class="failed">
+        <td><%= "#{charge.customer.first_name} #{charge.customer.last_name}" %></td>
+        <td><%= charge.amount %></td>
+        <td><%= charge.currency %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<h1>Disputed Transactions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Amount</th>
+      <th>Currency</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @charges.disputed_transaction.each do |charge| %>
+      <tr class="disputed">
+        <td><%= "#{charge.customer.first_name} #{charge.customer.last_name}" %></td>
+        <td><%= charge.amount %></td>
+        <td><%= charge.currency %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
