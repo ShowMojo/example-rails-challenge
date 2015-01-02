@@ -1,0 +1,39 @@
+<div class='charges-container'>
+  <h1>Failed Charges</h1>
+  <ul class='failed-charges'>
+    <% if @charges['failed'] %>
+      <% @charges['failed'].each do |c| %>
+        <li>
+          <b><%= c.customer.fullname %></b>: <%= c.amount %>$ at <small><%= c.created_at %></small>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
+<div class='charges-container'>
+  <h1>Disputed Charges</h1>
+  <ul class='disputed-charges'>
+    <% if @charges['disputed'] %>
+      <% @charges['disputed'].each do |c| %>
+        <li>
+          <%= c.customer.fullname %>: <%= c.amount %> $ <small><%= c.created_at %></small>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
+
+<div class='charges-container'>
+  <h1>Successful Charges</h1>
+  <ul class='succeeded-charges'>
+    <% if @charges['succeed'] %>
+      <% @charges['succeed'].each do |c| %>
+        <li>
+          <%= c.customer.fullname %>: <%= c.amount %> $ <small><%= c.created_at %></small>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
