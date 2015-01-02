@@ -1,0 +1,15 @@
+<table id="successful-charges">
+  <thead>
+    <tr>
+      <th>Charge</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @successful_charges.each do |charge| %>
+    <tr>
+      <td><%= charge.created %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

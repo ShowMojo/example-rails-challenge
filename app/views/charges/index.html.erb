@@ -1,67 +1,11 @@
 <h1>Failed Charges</h1>
 
-<table id="failed-charges">
-  <thead>
-    <tr>
-      <th>Charge</th>
-      <th>Customer</th>
-      <th>Amount</th>
-      <th>Failed Date</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @failed_charges.each do |charge| %>
-      <tr style="background-color: #FF0000">
-        <td><%= charge.created %></td>
-        <td><%= charge.customer %></td>
-        <td><%= number_to_currency charge.amount, presicion: 2 %></td>
-        <td><%= charge.updated_at.strftime('%F') %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render 'failed', charges: @failed_charges %>
 
 <h1>Disputed Charges</h1>
 
-<table id="disputed-charges">
-  <thead>
-    <tr>
-      <th>Charge</th>
-      <th>Customer</th>
-      <th>Amount</th>
-      <th>Disputed Date</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @disputed_charges.each do |charge| %>
-      <tr style="background-color: #FF5400">
-        <td><%= charge.created %></td>
-        <td><%= charge.customer %></td>
-        <td><%= number_to_currency charge.amount, presicion: 2 %></td>
-        <td><%= charge.updated_at.strftime('%F') %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render 'disputed', charges: @disputed_charges %>
 
 <h1>Successful Charges</h1>
 
-<table id="successful-charges">
-  <thead>
-    <tr>
-      <th>Charge</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @successful_charges.each do |charge| %>
-    <tr>
-      <td><%= charge.created %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<%= render 'successful', charges: @successful_charges %>
