@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing charges</h1>
+
+
+    <ul id="failed">
+      <li>
+        <h4>Failed Charges</h4>
+      </li>
+      <% @failed.each do |charge| %>
+          <li class="item" style="background: #FF0000;">
+            <%= charge_details(charge) %>
+          </li>
+      <% end %>
+    </ul>
+
+
+    <ul id="disputed">
+      <li>
+        <h4>Disputed Charges</h4>
+      </li>
+      <% @disputed.each do |charge| %>
+          <li class="item" style="background: #FF5400;">
+            <%= charge_details(charge) %>
+          </li>
+      <% end %>
+    </ul>
+
+
+    <ul id="succeed">
+      <li>
+        <h4>Successful Charges</h4>
+      </li>
+      <% @succeed.each do |charge| %>
+          <li class="item">
+            <%= charge_details(charge) %>
+          </li>
+      <% end %>
+    </ul>
+
+<%= link_to 'New Charge', new_charge_path %>
