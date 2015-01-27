@@ -1,0 +1,66 @@
+<h1>Welcome!</h1>
+
+<%= link_to 'Customer List', mycustomers_path %>
+
+<h1>Successful Charges</h1>
+ 
+
+<table id="table_successful_charges" style="background-color:#FF0000">
+  <tr>
+    <th>Amount</th>
+    <th>Currency</th>
+    <th>Date</th>
+    <th>Customer</th>
+  </tr>
+ 
+  <% @transactions.each do |transaction| %>
+    <tr>
+      <td><%= transaction.amount %></td>
+      <td><%= transaction.currency%></td>
+      <td><%= transaction.created_at.strftime("%Y-%m-%d") %></td>
+      <td style="padding-left:10px"><%= link_to transaction.mycustomer.firstName + ' ' + transaction.mycustomer.lastName, edit_mycustomer_path(transaction.mycustomer) %></td>
+     </tr>
+  <% end %>
+</table>
+
+<h1>Disputed Charges</h1>
+ 
+
+<table id="table_disputed_charges" style="background-color:#FF5400">
+  <tr>
+    <th>Amount</th>
+    <th>Currency</th>
+    <th>Date</th>
+    <th>Customer</th>
+  </tr>
+ 
+  <% @transactions2.each do |transaction| %>
+    <tr>
+      <td><%= transaction.amount %></td>
+      <td><%= transaction.currency%></td>
+      <td><%= transaction.created_at.strftime("%Y-%m-%d")%></td>
+      <td style="padding-left:10px"><%= link_to transaction.mycustomer.firstName + ' ' + transaction.mycustomer.lastName ,edit_mycustomer_path(transaction.mycustomer) %></td>
+     </tr>
+  <% end %>
+</table>
+
+<h1>Failed Charges</h1>
+ 
+
+<table id="table_failed_charges" style="background-color:#999999">
+  <tr>
+    <th>Amount</th>
+    <th>Currency</th>
+    <th>Date</th>
+    <th>Customer</th>
+  </tr>
+ 
+  <% @transactions3.each do |transaction| %>
+    <tr>
+      <td><%= transaction.amount %></td>
+      <td><%= transaction.currency%></td>
+      <td><%= transaction.created_at.strftime("%Y-%m-%d")%></td>
+      <td style="padding-left:10px"><%= link_to transaction.mycustomer.firstName + ' ' + transaction.mycustomer.lastName ,edit_mycustomer_path(transaction.mycustomer) %></td>
+     </tr>
+  <% end %>
+</table>
