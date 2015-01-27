@@ -1,0 +1,28 @@
+<h1>Editing Customer</h1>
+ 
+<%= form_for :mycustomer, url: mycustomer_path(@mycustomer), method: :patch do |f| %>
+  <% if @mycustomer.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@mycustomer.errors.count, "error") %> prohibited
+      this article from being saved:</h2>
+    <ul>
+    <% @mycustomer.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+    <%= f.label :firstName %><br>
+    <%= f.text_field :firstName %>
+  </p>
+ 
+  <p>
+    <%= f.label :lastName %><br>
+    <%= f.text_field :lastName %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
