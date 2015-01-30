@@ -1,0 +1,22 @@
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version -2.0.0p598
+* Rails version - 4.1.6 
+* Database -mysql
+* Environment - ubuntu 14.04
+
+To run this application please do these steps:
+
+1  rake db:create
+
+2. rake db:migrate
+
+3. rake db:seed.
+
+
+

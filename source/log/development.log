@@ -1,0 +1,2068 @@
+  [1m[36m (92.2ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (211.3ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateCustomers (20150129091000)
+  [1m[35m (72.1ms)[0m  CREATE TABLE `customers` (`id` int(11) auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150129091000')
+  [1m[36m (48.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateTransactions (20150129092652)
+  [1m[35m (0.8ms)[0m  ALTER TABLE `customers` ADD CONSTRAINT `customers_transaction_id_fk` FOREIGN KEY (`transaction_id`) REFERENCES `transactions`(id)
+Mysql2::Error: Key column 'transaction_id' doesn't exist in table: ALTER TABLE `customers` ADD CONSTRAINT `customers_transaction_id_fk` FOREIGN KEY (`transaction_id`) REFERENCES `transactions`(id)
+  [1m[36m (227.3ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (178.3ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateCustomers (20150129091000)
+  [1m[35m (72.1ms)[0m  CREATE TABLE `customers` (`id` int(11) auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150129091000')
+  [1m[36m (39.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateTransactions (20150129092652)
+  [1m[35m (0.3ms)[0m  ALTER TABLE `transactions` ADD CONSTRAINT `transactions_customer_id_fk` FOREIGN KEY (`customer_id`) REFERENCES `customers`(id)
+Mysql2::Error: Table 'credit_card_charge_development.transactions' doesn't exist: ALTER TABLE `transactions` ADD CONSTRAINT `transactions_customer_id_fk` FOREIGN KEY (`customer_id`) REFERENCES `customers`(id)
+  [1m[36m (89.9ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (200.4ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateCustomers (20150129091000)
+  [1m[35m (84.3ms)[0m  CREATE TABLE `customers` (`id` int(11) auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150129091000')
+  [1m[36m (43.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateTransactions (20150129092652)
+  [1m[35m (84.8ms)[0m  CREATE TABLE `transactions` (`id` int(11) auto_increment PRIMARY KEY, `paid` tinyint(1), `amount` float, `currency` varchar(255), `refunded` tinyint(1), `customer_id` int(11), `disputed` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (193.2ms)[0m  [1mALTER TABLE `transactions` ADD CONSTRAINT `transactions_customer_id_fk` FOREIGN KEY (`customer_id`) REFERENCES `customers`(id)[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20150129092652')[0m
+  [1m[35m (31.1ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  
+          SELECT fk.referenced_table_name as 'to_table'
+                ,fk.referenced_column_name as 'primary_key'
+                ,fk.column_name as 'column'
+                ,fk.constraint_name as 'name'
+          FROM information_schema.key_column_usage fk
+          WHERE fk.referenced_column_name is not null
+            AND fk.table_schema = 'credit_card_charge_development'
+            AND fk.table_name = 'customers'
+        
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `customers`[0m
+  [1m[35m (0.2ms)[0m  
+          SELECT fk.referenced_table_name as 'to_table'
+                ,fk.referenced_column_name as 'primary_key'
+                ,fk.column_name as 'column'
+                ,fk.constraint_name as 'name'
+          FROM information_schema.key_column_usage fk
+          WHERE fk.referenced_column_name is not null
+            AND fk.table_schema = 'credit_card_charge_development'
+            AND fk.table_name = 'transactions'
+        
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `transactions`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `customers` (`created_at`, `first_name`, `last_name`, `updated_at`) VALUES ('2015-01-29 09:41:25', 'Johny', 'Flow', '2015-01-29 09:41:25')[0m
+  [1m[35m (60.1ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `customers` (`created_at`, `first_name`, `last_name`, `updated_at`) VALUES ('2015-01-29 09:43:12', 'Johny', 'Flow', '2015-01-29 09:43:12')[0m
+  [1m[35m (36.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `customers` (`created_at`, `first_name`, `last_name`, `updated_at`) VALUES ('2015-01-29 09:43:13', 'Raj', 'Jamnis', '2015-01-29 09:43:13')
+  [1m[36m (30.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `customers` (`created_at`, `first_name`, `last_name`, `updated_at`) VALUES ('2015-01-29 09:43:13', 'Andrew', 'Chung', '2015-01-29 09:43:13')[0m
+  [1m[35m (31.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `customers` (`created_at`, `first_name`, `last_name`, `updated_at`) VALUES ('2015-01-29 09:43:13', 'Mike', 'Smith', '2015-01-29 09:43:13')
+  [1m[36m (31.7ms)[0m  [1mCOMMIT[0m
+  [1m[36m (103.6ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (272.4ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateCustomers (20150129091000)
+  [1m[35m (122.5ms)[0m  CREATE TABLE `customers` (`id` int(11) auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150129091000')
+  [1m[36m (25.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateTransactions (20150129092652)
+  [1m[35m (89.5ms)[0m  CREATE TABLE `transactions` (`id` int(11) auto_increment PRIMARY KEY, `paid` tinyint(1), `amount` float, `currency` varchar(255), `refunded` tinyint(1), `customer_id` int(11), `disputed` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (178.3ms)[0m  [1mALTER TABLE `transactions` ADD CONSTRAINT `transactions_customer_id_fk` FOREIGN KEY (`customer_id`) REFERENCES `customers`(id)[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20150129092652')[0m
+  [1m[35m (31.5ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  
+          SELECT fk.referenced_table_name as 'to_table'
+                ,fk.referenced_column_name as 'primary_key'
+                ,fk.column_name as 'column'
+                ,fk.constraint_name as 'name'
+          FROM information_schema.key_column_usage fk
+          WHERE fk.referenced_column_name is not null
+            AND fk.table_schema = 'credit_card_charge_development'
+            AND fk.table_name = 'customers'
+        
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `customers`[0m
+  [1m[35m (0.3ms)[0m  
+          SELECT fk.referenced_table_name as 'to_table'
+                ,fk.referenced_column_name as 'primary_key'
+                ,fk.column_name as 'column'
+                ,fk.constraint_name as 'name'
+          FROM information_schema.key_column_usage fk
+          WHERE fk.referenced_column_name is not null
+            AND fk.table_schema = 'credit_card_charge_development'
+            AND fk.table_name = 'transactions'
+        
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `transactions`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `customers` (`created_at`, `first_name`, `last_name`, `updated_at`) VALUES ('2015-01-29 09:43:36', 'Johny', 'Flow', '2015-01-29 09:43:36')[0m
+  [1m[35m (50.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `customers` (`created_at`, `first_name`, `last_name`, `updated_at`) VALUES ('2015-01-29 09:43:37', 'Raj', 'Jamnis', '2015-01-29 09:43:37')
+  [1m[36m (30.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `customers` (`created_at`, `first_name`, `last_name`, `updated_at`) VALUES ('2015-01-29 09:43:37', 'Andrew', 'Chung', '2015-01-29 09:43:37')[0m
+  [1m[35m (30.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `customers` (`created_at`, `first_name`, `last_name`, `updated_at`) VALUES ('2015-01-29 09:43:37', 'Mike', 'Smith', '2015-01-29 09:43:37')
+  [1m[36m (31.5ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 14:14:53 +0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+Completed 500 Internal Server Error in 29ms
+
+NoMethodError (undefined method `successful_transactions' for #<Class:0x000000045a1780>):
+  app/controllers/welcome_controller.rb:3:in `index'
+
+
+  Rendered /home/movses/.rvm/gems/ruby-1.9.3-p551@global/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (24.5ms)
+  Rendered /home/movses/.rvm/gems/ruby-1.9.3-p551@global/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/movses/.rvm/gems/ruby-1.9.3-p551@global/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/movses/.rvm/gems/ruby-1.9.3-p551@global/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (56.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 14:16:55 +0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1186ms (Views: 1184.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 14:16:56 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 14:16:56 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 14:16:56 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 14:16:56 +0400
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 14:16:56 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 14:16:56 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 14:16:56 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 14:16:56 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 14:16:56 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 14:16:56 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 14:16:56 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 14:16:56 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 14:17:44 +0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 91ms (Views: 88.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 14:17:44 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 14:17:44 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 14:17:44 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 14:17:44 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 14:17:44 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 14:17:44 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 14:17:44 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 14:17:44 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 14:17:44 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 14:17:44 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 14:17:44 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 14:17:44 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 14:18:50 +0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 74ms (Views: 72.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 14:18:50 +0400
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 14:18:50 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 14:18:50 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 14:18:50 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 14:18:50 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 14:18:50 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 14:18:50 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 14:18:50 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 14:18:50 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 14:18:50 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 14:18:50 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 14:18:50 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 14:35:59 +0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 73ms (Views: 72.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 14:36:00 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 14:36:00 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 14:36:00 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 14:36:00 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 14:36:00 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 14:36:00 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 14:36:00 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 14:36:00 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 14:36:00 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 14:36:00 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 14:36:00 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 14:36:00 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 74ms (Views: 72.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 76ms (Views: 74.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 14:36:01 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 14:39:23 +0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 108ms (Views: 107.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:23 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:23 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:23 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:23 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:23 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:23 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:23 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:23 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:23 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:23 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:23 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:23 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 14:39:24 +0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 71ms (Views: 69.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:24 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:24 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:24 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:24 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:24 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:24 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:24 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:24 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:24 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:24 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:24 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:24 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 14:39:25 +0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 74ms (Views: 72.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:25 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:25 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:25 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:25 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:25 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:25 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:25 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:25 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:25 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:25 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:25 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:25 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 14:39:52 +0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 106ms (Views: 105.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:52 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:52 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:52 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:52 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:52 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:52 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:52 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:52 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:52 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:52 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:52 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:52 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 14:39:52 +0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 83ms (Views: 82.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:52 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:52 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:52 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:52 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:52 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:52 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:53 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:53 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:53 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:53 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:53 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:53 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 14:39:53 +0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 76ms (Views: 74.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:53 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:53 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:53 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:53 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 14:39:53 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:53 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:53 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:53 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:53 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:53 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:53 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 14:39:53 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 14:46:30 +0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 500 Internal Server Error in 34ms
+
+ActionView::Template::Error (Colors must have either three or six digits: '#F'
+  (in /home/movses/rails_projects/credit_card_charge/app/assets/stylesheets/welcome.css.scss:6)):
+    2: <html>
+    3: <head>
+    4:   <title>CreditCardCharge</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/welcome.css.scss:6
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___2804249039135026021_37326600'
+
+
+  Rendered /home/movses/.rvm/gems/ruby-1.9.3-p551@global/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/movses/.rvm/gems/ruby-1.9.3-p551@global/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/movses/.rvm/gems/ruby-1.9.3-p551@global/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 14:46:41 +0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 74ms (Views: 72.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 14:46:41 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 14:46:41 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 14:46:41 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 14:46:41 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 14:46:41 +0400
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 14:46:41 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 14:46:41 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 14:46:41 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 14:46:41 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 14:46:41 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 14:46:41 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 14:46:41 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 14:47:17 +0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (Invalid CSS after "...kground-color: ": expected expression (e.g. 1px, bold), was "##FF5400;"
+  (in /home/movses/rails_projects/credit_card_charge/app/assets/stylesheets/welcome.css.scss:6)):
+    2: <html>
+    3: <head>
+    4:   <title>CreditCardCharge</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/welcome.css.scss:6
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___2804249039135026021_37326600'
+
+
+  Rendered /home/movses/.rvm/gems/ruby-1.9.3-p551@global/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/movses/.rvm/gems/ruby-1.9.3-p551@global/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/movses/.rvm/gems/ruby-1.9.3-p551@global/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (9.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 16:04:06 +0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 73ms (Views: 71.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 16:04:06 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 16:04:06 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 16:04:06 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 16:04:06 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 16:04:06 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 16:04:06 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 16:04:06 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 16:04:06 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 16:04:06 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 16:04:06 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 16:04:06 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 16:04:06 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 18:12:56 +0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 135ms (Views: 125.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 18:12:57 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:12:57 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 18:12:57 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:12:57 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 18:12:57 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 18:12:57 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:12:57 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 18:12:57 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 18:12:57 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:12:57 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 18:12:57 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:12:57 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 18:14:31 +0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 115ms (Views: 113.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:14:31 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 18:14:31 +0400
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 18:14:31 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 18:14:31 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 18:14:31 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:14:31 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:14:31 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 18:14:31 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 18:14:31 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:14:31 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 18:14:31 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:14:31 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 18:19:01 +0400
+Processing by WelcomeController#index as HTML
+  [1m[35mTransaction Load (0.3ms)[0m  SELECT `transactions`.* FROM `transactions`  WHERE (paid = 0 and disputed = 0)
+  Rendered welcome/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 73ms (Views: 71.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 18:19:01 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 18:19:01 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 18:19:01 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:19:01 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 18:19:01 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:19:01 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:19:01 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 18:19:01 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 18:19:01 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 18:19:01 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:19:01 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:19:01 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 18:19:42 +0400
+Processing by WelcomeController#index as HTML
+  [1m[36mTransaction Load (0.1ms)[0m  [1mSELECT `transactions`.* FROM `transactions`  WHERE (paid = 0 and disputed = 0)[0m
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 74ms (Views: 72.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 18:19:42 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 18:19:42 +0400
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 18:19:42 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:19:42 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 18:19:42 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:19:42 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:19:42 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:19:42 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 18:19:42 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 18:19:42 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 18:19:42 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:19:42 +0400
+  [1m[36m (263.8ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (189.6ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateCustomers (20150129091000)
+  [1m[35m (95.0ms)[0m  CREATE TABLE `customers` (`id` int(11) auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150129091000')
+  [1m[36m (39.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateTransactions (20150129092652)
+  [1m[35m (88.5ms)[0m  CREATE TABLE `transactions` (`id` int(11) auto_increment PRIMARY KEY, `paid` tinyint(1), `amount` float, `currency` varchar(255), `refunded` tinyint(1), `customer_id` int(11), `disputed` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (167.7ms)[0m  [1mALTER TABLE `transactions` ADD CONSTRAINT `transactions_customer_id_fk` FOREIGN KEY (`customer_id`) REFERENCES `customers`(id)[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20150129092652')[0m
+  [1m[35m (31.7ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.4ms)[0m  
+          SELECT fk.referenced_table_name as 'to_table'
+                ,fk.referenced_column_name as 'primary_key'
+                ,fk.column_name as 'column'
+                ,fk.constraint_name as 'name'
+          FROM information_schema.key_column_usage fk
+          WHERE fk.referenced_column_name is not null
+            AND fk.table_schema = 'credit_card_charge_development'
+            AND fk.table_name = 'customers'
+        
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `customers`[0m
+  [1m[35m (0.4ms)[0m  
+          SELECT fk.referenced_table_name as 'to_table'
+                ,fk.referenced_column_name as 'primary_key'
+                ,fk.column_name as 'column'
+                ,fk.constraint_name as 'name'
+          FROM information_schema.key_column_usage fk
+          WHERE fk.referenced_column_name is not null
+            AND fk.table_schema = 'credit_card_charge_development'
+            AND fk.table_name = 'transactions'
+        
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `transactions`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `customers` (`created_at`, `first_name`, `last_name`, `updated_at`) VALUES ('2015-01-29 14:20:04', 'Johny', 'Flow', '2015-01-29 14:20:04')[0m
+  [1m[35m (36.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `customers` (`created_at`, `first_name`, `last_name`, `updated_at`) VALUES ('2015-01-29 14:20:04', 'Raj', 'Jamnis', '2015-01-29 14:20:04')
+  [1m[36m (65.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `customers` (`created_at`, `first_name`, `last_name`, `updated_at`) VALUES ('2015-01-29 14:20:04', 'Andrew', 'Chung', '2015-01-29 14:20:04')[0m
+  [1m[35m (31.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `customers` (`created_at`, `first_name`, `last_name`, `updated_at`) VALUES ('2015-01-29 14:20:04', 'Mike', 'Smith', '2015-01-29 14:20:04')
+  [1m[36m (31.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-29 14:20:04', 'USD', 1, 1, 0, '2015-01-29 14:20:04')[0m
+  [1m[35m (30.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-29 14:20:04', 'USD', 1, 1, 0, '2015-01-29 14:20:04')
+  [1m[36m (31.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-29 14:20:04', 'USD', 1, 1, 0, '2015-01-29 14:20:04')[0m
+  [1m[35m (31.6ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-29 14:20:04', 'USD', 1, 1, 0, '2015-01-29 14:20:04')
+  [1m[36m (30.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-29 14:20:04', 'USD', 1, 1, 0, '2015-01-29 14:20:04')[0m
+  [1m[35m (30.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `paid`, `refunded`, `updated_at`) VALUES (11.99, '2015-01-29 14:20:04', 'USD', 2, 1, 0, '2015-01-29 14:20:04')
+  [1m[36m (31.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `paid`, `refunded`, `updated_at`) VALUES (11.99, '2015-01-29 14:20:04', 'USD', 2, 1, 0, '2015-01-29 14:20:04')[0m
+  [1m[35m (31.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `paid`, `refunded`, `updated_at`) VALUES (11.99, '2015-01-29 14:20:04', 'USD', 2, 1, 0, '2015-01-29 14:20:04')
+  [1m[36m (31.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `paid`, `refunded`, `updated_at`) VALUES (45.0, '2015-01-29 14:20:04', 'USD', 3, 1, 0, '2015-01-29 14:20:04')[0m
+  [1m[35m (31.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `paid`, `refunded`, `updated_at`) VALUES (69.0, '2015-01-29 14:20:04', 'USD', 4, 1, 0, '2015-01-29 14:20:04')
+  [1m[36m (31.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-29 14:20:04', 'USD', 3, 0, 0, '2015-01-29 14:20:04')[0m
+  [1m[35m (31.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-29 14:20:04', 'USD', 3, 0, 0, '2015-01-29 14:20:04')
+  [1m[36m (40.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-29 14:20:04', 'USD', 3, 0, 0, '2015-01-29 14:20:04')[0m
+  [1m[35m (31.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `paid`, `refunded`, `updated_at`) VALUES (56.89, '2015-01-29 14:20:04', 'USD', 4, 0, 0, '2015-01-29 14:20:04')
+  [1m[36m (31.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `paid`, `refunded`, `updated_at`) VALUES (56.89, '2015-01-29 14:20:04', 'USD', 4, 0, 0, '2015-01-29 14:20:04')[0m
+  [1m[35m (31.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-29 14:20:04', 'USD', 1, 1, 1, '2015-01-29 14:20:04')
+  [1m[36m (31.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-29 14:20:04', 'USD', 1, 1, 1, '2015-01-29 14:20:04')[0m
+  [1m[35m (31.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-29 14:20:04', 'USD', 1, 1, 1, '2015-01-29 14:20:04')
+  [1m[36m (33.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `paid`, `refunded`, `updated_at`) VALUES (56.89, '2015-01-29 14:20:04', 'USD', 2, 1, 1, '2015-01-29 14:20:04')[0m
+  [1m[35m (42.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `paid`, `refunded`, `updated_at`) VALUES (56.89, '2015-01-29 14:20:04', 'USD', 2, 1, 1, '2015-01-29 14:20:04')
+  [1m[36m (41.4ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 18:20:07 +0400
+Processing by WelcomeController#index as HTML
+  [1m[35mTransaction Load (0.6ms)[0m  SELECT `transactions`.* FROM `transactions`  WHERE (paid = 0 and disputed = 0)
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 69ms (Views: 66.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:07 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:07 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:07 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:07 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:07 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:07 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:07 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:07 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:07 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:07 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:07 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:07 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 18:20:09 +0400
+Processing by WelcomeController#index as HTML
+  [1m[36mTransaction Load (0.3ms)[0m  [1mSELECT `transactions`.* FROM `transactions`  WHERE (paid = 0 and disputed = 0)[0m
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 68ms (Views: 67.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:10 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:10 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:10 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:10 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:10 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:10 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:10 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:10 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:10 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:10 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:10 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:10 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 18:20:24 +0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  [1m[35mTransaction Load (0.3ms)[0m  SELECT `transactions`.* FROM `transactions`  WHERE (paid = 0 and disputed = 0)
+  Rendered welcome/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 133ms (Views: 121.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:25 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:25 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:25 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:25 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:25 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:25 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:25 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:25 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:25 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:25 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:25 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:25 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 18:20:26 +0400
+Processing by WelcomeController#index as HTML
+  [1m[36mTransaction Load (0.2ms)[0m  [1mSELECT `transactions`.* FROM `transactions`  WHERE (paid = 0 and disputed = 0)[0m
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 76ms (Views: 74.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:26 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:26 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:26 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:26 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:26 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:26 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:26 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:26 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:26 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:26 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:26 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:26 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 18:20:58 +0400
+Processing by WelcomeController#index as HTML
+  [1m[35mTransaction Load (0.1ms)[0m  SELECT `transactions`.* FROM `transactions`  WHERE (paid = 0 and disputed = 0)
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 71ms (Views: 69.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:58 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:59 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:59 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:59 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:59 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:59 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:59 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:59 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:59 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:59 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:59 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:59 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 18:27:56 +0400
+Processing by WelcomeController#index as HTML
+  [1m[36mTransaction Load (0.2ms)[0m  [1mSELECT `transactions`.* FROM `transactions`  WHERE (paid = 0 and disputed = 0)[0m
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 75ms (Views: 72.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 18:27:56 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 18:27:56 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 18:27:56 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 18:27:56 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:27:56 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:27:56 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:27:56 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 18:27:56 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:27:56 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 18:27:56 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:27:56 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 18:27:56 +0400
+  [1m[36m (121.8ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (200.9ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateCustomers (20150129091000)
+  [1m[35m (73.9ms)[0m  CREATE TABLE `customers` (`id` int(11) auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150129091000')
+  [1m[36m (26.1ms)[0m  [1mCOMMIT[0m
+Migrating to CreateTransactions (20150129092652)
+  [1m[35m (76.3ms)[0m  CREATE TABLE `transactions` (`id` int(11) auto_increment PRIMARY KEY, `paid` tinyint(1), `amount` float, `currency` varchar(255), `refunded` tinyint(1), `customer_id` int(11), `disputed` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (167.4ms)[0m  [1mALTER TABLE `transactions` ADD CONSTRAINT `transactions_customer_id_fk` FOREIGN KEY (`customer_id`) REFERENCES `customers`(id)[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20150129092652')[0m
+  [1m[35m (41.3ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  
+          SELECT fk.referenced_table_name as 'to_table'
+                ,fk.referenced_column_name as 'primary_key'
+                ,fk.column_name as 'column'
+                ,fk.constraint_name as 'name'
+          FROM information_schema.key_column_usage fk
+          WHERE fk.referenced_column_name is not null
+            AND fk.table_schema = 'credit_card_charge_development'
+            AND fk.table_name = 'customers'
+        
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `customers`[0m
+  [1m[35m (0.3ms)[0m  
+          SELECT fk.referenced_table_name as 'to_table'
+                ,fk.referenced_column_name as 'primary_key'
+                ,fk.column_name as 'column'
+                ,fk.constraint_name as 'name'
+          FROM information_schema.key_column_usage fk
+          WHERE fk.referenced_column_name is not null
+            AND fk.table_schema = 'credit_card_charge_development'
+            AND fk.table_name = 'transactions'
+        
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `transactions`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `customers` (`created_at`, `first_name`, `last_name`, `updated_at`) VALUES ('2015-01-29 14:28:20', 'Johny', 'Flow', '2015-01-29 14:28:20')[0m
+  [1m[35m (49.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `customers` (`created_at`, `first_name`, `last_name`, `updated_at`) VALUES ('2015-01-29 14:28:20', 'Raj', 'Jamnis', '2015-01-29 14:28:20')
+  [1m[36m (42.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `customers` (`created_at`, `first_name`, `last_name`, `updated_at`) VALUES ('2015-01-29 14:28:20', 'Andrew', 'Chung', '2015-01-29 14:28:20')[0m
+  [1m[35m (42.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `customers` (`created_at`, `first_name`, `last_name`, `updated_at`) VALUES ('2015-01-29 14:28:20', 'Mike', 'Smith', '2015-01-29 14:28:20')
+  [1m[36m (41.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-29 14:28:20', 'USD', 1, 0, 1, 0, '2015-01-29 14:28:20')[0m
+  [1m[35m (41.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-29 14:28:20', 'USD', 1, 0, 1, 0, '2015-01-29 14:28:20')
+  [1m[36m (30.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-29 14:28:20', 'USD', 1, 0, 1, 0, '2015-01-29 14:28:20')[0m
+  [1m[35m (74.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-29 14:28:20', 'USD', 1, 0, 1, 0, '2015-01-29 14:28:20')
+  [1m[36m (30.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-29 14:28:20', 'USD', 1, 0, 1, 0, '2015-01-29 14:28:20')[0m
+  [1m[35m (30.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (11.99, '2015-01-29 14:28:20', 'USD', 2, 0, 1, 0, '2015-01-29 14:28:20')
+  [1m[36m (30.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (11.99, '2015-01-29 14:28:20', 'USD', 2, 0, 1, 0, '2015-01-29 14:28:20')[0m
+  [1m[35m (30.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (11.99, '2015-01-29 14:28:20', 'USD', 2, 0, 1, 0, '2015-01-29 14:28:20')
+  [1m[36m (30.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (45.0, '2015-01-29 14:28:20', 'USD', 3, 0, 1, 0, '2015-01-29 14:28:20')[0m
+  [1m[35m (30.4ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (69.0, '2015-01-29 14:28:20', 'USD', 4, 0, 1, 0, '2015-01-29 14:28:20')
+  [1m[36m (30.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-29 14:28:20', 'USD', 3, 0, 0, 0, '2015-01-29 14:28:20')[0m
+  [1m[35m (30.2ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-29 14:28:20', 'USD', 3, 0, 0, 0, '2015-01-29 14:28:20')
+  [1m[36m (30.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-29 14:28:20', 'USD', 3, 0, 0, 0, '2015-01-29 14:28:20')[0m
+  [1m[35m (30.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (56.89, '2015-01-29 14:28:20', 'USD', 4, 0, 0, 0, '2015-01-29 14:28:20')
+  [1m[36m (30.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (56.89, '2015-01-29 14:28:20', 'USD', 4, 0, 0, 0, '2015-01-29 14:28:20')[0m
+  [1m[35m (41.5ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-29 14:28:20', 'USD', 1, 1, 1, 0, '2015-01-29 14:28:20')
+  [1m[36m (41.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-29 14:28:20', 'USD', 1, 1, 1, 0, '2015-01-29 14:28:20')[0m
+  [1m[35m (31.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-29 14:28:20', 'USD', 1, 1, 1, 0, '2015-01-29 14:28:20')
+  [1m[36m (31.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (56.89, '2015-01-29 14:28:20', 'USD', 2, 1, 1, 0, '2015-01-29 14:28:20')[0m
+  [1m[35m (41.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (56.89, '2015-01-29 14:28:21', 'USD', 2, 1, 1, 0, '2015-01-29 14:28:21')
+  [1m[36m (41.4ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 18:28:27 +0400
+Processing by WelcomeController#index as HTML
+  [1m[35mTransaction Load (0.3ms)[0m  SELECT `transactions`.* FROM `transactions`  WHERE (paid = 0 and disputed = 0)
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 85ms (Views: 73.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 18:28:27 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:28:27 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 18:28:27 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 18:28:27 +0400
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 18:28:27 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:28:27 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:28:27 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 18:28:27 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:28:27 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 18:28:27 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 18:28:27 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:28:27 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 18:31:24 +0400
+Processing by WelcomeController#index as HTML
+  [1m[36mTransaction Load (0.3ms)[0m  [1mSELECT `transactions`.* FROM `transactions`  WHERE (paid = 0 and disputed = 0)[0m
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 92ms (Views: 89.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 18:31:24 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:31:24 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 18:31:24 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 18:31:24 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:31:24 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 18:31:24 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:31:24 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 18:31:24 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 18:31:24 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:31:24 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 18:31:24 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:31:24 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 18:34:31 +0400
+Processing by WelcomeController#index as HTML
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT `transactions`.* FROM `transactions`  WHERE (paid = 0 and disputed = 0)
+  Rendered welcome/index.html.erb within layouts/application (9.4ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (undefined method `customer' for #<Transaction:0x000000045cabd0>):
+    15:   <% @failed_transactions.each do |t| %>
+    16:     <tr>
+    17:       <td>
+    18:         <%= t.customer.first_name %>
+    19:       </td>
+    20:       <td>
+    21:         <%= t.amount %>
+  app/views/welcome/index.html.erb:18:in `block in _app_views_welcome_index_html_erb__2897878206060767035_36558920'
+  app/views/welcome/index.html.erb:15:in `_app_views_welcome_index_html_erb__2897878206060767035_36558920'
+
+
+  Rendered /home/movses/.rvm/gems/ruby-1.9.3-p551@global/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/movses/.rvm/gems/ruby-1.9.3-p551@global/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/movses/.rvm/gems/ruby-1.9.3-p551@global/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (9.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 18:42:00 +0400
+Processing by WelcomeController#index as HTML
+  [1m[36mTransaction Load (0.2ms)[0m  [1mSELECT `transactions`.* FROM `transactions`  WHERE (paid = 0 and disputed = 0)[0m
+  [1m[35mCustomer Load (0.4ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 3 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 3 LIMIT 1  [["id", 3]]
+  [1m[36mCustomer Load (0.4ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mTransaction Load (0.5ms)[0m  [1mSELECT `transactions`.* FROM `transactions`  WHERE (paid = 1 and disputed = 1)[0m
+  [1m[35mCustomer Load (0.5ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCustomer Load (0.7ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 2 LIMIT 1  [["id", 2]]
+  [1m[36mTransaction Load (0.6ms)[0m  [1mSELECT `transactions`.* FROM `transactions`  WHERE (paid = 1 and disputed = 0)[0m
+  Rendered welcome/index.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 120ms (Views: 102.1ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 18:42:00 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 18:42:00 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:42:00 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 18:42:00 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 18:42:00 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:42:00 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:42:00 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 18:42:00 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 18:42:00 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 18:42:00 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:42:00 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:42:00 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 18:47:36 +0400
+Processing by WelcomeController#index as HTML
+  [1m[35mTransaction Load (0.7ms)[0m  SELECT `transactions`.* FROM `transactions`  WHERE (paid = 0 and disputed = 0)
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 3 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 3 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mTransaction Load (0.1ms)[0m  SELECT `transactions`.* FROM `transactions`  WHERE (paid = 1 and disputed = 1)
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  [1m[35mTransaction Load (0.1ms)[0m  SELECT `transactions`.* FROM `transactions`  WHERE (paid = 1 and disputed = 0)
+  Rendered welcome/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 106ms (Views: 100.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 18:47:36 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 18:47:36 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:47:36 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 18:47:36 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 18:47:36 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:47:36 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:47:36 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 18:47:36 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 18:47:36 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:47:36 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:47:36 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 18:47:36 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 18:56:03 +0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT `transactions`.* FROM `transactions`  WHERE (paid = 0 and disputed = 0)
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 3 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 3 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT `transactions`.* FROM `transactions`  WHERE (paid = 1 and disputed = 1)
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT `transactions`.* FROM `transactions`  WHERE (paid = 1 and disputed = 0)
+  Rendered welcome/index.html.erb within layouts/application (22.8ms)
+Completed 500 Internal Server Error in 118ms
+
+ActionView::Template::Error (couldn't find file 'jquery'
+  (in /home/movses/rails_projects/credit_card_charge/app/assets/javascripts/application.js:13)):
+    3: <head>
+    4:   <title>CreditCardCharge</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+    9: <body>
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb__589008709400655760_28177180'
+
+
+  Rendered /home/movses/.rvm/gems/ruby-2.0.0-p598/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/movses/.rvm/gems/ruby-2.0.0-p598/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (13.1ms)
+  Rendered /home/movses/.rvm/gems/ruby-2.0.0-p598/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 18:56:34 +0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT `transactions`.* FROM `transactions`  WHERE (paid = 0 and disputed = 0)
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 3 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 3 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mTransaction Load (0.1ms)[0m  SELECT `transactions`.* FROM `transactions`  WHERE (paid = 1 and disputed = 1)
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  [1m[35mTransaction Load (0.3ms)[0m  SELECT `transactions`.* FROM `transactions`  WHERE (paid = 1 and disputed = 0)
+  Rendered welcome/index.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 508ms (Views: 482.0ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 18:56:34 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 18:56:34 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:56:34 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 18:56:34 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 18:56:34 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:56:34 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:56:34 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 18:56:34 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 18:56:34 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:56:34 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 18:56:34 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:56:34 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 19:00:58 +0400
+Processing by WelcomeController#index as HTML
+  [1m[36mTransaction Load (0.5ms)[0m  [1mSELECT `transactions`.* FROM `transactions`  WHERE (paid = 0 and disputed = 0)[0m
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 3 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 3 LIMIT 1  [["id", 3]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1mSELECT `transactions`.* FROM `transactions`  WHERE (paid = 1 and disputed = 1)[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 2 LIMIT 1  [["id", 2]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1mSELECT `transactions`.* FROM `transactions`  WHERE (paid = 1 and disputed = 0)[0m
+  Rendered welcome/index.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 63ms (Views: 57.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 19:00:58 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 19:00:58 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 19:00:58 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 19:00:58 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 19:00:58 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 19:00:58 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 19:00:58 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 19:00:58 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 19:00:58 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 19:00:58 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 19:00:58 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 19:00:58 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 21:45:27 +0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  [1m[35mTransaction Load (0.6ms)[0m  SELECT `transactions`.* FROM `transactions`  WHERE (paid = 0 and disputed = 0)
+  [1m[36mCustomer Load (0.5ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 3 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 3 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCustomer Load (0.5ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mTransaction Load (0.5ms)[0m  SELECT `transactions`.* FROM `transactions`  WHERE (paid = 1 and disputed = 1)
+  [1m[36mCustomer Load (0.4ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCustomer Load (0.3ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  [1m[35mTransaction Load (0.6ms)[0m  SELECT `transactions`.* FROM `transactions`  WHERE (paid = 1 and disputed = 0)
+  Rendered welcome/index.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 338ms (Views: 289.9ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-29 21:45:28 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-29 21:45:28 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-29 21:45:28 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-29 21:45:28 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 21:45:28 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 21:45:28 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 21:45:28 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-29 21:45:28 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-29 21:45:28 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 21:45:28 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-29 21:45:28 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 21:45:28 +0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-30 01:20:01 +0400
+Processing by WelcomeController#index as HTML
+  [1m[36mTransaction Load (0.1ms)[0m  [1mSELECT `transactions`.* FROM `transactions`  WHERE (paid = 0 and disputed = 0)[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 3 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 3 LIMIT 1  [["id", 3]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 4 LIMIT 1  [["id", 4]]
+  [1m[36mTransaction Load (0.1ms)[0m  [1mSELECT `transactions`.* FROM `transactions`  WHERE (paid = 1 and disputed = 1)[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 2 LIMIT 1  [["id", 2]]
+  [1m[36mTransaction Load (0.1ms)[0m  [1mSELECT `transactions`.* FROM `transactions`  WHERE (paid = 1 and disputed = 0)[0m
+  Rendered welcome/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 60ms (Views: 58.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-30 01:20:01 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-30 01:20:01 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-30 01:20:01 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-30 01:20:01 +0400
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-30 01:20:01 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-30 01:20:01 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-30 01:20:01 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-30 01:20:01 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-30 01:20:01 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-30 01:20:01 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-30 01:20:01 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-30 01:20:01 +0400
+  [1m[36m (102.9ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (200.3ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateCustomers (20150129091000)
+  [1m[35m (81.0ms)[0m  CREATE TABLE `customers` (`id` int(11) auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150129091000')
+  [1m[36m (35.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateTransactions (20150129092652)
+  [1m[35m (76.5ms)[0m  CREATE TABLE `transactions` (`id` int(11) auto_increment PRIMARY KEY, `paid` tinyint(1), `amount` float, `currency` varchar(255), `refunded` tinyint(1), `customer_id` int(11), `disputed` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (168.8ms)[0m  [1mALTER TABLE `transactions` ADD CONSTRAINT `transactions_customer_id_fk` FOREIGN KEY (`customer_id`) REFERENCES `customers`(id)[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20150129092652')[0m
+  [1m[35m (30.5ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.5ms)[0m  
+          SELECT fk.referenced_table_name as 'to_table'
+                ,fk.referenced_column_name as 'primary_key'
+                ,fk.column_name as 'column'
+                ,fk.constraint_name as 'name'
+          FROM information_schema.key_column_usage fk
+          WHERE fk.referenced_column_name is not null
+            AND fk.table_schema = 'credit_card_charge_development'
+            AND fk.table_name = 'customers'
+        
+  [1m[36m (0.3ms)[0m  [1mSHOW CREATE TABLE `customers`[0m
+  [1m[35m (0.4ms)[0m  
+          SELECT fk.referenced_table_name as 'to_table'
+                ,fk.referenced_column_name as 'primary_key'
+                ,fk.column_name as 'column'
+                ,fk.constraint_name as 'name'
+          FROM information_schema.key_column_usage fk
+          WHERE fk.referenced_column_name is not null
+            AND fk.table_schema = 'credit_card_charge_development'
+            AND fk.table_name = 'transactions'
+        
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `transactions`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `customers` (`created_at`, `first_name`, `last_name`, `updated_at`) VALUES ('2015-01-30 09:33:55', 'Johny', 'Flow', '2015-01-30 09:33:55')[0m
+  [1m[35m (61.7ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `customers` (`created_at`, `first_name`, `last_name`, `updated_at`) VALUES ('2015-01-30 09:33:55', 'Raj', 'Jamnis', '2015-01-30 09:33:55')
+  [1m[36m (41.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `customers` (`created_at`, `first_name`, `last_name`, `updated_at`) VALUES ('2015-01-30 09:33:55', 'Andrew', 'Chung', '2015-01-30 09:33:55')[0m
+  [1m[35m (30.7ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `customers` (`created_at`, `first_name`, `last_name`, `updated_at`) VALUES ('2015-01-30 09:33:55', 'Mike', 'Smith', '2015-01-30 09:33:55')
+  [1m[36m (41.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-30 09:33:55', 'USD', 1, 0, 1, 0, '2015-01-30 09:33:55')[0m
+  [1m[35m (40.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (42.8ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-30 09:33:55', 'USD', 1, 0, 1, 0, '2015-01-30 09:33:55')
+  [1m[36m (87.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (76.3ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-30 09:33:55', 'USD', 1, 0, 1, 0, '2015-01-30 09:33:55')[0m
+  [1m[35m (88.4ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-30 09:33:55', 'USD', 1, 0, 1, 0, '2015-01-30 09:33:55')
+  [1m[36m (86.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-30 09:33:55', 'USD', 1, 0, 1, 0, '2015-01-30 09:33:55')[0m
+  [1m[35m (41.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (11.99, '2015-01-30 09:33:55', 'USD', 2, 0, 1, 0, '2015-01-30 09:33:55')
+  [1m[36m (42.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (11.99, '2015-01-30 09:33:55', 'USD', 2, 0, 1, 0, '2015-01-30 09:33:55')[0m
+  [1m[35m (31.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (11.99, '2015-01-30 09:33:55', 'USD', 2, 0, 1, 0, '2015-01-30 09:33:55')
+  [1m[36m (31.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (45.0, '2015-01-30 09:33:55', 'USD', 3, 0, 1, 0, '2015-01-30 09:33:55')[0m
+  [1m[35m (31.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (69.0, '2015-01-30 09:33:55', 'USD', 4, 0, 1, 0, '2015-01-30 09:33:55')
+  [1m[36m (42.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-30 09:33:55', 'USD', 3, 0, 0, 0, '2015-01-30 09:33:55')[0m
+  [1m[35m (42.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-30 09:33:55', 'USD', 3, 0, 0, 0, '2015-01-30 09:33:55')
+  [1m[36m (76.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-30 09:33:56', 'USD', 3, 0, 0, 0, '2015-01-30 09:33:56')[0m
+  [1m[35m (31.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (56.89, '2015-01-30 09:33:56', 'USD', 4, 0, 0, 0, '2015-01-30 09:33:56')
+  [1m[36m (30.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (56.89, '2015-01-30 09:33:56', 'USD', 4, 0, 0, 0, '2015-01-30 09:33:56')[0m
+  [1m[35m (30.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-30 09:33:56', 'USD', 1, 1, 1, 0, '2015-01-30 09:33:56')
+  [1m[36m (30.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-30 09:33:56', 'USD', 1, 1, 1, 0, '2015-01-30 09:33:56')[0m
+  [1m[35m (30.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (50.0, '2015-01-30 09:33:56', 'USD', 1, 1, 1, 0, '2015-01-30 09:33:56')
+  [1m[36m (30.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (56.89, '2015-01-30 09:33:56', 'USD', 2, 1, 1, 0, '2015-01-30 09:33:56')[0m
+  [1m[35m (30.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `transactions` (`amount`, `created_at`, `currency`, `customer_id`, `disputed`, `paid`, `refunded`, `updated_at`) VALUES (56.89, '2015-01-30 09:33:56', 'USD', 2, 1, 1, 0, '2015-01-30 09:33:56')
+  [1m[36m (30.3ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-30 13:34:10 +0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  [1m[35mTransaction Load (0.4ms)[0m  SELECT `transactions`.* FROM `transactions`  WHERE (paid = 0 and disputed = 0)
+  [1m[36mCustomer Load (0.4ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 3 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 3 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCustomer Load (0.4ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 4 LIMIT 1[0m  [["id", 4]]
+  [1m[35mTransaction Load (0.4ms)[0m  SELECT `transactions`.* FROM `transactions`  WHERE (paid = 1 and disputed = 1)
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCustomer Load (0.3ms)[0m  SELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `customers`.* FROM `customers`  WHERE `customers`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  [1m[35mTransaction Load (0.3ms)[0m  SELECT `transactions`.* FROM `transactions`  WHERE (paid = 1 and disputed = 0)
+  Rendered welcome/index.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 235ms (Views: 220.6ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2015-01-30 13:34:10 +0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-30 13:34:10 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-30 13:34:10 +0400
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-30 13:34:10 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-30 13:34:10 +0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-30 13:34:10 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-30 13:34:10 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-30 13:34:10 +0400
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2015-01-30 13:34:10 +0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-30 13:34:10 +0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-30 13:34:10 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-30 13:34:10 +0400
