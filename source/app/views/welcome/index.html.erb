@@ -1,0 +1,119 @@
+<h1>Failed Charges</h1>
+<table class="failed_table">
+  <tr>
+    <th>
+      Customer Name
+    </th>
+    <th>
+      Charge amount
+    </th>
+    <th>
+      Date
+    </th>
+  </tr>
+  <tbody>
+  <% @failed_transactions.each do |t| %>
+    <tr>
+      <td>
+        <%= t.name %>
+      </td>
+      <td>
+        <%= t.amount %>
+      </td>
+      <td>
+        <%= t.created_at %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<h1>Disputed Charges</h1>
+<table class="disputed_table">
+  <tr>
+    <th>
+      Customer Name
+    </th>
+    <th>
+      Charge amount
+    </th>
+    <th>
+      Date
+    </th>
+  </tr>
+  <tbody>
+  <% @disputed_transactions.each do |t| %>
+      <tr>
+        <td>
+          <%= t.name %>
+        </td>
+        <td>
+          <%= t.amount %>
+        </td>
+        <td>
+          <%= t.created_at %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<h1>Successful Charges</h1>
+<table>
+  <tr>
+    <th>
+      Transaction ID
+    </th>
+    <th>
+      Paid
+    </th>
+    <th>
+      Amount
+    </th>
+    <th>
+      Currency
+    </th>
+    <th>
+      refunded
+    </th>
+    <th>
+      Customer ID
+    </th>
+    <th>
+      Disputed
+    </th>
+    <th>
+      Date
+    </th>
+  </tr>
+  <tbody>
+  <% @successful_transactions.each do |t| %>
+      <tr>
+        <td>
+          <%= t.id %>
+        </td>
+        <td>
+          <%= t.paid %>
+        </td>
+        <td>
+          <%= t.amount %>
+        </td>
+        <td>
+          <%= t.currency %>
+        </td>
+        <td>
+          <%= t.refunded %>
+        </td>
+        <td>
+          <%= t.customer_id %>
+        </td>
+        <td>
+          <%= t.disputed %>
+        </td>
+        <td>
+          <%= t.created_at %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
