@@ -1,2 +1,10 @@
-%h1 CardCharges#index
-%p Find me in app/views/card_charges/index.html.haml
+%div
+  %strong
+    %h1 Successful:
+  = render partial: "table", locals: {charges: @successful,:tab_id => 'tab_success'}
+  %strong
+    %h1 Failed:
+  = render partial: "table", locals: {charges: @failed,:failed=> true ,:s_class=> 'tab_failed',:tab_id => 'tab_failed'}
+  %strong
+    %h1 Disputed:
+  = render partial: "table", locals: {charges: @disputed,:disputed => true ,:s_class=> 'tab_disputed',:tab_id => 'tab_disputed'}

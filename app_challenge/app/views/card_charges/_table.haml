@@ -1,0 +1,31 @@
+%div
+  - dispute_or_failed = (local_assigns[:disputed] or local_assigns[:failed])
+  %table{:class => "table table-bordered table-striped #{local_assigns[:s_class].to_s}", :id => "#{local_assigns[:tab_id]}"}
+    %tbody
+      %thead
+        %th.text-primary
+          %h1 Name
+        %th.text-primary
+          %h1 Last name
+        %th.text-primary
+          %h1 Amount
+          - if dispute_or_failed
+            %th.text-primary
+              %h1 Date
+      - charges.each do |c|
+        %tr
+          %td
+            = c.customer.name
+          %td
+            = c.customer.last_name
+          %td
+            = number_to_currency(c.amount)
+          - if dispute_or_failed
+            %td
+              = res = (local_assigns[:disputed] ) ?  c.dispute_date.to_s : c.failed_date.to_s
+  - s =""
+  - case (charges.first.status)
+  - when 1; s ='Successful Count:'; when 2; s= 'Failed Count:' when 3; s ="Disputed Count:";
+
+  %section.text-primary
+    = s + charges.count.to_s
