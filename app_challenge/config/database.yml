@@ -1,0 +1,25 @@
+#
+default: &default
+  adapter: postgresql
+  host: localhost
+  username: postgres
+  password:
+  pool: 5
+
+development:
+  <<: *default
+  database: simple_db_dev
+
+
+
+test:
+  <<: *default
+  database: simple_db_test
+
+
+#
+production:
+  <<: *default
+  database: simple_db_test
+  username: recenta
+  password: <%= ENV['SIMPLE_DB_PASSWORD'] %>

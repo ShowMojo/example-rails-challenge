@@ -1,3 +1,16 @@
+/app_challenge/.gitignore
+/app_challenge/.idea/.generators
+/app_challenge/.idea/.name
+/app_challenge/.idea/.rakeTasks
+/app_challenge/.idea/app_challenge.iml
+/app_challenge/.idea/dataSources.ids
+/app_challenge/.idea/dataSources.xml
+/app_challenge/.idea/encodings.xml
+/app_challenge/.idea/misc.xml
+/app_challenge/.idea/modules.xml
+/app_challenge/.idea/scopes/scope_settings.xml
+/app_challenge/.idea/vcs.xml
+/app_challenge/.idea/workspace.xml
 *.rbc
 *.sassc
 .sass-cache
