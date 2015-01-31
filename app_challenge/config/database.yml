@@ -8,18 +8,18 @@ default: &default
 
 development:
   <<: *default
-  database: simple_db_dev
+  database: db_1_dev
 
 
 
 test:
   <<: *default
-  database: simple_db_test
+  database: db_1_test
 
 
 #
 production:
   <<: *default
-  database: simple_db_test
+  database: db_1_product
   username: recenta
   password: <%= ENV['SIMPLE_DB_PASSWORD'] %>
