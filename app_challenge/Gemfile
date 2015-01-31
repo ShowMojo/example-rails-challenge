@@ -31,3 +31,6 @@ group :test, :development do
   gem "rspec-rails", "~> 2.0"
   gem 'database_cleaner', '~> 1.4.0'
 end
+
+
+gem "twitter-bootstrap-rails"
