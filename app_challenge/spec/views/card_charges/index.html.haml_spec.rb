@@ -2,13 +2,13 @@ require 'spec_helper'
 
 RSpec.describe "card_charges/index.html.haml", :type => :view do
   before do
-    @failed,@successful,@disputed = CardCharge.failed,CardCharge.successful, CardCharge.disputed
+    @failed,@successful,@disputed = CardCharge.failed.includes(:customer),
+        CardCharge.successful.includes(:customer),
+        CardCharge.disputed.includes(:customer)
     render
   end
 
-
   it 'it render a partial and show 3 lists' do
-    render
     expect(rendered).to include("tab_success")
     expect(rendered).to include("tab_failed")
     expect(rendered).to include("tab_disputed")
