@@ -1,0 +1,30 @@
+<div class="charges">
+  <h1>Failed Charges</h1>
+  <ul class="failed">
+    <% @charges.each do |charge| %>
+      <% if charge.failed? %>
+        <%= render :partial => 'row', :locals => {:charge => charge } %>
+      <% end %>
+    <% end %>
+  </ul>
+
+  <h1>Disputed Charges</h1>
+  <ul class="disputed">
+    <% @charges.each do |charge| %>
+      <% if charge.disputed? %>
+        <%= render :partial => 'row', :locals => {:charge => charge } %>
+      <% end %>
+    <% end %>
+  </ul>
+
+  <h1>Successful Charges</h1>
+  <ul class="successful">
+    <% @charges.each do |charge| %>
+      <% if charge.successful? %>
+        <%= render :partial => 'row', :locals => {:charge => charge } %>
+      <% end %>
+    <% end %>
+  </ul>
+
+</div>
+
