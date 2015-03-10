@@ -1,0 +1,9 @@
+<li> 
+  <% if charge.failed? %>
+    <%= "Customer: #{charge.customer.name}, transaction: #{charge.amount} #{charge.currency} on #{charge.updated_at}" %>
+  <% elsif charge.disputed? %>
+    <%= "Customer: #{charge.customer.name}, transaction: #{charge.amount} #{charge.currency} on #{charge.updated_at}" %>
+  <% else %>
+    <%= "Customer: #{charge.customer.name}, transaction: #{charge.amount} #{charge.currency}" %>
+  <% end %>
+</li>
