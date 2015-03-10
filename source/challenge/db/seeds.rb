@@ -15,7 +15,7 @@ customers[3].charges.create(paid: true, amount: 3312)
 
 # failed charges
 3.times { customers[2].charges.create(paid:false, amount: 4444) }
-2.times { customers[1].charges.create(paid: false, amount: 5555) }
+2.times { customers[3].charges.create(paid: false, amount: 5555) }
 
 # disputed charges
 3.times { customers[0].charges.create(paid: true, refunded: true, amount: 6666) }
