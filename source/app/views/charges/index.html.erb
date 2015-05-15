@@ -1,0 +1,17 @@
+<h1>Charges#index</h1>
+<p>Find me in app/views/charges/index.html.erb</p>
+
+<div class="charges_container failed">
+  <h1>Failed Charges</h1>
+  <%= render partial: 'charges', locals: { charges: @charges_failed } %>
+</div>
+
+<div class="charges_container disputed">
+  <h1>Disputed Charges</h1>
+  <%= render partial: 'charges', locals: { charges: @charges_disputed } %>
+</div>
+
+<div class="charges_container successful">
+  <h1>Failed Successful</h1>
+  <%= render partial: 'charges', locals: { charges: @charges_successful } %>
+</div>

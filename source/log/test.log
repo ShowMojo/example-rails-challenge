@@ -1,0 +1,1603 @@
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mCharge Load (0.3ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'[0m
+  Rendered charges/_charges.html.erb (3.6ms)
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'
+  Rendered charges/_charges.html.erb (0.5ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'[0m
+  Rendered charges/_charges.html.erb (0.4ms)
+  Rendered charges/index.html.erb (16.3ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'[0m
+  Rendered charges/_charges.html.erb (2.7ms)
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'
+  Rendered charges/_charges.html.erb (0.5ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'[0m
+  Rendered charges/_charges.html.erb (0.3ms)
+  Rendered charges/index.html.erb (12.3ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'[0m
+  Rendered charges/_charges.html.erb (2.6ms)
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'
+  Rendered charges/_charges.html.erb (0.4ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'[0m
+  Rendered charges/_charges.html.erb (0.3ms)
+  Rendered charges/index.html.erb (12.3ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mCustomer Load (0.4ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."first_name" = 'Johny' AND "customers"."last_name" = 'Flow' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "customers" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-05-15 15:59:05.833234"], ["first_name", "Johny"], ["last_name", "Flow"], ["updated_at", "2015-05-15 15:59:05.833234"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."first_name" = 'Raj' AND "customers"."last_name" = 'Jamnis' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "customers" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-05-15 15:59:05.837478"], ["first_name", "Raj"], ["last_name", "Jamnis"], ["updated_at", "2015-05-15 15:59:05.837478"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."first_name" = 'Andrew' AND "customers"."last_name" = 'Chung' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "customers" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-05-15 15:59:05.839551"], ["first_name", "Andrew"], ["last_name", "Chung"], ["updated_at", "2015-05-15 15:59:05.839551"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."first_name" = 'Mike' AND "customers"."last_name" = 'Smith' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "customers" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-05-15 15:59:05.841444"], ["first_name", "Mike"], ["last_name", "Smith"], ["updated_at", "2015-05-15 15:59:05.841444"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT "customers".* FROM "customers"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "charges" ("amount", "created_at", "customer_id", "paid", "refunded", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["amount", 883722], ["created_at", "2015-05-15 15:59:05.861405"], ["customer_id", 1], ["paid", "t"], ["refunded", "f"], ["updated_at", "2015-05-15 15:59:05.861405"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "charges" ("amount", "created_at", "customer_id", "paid", "refunded", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["amount", 433279], ["created_at", "2015-05-15 15:59:05.864001"], ["customer_id", 1], ["paid", "t"], ["refunded", "f"], ["updated_at", "2015-05-15 15:59:05.864001"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "charges" ("amount", "created_at", "customer_id", "paid", "refunded", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["amount", 95146], ["created_at", "2015-05-15 15:59:05.866000"], ["customer_id", 1], ["paid", "t"], ["refunded", "f"], ["updated_at", "2015-05-15 15:59:05.866000"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "charges" ("amount", "created_at", "customer_id", "paid", "refunded", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["amount", 69940], ["created_at", "2015-05-15 15:59:05.867869"], ["customer_id", 1], ["paid", "t"], ["refunded", "f"], ["updated_at", "2015-05-15 15:59:05.867869"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "charges" ("amount", "created_at", "customer_id", "paid", "refunded", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["amount", 222518], ["created_at", "2015-05-15 15:59:05.869598"], ["customer_id", 1], ["paid", "t"], ["refunded", "f"], ["updated_at", "2015-05-15 15:59:05.869598"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "charges" ("amount", "created_at", "customer_id", "paid", "refunded", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["amount", 32198], ["created_at", "2015-05-15 15:59:05.871537"], ["customer_id", 2], ["paid", "t"], ["refunded", "f"], ["updated_at", "2015-05-15 15:59:05.871537"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "charges" ("amount", "created_at", "customer_id", "paid", "refunded", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["amount", 638972], ["created_at", "2015-05-15 15:59:05.873395"], ["customer_id", 2], ["paid", "t"], ["refunded", "f"], ["updated_at", "2015-05-15 15:59:05.873395"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "charges" ("amount", "created_at", "customer_id", "paid", "refunded", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["amount", 299567], ["created_at", "2015-05-15 15:59:05.875186"], ["customer_id", 2], ["paid", "t"], ["refunded", "f"], ["updated_at", "2015-05-15 15:59:05.875186"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "charges" ("amount", "created_at", "customer_id", "paid", "refunded", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["amount", 307850], ["created_at", "2015-05-15 15:59:05.877075"], ["customer_id", 3], ["paid", "t"], ["refunded", "f"], ["updated_at", "2015-05-15 15:59:05.877075"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "charges" ("amount", "created_at", "customer_id", "paid", "refunded", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["amount", 417211], ["created_at", "2015-05-15 15:59:05.878937"], ["customer_id", 4], ["paid", "t"], ["refunded", "f"], ["updated_at", "2015-05-15 15:59:05.878937"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "charges" ("amount", "created_at", "customer_id", "paid", "updated_at") VALUES (?, ?, ?, ?, ?)  [["amount", 316877], ["created_at", "2015-05-15 15:59:05.880630"], ["customer_id", 3], ["paid", "f"], ["updated_at", "2015-05-15 15:59:05.880630"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "charges" ("amount", "created_at", "customer_id", "paid", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 715760], ["created_at", "2015-05-15 15:59:05.882471"], ["customer_id", 3], ["paid", "f"], ["updated_at", "2015-05-15 15:59:05.882471"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "charges" ("amount", "created_at", "customer_id", "paid", "updated_at") VALUES (?, ?, ?, ?, ?)  [["amount", 843160], ["created_at", "2015-05-15 15:59:05.885090"], ["customer_id", 3], ["paid", "f"], ["updated_at", "2015-05-15 15:59:05.885090"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "charges" ("amount", "created_at", "customer_id", "paid", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["amount", 414666], ["created_at", "2015-05-15 15:59:05.886801"], ["customer_id", 4], ["paid", "f"], ["updated_at", "2015-05-15 15:59:05.886801"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "charges" ("amount", "created_at", "customer_id", "paid", "updated_at") VALUES (?, ?, ?, ?, ?)  [["amount", 767529], ["created_at", "2015-05-15 15:59:05.888617"], ["customer_id", 4], ["paid", "f"], ["updated_at", "2015-05-15 15:59:05.888617"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "charges" ("amount", "created_at", "customer_id", "paid", "refunded", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["amount", 337660], ["created_at", "2015-05-15 15:59:05.890487"], ["customer_id", 1], ["paid", "t"], ["refunded", "t"], ["updated_at", "2015-05-15 15:59:05.890487"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "charges" ("amount", "created_at", "customer_id", "paid", "refunded", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["amount", 692171], ["created_at", "2015-05-15 15:59:05.892204"], ["customer_id", 1], ["paid", "t"], ["refunded", "t"], ["updated_at", "2015-05-15 15:59:05.892204"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "charges" ("amount", "created_at", "customer_id", "paid", "refunded", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["amount", 819226], ["created_at", "2015-05-15 15:59:05.893949"], ["customer_id", 1], ["paid", "t"], ["refunded", "t"], ["updated_at", "2015-05-15 15:59:05.893949"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "charges" ("amount", "created_at", "customer_id", "paid", "refunded", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["amount", 169268], ["created_at", "2015-05-15 15:59:05.895660"], ["customer_id", 2], ["paid", "t"], ["refunded", "t"], ["updated_at", "2015-05-15 15:59:05.895660"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "charges" ("amount", "created_at", "customer_id", "paid", "refunded", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["amount", 209670], ["created_at", "2015-05-15 15:59:05.897313"], ["customer_id", 2], ["paid", "t"], ["refunded", "t"], ["updated_at", "2015-05-15 15:59:05.897313"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (12.1ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (24.3ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'[0m
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (3.4ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'[0m
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (6.7ms)
+  Rendered charges/index.html.erb (50.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (10.8ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (21.4ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'[0m
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (3.6ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'[0m
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (6.6ms)
+  Rendered charges/index.html.erb (40.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mCharge Load (0.4ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'[0m
+  [1m[35mCustomer Load (0.4ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (15.6ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (1.3ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  Rendered charges/_charges.html.erb (28.7ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'[0m
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (3.5ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'[0m
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (14.1ms)
+  Rendered charges/index.html.erb (55.9ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mCharge Load (0.3ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'[0m
+  [1m[35mCustomer Load (0.4ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (14.1ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (26.1ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'[0m
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.9ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (1.0ms)
+  Rendered charges/_charges.html.erb (5.3ms)
+  [1m[36mCharge Load (0.2ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'[0m
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (14.3ms)
+  Rendered charges/index.html.erb (55.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "charges"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "charges" ("paid", "amount", "currency", "refunded", "created_at", "updated_at", "id") VALUES ('f', NULL, 'MyString', 'f', '2015-05-15 16:05:58', '2015-05-15 16:05:58', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "charges" ("paid", "amount", "currency", "refunded", "created_at", "updated_at", "id") VALUES ('f', NULL, 'MyString', 'f', '2015-05-15 16:05:58', '2015-05-15 16:05:58', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "customers"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "customers" ("attributes", "created_at", "updated_at", "id") VALUES ('---
+first_name: Mike
+last_name: Smith
+', '2015-05-15 16:05:58', '2015-05-15 16:05:58', 980190962)[0m
+SQLite3::SQLException: table customers has no column named attributes: INSERT INTO "customers" ("attributes", "created_at", "updated_at", "id") VALUES ('---
+first_name: Mike
+last_name: Smith
+', '2015-05-15 16:05:58', '2015-05-15 16:05:58', 980190962)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "charges"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "charges" ("paid", "amount", "currency", "refunded", "created_at", "updated_at", "id") VALUES ('f', NULL, 'MyString', 'f', '2015-05-15 16:05:58', '2015-05-15 16:05:58', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "charges" ("paid", "amount", "currency", "refunded", "created_at", "updated_at", "id") VALUES ('f', NULL, 'MyString', 'f', '2015-05-15 16:05:58', '2015-05-15 16:05:58', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "customers"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "customers" ("attributes", "created_at", "updated_at", "id") VALUES ('---
+first_name: Mike
+last_name: Smith
+', '2015-05-15 16:05:58', '2015-05-15 16:05:58', 980190962)
+SQLite3::SQLException: table customers has no column named attributes: INSERT INTO "customers" ("attributes", "created_at", "updated_at", "id") VALUES ('---
+first_name: Mike
+last_name: Smith
+', '2015-05-15 16:05:58', '2015-05-15 16:05:58', 980190962)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "charges"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "charges" ("paid", "amount", "currency", "refunded", "created_at", "updated_at", "id") VALUES ('f', NULL, 'MyString', 'f', '2015-05-15 16:06:33', '2015-05-15 16:06:33', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "charges" ("paid", "amount", "currency", "refunded", "created_at", "updated_at", "id") VALUES ('f', NULL, 'MyString', 'f', '2015-05-15 16:06:33', '2015-05-15 16:06:33', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "customers"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "customers" ("attributes", "created_at", "updated_at", "id") VALUES ('---
+first_name: Mike
+last_name: Smith
+', '2015-05-15 16:06:34', '2015-05-15 16:06:34', 980190962)[0m
+SQLite3::SQLException: table customers has no column named attributes: INSERT INTO "customers" ("attributes", "created_at", "updated_at", "id") VALUES ('---
+first_name: Mike
+last_name: Smith
+', '2015-05-15 16:06:34', '2015-05-15 16:06:34', 980190962)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "charges"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "charges" ("paid", "amount", "currency", "refunded", "created_at", "updated_at", "id") VALUES ('f', NULL, 'MyString', 'f', '2015-05-15 16:06:34', '2015-05-15 16:06:34', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "charges" ("paid", "amount", "currency", "refunded", "created_at", "updated_at", "id") VALUES ('f', NULL, 'MyString', 'f', '2015-05-15 16:06:34', '2015-05-15 16:06:34', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "customers"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "customers" ("attributes", "created_at", "updated_at", "id") VALUES ('---
+first_name: Mike
+last_name: Smith
+', '2015-05-15 16:06:34', '2015-05-15 16:06:34', 980190962)
+SQLite3::SQLException: table customers has no column named attributes: INSERT INTO "customers" ("attributes", "created_at", "updated_at", "id") VALUES ('---
+first_name: Mike
+last_name: Smith
+', '2015-05-15 16:06:34', '2015-05-15 16:06:34', 980190962)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "charges"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "charges" ("paid", "amount", "currency", "refunded", "created_at", "updated_at", "id") VALUES ('f', NULL, 'MyString', 'f', '2015-05-15 16:06:55', '2015-05-15 16:06:55', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "charges" ("paid", "amount", "currency", "refunded", "created_at", "updated_at", "id") VALUES ('f', NULL, 'MyString', 'f', '2015-05-15 16:06:55', '2015-05-15 16:06:55', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "customers"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "customers" ("attributes", "created_at", "updated_at", "id") VALUES ('---
+first_name: Mike
+last_name: Smith
+', '2015-05-15 16:06:55', '2015-05-15 16:06:55', 980190962)[0m
+SQLite3::SQLException: table customers has no column named attributes: INSERT INTO "customers" ("attributes", "created_at", "updated_at", "id") VALUES ('---
+first_name: Mike
+last_name: Smith
+', '2015-05-15 16:06:55', '2015-05-15 16:06:55', 980190962)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "charges"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "charges" ("paid", "amount", "currency", "refunded", "created_at", "updated_at", "id") VALUES ('f', NULL, 'MyString', 'f', '2015-05-15 16:06:55', '2015-05-15 16:06:55', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "charges" ("paid", "amount", "currency", "refunded", "created_at", "updated_at", "id") VALUES ('f', NULL, 'MyString', 'f', '2015-05-15 16:06:55', '2015-05-15 16:06:55', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "customers"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "customers" ("attributes", "created_at", "updated_at", "id") VALUES ('---
+first_name: Mike
+last_name: Smith
+', '2015-05-15 16:06:55', '2015-05-15 16:06:55', 980190962)
+SQLite3::SQLException: table customers has no column named attributes: INSERT INTO "customers" ("attributes", "created_at", "updated_at", "id") VALUES ('---
+first_name: Mike
+last_name: Smith
+', '2015-05-15 16:06:55', '2015-05-15 16:06:55', 980190962)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "charges"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "charges" ("paid", "amount", "currency", "refunded", "created_at", "updated_at", "id") VALUES ('f', NULL, 'MyString', 'f', '2015-05-15 16:07:53', '2015-05-15 16:07:53', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "charges" ("paid", "amount", "currency", "refunded", "created_at", "updated_at", "id") VALUES ('f', NULL, 'MyString', 'f', '2015-05-15 16:07:53', '2015-05-15 16:07:53', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "customers"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "customers" ("attributes", "created_at", "updated_at", "id") VALUES ('---
+first_name: Mike
+last_name: Smith
+', '2015-05-15 16:07:53', '2015-05-15 16:07:53', 980190962)[0m
+SQLite3::SQLException: table customers has no column named attributes: INSERT INTO "customers" ("attributes", "created_at", "updated_at", "id") VALUES ('---
+first_name: Mike
+last_name: Smith
+', '2015-05-15 16:07:53', '2015-05-15 16:07:53', 980190962)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "charges"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "charges" ("paid", "amount", "currency", "refunded", "created_at", "updated_at", "id") VALUES ('f', NULL, 'MyString', 'f', '2015-05-15 16:08:09', '2015-05-15 16:08:09', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "charges" ("paid", "amount", "currency", "refunded", "created_at", "updated_at", "id") VALUES ('f', NULL, 'MyString', 'f', '2015-05-15 16:08:09', '2015-05-15 16:08:09', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "customers"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "customers" ("attributes", "created_at", "updated_at", "id") VALUES ('---
+first_name: Mike
+last_name: Smith
+', '2015-05-15 16:08:09', '2015-05-15 16:08:09', 980190962)[0m
+SQLite3::SQLException: table customers has no column named attributes: INSERT INTO "customers" ("attributes", "created_at", "updated_at", "id") VALUES ('---
+first_name: Mike
+last_name: Smith
+', '2015-05-15 16:08:09', '2015-05-15 16:08:09', 980190962)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mCharge Load (0.3ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'[0m
+  [1m[35mCustomer Load (0.4ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (17.4ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (1.3ms)
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (1.1ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.9ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  Rendered charges/_charges.html.erb (32.0ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'[0m
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (3.7ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.8ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.8ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  Rendered charges/_charges.html.erb (7.2ms)
+  Rendered charges/index.html.erb (53.6ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/charges" for 127.0.0.1 at 2015-05-15 19:15:23 +0300
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2015-05-15 19:15:52 +0300
+Processing by ChargesController#index as HTML
+  [1m[36mCharge Load (0.3ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'[0m
+  [1m[35mCustomer Load (0.4ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (17.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (27.8ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'[0m
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (3.6ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  Rendered charges/_charges.html.erb (6.2ms)
+  Rendered charges/index.html.erb within layouts/application (41.3ms)
+Completed 200 OK in 2442ms (Views: 2425.8ms | ActiveRecord: 1.8ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2015-05-15 19:16:05 +0300
+Processing by ChargesController#index as HTML
+  [1m[36mCharge Load (0.3ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'[0m
+  [1m[35mCustomer Load (0.3ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (13.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (23.8ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'[0m
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (3.2ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (6.1ms)
+  Rendered charges/index.html.erb within layouts/application (36.9ms)
+Completed 200 OK in 117ms (Views: 100.1ms | ActiveRecord: 1.5ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2015-05-15 19:16:14 +0300
+Processing by ChargesController#index as HTML
+  [1m[36mCharge Load (0.2ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'[0m
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (18.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (1.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (2.2ms)
+  Rendered charges/_charges.html.erb (34.6ms)
+  [1m[36mCharge Load (0.2ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (1.1ms)
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (1.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.8ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.9ms)
+  Rendered charges/_charges.html.erb (7.4ms)
+  [1m[36mCharge Load (0.2ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (1.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (1.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  Rendered charges/_charges.html.erb (11.1ms)
+  Rendered charges/index.html.erb within layouts/application (57.4ms)
+Completed 200 OK in 134ms (Views: 117.9ms | ActiveRecord: 1.8ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2015-05-15 19:16:21 +0300
+Processing by ChargesController#index as HTML
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (12.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (22.1ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'[0m
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (3.5ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (1.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (7.7ms)
+  Rendered charges/index.html.erb within layouts/application (36.8ms)
+Completed 200 OK in 99ms (Views: 85.9ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2015-05-15 19:16:36 +0300
+Processing by ChargesController#index as HTML
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (12.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.8ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  Rendered charges/_charges.html.erb (22.4ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'[0m
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (4.0ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (5.9ms)
+  Rendered charges/index.html.erb within layouts/application (35.3ms)
+Completed 200 OK in 95ms (Views: 82.0ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2015-05-15 19:17:22 +0300
+Processing by ChargesController#index as HTML
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (12.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (22.2ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'[0m
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (3.4ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  Rendered charges/_charges.html.erb (6.1ms)
+  Rendered charges/index.html.erb within layouts/application (34.7ms)
+Completed 200 OK in 96ms (Views: 83.2ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2015-05-15 19:17:40 +0300
+Processing by ChargesController#index as HTML
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (11.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (20.9ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'[0m
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (3.3ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (5.6ms)
+  Rendered charges/index.html.erb within layouts/application (32.7ms)
+Completed 200 OK in 92ms (Views: 79.2ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2015-05-15 19:17:47 +0300
+Processing by ChargesController#index as HTML
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (12.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (21.6ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'[0m
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (3.3ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  Rendered charges/_charges.html.erb (7.8ms)
+  Rendered charges/index.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 106ms (Views: 86.2ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2015-05-15 19:18:04 +0300
+Processing by ChargesController#index as HTML
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'[0m
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (19.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (1.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.8ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (1.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.9ms)
+  Rendered charges/_charges.html.erb (32.1ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (1.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (4.8ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  Rendered charges/_charges.html.erb (8.0ms)
+  Rendered charges/index.html.erb within layouts/application (49.5ms)
+Completed 200 OK in 139ms (Views: 121.7ms | ActiveRecord: 1.6ms)
+  [1m[35m (2.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2015-05-15 19:21:03 +0300
+Processing by ChargesController#index as HTML
+  [1m[36mCharge Load (0.3ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'[0m
+  [1m[35mCustomer Load (0.3ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (14.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (25.8ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'[0m
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  Rendered charges/_charges.html.erb (3.6ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (5.9ms)
+  Rendered charges/index.html.erb within layouts/application (39.2ms)
+Completed 200 OK in 120ms (Views: 105.0ms | ActiveRecord: 1.6ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2015-05-15 19:21:03 +0300
+Processing by ChargesController#index as HTML
+  [1m[35mCharge Load (0.2ms)[0m  SELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (4.0ms)
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (3.1ms)
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (5.8ms)
+  Rendered charges/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 30ms (Views: 29.2ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2015-05-15 19:21:03 +0300
+Processing by ChargesController#index as HTML
+  [1m[36mCharge Load (0.3ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (1.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (4.8ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'[0m
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (3.2ms)
+  [1m[36mCharge Load (0.2ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  Rendered charges/_charges.html.erb (8.5ms)
+  Rendered charges/index.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 68ms (Views: 66.9ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2015-05-15 19:21:03 +0300
+Processing by ChargesController#index as HTML
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (3.8ms)
+  [1m[35mCharge Load (0.2ms)[0m  SELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (3.7ms)
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (6.0ms)
+  Rendered charges/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2015-05-15 19:21:13 +0300
+Processing by ChargesController#index as HTML
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (12.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (22.3ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'[0m
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (3.5ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (6.1ms)
+  Rendered charges/index.html.erb within layouts/application (35.2ms)
+Completed 200 OK in 100ms (Views: 82.8ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2015-05-15 19:21:13 +0300
+Processing by ChargesController#index as HTML
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (4.2ms)
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.8ms)
+  Rendered charges/_charges.html.erb (4.5ms)
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (6.6ms)
+  Rendered charges/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 33ms (Views: 32.2ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2015-05-15 19:21:13 +0300
+Processing by ChargesController#index as HTML
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'[0m
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  Rendered charges/_charges.html.erb (3.5ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'[0m
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (1.6ms)
+  Rendered charges/_charges.html.erb (4.8ms)
+  [1m[36mCharge Load (0.2ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (1.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (8.1ms)
+  Rendered charges/index.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 63ms (Views: 61.6ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2015-05-15 19:21:13 +0300
+Processing by ChargesController#index as HTML
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (3.6ms)
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  Rendered charges/_charges.html.erb (4.0ms)
+  [1m[35mCharge Load (0.2ms)[0m  SELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (6.3ms)
+  Rendered charges/index.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 31ms (Views: 30.0ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2015-05-15 19:21:23 +0300
+Processing by ChargesController#index as HTML
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (11.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (20.8ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'[0m
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (3.2ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (5.5ms)
+  Rendered charges/index.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 91ms (Views: 78.8ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2015-05-15 19:21:23 +0300
+Processing by ChargesController#index as HTML
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.7ms)
+  Rendered charges/_charges.html.erb (3.9ms)
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (3.0ms)
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (5.7ms)
+  Rendered charges/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2015-05-15 19:21:23 +0300
+Processing by ChargesController#index as HTML
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'[0m
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (3.2ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'[0m
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (3.1ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (5.6ms)
+  Rendered charges/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 57ms (Views: 56.2ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2015-05-15 19:21:23 +0300
+Processing by ChargesController#index as HTML
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 'f'
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered charges/_charge.html.erb (1.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (1.1ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (5.5ms)
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 't'
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (3.0ms)
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges"  WHERE "charges"."paid" = 't' AND "charges"."refunded" = 'f'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered charges/_charge.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers"  WHERE "customers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered charges/_charge.html.erb (0.4ms)
+  Rendered charges/_charges.html.erb (5.5ms)
+  Rendered charges/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 31ms (Views: 29.5ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m

@@ -1,0 +1,29 @@
+---
+- !ruby/object:Customer
+  attributes:
+    id: 1
+    first_name: Johny
+    last_name: Flow
+    created_at: 2015-05-15 15:18:12.161474000 Z
+    updated_at: 2015-05-15 15:18:12.161474000 Z
+- !ruby/object:Customer
+  attributes:
+    id: 2
+    first_name: Raj
+    last_name: Jamnis
+    created_at: 2015-05-15 15:18:12.166240000 Z
+    updated_at: 2015-05-15 15:18:12.166240000 Z
+- !ruby/object:Customer
+  attributes:
+    id: 3
+    first_name: Andrew
+    last_name: Chung
+    created_at: 2015-05-15 15:18:12.168285000 Z
+    updated_at: 2015-05-15 15:18:12.168285000 Z
+- !ruby/object:Customer
+  attributes:
+    id: 4
+    first_name: Mike
+    last_name: Smith
+    created_at: 2015-05-15 15:18:12.170148000 Z
+    updated_at: 2015-05-15 15:18:12.170148000 Z

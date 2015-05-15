@@ -1,0 +1,120 @@
+one:
+  paid: true
+  amount: 733224
+  currency: usd
+  refunded: false
+  customer_id: 1
+one:
+  paid: true
+  amount: 194778
+  currency: usd
+  refunded: false
+  customer_id: 1
+one:
+  paid: true
+  amount: 829513
+  currency: usd
+  refunded: false
+  customer_id: 1
+one:
+  paid: true
+  amount: 12103
+  currency: usd
+  refunded: false
+  customer_id: 1
+one:
+  paid: true
+  amount: 475284
+  currency: usd
+  refunded: false
+  customer_id: 1
+one:
+  paid: true
+  amount: 983607
+  currency: usd
+  refunded: false
+  customer_id: 2
+one:
+  paid: true
+  amount: 32038
+  currency: usd
+  refunded: false
+  customer_id: 2
+one:
+  paid: true
+  amount: 575044
+  currency: usd
+  refunded: false
+  customer_id: 2
+one:
+  paid: true
+  amount: 126395
+  currency: usd
+  refunded: false
+  customer_id: 3
+one:
+  paid: true
+  amount: 874978
+  currency: usd
+  refunded: false
+  customer_id: 4
+one:
+  paid: false
+  amount: 356056
+  currency: usd
+  refunded:
+  customer_id: 3
+one:
+  paid: false
+  amount: 953200
+  currency: usd
+  refunded:
+  customer_id: 3
+one:
+  paid: false
+  amount: 603755
+  currency: usd
+  refunded:
+  customer_id: 3
+one:
+  paid: false
+  amount: 237549
+  currency: usd
+  refunded:
+  customer_id: 4
+one:
+  paid: false
+  amount: 500811
+  currency: usd
+  refunded:
+  customer_id: 4
+one:
+  paid: true
+  amount: 791776
+  currency: usd
+  refunded: true
+  customer_id: 1
+one:
+  paid: true
+  amount: 453504
+  currency: usd
+  refunded: true
+  customer_id: 1
+one:
+  paid: true
+  amount: 342847
+  currency: usd
+  refunded: true
+  customer_id: 1
+one:
+  paid: true
+  amount: 271505
+  currency: usd
+  refunded: true
+  customer_id: 2
+one:
+  paid: true
+  amount: 733002
+  currency: usd
+  refunded: true
+  customer_id: 2

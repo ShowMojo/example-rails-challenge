@@ -1,0 +1,12 @@
+<table class='table'>
+  <thead>
+    <th>Customer Name</th>
+    <th>Charge Amount</th>
+    <th>Failed at</th>
+  </thead>
+  <tbody>
+    <% charges.each do |charge| %>
+      <%= render charge %>
+    <% end %>
+  </tbody>
+</table>
