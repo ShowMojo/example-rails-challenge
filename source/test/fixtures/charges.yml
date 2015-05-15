@@ -1,0 +1,16 @@
+
+
+
+one:
+  paid: false
+  amount:
+  currency: MyString
+  refunded: false
+  customer:
+
+two:
+  paid: false
+  amount:
+  currency: MyString
+  refunded: false
+  customer:
