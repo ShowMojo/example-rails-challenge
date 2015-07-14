@@ -1,0 +1,71 @@
+<%= link_to 'New Charge', new_charge_path %>
+
+<br>
+
+<% if @failed_charges.size > 0 %>
+<h1>Failed Charges</h1>
+<table class="fail charges" border="1">
+  <thead>
+    <tr>
+      <th>Customer Name</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @failed_charges.each do |charge| %>
+      <tr>
+        <td><%= charge.customer.full_name %></td>
+        <td><%= charge.amount %></td>
+        <td><%= charge.created %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br />
+<% end %>
+
+<% if @disputed_charges.size > 0 %>
+<h1>Disputed Charges</h1>
+<table class="disput charges" border="1">
+  <thead>
+    <tr>
+      <th>Customer Name</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @disputed_charges.each do |charge| %>
+      <tr>
+        <td><%= charge.customer.full_name %></td>
+        <td><%= charge.amount %></td>
+        <td><%= charge.created %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br />
+<% end %>
+
+<% if @successful_charges.size > 0 %>
+<h1>Successful Charges</h1>
+<table class="success  charges" border="1">
+  <thead>
+    <tr>
+      <th>Customer Name</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @successful_charges.each do |charge| %>
+      <tr>
+        <td><%= charge.customer.full_name %></td>
+        <td><%= charge.amount %></td>
+        <td><%= charge.created %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
