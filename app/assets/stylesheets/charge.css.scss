@@ -1,0 +1,28 @@
+// Place all the styles related to the Charge controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.charges-list {
+	&.centered {
+			text-align: center;
+	}
+	h5 {
+		padding: 30px 0 20px 0;
+	}
+	&.failed-charges {
+		thead {
+			background-color: rgba(255, 0, 0, 0.5);
+		}
+		table.striped > tbody > tr:nth-child(odd) {
+	  	background-color: rgba(255, 0, 0, 0.14);
+		}
+	}
+	&.disputed-charges {
+		thead {
+			background-color: rgba(255, 84, 0, 0.5)
+		}
+		table.striped > tbody > tr:nth-child(odd) {
+	  	background-color: rgba(255, 84, 0, 0.14)
+		}
+	}
+}
