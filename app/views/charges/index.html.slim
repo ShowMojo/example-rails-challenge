@@ -1,0 +1,80 @@
+div class="row"
+
+	div class="charges-list failed-charges centered"
+		h5 Failed charges
+		- unless @failed_charges.blank?
+			table class="borderless striped responsive-table centered"
+				thead
+					tr
+						th Customer name
+						th Charge amount
+						th Charge date
+				tbody
+					- @failed_charges.each do |charge|
+						tr class="charge"
+							td 
+								= charge.customer.name
+							td 
+								= charge.human_amount
+							td 
+							 	= charge.created_at.strftime('%c')
+		- else
+			p class="empty"
+				| List of failed charges is empty
+
+	div class="charges-list disputed-charges centered"
+		h5 Disputed charges
+		- unless @disputed_charges.blank?
+			table class="borderless striped responsive-table centered"
+				thead
+					tr
+						th Customer name
+						th Charge amount
+						th Charge date
+				tbody
+					- @disputed_charges.each do |charge|
+						tr class="charge"
+							td 
+								= charge.customer.name
+							td 
+								= charge.human_amount
+							td 
+							 	= charge.created_at.strftime('%c')
+		- else
+			| List of disputed charges is empty
+
+	div class="charges-list successfull-charges centered"
+		h5 Successfull charges
+		- unless @successfull_charges.blank?
+			table class="borderless striped responsive-table centered"
+				thead
+					tr
+						th Customer name
+						th Charge amount
+						th Charge date
+				tbody
+					- @successfull_charges.each do |charge|
+						tr class="charge"
+							td 
+								= charge.customer.name
+							td 
+								= charge.human_amount
+							td 
+							 	= charge.created_at.strftime('%c')
+		- else
+			| List of successfull charges is empty
+
+/ List 1 -
+
+/ Header: Failed Charges
+/ In this list set the background color of the rows to #FF0000 and list the Customers name, the charge amount and the date that the charge failed for each failed charge.
+
+/ List 2 -
+
+/ Header: Disputed Charges
+/ In this list set the background color of the rows to ##FF5400 and list the Customers name, the charge amount and the date that the charge was disputed for each disputed charge.
+
+/ List 3 -
+
+/ Header: Successful Charges
+/ In this list simply display all the charges that were succesful.
