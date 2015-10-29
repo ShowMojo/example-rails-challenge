@@ -1,0 +1,6 @@
+<%= render partial: 'charges_table',
+            locals: { title: 'Failed Charges', charges: @charges_failed, style: 'failed' } %>
+<%= render partial: 'charges_table',
+            locals: { title: 'Disputed Charges', charges: @charges_disputed, style: 'disputed' } %>
+<%= render partial: 'charges_table',
+            locals: { title: 'Successful Charges', charges: @charges_successful, style: '' } %>
