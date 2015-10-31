@@ -1,0 +1,72 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Failed Charges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer's name</th>
+      <th>Charge amount</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @charges.select{|c| !c.paid }.each do |charge| %>
+      <tr class="failed">
+        <td><%= charge.customer.firstname + " " + charge.customer.lastname %></td>
+        <td><%= "#{charge.amount} #{charge.currency.upcase}" %></td>
+        <td><%= charge.updated_at.strftime("%m.%d.%Y") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h2>Disputed Charges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer's name</th>
+      <th>Charge amount</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @charges.select{|c| c.paid && c.refunded }.each do |charge| %>
+      <tr class="disputed">
+        <td><%= charge.customer.firstname + " " + charge.customer.lastname %></td>
+        <td><%= "#{charge.amount} #{charge.currency.upcase}" %></td>
+        <td><%= charge.updated_at.strftime("%m.%d.%Y") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h2>Successful Charges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer's name</th>
+      <th>Charge amount</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @charges.select{|c| c.paid && !c.refunded }.each do |charge| %>
+      <tr>
+        <td><%= charge.customer.firstname + " " + charge.customer.lastname %></td>
+        <td><%= "#{charge.amount} #{charge.currency.upcase}" %></td>
+        <td><%= charge.updated_at.strftime("%m.%d.%Y") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
