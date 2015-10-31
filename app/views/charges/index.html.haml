@@ -1,0 +1,11 @@
+%h1 Failed Charges
+%table#failed
+  = render partial: 'charges/index/charges', locals: { charges: @failed_charges }
+
+%h1 Disputed Charges
+%table#disputed
+  = render partial: 'charges/index/charges', locals: { charges: @disputed_charges }
+
+%h1 Successful Charges
+%table#successful
+  = render partial: 'charges/index/charges', locals: { charges: @successful_charges }
