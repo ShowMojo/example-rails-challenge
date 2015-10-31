@@ -1,0 +1,5 @@
+- charges.each do |charge|
+  %tr
+    %td= charge.customer.full_name
+    %td= number_to_currency charge.amount
+    %td= charge.created_at
