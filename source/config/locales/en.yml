@@ -1,0 +1,5 @@
+en:
+  charges:
+    successful: "Successful charges"
+    failed: "Failed charges"
+    disputed: "Disputed charges"
