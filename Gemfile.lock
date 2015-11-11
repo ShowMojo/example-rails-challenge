@@ -57,6 +57,8 @@ GEM
     execjs (2.6.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    haml (4.0.6)
+      tilt
     i18n (0.7.0)
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
@@ -73,6 +75,8 @@ GEM
     mime-types (2.6.2)
     mini_portile (0.6.2)
     minitest (5.8.2)
+    money (6.5.1)
+      i18n (>= 0.6.4, <= 0.7.0)
     multi_json (1.11.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
@@ -165,8 +169,10 @@ DEPENDENCIES
   annotate
   byebug
   coffee-rails (~> 4.1.0)
+  haml
   jbuilder (~> 2.0)
   jquery-rails
+  money
   rails (= 4.2.0)
   rspec-rails
   sass-rails (~> 5.0)

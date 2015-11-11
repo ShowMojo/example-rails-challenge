@@ -16,4 +16,16 @@ class CreditCardCharge < ActiveRecord::Base
 
   belongs_to :customer
 
+  scope :successful, -> { where(paid: true, refunded: false) }
+  scope :disputed,   -> { where(paid: true, refunded: true) }
+  scope :failed,     -> { where(paid: false, refunded: false) }
+
+  def money_amount
+    @money_amount ||= Money.new(self.amount, self.currency)
+  end
+
+  def pretty_amount
+    money_amount.format
+  end
+
 end

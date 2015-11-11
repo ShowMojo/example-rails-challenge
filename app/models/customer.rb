@@ -13,4 +13,7 @@ class Customer < ActiveRecord::Base
 
   has_many :credit_card_charges
 
+  def name
+    "#{self.firstname} #{self.lastname}"
+  end
 end

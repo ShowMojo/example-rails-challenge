@@ -52,19 +52,19 @@ customer_4 = Customer.create(firstname: "Mike", lastname: "Smith")
 #
 
 5.times do
- CreditCardCharge.create(paid: true, amount: 15.0, refunded: false, customer: customer_1)
+ CreditCardCharge.create(paid: true, amount: 1500, refunded: false, customer: customer_1)
 end
 
 3.times do
- CreditCardCharge.create(paid: true, amount: 15.0, refunded: false, customer: customer_2)
- CreditCardCharge.create(paid: false, amount: 15.0, refunded: false, customer: customer_3)
- CreditCardCharge.create(paid: true, amount: 15.0, refunded: true, customer: customer_1)
+ CreditCardCharge.create(paid: true, amount: 1500, refunded: false, customer: customer_2)
+ CreditCardCharge.create(paid: false, amount: 1500, refunded: false, customer: customer_3)
+ CreditCardCharge.create(paid: true, amount: 1500, refunded: true, customer: customer_1)
 end
 
 2.times do
-  CreditCardCharge.create(paid: false, amount: 15.0, refunded: false, customer: customer_4)
-  CreditCardCharge.create(paid: true, amount: 15.0, refunded: true, customer: customer_2)
+  CreditCardCharge.create(paid: false, amount: 1500, refunded: false, customer: customer_4)
+  CreditCardCharge.create(paid: true, amount: 1500, refunded: true, customer: customer_2)
 end
 
-CreditCardCharge.create(paid: true, amount: 15.0, refunded: false, customer: customer_3)
-CreditCardCharge.create(paid: true, amount: 15.0, refunded: false, customer: customer_4)
+CreditCardCharge.create(paid: true, amount: 1500, refunded: false, customer: customer_3)
+CreditCardCharge.create(paid: true, amount: 1500, refunded: false, customer: customer_4)

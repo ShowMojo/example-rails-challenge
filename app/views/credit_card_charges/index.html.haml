@@ -1,0 +1,19 @@
+.container
+
+  %div
+    %h1 Failed Charges
+    %table.table.failed
+      %thead
+        %tr
+          %th Customer Name
+          %th Amount
+          %th Date Charged
+      %tbody
+        - @failed.each do |charge|
+          %tr
+            %td
+              = charge.customer.name
+            %td
+              = charge.pretty_amount
+            %td
+              = charge.created_at
