@@ -1,0 +1,15 @@
+%table.table{class: css}
+  %thead
+    %tr
+      %th Customer Name
+      %th Amount
+      %th Date Charged
+  %tbody
+    - charges.each do |charge|
+      %tr
+        %td
+          = charge.customer.name
+        %td
+          = charge.pretty_amount
+        %td
+          = charge.created_at.to_formatted_s(:rfc822)
