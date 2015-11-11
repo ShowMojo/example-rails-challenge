@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Charges</h1>
+
+<h3>Failed Charges</h3>
+<ul class="failed_charges">
+  <div class="row">
+    <% @failed_charges.each do |charge| %>
+      <div class="col-sm-12 col-lg-4">
+        <li class="failed">
+          <%= render "charge", charge: charge %>
+        </li>
+      </div>
+    <% end %>
+  </div>
+</ul>
+
+<h3>Disputed Charges</h3>
+<ul class="disputed_charges">
+  <div class="row">
+    <% @disputed_charges.each do |charge| %>
+        <div class="col-sm-12 col-lg-4">
+          <li class="disputed">
+            <%= render "charge", charge: charge %>
+          </li>
+        </div>
+    <% end %>
+  </div>
+</ul>
+
+<h3>Successful Charges</h3>
+<ul class="successful_charges">
+  <div class="row">
+    <% @successful_charges.each do |charge| %>
+        <div class="col-sm-12 col-lg-4">
+          <li class="successful">
+            <%= render "charge", charge: charge %>
+          </li>
+        </div>
+    <% end %>
+  </div>
+</ul>
+
