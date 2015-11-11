@@ -1,0 +1,9 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+table.charges {}
+table.charges.failed_charges tr {background-color: #FF0000;}
+table.charges.disputed_charges tr {background-color: #FF5400;}
+table.charges.successful_charges tr {background-color: none;}
