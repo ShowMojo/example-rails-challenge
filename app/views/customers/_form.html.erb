@@ -13,13 +13,13 @@
 
   <div class="field">
     <%= f.label :firstname %><br>
-    <%= f.text_field :firstname %>
+    <%= f.text_field :firstname, :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :lastname %><br>
-    <%= f.text_field :lastname %>
+    <%= f.text_field :lastname, :class => "form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create", :class => "form-control" %>
   </div>
 <% end %>
