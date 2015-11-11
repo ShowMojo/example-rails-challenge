@@ -1,7 +1,6 @@
 .container
-
   %div
     - %w{failed disputed successful}.each do |charge|
       %h1
         = "#{charge.capitalize} Charges"
-      = render partial: 'charge_list', locals: {:charges => eval("@#{charge}"), :css => charge}
+      = render partial: 'charge_list', locals: {charges: eval("@#{charge}"), css: charge}

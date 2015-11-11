@@ -53,3 +53,10 @@ group :development do
   gem 'annotate'
 end
 
+group :test do
+  gem 'capybara', '2.5.0'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'selenium-webdriver'
+end
+
