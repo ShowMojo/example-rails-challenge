@@ -1,0 +1,22 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body{
+  padding-top: 50px;
+}
+
+ul {
+  list-style-type: none;
+  color: white;
+  &.failed_charges li ul{
+    background-color: #FF0000;
+  }
+  &.disputed_charges li ul{
+    background-color: #FF5400;
+  }
+  &.successful_charges li ul{
+    background-color: green;
+  }
+
+}
+

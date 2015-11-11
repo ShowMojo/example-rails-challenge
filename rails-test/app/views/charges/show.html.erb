@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @charge.customer.first_name + " " + @charge.customer.last_name %>
+</p>
+
+<p>
+  <strong>Paid:</strong>
+  <%= @charge.paid %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @charge.amount %>
+</p>
+
+<p>
+  <strong>Refunded:</strong>
+  <%= @charge.refunded %>
+</p>
+
+<%= link_to 'Edit', edit_charge_path(@charge) %> |
+<%= link_to 'Back', charges_path %>
