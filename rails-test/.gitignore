@@ -17,3 +17,6 @@ config/database.yml
 
 # Ignore coverage reports with .simplecov
 coverage
+
+# Ignore .env file for env variables
+.env
