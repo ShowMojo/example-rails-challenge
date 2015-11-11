@@ -1,0 +1,48 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Ubuntu:400italic,700italic,400,700);
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+$roboto-slab: 'Roboto Slab', serif;
+$ubuntu: 'Ubuntu', sans-serif;
+
+body {
+  font-family: $ubuntu;
+  font-weight: normal;
+  font-style: normal;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6, input {
+  font-family: $roboto-slab;
+  font-weight: normal;
+}
+
+.container{
+  margin: 30px 0 20px 70px;
+
+  td {
+    padding: 5px 10px 5px 5px;
+  }
+}
+
+button {
+  font-family: $roboto-slab;
+  font-weight: bold;
+}
