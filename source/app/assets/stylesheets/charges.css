@@ -1,0 +1,11 @@
+table.charges {
+  width: 400px;
+}
+
+table.charges.failed {
+  background-color: #FF0000;
+}
+
+table.charges.disputed {
+  background-color: #FF5400;
+}
