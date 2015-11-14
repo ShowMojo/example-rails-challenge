@@ -1,0 +1,11 @@
+h1 Failed Charges
+table.charges.failed
+  = render "charges", charges: failed_charges
+
+h1 Disputed Charges
+table.charges.disputed
+  = render "charges", charges: disputed_charges
+
+h1 Successful Charges
+table.charges.successful
+  = render "charges", charges: successful_charges
