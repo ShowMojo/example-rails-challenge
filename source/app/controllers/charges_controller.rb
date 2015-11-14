@@ -1,7 +1,7 @@
 class ChargesController < ApplicationController
-  expose(:failed_charges) { Charge.failed }
-  expose(:disputed_charges) { Charge.disputed }
-  expose(:successful_charges) { Charge.successful }
+  expose(:failed_charges) { Charge.failed.decorate }
+  expose(:disputed_charges) { Charge.disputed.decorate }
+  expose(:successful_charges) { Charge.successful.decorate }
 
   def index
   end
