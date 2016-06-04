@@ -1,0 +1,7 @@
+<div>
+  <span class="<%= style %>"><%= charge.customer.name %></span>
+  <sapn class="<%= style %>"><%= charge.amount %></sapn>
+  <% unless style.eql? 'successful' %>
+      <sapn class="<%= style %>"><%= charge.updated_at.strftime('%Y-%m-%d') %></sapn>
+  <% end %>
+</div>
