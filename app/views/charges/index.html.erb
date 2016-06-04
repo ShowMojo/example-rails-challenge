@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  Failed Charges
+</h1>
+<% Charge.failed.each do |charge| %>
+    <%= render 'charges/charge', :charge => charge, :style => 'failed' %>
+<% end %>
+
+<h1>
+  Disputed Charges
+</h1>
+<% Charge.disputed.each do |charge| %>
+    <%= render 'charges/charge', :charge => charge, :style => 'disputed' %>
+<% end %>
+
+<h1>
+  Successful Charges
+</h1>
+<% Charge.successful.each do |charge| %>
+    <%= render 'charges/charge', :charge => charge, :style => 'successful' %>
+<% end %>
+
+<br>
+
+<%= link_to 'New Charge', new_charge_path %>
