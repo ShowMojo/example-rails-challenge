@@ -1,0 +1,4 @@
+<%= render partial: 'charge_list', locals: { charges: @charges[:failed], class_name: 'failed', header: 'Failed Charges' } %>
+<%= render partial: 'charge_list', locals: { charges: @charges[:disputed], class_name: 'disputed', header: 'Disputed Charges' } %>
+<%= render partial: 'charge_list', locals: { charges: @charges[:succeeded], class_name: 'succeeded', header: 'Successful Charges' } %>
+
