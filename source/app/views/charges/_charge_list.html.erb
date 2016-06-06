@@ -1,0 +1,8 @@
+<div class="list <%= class_name %>">
+  <h1><%= header %></h1>
+  <table>
+    <% charges.each do |charge| %>
+      <%= render partial: 'charge_line', locals: {charge: charge} %>
+    <% end %>
+  </table>
+</div>
