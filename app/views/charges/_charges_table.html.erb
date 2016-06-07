@@ -1,0 +1,16 @@
+<table>
+  <tbody class="<%= bg_class %>">
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>       
+    <% charges.each do |charge| %>
+      <tr>
+        <td><%= charge.customer.full_name %></td>
+        <td><%= charge.amount %></td>
+        <td><%= charge.created_at.to_date %></td>
+      </tr>
+    <% end %>
+  </tbody> 
+</table> 
