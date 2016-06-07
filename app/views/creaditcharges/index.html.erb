@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Failed Charges</h1>
+
+<% Creaditcharge.failed.each do |creaditcharge| %>
+    <%= render 'creaditcharges/creaditcharge', :creaditcharge => creaditcharge, :style => 'failed' %>
+<% end %>
+
+<h1>Disputed Charges</h1>
+
+<% Creaditcharge.disputed.each do |creaditcharge| %>
+    <%= render 'creaditcharges/creaditcharge', :creaditcharge => creaditcharge, :style => 'disputed' %>
+<% end %>
+
+<h1>Successful Charges</h1>
+
+<% Creaditcharge.successful.each do |creaditcharge| %>
+    <%= render 'creaditcharges/creaditcharge', :creaditcharge => creaditcharge, :style => 'successful' %>
+<% end %>
+
+<br>
+
+<%= link_to 'New Creaditcharge', new_creaditcharge_path %>

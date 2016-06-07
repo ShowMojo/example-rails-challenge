@@ -1,0 +1,33 @@
+<%= form_for(@creaditcharge) do |f| %>
+  <% if @creaditcharge.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@creaditcharge.errors.count, "error") %> prohibited this creaditcharge from being saved:</h2>
+
+      <ul>
+      <% @creaditcharge.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :paid %><br>
+    <%= f.check_box :paid %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br>
+    <%= f.number_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :currency %><br>
+    <%= f.text_field :currency %>
+  </div>
+  <div class="field">
+    <%= f.label :refunded %><br>
+    <%= f.text_field :refunded %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
