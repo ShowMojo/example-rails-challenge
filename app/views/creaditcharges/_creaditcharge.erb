@@ -1,0 +1,7 @@
+<div>
+  <span class="<%= style %>"><%= creaditcharge.customer.fullname %></span>
+  <span class="<%= style %>"><%= creaditcharge.amount %></span>
+  <% unless style.eql? 'successful' %>
+    <span class="<%= style %>"><%= creaditcharge.updated_at.strftime('%Y-%m-%d') %></span>
+  <% end %>
+</div>

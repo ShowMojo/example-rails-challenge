@@ -1,0 +1,12 @@
+class CreateCreaditcharges < ActiveRecord::Migration
+  def change
+    create_table :creaditcharges do |t|
+      t.boolean :paid
+      t.integer :amount
+      t.string :currency
+      t.false :refunded
+
+      t.timestamps null: false
+    end
+  end
+end

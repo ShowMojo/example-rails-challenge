@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Paid:</strong>
+  <%= @creaditcharge.paid %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @creaditcharge.amount %>
+</p>
+
+<p>
+  <strong>Currency:</strong>
+  <%= @creaditcharge.currency %>
+</p>
+
+<p>
+  <strong>Refunded:</strong>
+  <%= @creaditcharge.refunded %>
+</p>
+
+<%= link_to 'Edit', edit_creaditcharge_path(@creaditcharge) %> |
+<%= link_to 'Back', creaditcharges_path %>
