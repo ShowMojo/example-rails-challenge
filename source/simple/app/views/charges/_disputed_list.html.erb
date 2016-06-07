@@ -1,0 +1,11 @@
+<h1>Disputed Charges</h1>
+
+<ul class="charges-list disputed">
+  <% @disputed.each do |charge| %>
+    <li>
+      <%= charge.customer.name %>,
+      <%= charge.amount %>,
+      <%= charge.created_at %>
+    </li>
+  <% end %>
+</ul>
