@@ -1,65 +1,62 @@
-<h1>Failed Charges</h1>
- 
-<table>
-  <tbody class="bg-failed">
-    <tr>
-      <th>Name</th>
-      <th>Amount</th>
-      <th>Date</th>
-    </tr>
-   
-  <% @failed_charges.each do |charge| %>
-    <tr>
-      <td><%= charge.customer.full_name %></td>
-      <td><%= charge.amount %></td>
-      <td><%= charge.created_at.to_date %></td>
-    </tr>
-  <% end %>
-  </tbody> 
-</table>
- 
-<br>
+<ul>
+  <li id="failed-charges">
+    <h1>Failed Charges</h1> 
+    <table>
+      <tbody class="bg-failed">
+        <tr>
+          <th>Name</th>
+          <th>Amount</th>
+          <th>Date</th>
+        </tr>       
+        <% @failed_charges.each do |charge| %>
+          <tr>
+            <td><%= charge.customer.full_name %></td>
+            <td><%= charge.amount %></td>
+            <td><%= charge.created_at.to_date %></td>
+          </tr>
+        <% end %>
+      </tbody> 
+    </table> 
+  </li>
 
-<h1>Disputed Charges</h1>
+  <li id="disputed-charges">
+    <h1>Disputed Charges</h1>     
+    <table>
+      <tbody class="bg-disputed">
+        <tr>
+          <th>Name</th>
+          <th>Amount</th>
+          <th>Date</th>
+        </tr>       
+        <% @disputed_charges.each do |charge| %>
+          <tr>
+            <td><%= charge.customer.full_name %></td>
+            <td><%= charge.amount %></td>
+            <td><%= charge.created_at.to_date %></td>
+          </tr>
+        <% end %>
+      </tbody> 
+    </table>   
+  </li>
  
-<table>
-  <tbody class="bg-disputed">
-    <tr>
-      <th>Name</th>
-      <th>Amount</th>
-      <th>Date</th>
-    </tr>
-   
-  <% @disputed_charges.each do |charge| %>
-    <tr>
-      <td><%= charge.customer.full_name %></td>
-      <td><%= charge.amount %></td>
-      <td><%= charge.created_at.to_date %></td>
-    </tr>
-  <% end %>
-  </tbody> 
-</table>
- 
-<br>
- 
-<h1>Successful Charges</h1>
- 
-<table>
-  <tbody class="bg-success">
-    <tr>
-      <th>Name</th>
-      <th>Amount</th>
-      <th>Date</th>
-    </tr>
-   
-  <% @successful_charges.each do |charge| %>
-    <tr>
-      <td><%= charge.customer.full_name %></td>
-      <td><%= charge.amount %></td>
-      <td><%= charge.created_at.to_date %></td>
-    </tr>
-  <% end %>
-  </tbody> 
-</table>
- 
+  <li id="successful-charges"> 
+    <h1>Successful Charges</h1>     
+    <table>
+      <tbody class="bg-success">
+        <tr>
+          <th>Name</th>
+          <th>Amount</th>
+          <th>Date</th>
+        </tr>       
+        <% @successful_charges.each do |charge| %>
+          <tr>
+            <td><%= charge.customer.full_name %></td>
+            <td><%= charge.amount %></td>
+            <td><%= charge.created_at.to_date %></td>
+          </tr>
+        <% end %>
+      </tbody> 
+    </table>
+  </li>
+</ul> 
   
