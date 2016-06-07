@@ -1,17 +1,17 @@
 <ul>
   <li id="failed-charges">
     <h1>Failed Charges</h1> 
-    <%= render 'charges_table', charges: @failed_charges, bg_class: 'bg-failed' %>    
+    <%= render 'charges_table', charges: @charges.failed, bg_class: 'bg-failed' %>    
   </li>
 
   <li id="disputed-charges">
     <h1>Disputed Charges</h1>   
-    <%= render 'charges_table', charges: @disputed_charges, bg_class: 'bg-disputed' %>  
+    <%= render 'charges_table', charges: @charges.disputed, bg_class: 'bg-disputed' %>  
   </li>
  
   <li id="successful-charges"> 
     <h1>Successful Charges</h1>     
-    <%= render 'charges_table', charges: @successful_charges, bg_class: 'bg-successful' %>  
+    <%= render 'charges_table', charges: @charges.successful, bg_class: 'bg-successful' %>  
   </li>
 </ul> 
   
