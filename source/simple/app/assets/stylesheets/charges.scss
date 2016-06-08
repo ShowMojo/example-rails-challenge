@@ -1,3 +1,11 @@
 // Place all the styles related to the Charges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.charges-list.failed li {
+	background-color: #ff0000;
+}
+
+.charges-list.disputed li {
+	background-color: #ff5400;
+}
