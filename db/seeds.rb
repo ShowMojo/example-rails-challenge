@@ -1,0 +1,28 @@
+# create customers
+Customer.find_or_create_by!(first_name: "Johny", last_name: "Flow")
+Customer.find_or_create_by!(first_name: "Raj", last_name: "Jamnis")
+Customer.find_or_create_by!(first_name: "Andrew", last_name: "Chung")
+Customer.find_or_create_by!(first_name: "Mike", last_name: "Smith")
+# create successful transactions
+CreditCardCharge.find_or_create_by!(created: '1389618241', paid: true, amount: 3900, currency: 'usd', refunded: false, customer_id: '1')
+CreditCardCharge.find_or_create_by!(created: '1389618242', paid: true, amount: 2900, currency: 'usd', refunded: false, customer_id: '1')
+CreditCardCharge.find_or_create_by!(created: '1389618243', paid: true, amount: 1900, currency: 'usd', refunded: false, customer_id: '1')
+CreditCardCharge.find_or_create_by!(created: '1389618244', paid: true, amount: 4900, currency: 'usd', refunded: false, customer_id: '1')
+CreditCardCharge.find_or_create_by!(created: '1389618245', paid: true, amount: 5900, currency: 'usd', refunded: false, customer_id: '1')
+CreditCardCharge.find_or_create_by!(created: '1389618246', paid: true, amount: 9900, currency: 'usd', refunded: false, customer_id: '2')
+CreditCardCharge.find_or_create_by!(created: '1389618247', paid: true, amount: 6900, currency: 'usd', refunded: false, customer_id: '2')
+CreditCardCharge.find_or_create_by!(created: '1389618248', paid: true, amount: 7900, currency: 'usd', refunded: false, customer_id: '2')
+CreditCardCharge.find_or_create_by!(created: '1389618249', paid: true, amount: 8900, currency: 'usd', refunded: false, customer_id: '3')
+CreditCardCharge.find_or_create_by!(created: '1389618250', paid: true, amount: 9100, currency: 'usd', refunded: false, customer_id: '4')
+# create failed transactions
+CreditCardCharge.find_or_create_by!(created: '1389618251', paid: false, amount: 1100, currency: 'usd', refunded: false, customer_id: '3')
+CreditCardCharge.find_or_create_by!(created: '1389618252', paid: false, amount: 1200, currency: 'usd', refunded: false, customer_id: '3')
+CreditCardCharge.find_or_create_by!(created: '1389618253', paid: false, amount: 1300, currency: 'usd', refunded: false, customer_id: '3')
+CreditCardCharge.find_or_create_by!(created: '1389618254', paid: false, amount: 1400, currency: 'usd', refunded: false, customer_id: '4')
+CreditCardCharge.find_or_create_by!(created: '1389618255', paid: false, amount: 1500, currency: 'usd', refunded: false, customer_id: '4')
+# create disputed transactions
+CreditCardCharge.find_or_create_by!(created: '1389618256', paid: true, amount: 2000, currency: 'usd', refunded: true, customer_id: '1')
+CreditCardCharge.find_or_create_by!(created: '1389618257', paid: true, amount: 3000, currency: 'usd', refunded: true, customer_id: '1')
+CreditCardCharge.find_or_create_by!(created: '1389618258', paid: true, amount: 5000, currency: 'usd', refunded: true, customer_id: '1')
+CreditCardCharge.find_or_create_by!(created: '1389618259', paid: true, amount: 8000, currency: 'usd', refunded: true, customer_id: '2')
+CreditCardCharge.find_or_create_by!(created: '1389618260', paid: true, amount: 1000, currency: 'usd', refunded: true, customer_id: '2')
