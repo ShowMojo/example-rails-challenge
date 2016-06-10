@@ -1,0 +1,35 @@
+<h1>Failed charges</h1>
+
+<table id="failed-charges">
+	<% @failed_charges.each do |charge| %>
+		<tr>
+			<td><%= charge.customer.full_name %></td>
+			<td><%= charge.amount %></td>
+			<td><%= charge.created_at %></td>
+		</tr>
+	<% end -%>
+</table>
+
+<h1>Disputed charges</h1>
+
+<table id="disputed-charges">
+	<% @disputed_charges.each do |charge| %>
+		<tr>
+			<td><%= charge.customer.full_name %></td>
+			<td><%= charge.amount %></td>
+			<td><%= charge.created_at %></td>
+		</tr>
+	<% end -%>
+</table>
+
+<h1>Successful charges</h1>
+
+<table id="successful-charges">
+	<% @successful_charges.each do |charge| %>
+		<tr>
+			<td><%= charge.customer.full_name %></td>
+			<td><%= charge.amount %></td>
+			<td><%= charge.created_at %></td>
+		</tr>
+	<% end -%>
+</table>
