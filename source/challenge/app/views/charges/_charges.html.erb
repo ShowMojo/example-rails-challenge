@@ -1,5 +1,5 @@
 <table id="<%= id %>-charges">
-	<% @disputed_charges.each do |charge| %>
+	<% charges.each do |charge| %>
 		<tr>
 			<td><%= charge.customer.full_name %></td>
 			<td><%= charge.amount %></td>
