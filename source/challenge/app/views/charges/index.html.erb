@@ -1,0 +1,8 @@
+<h1>Failed charges</h1>
+<%= render "charges", charges: @failed_charges, id: "failed" %>
+
+<h1>Disputed charges</h1>
+<%= render "charges", charges: @disputed_charges, id: "disputed" %>
+
+<h1>Successful charges</h1>
+<%= render "charges", charges: @successful_charges, id: "successful" %>
