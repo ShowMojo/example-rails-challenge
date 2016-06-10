@@ -1,0 +1,9 @@
+<table id="<%= id %>-charges">
+	<% charges.each do |charge| %>
+		<tr>
+			<td><%= charge.customer.full_name %></td>
+			<td><%= charge.amount %></td>
+			<td><%= charge.created_at.to_date %></td>
+		</tr>
+	<% end -%>
+</table>
