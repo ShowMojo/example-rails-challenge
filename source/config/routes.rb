@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :charges
+  resources :customers
+  get 'customer/first_name'
+
+  get 'customer/last_name'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
