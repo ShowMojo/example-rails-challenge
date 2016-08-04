@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Amount</th>
+    <th>Date</th>
+  </thead>
+  <tbody> 
+    <% charges.each do |charge| %>
+      <tr>
+        <td><%= charge.customer.full_name %></td>
+        <td><%= '$' + (charge.amount.to_f/100).to_s %></td>
+        <td><%= charge.created_at.to_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
