@@ -26,9 +26,9 @@ end
 
 # disputed charges
 3.times do
-  customer1.charges.create refunded: true, amount: rand(1..5000), currency: 'usd'
+  customer1.charges.create paid: true, refunded: true, amount: rand(1..5000), currency: 'usd'
 end
 
 2.times do
-  customer2.charges.create refunded: true, amount: rand(1..5000), currency: 'usd'
+  customer2.charges.create paid: true, refunded: true, amount: rand(1..5000), currency: 'usd'
 end
