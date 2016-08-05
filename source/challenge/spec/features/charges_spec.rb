@@ -13,21 +13,21 @@ RSpec.feature 'Charges', type: :feature do
     expect(page).to have_css('h1', text: 'Successful Charges')
   end
 
-  scenario 'Successful charges should contain correct number of rows' do
+  scenario 'successful charges' do
     within('.charges.successful') do
-      expect(page).to have_selector('tr', count: 10)
+      expect(page).to have_selector('tr', count: Charge.successful.count)
     end
   end
 
-  scenario 'Failed charges should contain correct number of rows' do
+  scenario 'failed charges' do
     within('.charges.failed') do
-      expect(page).to have_selector('tr', count: 5)
+      expect(page).to have_selector('tr', count: Charge.failed.count)
     end
   end
 
-  scenario 'Disputed charges should contain correct number of rows' do
+  scenario 'disputed charges' do
     within('.charges.disputed') do
-      expect(page).to have_selector('tr', count: 5)
+      expect(page).to have_selector('tr', count: Charge.disputed.count)
     end
   end
 end
