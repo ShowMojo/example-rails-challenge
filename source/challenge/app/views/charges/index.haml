@@ -1,0 +1,15 @@
+.container
+  %h1 Failed Charges
+  %table.charges.failed(width="100%")
+    %tbody
+      = render @failed, klass: 'failed'
+
+  %h1 Disputed Charges
+  %table.charges.disputed(width="100%")
+    %tbody
+      = render @disputed, klass: 'disputed'
+
+  %h1 Successful Charges
+  %table.charges.successful(width="100%")
+    %tbody
+      = render @successful, klass: 'successful'

@@ -1,0 +1,4 @@
+%tr.charge
+  %td.customer= charge.customer.name
+  %td.amount= humanized_money_with_symbol(charge.amount)
+  %td.date= I18n.l charge.created_at, format: :long

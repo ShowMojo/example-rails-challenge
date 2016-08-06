@@ -1,0 +1,19 @@
+.container {
+  margin: 3em auto;
+  width: 90%;
+}
+
+.charge {
+  .failed & {
+    background-color: #FF0000;
+  }
+
+  .disputed & {
+    background-color: #FF5400;
+  }
+
+  td {
+    padding: 6px 12px;
+    width: 33.3333%
+  }
+}
