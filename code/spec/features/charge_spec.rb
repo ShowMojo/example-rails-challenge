@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.feature "Charges", :type => :feature do
-  before :each do
+  before do
     customer1 = FactoryGirl.create(:customer, first_name: 'Johny', last_name: 'Flow')
     customer2 = FactoryGirl.create(:customer, first_name: 'Raj', last_name: 'Jamnis')
     customer3 = FactoryGirl.create(:customer, first_name: 'Andrew', last_name: 'Chung')
@@ -20,10 +20,10 @@ RSpec.feature "Charges", :type => :feature do
     #Disputed charges
     3.times {FactoryGirl.create(:charge, refunded: true, customer: customer1)}
     2.times {FactoryGirl.create(:charge, refunded: true, customer: customer2)}
-
-    visit "/charges"
   end
 
+  before(:each) { visit '/charges' }
+  
   scenario "There are three lists on the screen" do
     expect(page).to have_css('h1', text: 'Successful Charges')
     expect(page).to have_css('h1', text: 'Failed Charges')
