@@ -1,0 +1,16 @@
+<ul>
+  <li class="charges-list failed">
+    <h1>Failed Charges</h1>
+    <%= render 'charges_list', charges: @failed_charges%>
+  </li>
+
+  <li class="charges-list disputed">
+    <h1>Disputed Charges</h1>
+    <%= render 'charges_list', charges: @disputed_charges %>
+  </li>
+
+  <li class="charges-list successful">
+    <h1>Successful Charges</h1>
+    <%= render 'charges_list', charges: @successful_charges%>
+  </li>
+</ul>
