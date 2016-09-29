@@ -10,15 +10,17 @@
     </th>
   </tr>
   </thead>
-  <tbody class="failed_charges">
-  <% @failed_charges.each do |credit_card_charge| %>
-      <tr>
-        <td><%= credit_card_charge.customer.try(:full_name) || '—' %></td>
-        <td><%= number_to_currency(credit_card_charge.amount / 100) %></td>
-        <td><%= credit_card_charge.created_at.strftime('%c') %></td>
-      </tr>
+  <% if @failed_charges.present? %>
+      <tbody class="failed_charges">
+      <% @failed_charges.each do |credit_card_charge| %>
+          <tr>
+            <td><%= credit_card_charge.customer.try(:full_name) || '—' %></td>
+            <td><%= number_to_currency(credit_card_charge.amount / 100) %></td>
+            <td><%= credit_card_charge.created_at.strftime('%c') %></td>
+          </tr>
+      <% end %>
+      </tbody>
   <% end %>
-  </tbody>
 
   <thead>
   <tr>
@@ -28,14 +30,16 @@
   </tr>
   </thead>
   <tbody class="disputed_charges">
-  <% @disputed_charges.each do |credit_card_charge| %>
-      <tr>
-        <td><%= credit_card_charge.customer.try(:full_name) || '—' %></td>
-        <td><%= number_to_currency(credit_card_charge.amount / 100) %></td>
-        <td><%= credit_card_charge.created_at.strftime('%c') %></td>
-      </tr>
+  <% if @disputed_charges.present? %>
+      <% @disputed_charges.each do |credit_card_charge| %>
+          <tr>
+            <td><%= credit_card_charge.customer.try(:full_name) || '—' %></td>
+            <td><%= number_to_currency(credit_card_charge.amount / 100) %></td>
+            <td><%= credit_card_charge.created_at.strftime('%c') %></td>
+          </tr>
+      <% end %>
+      </tbody>
   <% end %>
-  </tbody>
 
   <thead>
   <tr>
@@ -44,17 +48,19 @@
     </th>
   </tr>
   </thead>
-  <tbody>
-  <% @successful_charges.each do |credit_card_charge| %>
-      <tr>
-        <td><%= credit_card_charge.customer.try(:full_name) || '—' %></td>
-        <td><%= number_to_currency(credit_card_charge.amount / 100) %></td>
-        <td><%= credit_card_charge.created_at.strftime('%c') %></td>
-      </tr>
+  <tbody class="successful_charges">
+  <% if @successful_charges.present? %>
+      <% @successful_charges.each do |credit_card_charge| %>
+          <tr>
+            <td><%= credit_card_charge.customer.try(:full_name) || '—' %></td>
+            <td><%= number_to_currency(credit_card_charge.amount / 100) %></td>
+            <td><%= credit_card_charge.created_at.strftime('%c') %></td>
+          </tr>
+      <% end %>
+      </tbody>
   <% end %>
-  </tbody>
 
-</table>
+  </table>
 
 <br>
 
