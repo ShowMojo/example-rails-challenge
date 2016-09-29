@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160929032106) do
+ActiveRecord::Schema.define(version: 20160929045803) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,5 +29,12 @@ ActiveRecord::Schema.define(version: 20160929032106) do
   add_index "credit_card_charges", ["customer_id"], name: "index_credit_card_charges_on_customer_id", using: :btree
   add_index "credit_card_charges", ["paid"], name: "index_credit_card_charges_on_paid", using: :btree
   add_index "credit_card_charges", ["refunded"], name: "index_credit_card_charges_on_refunded", using: :btree
+
+  create_table "customers", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

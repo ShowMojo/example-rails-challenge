@@ -38,7 +38,7 @@
 
   <div class="field">
     <%= f.label :customer_id %>
-    <%= f.text_field :customer_id %>
+    <%= f.collection_select :customer_id, Customer.order(:first_name), :id, :full_name %>
   </div>
 
   <div class="actions">

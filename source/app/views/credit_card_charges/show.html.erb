@@ -27,7 +27,7 @@
 
 <p>
   <strong>Customer:</strong>
-  <%= @credit_card_charge.customer_id %>
+  <%= @credit_card_charge.customer.try(:full_name) || '—' %>
 </p>
 
 <%= link_to 'Edit', edit_credit_card_charge_path(@credit_card_charge) %> |
