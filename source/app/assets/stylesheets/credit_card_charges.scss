@@ -1,3 +1,7 @@
-// Place all the styles related to the credit-card-charges controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.failed_charges tr td {
+  background-color: #FF0000;
+}
+
+.disputed_charges tr td {
+  background-color: #FF5400;
+}

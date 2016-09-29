@@ -2,22 +2,58 @@
 
 <h1>Listing Credit Card Charges</h1>
 
-<table>
+<table width="60%">
   <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th colspan="3">
+      <h1>Failed Charges</h1>
+    </th>
+  </tr>
   </thead>
-
-  <tbody>
-    <% @credit_card_charges.each do |credit_card_charge| %>
+  <tbody class="failed_charges">
+  <% @failed_charges.each do |credit_card_charge| %>
       <tr>
-        <td><%= link_to 'Show', credit_card_charge %></td>
-        <td><%= link_to 'Edit', edit_credit_card_charge_path(credit_card_charge) %></td>
-        <td><%= link_to 'Destroy', credit_card_charge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= credit_card_charge.customer.try(:full_name) || '—' %></td>
+        <td><%= number_to_currency(credit_card_charge.amount / 100) %></td>
+        <td><%= credit_card_charge.created_at.strftime('%c') %></td>
       </tr>
-    <% end %>
+  <% end %>
   </tbody>
+
+  <thead>
+  <tr>
+    <th colspan="3">
+      <h1>Disputed Charges</h1>
+    </th>
+  </tr>
+  </thead>
+  <tbody class="disputed_charges">
+  <% @disputed_charges.each do |credit_card_charge| %>
+      <tr>
+        <td><%= credit_card_charge.customer.try(:full_name) || '—' %></td>
+        <td><%= number_to_currency(credit_card_charge.amount / 100) %></td>
+        <td><%= credit_card_charge.created_at.strftime('%c') %></td>
+      </tr>
+  <% end %>
+  </tbody>
+
+  <thead>
+  <tr>
+    <th colspan="3">
+      <h1>Successful Charges</h1>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @successful_charges.each do |credit_card_charge| %>
+      <tr>
+        <td><%= credit_card_charge.customer.try(:full_name) || '—' %></td>
+        <td><%= number_to_currency(credit_card_charge.amount / 100) %></td>
+        <td><%= credit_card_charge.created_at.strftime('%c') %></td>
+      </tr>
+  <% end %>
+  </tbody>
+
 </table>
 
 <br>
