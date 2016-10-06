@@ -1,0 +1,26 @@
+<div id="failed_charges">
+  <h1>Failed Charges</h1>
+  <ul>
+    <% @failed_charges.each do |charge| %>
+        <li class="failed_charge"> <%= charge_li(charge) %> </li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="disputed_charges">
+  <h1>Disputed Charges</h1>
+  <ul>
+    <% @disputed_charges.each do |charge| %>
+        <li class="disputed_charge"> <%= charge_li(charge) %> </li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="successful_charges">
+  <h1>Successful Charges</h1>
+  <ul>
+    <% @successful_charges.each do |charge| %>
+      <li class="successful_charge"> <%= charge_li(charge) %> </li>
+    <% end %>
+  </ul>
+</div>
