@@ -1,0 +1,6 @@
+li.failed_charge {
+    background-color: #FF0000;
+}
+li.disputed_charge {
+    background-color: #FF5400;
+}
