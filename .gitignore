@@ -14,3 +14,9 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
+.idea
+source/.*
+source/log/*
+source/tmp/*
+!source/log/.keep
+!source/tmp/.keep
