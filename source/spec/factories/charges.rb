@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :charge do
     paid false
-    amount{rand(10000..100000)}
+    amount { rand(10000..100000) }
     currency "MyString"
     refunded false
     customer nil
