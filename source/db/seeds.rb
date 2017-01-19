@@ -13,6 +13,7 @@ customers = [
     {first_name: 'Mike', last_name: 'Smith'}
 ]
 
+Customer.all.destroy_all
 customers.each_with_index do |c, i|
   customer = Customer.create(c)
   case i
