@@ -6,4 +6,6 @@ class Charge < ApplicationRecord
   scope :disputed, -> { where paid: true, refunded: true }
 
   monetize :amount, as: :money_amount
+
+  validates :amount, :currency, :customer, presence: true
 end
