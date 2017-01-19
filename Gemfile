@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'slim-rails'
+gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
+gem 'draper'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

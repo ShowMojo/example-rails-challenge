@@ -1,0 +1,18 @@
+h1 Failed Charges
+ul#failed-charges
+  - @failed_charges.each do |failed_charge|
+    li.charge-list-item = failed_charge.details
+
+hr
+
+h1 Disputed Charges
+ul#disputed-charges
+  - @disputed_charges.each do |disputed_charge|
+    li.charge-list-item = disputed_charge.details
+
+hr
+
+h1 Successful Charges
+ul#successful-charges
+  - @successful_charges.each do |successful_charge|
+    li.charge-list-item = successful_charge.details
