@@ -91,14 +91,9 @@ On the view that shows all charges (most likely the *GET /charges* route), creat
 Create the following RSpec tests:
 
   1.  Verify that there are three lists on the screen. One for successful charges, one for failed charges and one for the disputed charges. 
-  2.  Verify that in the Successful charges list there are 10 line items. Verify that in the failed charges list there are 5 failed charges. Verify that in the disputed charges list there are failed charges. 
+  2.  Verify that in the Successful charges list there are 10 line items. Verify that in the failed charges list there are 5 failed charges. Verify that in the disputed charges list there are 5 disputed charges.
 
 ## Once Complete
 1. Commit and Push your code to your new repository
 2. Send us a pull request, we will review your code and get back to you
-
-
-
-
-
 

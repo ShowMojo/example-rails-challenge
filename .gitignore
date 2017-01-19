@@ -6,7 +6,9 @@ capybara-*.html
 /.bundle
 /vendor/bundle
 /log/*
+!/log/.keep
 /tmp/*
+!/tmp/.keep
 /db/*.sqlite3
 /public/system/*
 /coverage/
@@ -14,3 +16,4 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
+.byebug_history
