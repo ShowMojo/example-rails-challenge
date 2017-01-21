@@ -1,0 +1,19 @@
+body[id=charges-index] {
+  .failed-charges {
+    .failed-charged-item {
+      background-color: #FF0000;
+    }
+  }
+
+  .disputed-charges {
+    .disputed-charged-item {
+      background-color: #FF5400;
+    }
+  }
+
+  .successful-charges {
+    .successful-charged-item {
+    }
+  }
+}
+
