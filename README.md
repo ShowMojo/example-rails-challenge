@@ -25,7 +25,7 @@
     "currency": "usd",
     "refunded": false,
     "customer_id" : 123
-  }
+  }z`
 ```
 
     *Note: Amount is in USD, cents*
