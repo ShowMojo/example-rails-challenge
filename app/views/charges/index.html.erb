@@ -1,0 +1,72 @@
+<div class="container">
+
+  <!-- Failed Transactions Section -->
+  <div class="transactions">
+    <h1>Failed Charges</h1>
+    <table class="table failed">
+      <tr>
+        <th class="text-primary col-md-3">Customers Name</th>
+        <th class="text-primary col-md-3">Charge Amount </th>
+        <th class="text-primary col-md-6">Date</th>
+      </tr>
+      
+      <% @charges.where(paid: false).each do |charge| %>
+        <tr class="list-item">
+          <td><%= charge.customer.first_name + ' ' + charge.customer.last_name %></td>
+          <td><%= charge.amount %></td>
+          <td><%= charge.created_at %></td>
+        </tr>
+      <% end %>
+      
+    </table>
+
+  </div>
+  <!-- End Failed Transactions Section -->
+
+  <!-- Disputed Transactions Section -->
+  <div class="transactions">
+    <h1>Disputed Charges</h1>
+    <table class="table disputed">
+      <tr>
+        <th class="text-primary col-md-3">Customers Name</th>
+        <th class="text-primary col-md-3">Charge Amount </th>
+        <th class="text-primary col-md-6">Date</th>
+      </tr>
+      
+      <% @charges.where(paid: true, refunded: true).each do |charge| %>
+        <tr class="list-item">
+          <td><%= charge.customer.first_name + ' ' + charge.customer.last_name %></td>
+          <td><%= charge.amount %></td>
+          <td><%= charge.created_at %></td>
+        </tr>
+      <% end %>
+      
+    </table>
+
+  </div>
+  <!-- End Disputed Transactions Section -->
+
+  <!-- Succeeded Transactions Section -->
+  <div class="transactions">
+    <h1>Successful Charges</h1>
+    <table class="table succeeded">
+      <tr>
+        <th class="text-primary col-md-3">Customers Name</th>
+        <th class="text-primary col-md-3">Charge Amount </th>
+        <th class="text-primary col-md-6">Date</th>
+      </tr>
+      
+      <% @charges.where(paid: true, refunded: false).each do |charge| %>
+        <tr class="list-item">
+          <td><%= charge.customer.first_name + ' ' + charge.customer.last_name %></td>
+          <td><%= charge.amount %></td>
+          <td><%= charge.created_at %></td>
+        </tr>
+      <% end %>
+      
+    </table>
+
+  </div>
+  <!-- End Succeeded Transactions Section -->
+</div>
+

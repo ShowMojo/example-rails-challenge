@@ -1,0 +1,18 @@
+// Place all the styles related to the Charges controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.transactions {
+	margin-bottom: 50px;
+}
+
+table.failed {
+	.list-item {
+		background-color: #FF0000;
+	}
+}
+
+table.disputed {
+	.list-item {
+		background-color: #FF5400;
+	}
+}
