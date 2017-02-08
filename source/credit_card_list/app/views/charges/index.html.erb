@@ -1,0 +1,72 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Charges</h1>
+
+<section id="failed">
+  <h2>Failed Charges</h2>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>Amount</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @failed_charges.each do |charge| %>
+          <tr>
+            <td><%= charge.amount %></td>
+            <td><%= charge.created_at.strftime("%B %d, %Y") %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="disputed">
+  <h2>Disputed Charges</h2>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>Amount</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @disputed_charges.each do |charge| %>
+          <tr>
+            <td><%= charge.amount %></td>
+            <td><%= charge.created_at.strftime("%B %d, %Y") %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="successful">
+  <h2>Successful Charges</h2>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>Amount</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @successful_charges.each do |charge| %>
+          <tr>
+            <td><%= charge.amount %></td>
+            <td><%= charge.created_at.strftime("%B %d, %Y") %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
