@@ -1,0 +1,14 @@
+div.highlight
+  h1 Disputed Charges
+  table.table.table-hover.disputed
+    thead.thead-default
+      tr
+        th = 'Name'
+        th = 'Amount'
+        th = 'Date'
+      tbody#disputed_charges
+        - @disputed_charges.each do |f|
+          tr
+            td.customer = "#{f.customer.firstname} #{f.customer.lastname}"
+            td.amount = f.amount
+            td.date = f.created_at

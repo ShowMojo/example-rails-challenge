@@ -1,0 +1,14 @@
+div.highlight
+  h1 Successful Charges
+  table.table.table-hover.successful
+    thead.thead-default
+      tr
+        th = 'Name'
+        th = 'Amount'
+        th = 'Date'
+      tbody#successful_charges
+        - @successful_charges.each do |f|
+          tr
+            td.customer = "#{f.customer.firstname} #{f.customer.lastname}"
+            td.amount = f.amount
+            td.date = f.created_at
