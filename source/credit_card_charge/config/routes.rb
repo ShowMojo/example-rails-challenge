@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources :charges, only: [:charges]
+  resources :charges, only: [:index]
 end

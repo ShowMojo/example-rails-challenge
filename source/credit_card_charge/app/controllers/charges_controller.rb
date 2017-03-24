@@ -1,13 +1,13 @@
 class ChargesController < ApplicationController
-  def charges
+  def index
     get_charges_list
   end
 
   private
 
   def get_charges_list
-    @failed_charges = Charges.failed
-    @disputed_charges = Charges.disputed
-    @successful_charges = Charges.successful
+    @failed_charges = Charge.failed
+    @disputed_charges = Charge.disputed
+    @successful_charges = Charge.successful
   end
 end
