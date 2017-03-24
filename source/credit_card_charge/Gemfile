@@ -17,6 +17,11 @@ gem 'slim-rails' # Template
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rubocop', require: false
+  gem 'respec'
+  gem 'rspec-rails'
+  gem 'guard'
+  gem 'faker'
+  gem 'database_cleaner'
 end
 
 group :development do
