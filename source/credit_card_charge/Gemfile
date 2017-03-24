@@ -20,8 +20,12 @@ group :development, :test do
   gem 'respec'
   gem 'rspec-rails'
   gem 'guard'
+  gem 'guard-rspec', require: false
   gem 'faker'
   gem 'database_cleaner'
+  gem 'rails-controller-testing'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
 end
 
 group :development do
