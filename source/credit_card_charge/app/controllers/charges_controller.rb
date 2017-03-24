@@ -1,11 +1,12 @@
+# frozen_string_literal: true
 class ChargesController < ApplicationController
   def index
-    get_charges_list
+    return_charges
   end
 
   private
 
-  def get_charges_list
+  def return_charges
     @failed_charges = Charge.failed
     @disputed_charges = Charge.disputed
     @successful_charges = Charge.successful

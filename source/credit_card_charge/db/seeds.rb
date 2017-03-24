@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # Seed 4 Customers into the system:
 
 # Customer 1: 
