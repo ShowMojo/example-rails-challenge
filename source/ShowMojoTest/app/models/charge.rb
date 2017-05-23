@@ -9,6 +9,6 @@ class Charge < ActiveRecord::Base
 
   scope :successful, -> { where(paid: true, refunded: false) }
   scope :failed, -> { where(paid: false, refunded: false) }
-  scope :refuned, -> { where(paid: true, refuned: true) }
+  scope :disputed, -> { where(paid: true, refunded: true) }
 
 end

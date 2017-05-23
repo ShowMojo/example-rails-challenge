@@ -1,0 +1,6 @@
+<h1>Failed charges</h1>
+<%= render 'charge_table', charges: @failed_charges, bk_class: 'failed' %>
+<h1>Disputed charges</h1>
+<%= render 'charge_table', charges: @disputed_charges, bk_class: 'disputed' %>
+<h1>Successful charges</h1>
+<%= render 'charge_table', charges: @successful_charges, bk_class: 'success' %>
