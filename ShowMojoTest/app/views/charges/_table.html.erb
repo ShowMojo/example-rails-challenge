@@ -1,0 +1,21 @@
+<div class="table-container">
+  <h1><%= kind.capitalize %> Charges</h1>
+  <table class="table-<%= kind %>">
+    <thead>
+      <tr>
+        <th>Customer</th>
+        <th>Date</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% source.each do |charge| %>
+        <tr class="<%= kind %>">
+          <td><%= charge.customer.full_name %></td>
+          <td><%= charge.created_at %></td>
+          <td><%= charge.amount_cents %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

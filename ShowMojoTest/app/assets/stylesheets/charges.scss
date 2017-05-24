@@ -1,0 +1,21 @@
+// Place all the styles related to the charges controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  margin: 0 auto;
+  display: table;
+}
+
+table {
+  padding: 30px;
+  margin: 0 auto;
+
+  tr.failed {
+    background: #F00;
+  }
+
+  tr.disputed {
+    background: #FF5400;
+  }
+}
