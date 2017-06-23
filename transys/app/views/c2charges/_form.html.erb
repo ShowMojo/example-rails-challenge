@@ -1,0 +1,33 @@
+<%= form_for(@c2charge) do |f| %>
+  <% if @c2charge.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@c2charge.errors.count, "error") %> prohibited this c2charge from being saved:</h2>
+
+      <ul>
+      <% @c2charge.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :paid %><br>
+    <%= f.check_box :paid %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br>
+    <%= f.text_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :currency %><br>
+    <%= f.text_field :currency %>
+  </div>
+  <div class="field">
+    <%= f.label :refunded %><br>
+    <%= f.check_box :refunded %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="failed-charges-header">Listing Failed Charges</h1>
+
+<table class="failed-charges-table">
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Amount</th>
+      <th>Date</th>      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @c2charges_failed.each do |c2charge| %>
+      <tr style="background-color: #FF0000">
+        <td><%= c2charge.customer.first_name + ' ' + c2charge.customer.last_name %></td>
+        <td><%= c2charge.amount %></td>
+        <td><%= c2charge.updated_at.to_date %></td>        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h1 class="disputed-charges-header">Listing Disputed Charges</h1>
+
+<table class="disputed-charges-table">
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Amount</th>
+      <th>Date</th>      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @c2charges_disputed.each do |c2charge| %>
+      <tr style="background-color:#FF5400">
+        <td><%= c2charge.customer.first_name + ' ' + c2charge.customer.last_name %></td>
+        <td><%= c2charge.amount %></td>
+        <td><%= c2charge.updated_at.to_date %></td>        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h1 class="successful-charges-header">Listing Successful Charges</h1>
+
+<table class="successful-charges-table">
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Paid</th>
+      <th>Amount</th>
+      <th>Currency</th>
+      <th>Refunded</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @c2charges_success.each do |c2charge| %>
+      <tr>
+        <td><%= c2charge.customer.first_name + ' ' + c2charge.customer.last_name %></td>
+        <td><%= c2charge.paid %></td>
+        <td><%= c2charge.amount %></td>
+        <td><%= c2charge.currency %></td>
+        <td><%= c2charge.refunded %></td>
+        <td><%= c2charge.updated_at.to_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

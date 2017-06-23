@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Paid:</strong>
+  <%= @c2charge.paid %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @c2charge.amount %>
+</p>
+
+<p>
+  <strong>Currency:</strong>
+  <%= @c2charge.currency %>
+</p>
+
+<p>
+  <strong>Refunded:</strong>
+  <%= @c2charge.refunded %>
+</p>
+
+<%= link_to 'Edit', edit_c2charge_path(@c2charge) %> |
+<%= link_to 'Back', c2charges_path %>
