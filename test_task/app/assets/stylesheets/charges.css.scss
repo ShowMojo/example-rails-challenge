@@ -1,0 +1,15 @@
+.failed tbody tr{
+  background-color: #FF0000;
+}
+
+.disputed tbody tr{
+  background-color: #FF5400;
+}
+
+table{
+  border-collapse: collapse;
+}
+td{
+  padding: 3px;
+  border: 1px solid black;
+}

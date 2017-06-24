@@ -1,0 +1,22 @@
+-@charges.each do |key, collection|
+  %h1
+    = key.capitalize
+    = 'Charges'
+  %table{class: "#{key}"}
+    %thead
+      %tr
+        %td First name
+        %td Last name
+        %td Amount
+        %td Date
+    %tbody
+      -collection.each do |charge|
+        %tr
+          %td
+            = charge.customer.first_name
+          %td
+            = charge.customer.last_name
+          %td
+            = charge.amount
+          %td
+            = display_date(charge.created)
