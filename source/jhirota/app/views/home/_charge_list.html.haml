@@ -1,0 +1,5 @@
+- charges.each do |charge|
+  .row.transaction
+    .col-md-4= charge.customer.name
+    .col-md-4= number_to_currency(charge.amount/100)
+    .col-md-4= charge.updated_at
