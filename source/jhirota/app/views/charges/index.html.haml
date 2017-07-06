@@ -1,0 +1,29 @@
+%h1 Listing charges
+
+%table
+  %thead
+    %tr
+      %th Customer
+      %th Paid
+      %th Amount
+      %th Currency
+      %th Refunded
+      %th
+      %th
+      %th
+
+  %tbody
+    - @charges.each do |charge|
+      %tr
+        %td= charge.customer
+        %td= charge.paid
+        %td= charge.amount
+        %td= charge.currency
+        %td= charge.refunded
+        %td= link_to 'Show', charge
+        %td= link_to 'Edit', edit_charge_path(charge)
+        %td= link_to 'Destroy', charge, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Charge', new_charge_path

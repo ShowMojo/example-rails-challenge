@@ -13,7 +13,7 @@ RSpec.configure do |config|
   config.order = :random
   Kernel.srand config.seed
 
-  config.before(:suite) do
-    Rails.application.load_seed # loading seeds
-  end
+  # config.before(:suite) do
+  #   Rails.application.load_seed # loading seeds
+  # end
 end

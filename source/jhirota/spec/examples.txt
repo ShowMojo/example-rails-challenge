@@ -1,10 +1,40 @@
-example_id                                        | status  | run_time        |
-------------------------------------------------- | ------- | --------------- |
-./spec/controllers/home_controller_spec.rb[1:1:1] | passed  | 0.05101 seconds |
-./spec/features/charge_list_spec.rb[1:1]          | passed  | 7.08 seconds    |
-./spec/models/charge_spec.rb[1:1]                 | passed  | 0.00262 seconds |
-./spec/models/charge_spec.rb[1:2]                 | passed  | 0.12831 seconds |
-./spec/models/customer_spec.rb[1:1]               | passed  | 0.00584 seconds |
-./spec/models/customer_spec.rb[1:2]               | passed  | 0.00573 seconds |
-./spec/models/customer_spec.rb[1:3]               | passed  | 0.00981 seconds |
-./spec/views/home/charges.html.erb_spec.rb[1:1]   | pending | 0.00001 seconds |
+example_id                                             | status  | run_time        |
+------------------------------------------------------ | ------- | --------------- |
+./spec/controllers/charges_controller_spec.rb[1:1:1]   | pending | 0.0064 seconds  |
+./spec/controllers/charges_controller_spec.rb[1:2:1]   | pending | 0.00198 seconds |
+./spec/controllers/charges_controller_spec.rb[1:3:1]   | passed  | 0.01838 seconds |
+./spec/controllers/charges_controller_spec.rb[1:4:1]   | pending | 0.00352 seconds |
+./spec/controllers/charges_controller_spec.rb[1:5:1:1] | pending | 0.02297 seconds |
+./spec/controllers/charges_controller_spec.rb[1:5:1:2] | pending | 0.00219 seconds |
+./spec/controllers/charges_controller_spec.rb[1:5:2:1] | pending | 0.01365 seconds |
+./spec/controllers/charges_controller_spec.rb[1:6:1:1] | pending | 0.03471 seconds |
+./spec/controllers/charges_controller_spec.rb[1:6:1:2] | pending | 0.00468 seconds |
+./spec/controllers/charges_controller_spec.rb[1:6:2:1] | pending | 0.00255 seconds |
+./spec/controllers/charges_controller_spec.rb[1:7:1]   | pending | 0.00298 seconds |
+./spec/controllers/charges_controller_spec.rb[1:7:2]   | pending | 0.00382 seconds |
+./spec/controllers/home_controller_spec.rb[1:1:1]      | passed  | 0.05528 seconds |
+./spec/features/charge_list_spec.rb[1:1]               | passed  | 0.13043 seconds |
+./spec/features/charge_list_spec.rb[1:2]               | passed  | 0.1132 seconds  |
+./spec/features/charge_list_spec.rb[1:3]               | passed  | 0.16777 seconds |
+./spec/features/charge_list_spec.rb[1:4]               | passed  | 0.09954 seconds |
+./spec/features/charge_list_spec.rb[1:5]               | passed  | 0.27213 seconds |
+./spec/features/charge_list_spec.rb[1:6]               | passed  | 0.11599 seconds |
+./spec/models/charge_spec.rb[1:1]                      | passed  | 0.00263 seconds |
+./spec/models/charge_spec.rb[1:2]                      | passed  | 0.00787 seconds |
+./spec/models/customer_spec.rb[1:1]                    | passed  | 0.00393 seconds |
+./spec/models/customer_spec.rb[1:2]                    | passed  | 0.01521 seconds |
+./spec/models/customer_spec.rb[1:3]                    | passed  | 0.00352 seconds |
+./spec/requests/charges_spec.rb[1:1:1]                 | passed  | 0.71577 seconds |
+./spec/routing/charges_routing_spec.rb[1:1:1]          | passed  | 0.00269 seconds |
+./spec/routing/charges_routing_spec.rb[1:1:2]          | passed  | 0.00264 seconds |
+./spec/routing/charges_routing_spec.rb[1:1:3]          | passed  | 0.00166 seconds |
+./spec/routing/charges_routing_spec.rb[1:1:4]          | passed  | 0.00266 seconds |
+./spec/routing/charges_routing_spec.rb[1:1:5]          | passed  | 0.00199 seconds |
+./spec/routing/charges_routing_spec.rb[1:1:6]          | passed  | 0.00323 seconds |
+./spec/routing/charges_routing_spec.rb[1:1:7]          | passed  | 0.00219 seconds |
+./spec/routing/charges_routing_spec.rb[1:1:8]          | passed  | 0.00151 seconds |
+./spec/views/charges/edit.html.haml_spec.rb[1:1]       | passed  | 0.10399 seconds |
+./spec/views/charges/index.html.haml_spec.rb[1:1]      | passed  | 0.04761 seconds |
+./spec/views/charges/new.html.haml_spec.rb[1:1]        | passed  | 0.04146 seconds |
+./spec/views/charges/show.html.haml_spec.rb[1:1]       | passed  | 0.032 seconds   |
+./spec/views/home/charges.html.erb_spec.rb[1:1]        | pending | 0.00001 seconds |
