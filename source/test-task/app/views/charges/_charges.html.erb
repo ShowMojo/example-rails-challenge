@@ -1,0 +1,18 @@
+<table data-scope="<%= charges_scope %>" class="table table-sm table-hover">
+  <thead>
+  <tr>
+    <th>Customers name</th>
+    <th>Charge amount</th>
+    <th>Date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% charges.each do |charge| %>
+      <tr>
+        <td><%= charge.customer.full_name %></td>
+        <td><%= charge.amount %></td>
+        <td><%= charge.created_at.to_date %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
