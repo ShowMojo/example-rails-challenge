@@ -1,0 +1,8 @@
+<h1>Failed Charges</h1>
+<%= render partial: "shared/transactions", locals: {charges: @charges1, bgcolor: "#FF0000"} %>
+
+<h1>Disputed Charges</h1>
+<%= render partial: "shared/transactions", locals: {charges: @charges2, bgcolor: "#FF5400"} %>
+
+<h1>Successful Charges</h1>
+<%= render partial: "shared/transactions", locals: {charges: @charges3, bgcolor: "#FFFFFF"} %>
