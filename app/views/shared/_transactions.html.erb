@@ -1,0 +1,16 @@
+<table bgcolor="<%= bgcolor %>">
+	<thead>
+		<th>Customer Name</th>
+		<th>Charge Amount</th>
+		<th>Failed At</th>
+	</thead>
+	<tbody>
+		<% charges.each do |c| %>
+			<tr>
+				<td><%= c.customer.name %></td>
+				<td><%= c.amount %></td>
+				<td><%= c.created %>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
