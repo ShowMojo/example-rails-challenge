@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Failed Charges</h1>
+<ol>
+  <% @charges_failed.each do |charge| %>
+  <li>
+    Client: <%= charge.customer.first_name + " " + charge.customer.last_name %><br/>
+    Failed: <%= charge.created %><br/>
+    Amount: <%= charge.amount %>
+  </li>
+  <% end %>
+</ol>
+
+<h1>Disputed Charges</h1>
+<ol>
+  <% @charges_disputed.each do |charge| %>
+  <li>
+    Client: <%= charge.customer.first_name + " " + charge.customer.last_name %><br/>
+    Disputed: <%= charge.created %><br/>
+    Amount: <%= charge.amount %>
+  </li>
+  <% end %>
+</ol>
+
+<h1>Successful Charges</h1>
+<ol>
+  <% @charges_success.each do |charge| %>
+  <li>
+    Client: <%= charge.customer.first_name + " " + charge.customer.last_name %><br/>
+    Successfully: <%= charge.created %><br/>
+    Amount: <%= charge.amount %>
+  </li>
+  <% end %>
+</ol>
