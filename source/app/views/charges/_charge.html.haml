@@ -1,0 +1,7 @@
+%tr
+  %td
+    = charge.customer.full_name if charge.customer
+  %td
+    = number_to_currency(charge.amount / 100) if charge.amount
+  %td
+    = charge.created.strftime('%c') if charge.created

@@ -1,0 +1,14 @@
+%h1
+  Failed Charges
+.failed-charges
+  = render 'list', charges: @failed_charges
+
+%h1
+  Disputed Charges
+.disputed-charges
+  = render 'list', charges: @disputed_charges
+
+%h1
+  Successful Charges
+.successful-charges
+  = render 'list', charges: @successful_charges
