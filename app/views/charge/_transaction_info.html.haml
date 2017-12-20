@@ -1,0 +1,5 @@
+%li
+  %span{class: class_name}
+    = "Customer Name: #{transaction.customer.full_name}, "
+    = "Amount: #{number_to_currency(transaction.amount/100.0)}, "
+    = "Date: #{Time.at(transaction.created)}"
