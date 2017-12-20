@@ -1,0 +1,17 @@
+%ul
+  %li
+    %h1 Failed Charges
+    %ul
+      = render :partial => "transaction_info", :collection => @failed_transactions, as: :transaction, locals:{class_name: 'failed'}
+  %li
+    %h1 Disputed Charges
+    %ul
+      = render :partial => "transaction_info", :collection => @disputed_transactions, as: :transaction, locals:{class_name: 'disputed'}
+  %li
+    %h1 Successful Charges
+    %ul
+      = render :partial => "transaction_info", :collection => @successful_transactions, as: :transaction, locals:{class_name: 'successful'}
+
+
+
+
