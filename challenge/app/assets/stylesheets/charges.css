@@ -1,0 +1,16 @@
+table.data-table { border-collapse: collapse; }
+
+table.data-table th { text-align: left; }
+
+table.data-table th,
+table.data-table td { padding: 14px 7px; }
+
+table.failed-charges td {
+  background: #FF0000;
+  color: #FFF;
+}
+
+table.disputed-charges td { 
+  background: #FF5400;
+  color: #FFF;
+}
