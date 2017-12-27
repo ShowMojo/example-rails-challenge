@@ -1,0 +1,20 @@
+<% if charges.any? %>
+  <table class="data-table <%= "#{charge_type}-charges" %>">
+    <thead>
+      <th>Customer</th>
+      <th>Date</th>
+      <th>Amount</th>
+    </thead>
+    <tbody>
+      <% charges.each do |charge|%>
+        <tr>
+          <td><%= charge.customer_full_name %></td>
+          <td><%= charge.date %></td>
+          <td><%= number_to_currency(charge.display_amount, unit: charge.currency, format: '%n %u') %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  No Charges yet
+<% end %>
