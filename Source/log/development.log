@@ -1,0 +1,360 @@
+  [1m[36m (106.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (91.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateCustomers (20171227145020)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "customers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171227145020"]]
+  [1m[35m (94.1ms)[0m  commit transaction
+Migrating to CreateCharges (20171227145031)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "charges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "amount" integer, "currency" varchar, "refunded" boolean DEFAULT 'f', "paid" boolean DEFAULT 'f', "created" datetime, "customer_id" integer) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_charges_on_customer_id" ON "charges" ("customer_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20171227145031"]]
+  [1m[36m (90.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_charges_on_customer_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_charges_on_customer_id' AND type='index'
+[0m
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-27 17:34:03 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/darii/.rvm/gems/ruby-2.2.9@test_app/gems/railties-4.2.10/lib/rails/templates/rails/welcome/index.html.erb (1.3ms)
+Completed 200 OK in 62ms (Views: 48.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-27 17:34:41 +0200
+Processing by ChargesController#index as HTML
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges" WHERE "charges"."paid" = ?  [["paid", "f"]]
+  Rendered charges/_charges.html.haml (3.1ms)
+  [1m[36mCharge Load (0.1ms)[0m  [1mSELECT "charges".* FROM "charges" WHERE "charges"."paid" = ? AND "charges"."refunded" = ?[0m  [["paid", "t"], ["refunded", "t"]]
+  Rendered charges/_charges.html.haml (0.4ms)
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges" WHERE "charges"."paid" = ? AND "charges"."refunded" = ?  [["paid", "t"], ["refunded", "f"]]
+  Rendered charges/_charges.html.haml (0.7ms)
+  Rendered charges/index.html.haml within layouts/application (35.6ms)
+Completed 200 OK in 1336ms (Views: 1330.5ms | ActiveRecord: 0.6ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."first_name" = ? AND "customers"."last_name" = ?  ORDER BY "customers"."id" ASC LIMIT 1  [["first_name", "Johny"], ["last_name", "Flow"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCustomer Exists (0.1ms)[0m  SELECT  1 AS one FROM "customers" WHERE ("customers"."first_name" = 'Johny' AND "customers"."last_name" = 'Flow') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Johny"], ["last_name", "Flow"], ["created_at", "2017-12-27 15:46:20.220977"], ["updated_at", "2017-12-27 15:46:20.220977"]]
+  [1m[35m (65.0ms)[0m  commit transaction
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."first_name" = ? AND "customers"."last_name" = ?  ORDER BY "customers"."id" ASC LIMIT 1[0m  [["first_name", "Raj"], ["last_name", "Jamnis"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mCustomer Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE ("customers"."first_name" = 'Raj' AND "customers"."last_name" = 'Jamnis') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["first_name", "Raj"], ["last_name", "Jamnis"], ["created_at", "2017-12-27 15:46:20.288302"], ["updated_at", "2017-12-27 15:46:20.288302"]]
+  [1m[36m (65.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."first_name" = ? AND "customers"."last_name" = ?  ORDER BY "customers"."id" ASC LIMIT 1  [["first_name", "Andrew"], ["last_name", "Chung"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCustomer Exists (0.1ms)[0m  SELECT  1 AS one FROM "customers" WHERE ("customers"."first_name" = 'Andrew' AND "customers"."last_name" = 'Chung') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Andrew"], ["last_name", "Chung"], ["created_at", "2017-12-27 15:46:20.355458"], ["updated_at", "2017-12-27 15:46:20.355458"]]
+  [1m[35m (64.1ms)[0m  commit transaction
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."first_name" = ? AND "customers"."last_name" = ?  ORDER BY "customers"."id" ASC LIMIT 1[0m  [["first_name", "Mike"], ["last_name", "Smith"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mCustomer Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE ("customers"."first_name" = 'Mike' AND "customers"."last_name" = 'Smith') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["first_name", "Mike"], ["last_name", "Smith"], ["created_at", "2017-12-27 15:46:20.421393"], ["updated_at", "2017-12-27 15:46:20.421393"]]
+  [1m[36m (64.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "charges" ("paid", "amount", "currency", "customer_id") VALUES (?, ?, ?, ?)[0m  [["paid", "t"], ["amount", 8725], ["currency", "usd"], ["customer_id", 1]]
+  [1m[35m (58.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "charges" ("paid", "amount", "currency", "customer_id") VALUES (?, ?, ?, ?)  [["paid", "t"], ["amount", 3309], ["currency", "usd"], ["customer_id", 1]]
+  [1m[36m (65.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "charges" ("paid", "amount", "currency", "customer_id") VALUES (?, ?, ?, ?)[0m  [["paid", "t"], ["amount", 5613], ["currency", "usd"], ["customer_id", 1]]
+  [1m[35m (57.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "charges" ("paid", "amount", "currency", "customer_id") VALUES (?, ?, ?, ?)  [["paid", "t"], ["amount", 5699], ["currency", "usd"], ["customer_id", 1]]
+  [1m[36m (57.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "charges" ("paid", "amount", "currency", "customer_id") VALUES (?, ?, ?, ?)[0m  [["paid", "t"], ["amount", 2824], ["currency", "usd"], ["customer_id", 1]]
+  [1m[35m (48.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "charges" ("paid", "amount", "currency", "customer_id") VALUES (?, ?, ?, ?)  [["paid", "t"], ["amount", 6262], ["currency", "usd"], ["customer_id", 2]]
+  [1m[36m (57.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "charges" ("paid", "amount", "currency", "customer_id") VALUES (?, ?, ?, ?)[0m  [["paid", "t"], ["amount", 3897], ["currency", "usd"], ["customer_id", 2]]
+  [1m[35m (57.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "charges" ("paid", "amount", "currency", "customer_id") VALUES (?, ?, ?, ?)  [["paid", "t"], ["amount", 8928], ["currency", "usd"], ["customer_id", 2]]
+  [1m[36m (57.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "charges" ("paid", "amount", "currency", "customer_id") VALUES (?, ?, ?, ?)[0m  [["paid", "t"], ["amount", 9979], ["currency", "usd"], ["customer_id", 3]]
+  [1m[35m (57.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "charges" ("paid", "amount", "currency", "customer_id") VALUES (?, ?, ?, ?)  [["paid", "t"], ["amount", 1361], ["currency", "usd"], ["customer_id", 4]]
+  [1m[36m (57.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "charges" ("amount", "currency", "customer_id") VALUES (?, ?, ?)[0m  [["amount", 2128], ["currency", "usd"], ["customer_id", 3]]
+  [1m[35m (56.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "charges" ("amount", "currency", "customer_id") VALUES (?, ?, ?)  [["amount", 2372], ["currency", "usd"], ["customer_id", 3]]
+  [1m[36m (57.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "charges" ("amount", "currency", "customer_id") VALUES (?, ?, ?)[0m  [["amount", 5095], ["currency", "usd"], ["customer_id", 3]]
+  [1m[35m (57.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "charges" ("amount", "currency", "customer_id") VALUES (?, ?, ?)  [["amount", 669], ["currency", "usd"], ["customer_id", 4]]
+  [1m[36m (57.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "charges" ("amount", "currency", "customer_id") VALUES (?, ?, ?)[0m  [["amount", 122], ["currency", "usd"], ["customer_id", 4]]
+  [1m[35m (67.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "charges" ("paid", "refunded", "amount", "currency", "customer_id") VALUES (?, ?, ?, ?, ?)  [["paid", "t"], ["refunded", "t"], ["amount", 8648], ["currency", "usd"], ["customer_id", 1]]
+  [1m[36m (171.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "charges" ("paid", "refunded", "amount", "currency", "customer_id") VALUES (?, ?, ?, ?, ?)[0m  [["paid", "t"], ["refunded", "t"], ["amount", 1655], ["currency", "usd"], ["customer_id", 1]]
+  [1m[35m (57.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "charges" ("paid", "refunded", "amount", "currency", "customer_id") VALUES (?, ?, ?, ?, ?)  [["paid", "t"], ["refunded", "t"], ["amount", 6617], ["currency", "usd"], ["customer_id", 1]]
+  [1m[36m (57.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "charges" ("paid", "refunded", "amount", "currency", "customer_id") VALUES (?, ?, ?, ?, ?)[0m  [["paid", "t"], ["refunded", "t"], ["amount", 1781], ["currency", "usd"], ["customer_id", 2]]
+  [1m[35m (57.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "charges" ("paid", "refunded", "amount", "currency", "customer_id") VALUES (?, ?, ?, ?, ?)  [["paid", "t"], ["refunded", "t"], ["amount", 4838], ["currency", "usd"], ["customer_id", 2]]
+  [1m[36m (84.9ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-27 17:46:29 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ChargesController#index as HTML
+  [1m[35mCharge Load (0.2ms)[0m  SELECT "charges".* FROM "charges" WHERE "charges"."paid" = ?  [["paid", "f"]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."id" IN (3, 4)[0m
+  Rendered charges/_charges.html.haml (52.6ms)
+  Rendered charges/index.html.haml within layouts/application (61.7ms)
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (undefined method `customer_name' for #<Charge:0x007fd48c9e7240>):
+     7:   %tbody.table.tbody{ class: table_class }
+     8:     -charges.each do |charge|
+     9:       %tr.table.tbody.tr{ class: table_class }
+    10:         %td= charge.customer_name
+    11:         %td= charge.amount
+    12:         %td= charge.created
+  app/views/charges/_charges.html.haml:10:in `block in _app_views_charges__charges_html_haml___970986442565907638_70275436290820'
+  app/views/charges/_charges.html.haml:8:in `_app_views_charges__charges_html_haml___970986442565907638_70275436290820'
+  app/views/charges/index.html.haml:2:in `_app_views_charges_index_html_haml__1190378634411501959_70275436061840'
+
+
+  Rendered /home/darii/.rvm/gems/ruby-2.2.9@test_app/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /home/darii/.rvm/gems/ruby-2.2.9@test_app/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /home/darii/.rvm/gems/ruby-2.2.9@test_app/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/darii/.rvm/gems/ruby-2.2.9@test_app/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (47.9ms)
+  Rendered /home/darii/.rvm/gems/ruby-2.2.9@test_app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/darii/.rvm/gems/ruby-2.2.9@test_app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/darii/.rvm/gems/ruby-2.2.9@test_app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/darii/.rvm/gems/ruby-2.2.9@test_app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/darii/.rvm/gems/ruby-2.2.9@test_app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (24.0ms)
+  Rendered /home/darii/.rvm/gems/ruby-2.2.9@test_app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/darii/.rvm/gems/ruby-2.2.9@test_app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/darii/.rvm/gems/ruby-2.2.9@test_app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (46.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-27 17:47:58 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ChargesController#index as HTML
+  [1m[35mCharge Load (0.2ms)[0m  SELECT "charges".* FROM "charges" WHERE "charges"."paid" = ?  [["paid", "f"]]
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."id" IN (3, 4)[0m
+  Rendered charges/_charges.html.haml (27.8ms)
+  [1m[35mCharge Load (0.5ms)[0m  SELECT "charges".* FROM "charges" WHERE "charges"."paid" = ? AND "charges"."refunded" = ?  [["paid", "t"], ["refunded", "t"]]
+  [1m[36mCustomer Load (0.4ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."id" IN (1, 2)[0m
+  Rendered charges/_charges.html.haml (5.4ms)
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges" WHERE "charges"."paid" = ? AND "charges"."refunded" = ?  [["paid", "t"], ["refunded", "f"]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."id" IN (1, 2, 3, 4)[0m
+  Rendered charges/_charges.html.haml (1.8ms)
+  Rendered charges/index.html.haml within layouts/application (48.3ms)
+Completed 200 OK in 386ms (Views: 371.1ms | ActiveRecord: 2.3ms)
+  [1m[36m (99.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (91.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateCustomers (20171227145020)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "customers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171227145020"]]
+  [1m[35m (93.8ms)[0m  commit transaction
+Migrating to CreateCharges (20171227145031)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "charges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "amount" integer, "currency" varchar, "refunded" boolean DEFAULT 'f', "paid" boolean DEFAULT 'f', "created" datetime, "customer_id" integer) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_charges_on_customer_id" ON "charges" ("customer_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20171227145031"]]
+  [1m[36m (90.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_charges_on_customer_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_charges_on_customer_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."first_name" = ? AND "customers"."last_name" = ?  ORDER BY "customers"."id" ASC LIMIT 1  [["first_name", "Johny"], ["last_name", "Flow"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCustomer Exists (0.1ms)[0m  SELECT  1 AS one FROM "customers" WHERE ("customers"."first_name" = 'Johny' AND "customers"."last_name" = 'Flow') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Johny"], ["last_name", "Flow"], ["created_at", "2017-12-27 15:49:54.000942"], ["updated_at", "2017-12-27 15:49:54.000942"]]
+  [1m[35m (57.3ms)[0m  commit transaction
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."first_name" = ? AND "customers"."last_name" = ?  ORDER BY "customers"."id" ASC LIMIT 1[0m  [["first_name", "Raj"], ["last_name", "Jamnis"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mCustomer Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE ("customers"."first_name" = 'Raj' AND "customers"."last_name" = 'Jamnis') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["first_name", "Raj"], ["last_name", "Jamnis"], ["created_at", "2017-12-27 15:49:54.060348"], ["updated_at", "2017-12-27 15:49:54.060348"]]
+  [1m[36m (64.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."first_name" = ? AND "customers"."last_name" = ?  ORDER BY "customers"."id" ASC LIMIT 1  [["first_name", "Andrew"], ["last_name", "Chung"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCustomer Exists (0.1ms)[0m  SELECT  1 AS one FROM "customers" WHERE ("customers"."first_name" = 'Andrew' AND "customers"."last_name" = 'Chung') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Andrew"], ["last_name", "Chung"], ["created_at", "2017-12-27 15:49:54.126891"], ["updated_at", "2017-12-27 15:49:54.126891"]]
+  [1m[35m (64.5ms)[0m  commit transaction
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."first_name" = ? AND "customers"."last_name" = ?  ORDER BY "customers"."id" ASC LIMIT 1[0m  [["first_name", "Mike"], ["last_name", "Smith"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mCustomer Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "customers" WHERE ("customers"."first_name" = 'Mike' AND "customers"."last_name" = 'Smith') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["first_name", "Mike"], ["last_name", "Smith"], ["created_at", "2017-12-27 15:49:54.193480"], ["updated_at", "2017-12-27 15:49:54.193480"]]
+  [1m[36m (64.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "charges" ("paid", "amount", "currency", "created", "customer_id") VALUES (?, ?, ?, ?, ?)[0m  [["paid", "t"], ["amount", 9438], ["currency", "usd"], ["created", "2017-12-27 15:49:54.260915"], ["customer_id", 1]]
+  [1m[35m (66.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "charges" ("paid", "amount", "currency", "created", "customer_id") VALUES (?, ?, ?, ?, ?)  [["paid", "t"], ["amount", 1636], ["currency", "usd"], ["created", "2017-12-27 15:49:54.333884"], ["customer_id", 1]]
+  [1m[36m (65.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "charges" ("paid", "amount", "currency", "created", "customer_id") VALUES (?, ?, ?, ?, ?)[0m  [["paid", "t"], ["amount", 1945], ["currency", "usd"], ["created", "2017-12-27 15:49:54.400472"], ["customer_id", 1]]
+  [1m[35m (65.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "charges" ("paid", "amount", "currency", "created", "customer_id") VALUES (?, ?, ?, ?, ?)  [["paid", "t"], ["amount", 2270], ["currency", "usd"], ["created", "2017-12-27 15:49:54.467071"], ["customer_id", 1]]
+  [1m[36m (65.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "charges" ("paid", "amount", "currency", "created", "customer_id") VALUES (?, ?, ?, ?, ?)[0m  [["paid", "t"], ["amount", 6622], ["currency", "usd"], ["created", "2017-12-27 15:49:54.533656"], ["customer_id", 1]]
+  [1m[35m (65.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "charges" ("paid", "amount", "currency", "created", "customer_id") VALUES (?, ?, ?, ?, ?)  [["paid", "t"], ["amount", 6220], ["currency", "usd"], ["created", "2017-12-27 15:49:54.600263"], ["customer_id", 2]]
+  [1m[36m (65.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "charges" ("paid", "amount", "currency", "created", "customer_id") VALUES (?, ?, ?, ?, ?)[0m  [["paid", "t"], ["amount", 9587], ["currency", "usd"], ["created", "2017-12-27 15:49:54.666960"], ["customer_id", 2]]
+  [1m[35m (64.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "charges" ("paid", "amount", "currency", "created", "customer_id") VALUES (?, ?, ?, ?, ?)  [["paid", "t"], ["amount", 7907], ["currency", "usd"], ["created", "2017-12-27 15:49:54.733494"], ["customer_id", 2]]
+  [1m[36m (65.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "charges" ("paid", "amount", "currency", "created", "customer_id") VALUES (?, ?, ?, ?, ?)[0m  [["paid", "t"], ["amount", 9821], ["currency", "usd"], ["created", "2017-12-27 15:49:54.800052"], ["customer_id", 3]]
+  [1m[35m (65.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "charges" ("paid", "amount", "currency", "created", "customer_id") VALUES (?, ?, ?, ?, ?)  [["paid", "t"], ["amount", 9262], ["currency", "usd"], ["created", "2017-12-27 15:49:54.866649"], ["customer_id", 4]]
+  [1m[36m (65.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "charges" ("amount", "currency", "created", "customer_id") VALUES (?, ?, ?, ?)[0m  [["amount", 926], ["currency", "usd"], ["created", "2017-12-27 15:49:54.933232"], ["customer_id", 3]]
+  [1m[35m (65.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "charges" ("amount", "currency", "created", "customer_id") VALUES (?, ?, ?, ?)  [["amount", 4954], ["currency", "usd"], ["created", "2017-12-27 15:49:54.999850"], ["customer_id", 3]]
+  [1m[36m (65.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "charges" ("amount", "currency", "created", "customer_id") VALUES (?, ?, ?, ?)[0m  [["amount", 8809], ["currency", "usd"], ["created", "2017-12-27 15:49:55.066429"], ["customer_id", 3]]
+  [1m[35m (65.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "charges" ("amount", "currency", "created", "customer_id") VALUES (?, ?, ?, ?)  [["amount", 6729], ["currency", "usd"], ["created", "2017-12-27 15:49:55.133027"], ["customer_id", 4]]
+  [1m[36m (65.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "charges" ("amount", "currency", "created", "customer_id") VALUES (?, ?, ?, ?)[0m  [["amount", 6352], ["currency", "usd"], ["created", "2017-12-27 15:49:55.199633"], ["customer_id", 4]]
+  [1m[35m (65.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "charges" ("paid", "refunded", "amount", "currency", "created", "customer_id") VALUES (?, ?, ?, ?, ?, ?)  [["paid", "t"], ["refunded", "t"], ["amount", 4439], ["currency", "usd"], ["created", "2017-12-27 15:49:55.266220"], ["customer_id", 1]]
+  [1m[36m (65.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "charges" ("paid", "refunded", "amount", "currency", "created", "customer_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["paid", "t"], ["refunded", "t"], ["amount", 5469], ["currency", "usd"], ["created", "2017-12-27 15:49:55.332820"], ["customer_id", 1]]
+  [1m[35m (57.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "charges" ("paid", "refunded", "amount", "currency", "created", "customer_id") VALUES (?, ?, ?, ?, ?, ?)  [["paid", "t"], ["refunded", "t"], ["amount", 2135], ["currency", "usd"], ["created", "2017-12-27 15:49:55.391099"], ["customer_id", 1]]
+  [1m[36m (65.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "charges" ("paid", "refunded", "amount", "currency", "created", "customer_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["paid", "t"], ["refunded", "t"], ["amount", 9762], ["currency", "usd"], ["created", "2017-12-27 15:49:55.457703"], ["customer_id", 2]]
+  [1m[35m (57.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "charges" ("paid", "refunded", "amount", "currency", "created", "customer_id") VALUES (?, ?, ?, ?, ?, ?)  [["paid", "t"], ["refunded", "t"], ["amount", 1107], ["currency", "usd"], ["created", "2017-12-27 15:49:55.515939"], ["customer_id", 2]]
+  [1m[36m (65.4ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-27 17:50:02 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ChargesController#index as HTML
+  [1m[35mCharge Load (0.2ms)[0m  SELECT "charges".* FROM "charges" WHERE "charges"."paid" = ?  [["paid", "f"]]
+  [1m[36mCustomer Load (0.5ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."id" IN (3, 4)[0m
+  Rendered charges/_charges.html.haml (27.3ms)
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges" WHERE "charges"."paid" = ? AND "charges"."refunded" = ?  [["paid", "t"], ["refunded", "t"]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."id" IN (1, 2)[0m
+  Rendered charges/_charges.html.haml (1.7ms)
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges" WHERE "charges"."paid" = ? AND "charges"."refunded" = ?  [["paid", "t"], ["refunded", "f"]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."id" IN (1, 2, 3, 4)[0m
+  Rendered charges/_charges.html.haml (2.0ms)
+  Rendered charges/index.html.haml within layouts/application (37.4ms)
+Completed 200 OK in 383ms (Views: 368.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-27 18:00:39 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ChargesController#index as HTML
+  [1m[35mCharge Load (0.5ms)[0m  SELECT "charges".* FROM "charges" WHERE "charges"."paid" = ?  [["paid", "f"]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."id" IN (3, 4)[0m
+  Rendered charges/_charges.html.haml (38.5ms)
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges" WHERE "charges"."paid" = ? AND "charges"."refunded" = ?  [["paid", "t"], ["refunded", "t"]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."id" IN (1, 2)[0m
+  Rendered charges/_charges.html.haml (2.1ms)
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges" WHERE "charges"."paid" = ? AND "charges"."refunded" = ?  [["paid", "t"], ["refunded", "f"]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."id" IN (1, 2, 3, 4)[0m
+  Rendered charges/_charges.html.haml (2.4ms)
+  Rendered charges/index.html.haml within layouts/application (49.3ms)
+Completed 200 OK in 241ms (Views: 225.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-27 18:01:11 +0200
+Processing by ChargesController#index as HTML
+  [1m[35mCharge Load (0.4ms)[0m  SELECT "charges".* FROM "charges" WHERE "charges"."paid" = ?  [["paid", "f"]]
+  [1m[36mCustomer Load (0.4ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."id" IN (3, 4)[0m
+  Rendered charges/_charges.html.haml (11.8ms)
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges" WHERE "charges"."paid" = ? AND "charges"."refunded" = ?  [["paid", "t"], ["refunded", "t"]]
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."id" IN (1, 2)[0m
+  Rendered charges/_charges.html.haml (2.1ms)
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges" WHERE "charges"."paid" = ? AND "charges"."refunded" = ?  [["paid", "t"], ["refunded", "f"]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."id" IN (1, 2, 3, 4)[0m
+  Rendered charges/_charges.html.haml (2.7ms)
+  Rendered charges/index.html.haml within layouts/application (18.0ms)
+Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-27 18:01:16 +0200
+Processing by ChargesController#index as HTML
+  [1m[35mCharge Load (0.4ms)[0m  SELECT "charges".* FROM "charges" WHERE "charges"."paid" = ?  [["paid", "f"]]
+  [1m[36mCustomer Load (1.0ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."id" IN (3, 4)[0m
+  Rendered charges/_charges.html.haml (9.5ms)
+  [1m[35mCharge Load (0.2ms)[0m  SELECT "charges".* FROM "charges" WHERE "charges"."paid" = ? AND "charges"."refunded" = ?  [["paid", "t"], ["refunded", "t"]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."id" IN (1, 2)[0m
+  Rendered charges/_charges.html.haml (3.7ms)
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges" WHERE "charges"."paid" = ? AND "charges"."refunded" = ?  [["paid", "t"], ["refunded", "f"]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."id" IN (1, 2, 3, 4)[0m
+  Rendered charges/_charges.html.haml (2.5ms)
+  Rendered charges/index.html.haml within layouts/application (18.1ms)
+Completed 200 OK in 29ms (Views: 25.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-27 18:03:50 +0200
+Processing by ChargesController#index as HTML
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges" WHERE "charges"."paid" = ?  [["paid", "f"]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."id" IN (3, 4)[0m
+  Rendered charges/_charges.html.haml (2.1ms)
+  [1m[35mCharge Load (0.1ms)[0m  SELECT "charges".* FROM "charges" WHERE "charges"."paid" = ? AND "charges"."refunded" = ?  [["paid", "t"], ["refunded", "t"]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."id" IN (1, 2)[0m
+  Rendered charges/_charges.html.haml (1.7ms)
+  [1m[35mCharge Load (0.4ms)[0m  SELECT "charges".* FROM "charges" WHERE "charges"."paid" = ? AND "charges"."refunded" = ?  [["paid", "t"], ["refunded", "f"]]
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."id" IN (1, 2, 3, 4)[0m
+  Rendered charges/_charges.html.haml (5.7ms)
+  Rendered charges/index.html.haml within layouts/application (11.2ms)
+Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/charges.self-4edc3790bfd5fce73e854198f280981902323f9032a97c0717ebc234099af351.css?body=1" for 127.0.0.1 at 2017-12-27 18:03:50 +0200
