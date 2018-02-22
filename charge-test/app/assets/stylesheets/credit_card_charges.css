@@ -1,0 +1,7 @@
+table.failed-charges {
+    background: #FF0000;
+}
+
+table.disputed-charges {
+    background: #FF5400;
+}
