@@ -31,6 +31,11 @@
     <%= form.check_box :refunded, id: :credit_card_charge_refunded %>
   </div>
 
+  <div class="field">
+    <%= form.label :customer %>
+    <%= form.collection_select(:customer_id, Customer.all, :id, :full_name, :prompt => 'Select') %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
