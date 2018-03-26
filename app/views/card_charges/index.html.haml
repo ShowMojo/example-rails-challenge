@@ -36,7 +36,7 @@
               Date
         %tbody
           - @card_charges.each do |card_charge|
-            - if card_charge.refunded && !card_charge.paid
+            - if card_charge.refunded && card_charge.paid
               %tr
                 %td= customer_name(card_charge.customer)
                 %td= card_charge.amount

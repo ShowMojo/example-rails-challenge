@@ -11,7 +11,7 @@ for i in 1..8
     paid = true
     refunded = false
   else
-    paid = false
+    paid = true
     refunded = true
   end
   customer_1.card_charges.create(created: Time.now.getutc, paid: paid,
@@ -25,7 +25,7 @@ for i in 1..5
     paid = true
     refunded = false
   else
-    paid = false
+    paid = true
     refunded = true
   end
   customer_2.card_charges.create(created: Time.now.getutc, paid: paid,
