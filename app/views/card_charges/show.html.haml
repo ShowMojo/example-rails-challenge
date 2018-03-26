@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Created:
+  = @card_charge.created
+%p
+  %b Paid:
+  = @card_charge.paid
+%p
+  %b Amount:
+  = @card_charge.amount
+%p
+  %b Currency:
+  = @card_charge.currency
+%p
+  %b Refunded:
+  = @card_charge.refunded
+%p
+  %b Customer:
+  = @card_charge.customer
+
+= link_to 'Edit', edit_card_charge_path(@card_charge)
+\|
+= link_to 'Back', card_charges_path

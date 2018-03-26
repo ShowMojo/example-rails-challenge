@@ -1,0 +1,72 @@
+.container
+  .section
+    .row
+      %h1
+        Failed Charges
+    .row
+      %table.failed_charges_table
+        %thead
+          %tr
+            %th
+              Customer name
+            %th
+              Charge Amount
+            %th
+              Date
+        %tbody
+          - @card_charges.each do |card_charge|
+            - if card_charge.refunded || !card_charge.paid
+              %tr
+                %td= customer_name(card_charge.customer)
+                %td= card_charge.amount
+                %td= card_charge.created
+  .section
+    .row
+      %h1
+        Disputed Charges
+    .row
+      %table.disputed_charges_table
+        %thead
+          %tr
+            %th
+              Customer name
+            %th
+              Charge Amount
+            %th
+              Date
+        %tbody
+          - @card_charges.each do |card_charge|
+            - if card_charge.refunded && !card_charge.paid
+              %tr
+                %td= customer_name(card_charge.customer)
+                %td= card_charge.amount
+                %td= card_charge.created
+
+  .section
+    .row
+      %h1
+        Successful Charges
+    .row
+      %table.successful_charges_table
+        %thead
+          %tr
+            %th
+              Customer name
+            %th
+              Charge Amount
+            %th
+              Currency
+            %th
+              Date
+        %tbody
+          - @card_charges.each do |card_charge|
+            - if card_charge.paid && !card_charge.refunded
+              %tr
+                %td= customer_name(card_charge.customer)
+                %td= card_charge.amount
+                %td= card_charge.currency
+                %td= card_charge.created
+
+%br
+
+= link_to 'New Card charge', new_card_charge_path

@@ -20,7 +20,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: 'rails_challenge'
+  database: 'rails_challenge_test'
 
 production:
   <<: *default

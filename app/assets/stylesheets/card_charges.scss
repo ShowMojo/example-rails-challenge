@@ -1,0 +1,14 @@
+// Place all the styles related to the CardCharges controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.failed_charges_table{
+  td{
+    background-color: #FF0001;
+  }
+}
+
+.disputed_charges_table{
+  td{
+    background-color: #FF5400;
+  }
+}

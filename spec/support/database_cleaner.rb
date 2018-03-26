@@ -3,17 +3,20 @@ RSpec.configure do |config|
 
   DatabaseCleaner[:active_record].strategy = :truncation
 
-  config.before(:each) do
-    DatabaseCleaner.start
-  end
+  # config.before(:each) do
+    # DatabaseCleaner.start
+  # end
 
-  config.after(:each) do
-    DatabaseCleaner.clean
-  end
-
+  # config.after(:each) do
+  #   DatabaseCleaner.clean
+  # end
   config.before(:all) do
-    DatabaseCleaner.start
+    load "#{Rails.root}/db/seeds.rb"
   end
+
+  # config.before(:all) do
+    # DatabaseCleaner.start
+  # end
 
   config.after(:all) do
     DatabaseCleaner.clean
