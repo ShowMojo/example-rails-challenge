@@ -1,0 +1,48 @@
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+  2.2.2
+
+* Rails version
+
+  4.2.5
+
+* System dependencies
+
+* Configuration
+
+  Please set the following env variables
+
+  ```
+    export RAILS_CHALLENGE_USERNAME="your pg username"
+    export RAILS_CHALLENGE_PASSWORD = "your pg password"
+  ```
+
+  If you are planning to deploy this project in a production environment
+
+  ```
+    export RAILS_CHALLENGE_HOST="your production pg host"
+    export RAILS_CHALLENGE_PORT = "your production pg port"
+  ```
+
+* Database creation
+
+  bundle exec rake db:create db:migrate
+
+* Database initialization
+
+* How to run the test suite
+
+  ```
+    rspec
+  ```
+  
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
