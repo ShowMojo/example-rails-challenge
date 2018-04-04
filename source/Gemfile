@@ -38,6 +38,9 @@ group :development, :test do
 
   # Adds rspec-rails
   gem 'rspec-rails', '~> 3.7'
+
+  # Adds database cleaner
+  gem 'database_cleaner'
 end
 
 group :development do
