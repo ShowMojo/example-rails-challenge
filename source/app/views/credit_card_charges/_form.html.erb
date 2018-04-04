@@ -1,0 +1,17 @@
+<%= form_with(model: credit_card_charge, local: true) do |form| %>
+  <% if credit_card_charge.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(credit_card_charge.errors.count, "error") %> prohibited this credit_card_charge from being saved:</h2>
+
+      <ul>
+      <% credit_card_charge.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

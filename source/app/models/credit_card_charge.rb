@@ -1,0 +1,2 @@
+class CreditCardCharge < ApplicationRecord
+end
