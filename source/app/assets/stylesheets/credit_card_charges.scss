@@ -1,3 +1,22 @@
-// Place all the styles related to the credit_card_charges controller here.
+// Place all the styles related to the CreditCardCharges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.failed {
+  border: 1px solid #FF0000;
+  tr {
+    background: #FF0000;
+  }
+}
+.disputed {
+  border: px solid #FF5400;
+  tr {
+    background: #FF5400;
+  }
+}
+.success {
+  border: 1px solid green;
+  tr {
+    background: green;
+  }
+}  

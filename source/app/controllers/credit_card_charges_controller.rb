@@ -4,7 +4,9 @@ class CreditCardChargesController < ApplicationController
   # GET /credit_card_charges
   # GET /credit_card_charges.json
   def index
-    @credit_card_charges = CreditCardCharge.all
+    @failed = CreditCardCharge.failed
+    @disputed = CreditCardCharge.disputed
+    @successful = CreditCardCharge.successful
   end
 
   # GET /credit_card_charges/1
@@ -69,6 +71,6 @@ class CreditCardChargesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def credit_card_charge_params
-      params.fetch(:credit_card_charge, {})
+      params.require(:credit_card_charge).permit(:paid, :amount, :currency, :refunded, :customer_id)
     end
 end
