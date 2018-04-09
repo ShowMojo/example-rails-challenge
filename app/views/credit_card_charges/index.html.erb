@@ -1,0 +1,77 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Failed Charges</h1>
+
+<table class="table-failed">
+  <thead>
+    <tr>
+      <th>Customer Name</th>
+      <th>Amount</th>
+      <th>Created</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @failed.each do |credit_card_charge| %>
+      <tr class="failed">
+
+        <td><%= credit_card_charge.try(:customer).try(:first_name) %></td>
+        <td><%= credit_card_charge.amount %></td>
+        <td><%= credit_card_charge.created %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h1>Disputed Charges</h1>
+
+<table class="table-disputed">
+  <thead>
+    <tr>
+      <th>Customer Name</th>
+      <th>Amount</th>
+      <th>Created</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @disputed.each do |credit_card_charge| %>
+      <tr class="disputed">
+
+        <td><%= credit_card_charge.try(:customer).try(:first_name) %></td>
+        <td><%= credit_card_charge.amount %></td>
+        <td><%= credit_card_charge.created %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h1>Successful Charges</h1>
+
+<table class="table-successful">
+  <thead>
+    <tr>
+      <th>Customer Name</th>
+      <th>Amount</th>
+      <th>Created</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @successful.each do |credit_card_charge| %>
+      <tr>
+        <td><%= credit_card_charge.try(:customer).try(:first_name) %></td>
+        <td><%= credit_card_charge.amount %></td>
+        <td><%= credit_card_charge.created %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Credit card charge', new_credit_card_charge_path %>
