@@ -1,0 +1,9 @@
+<ul>
+  <% list.each do |transaction| %>
+    <li class="<%= css_class %>">
+      <%= transaction.customer.full_name %>
+      <%= transaction.formatted_amount %>
+      <%= transaction.formatted_date %>
+    </li>
+  <% end %>
+</ul>

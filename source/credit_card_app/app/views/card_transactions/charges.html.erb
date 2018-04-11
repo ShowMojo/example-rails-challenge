@@ -1,0 +1,6 @@
+<h1>Failed Charges</h1>
+<%= render partial: 'transactions_list', locals: { list: @failed_transactions, css_class: 'failed' } %>
+<h1>Disputed Charges</h1>
+<%= render partial: 'transactions_list', locals: { list: @disputed_transactions, css_class: 'disputed' } %>
+<h1>Successful Charges</h1>
+<%= render partial: 'transactions_list', locals: { list: @successful_transactions, css_class: 'successful' } %>
