@@ -1,0 +1,23 @@
+<h2>Failed Charges</h2>
+<table class="failed">
+  <%= render 'header' %>
+  <tbody>
+    <%= render @failed_charges %>
+  </tbody>
+</table>
+
+<h2>Disputed Charges</h2>
+<table class="disputed">
+  <%= render 'header' %>
+  <tbody>
+    <%= render @disputed_charges %>
+  </tbody>
+</table>
+
+<h2>Successful Charges</h2>
+<table class="succeed">
+  <%= render 'header'%>
+  <tbody>
+    <%= render @succeed_charges %>
+  </tbody>
+</table>

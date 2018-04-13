@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  paid: false
+  amount: 
+  currency: MyString
+  refunded: false
+  customer: one
+
+two:
+  paid: false
+  amount: 
+  currency: MyString
+  refunded: false
+  customer: two
