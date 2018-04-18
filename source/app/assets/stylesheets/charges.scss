@@ -1,0 +1,33 @@
+.charges_overview{
+  ul{
+    margin: 0;
+    padding: 0;
+    li{
+      list-style: none;
+      margin-bottom: 5px;
+      padding: 0.5rem
+    }
+  }
+}
+
+.charge_status{
+  &_failed{
+    background-color: #ff0000;
+  }
+  &_disputed{
+    background-color: #ff5400;
+  }
+}
+
+.customer{
+  &_name{
+    display: inline-block;
+    width: 40%;
+  }
+  &_charge{
+    &_amount, &_date{
+      display: inline-block;
+      width: 28%;
+    }
+  }
+}

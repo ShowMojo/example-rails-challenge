@@ -1,0 +1,10 @@
+<div class="charges_overview">
+  <h1>Failed Charges</h1>
+  <%= render 'row_item', charges: @failed_charges, charge_status: 'failed' %>
+
+  <h1>Disputed Charges</h1>
+  <%= render 'row_item', charges: @disputed_charges, charge_status: 'disputed' %>
+
+  <h1>Successful Charges</h1>
+  <%= render 'row_item', charges: @successful_charges, charge_status: 'successful' %>
+</div>

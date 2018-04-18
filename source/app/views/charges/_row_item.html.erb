@@ -1,0 +1,15 @@
+<ul>
+<% charges.each do |charge| %>
+  <li class=<%="charge_status_#{charge_status}"%>>
+    <div class="customer_name">
+      <%= "#{charge.customer.first_name} #{charge.customer.last_name}"%>
+    </div>
+    <div class="customer_charge_amount">
+      <%= "#{number_to_currency(charge.amount, precision: 2)}"%>
+    </div>
+    <div class="customer_charge_date">
+      <%= "#{charge.created_at}"%>
+    </div>
+  </li>
+<% end %>
+</ul>
