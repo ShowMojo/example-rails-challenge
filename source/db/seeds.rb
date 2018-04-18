@@ -1,12 +1,27 @@
 customers = ['Johny Flow', 'Raj Jamnis', 'Andrew Chung', 'Mike Smith']
 
 def seed_credit_card_charges(customer, charge_status) 
+  paid_status = false
+  refunded_status = false
+
+  case (charge_status) 
+  when :successful
+    paid_status = true
+    refunded_status = false
+  when :failed
+    paid_status = false
+    refunded_status = false
+  when :disputed
+    paid_status = true
+    refunded_status = true
+  end
+
   CreditCardCharge.create({
-    paid: true,
+    paid: paid_status,
     amount: rand(10000),
     currency: 'USD',
     customer: customer,
-    status: charge_status,
+    refunded: refunded_status
   })
 end
 

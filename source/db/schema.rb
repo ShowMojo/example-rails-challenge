@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180418061334) do
+ActiveRecord::Schema.define(version: 20180418072758) do
 
   create_table "credit_card_charges", force: :cascade do |t|
     t.boolean  "paid",        default: false
     t.integer  "amount"
     t.string   "currency"
     t.integer  "customer_id"
-    t.integer  "status"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.boolean  "refunded"
   end
 
   create_table "customers", force: :cascade do |t|

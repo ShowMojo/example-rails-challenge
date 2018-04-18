@@ -15,17 +15,17 @@ RSpec.describe ChargesController, type: :request do
           amount: rand(10000),
           currency: 'USD',
           customer: customer1,
-          status: :successful
+          refunded: false
         })
       end
       # create failed charges
       5.times do 
         CreditCardCharge.create({
-          paid: true,
+          paid: false,
           amount: rand(10000),
           currency: 'USD',
           customer: customer2,
-          status: :failed
+          refunded: false
         })
       end
       # create disputed charges
@@ -35,7 +35,7 @@ RSpec.describe ChargesController, type: :request do
           amount: rand(10000),
           currency: 'USD',
           customer: customer3,
-          status: :disputed
+          refunded: true
         })
       end
 

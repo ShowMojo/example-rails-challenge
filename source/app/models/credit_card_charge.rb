@@ -1,4 +1,6 @@
 class CreditCardCharge < ActiveRecord::Base
   belongs_to :customer
-  enum status: [:failed, :successful, :disputed]
+  scope :failed, -> { where(paid: false, refunded: false) }
+  scope :successful, -> { where(paid: true, refunded: false) }
+  scope :disputed, -> { where(paid: true, refunded: true) }
 end
