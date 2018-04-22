@@ -11,6 +11,6 @@ class Charge < ApplicationRecord
 
   #TODO extract to a decorator
   def human_amount
-  	[amount / 100, currency].join(' ')
+    [amount / 100, currency].join(' ')
   end
 end

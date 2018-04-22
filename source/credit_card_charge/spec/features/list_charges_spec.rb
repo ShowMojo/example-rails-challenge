@@ -2,15 +2,15 @@ require 'rails_helper'
 
 feature 'ListCharges', type: :feature do
   it 'Contains all charges statuses' do
-  	visit charges_path
+    visit charges_path
 
-  	expect(page).to have_css 'h1', text: 'Failed Charges'
+    expect(page).to have_css 'h1', text: 'Failed Charges'
     expect(page).to have_css 'h1', text: 'Disputed Charges'
     expect(page).to have_css 'h1', text: 'Successful Charges'
   end
 
   it "lists 10 successful transactions" do
-  	10.times { create(:charge, :successful) }
+    10.times { create(:charge, :successful) }
 
     visit charges_path
 
@@ -18,7 +18,7 @@ feature 'ListCharges', type: :feature do
   end
 
   it "lists 5 disputed transactions" do
-  	5.times { create(:charge, :disputed) }
+    5.times { create(:charge, :disputed) }
 
     visit charges_path
 
