@@ -1,0 +1,47 @@
+<h1>Failed Charges</h1>
+
+<table class="failed_credit_card_charges">
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Amount</th>
+      <th>Failed At</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render partial: 'credit_card_charge', collection: @failed %>
+  </tbody>
+</table>
+
+<h1>Disputed Charges</h1>
+
+<table class="disputed_credit_card_charges">
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Amount</th>
+      <th>Failed At</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render partial: 'credit_card_charge', collection: @disputed %>
+  </tbody>
+</table>
+
+<h1>Successful Charges</h1>
+
+<table class="paid_credit_card_charges">
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Amount</th>
+      <th>Failed At</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render partial: 'credit_card_charge', collection: @paid %>
+  </tbody>
+</table>

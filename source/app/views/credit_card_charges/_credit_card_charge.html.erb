@@ -1,0 +1,5 @@
+<%= content_tag :tr, id: dom_id(credit_card_charge) do %>
+  <td><%= credit_card_charge.name %></td>
+  <td><%= number_to_currency credit_card_charge.human_amount %></td>
+  <td><%= l credit_card_charge.created_at, format: :short %></td>
+<% end %>

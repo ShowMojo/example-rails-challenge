@@ -1,0 +1,32 @@
+.credit_card_charges table {
+  width: 100%;
+  margin-bottom: 2rem;
+
+  th {
+    text-align: left;
+  }
+
+  td {
+    padding: 0.5rem;
+  }
+}
+
+.failed_credit_card_charges {
+  tbody tr {
+    background-color: #ff0000;
+    color: #fff;
+  }
+}
+
+.disputed_credit_card_charges {
+  tbody tr {
+    background-color: #ff5400;
+    color: #fff;
+  }
+}
+
+.paid_credit_card_charges {
+  tbody tr {
+    background-color: #f9f9f9;
+  }
+}
