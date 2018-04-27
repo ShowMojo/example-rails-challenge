@@ -1,35 +1,47 @@
-<p id="notice"><%= notice %></p>
+<h1>Failed Charges</h1>
 
-<h1>Listing Credit Card Charges</h1>
-
-<table>
+<table class="failed_credit_card_charges">
   <thead>
     <tr>
       <th>Customer</th>
-      <th>Paid</th>
       <th>Amount</th>
-      <th>Currency</th>
-      <th>Refunded</th>
-      <th colspan="3"></th>
+      <th>Failed At</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @credit_card_charges.each do |credit_card_charge| %>
-      <tr>
-        <td><%= credit_card_charge.customer %></td>
-        <td><%= credit_card_charge.paid %></td>
-        <td><%= credit_card_charge.amount %></td>
-        <td><%= credit_card_charge.currency %></td>
-        <td><%= credit_card_charge.refunded %></td>
-        <td><%= link_to 'Show', credit_card_charge %></td>
-        <td><%= link_to 'Edit', edit_credit_card_charge_path(credit_card_charge) %></td>
-        <td><%= link_to 'Destroy', credit_card_charge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render partial: 'credit_card_charge', collection: @failed %>
   </tbody>
 </table>
 
-<br>
+<h1>Disputed Charges</h1>
 
-<%= link_to 'New Credit card charge', new_credit_card_charge_path %>
+<table class="disputed_credit_card_charges">
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Amount</th>
+      <th>Failed At</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render partial: 'credit_card_charge', collection: @disputed %>
+  </tbody>
+</table>
+
+<h1>Successful Charges</h1>
+
+<table class="paid_credit_card_charges">
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Amount</th>
+      <th>Failed At</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render partial: 'credit_card_charge', collection: @paid %>
+  </tbody>
+</table>

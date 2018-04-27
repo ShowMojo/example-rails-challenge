@@ -1,0 +1,139 @@
+credit_card_charge_1:
+  customer: customer_1
+  amount: 100
+  currency: usd
+  paid: true
+  refunded: false
+
+credit_card_charge_2:
+  customer: customer_1
+  amount: 100
+  currency: usd
+  paid: true
+  refunded: false
+
+credit_card_charge_3:
+  customer: customer_1
+  amount: 100
+  currency: usd
+  paid: true
+  refunded: false
+
+credit_card_charge_4:
+  customer: customer_1
+  amount: 100
+  currency: usd
+  paid: true
+  refunded: false
+
+credit_card_charge_5:
+  customer: customer_1
+  amount: 100
+  currency: usd
+  paid: true
+  refunded: false
+
+credit_card_charge_6:
+  customer: customer_2
+  amount: 100
+  currency: usd
+  paid: true
+  refunded: false
+
+credit_card_charge_7:
+  customer: customer_2
+  amount: 100
+  currency: usd
+  paid: true
+  refunded: false
+
+credit_card_charge_8:
+  customer: customer_2
+  amount: 100
+  currency: usd
+  paid: true
+  refunded: false
+
+credit_card_charge_9:
+  customer: customer_3
+  amount: 100
+  currency: usd
+  paid: true
+  refunded: false
+
+credit_card_charge_10:
+  customer: customer_4
+  amount: 100
+  currency: usd
+  paid: true
+  refunded: false
+
+credit_card_charge_11:
+  customer: customer_3
+  amount: 100
+  currency: usd
+  paid: false
+  refunded: false
+
+credit_card_charge_12:
+  customer: customer_3
+  amount: 100
+  currency: usd
+  paid: false
+  refunded: false
+
+credit_card_charge_13:
+  customer: customer_3
+  amount: 100
+  currency: usd
+  paid: false
+  refunded: false
+
+credit_card_charge_14:
+  customer: customer_4
+  amount: 100
+  currency: usd
+  paid: false
+  refunded: false
+
+credit_card_charge_15:
+  customer: customer_4
+  amount: 100
+  currency: usd
+  paid: false
+  refunded: false
+
+credit_card_charge_16:
+  customer: customer_1
+  amount: 100
+  currency: usd
+  paid: true
+  refunded: true
+
+credit_card_charge_17:
+  customer: customer_1
+  amount: 100
+  currency: usd
+  paid: true
+  refunded: true
+
+credit_card_charge_18:
+  customer: customer_1
+  amount: 100
+  currency: usd
+  paid: true
+  refunded: true
+
+credit_card_charge_19:
+  customer: customer_2
+  amount: 100
+  currency: usd
+  paid: true
+  refunded: true
+
+credit_card_charge_20:
+  customer: customer_2
+  amount: 100
+  currency: usd
+  paid: true
+  refunded: true
