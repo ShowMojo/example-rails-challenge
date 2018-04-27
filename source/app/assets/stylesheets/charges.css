@@ -1,0 +1,7 @@
+table.failed-charges tbody td {
+  background-color: #FF0000
+}
+
+table.disputed-charges tbody td {
+  background-color: #FF5400
+}
