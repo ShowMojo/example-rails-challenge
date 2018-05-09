@@ -21,9 +21,9 @@ table td{
   border: 0px solid white;
   padding: 2px 5px;
 }
-.failed tr > td {
+#failed tr > td {
   background: #FF0000;
 }
-.disputed tr > td {
+#disputed tr > td {
   background: #FF5400;
 }

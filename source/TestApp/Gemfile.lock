@@ -49,6 +49,8 @@ GEM
       rack (>= 1.6.0)
       rack-test (>= 0.6.3)
       xpath (~> 3.0)
+    childprocess (0.9.0)
+      ffi (~> 1.0, >= 1.0.11)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -88,6 +90,7 @@ GEM
       mini_portile2 (~> 2.3.0)
     pg (0.21.0)
     public_suffix (3.0.2)
+    puma (3.11.4)
     rack (1.6.10)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -137,6 +140,7 @@ GEM
       rspec-mocks (~> 3.7.0)
       rspec-support (~> 3.7.0)
     rspec-support (3.7.1)
+    rubyzip (1.2.1)
     sass (3.5.6)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -151,6 +155,9 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    selenium-webdriver (3.12.0)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.2)
     spring (2.0.2)
       activesupport (>= 4.2)
     sprockets (3.7.1)
@@ -175,6 +182,10 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    webdrivers (3.3.1)
+      nokogiri (~> 1.6)
+      rubyzip (~> 1.0)
+      selenium-webdriver (~> 3.0)
     xpath (3.0.0)
       nokogiri (~> 1.8)
 
@@ -188,14 +199,17 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   pg (~> 0.18)
+  puma
   rails (~> 4.2)
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  selenium-webdriver
   spring
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+  webdrivers
 
 BUNDLED WITH
    1.16.1
