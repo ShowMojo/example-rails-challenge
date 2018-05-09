@@ -1,4 +1,4 @@
 example_id                                          | status | run_time        |
 --------------------------------------------------- | ------ | --------------- |
-./spec/integration/credit_card_charges_spec.rb[1:1] | passed | 0.59167 seconds |
-./spec/integration/credit_card_charges_spec.rb[1:2] | passed | 6.93 seconds    |
+./spec/integration/credit_card_charges_spec.rb[1:1] | passed | 5.86 seconds    |
+./spec/integration/credit_card_charges_spec.rb[1:2] | passed | 0.73539 seconds |
