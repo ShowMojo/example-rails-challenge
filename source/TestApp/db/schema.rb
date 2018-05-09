@@ -11,9 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20180509142700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "credit_card_charges", force: :cascade do |t|
+    t.datetime "created",                     null: false
+    t.boolean  "paid",        default: false
+    t.integer  "amount",      default: 0
+    t.string   "currency",    default: "usd"
+    t.boolean  "refunded",    default: false
+    t.integer  "customer_id",                 null: false
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
