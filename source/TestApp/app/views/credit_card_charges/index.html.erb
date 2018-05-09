@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Failed Charges</h1>
-<table>
+<table class="failed">
   <thead>
     <tr>
       <th>Customer</th>
       <th>Amount</th>
-      <th>Fail Date</th>
+      <th>Failure Date</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @credit_card_charges.failed.each do |credit_card_charge| %>
-      <tr style="background: #FF0000; border-spacing:0px">
+      <tr>
         <td><%= credit_card_charge.customer.full_name %></td>
         <td><%= credit_card_charge.amount_in_human_readable %></td>
         <td><%= credit_card_charge.created.to_date %></td>
@@ -27,7 +27,7 @@
 <hr/>
 
 <h1>Disputed Charges</h1>
-<table>
+<table class="disputed">
   <thead>
     <tr>
       <th>Customer</th>
@@ -39,7 +39,7 @@
 
   <tbody>
     <% @credit_card_charges.disputed.each do |credit_card_charge| %>
-      <tr style="background: #FF5400">
+      <tr>
         <td><%= credit_card_charge.customer.full_name %></td>
         <td><%= credit_card_charge.amount_in_human_readable %></td>
         <td><%= credit_card_charge.created.to_date %></td>
