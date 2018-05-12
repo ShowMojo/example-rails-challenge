@@ -50,5 +50,12 @@ RSpec.describe Charge, type: :model do
     end
   end
 
+  describe "#created" do
+    it "returns created_at in unix time" do
+      charge.save!
+      expect(charge.created).to eq charge.created_at.to_time.to_i
+    end
+  end
+
 
 end
