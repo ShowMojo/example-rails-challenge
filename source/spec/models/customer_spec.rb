@@ -14,4 +14,10 @@ RSpec.describe Customer, type: :model do
   end
 
   it { expect(customer).to have_many(:charges) }
+
+  describe "name" do
+    it "returns first_name and last_name" do
+      expect(customer.name).to eq customer.first_name + " " + customer.last_name
+    end
+  end
 end
