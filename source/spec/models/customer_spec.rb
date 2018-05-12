@@ -12,4 +12,6 @@ RSpec.describe Customer, type: :model do
     it { expect(customer).to respond_to(:last_name) }
     it { expect(customer).to have_db_column(:last_name) }
   end
+
+  it { expect(customer).to have_many(:charges) }
 end

@@ -23,8 +23,11 @@ RSpec.describe Charge, type: :model do
     it { expect(charge).to have_db_column(:refunded) }
   end
 
-  describe "customer_id" do
+  describe "customer" do
     it { expect(charge).to respond_to(:customer_id) }
     it { expect(charge).to have_db_column(:customer_id) }
+    it { expect(charge).to belong_to(:customer) }
   end
+
+
 end
