@@ -1,0 +1,12 @@
+%div{class: list_class}
+  %h1= header
+  %table
+    %tr
+      %th Customer
+      %th Amount
+      %th Date
+    - charges.each do |charge|
+      %tr.charge
+        %td= charge.customer.name
+        %td= charge.amount
+        %td= charge.updated_at.to_date

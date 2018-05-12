@@ -14,21 +14,21 @@ RSpec.feature "Charges", type: :feature do
   #end
 
   it "shows failed charges" do
-    within('.failed') do
+    within('.charges .failed') do
       expect(page).to have_text("Failed charges")
       expect(all('.charge').count).to eq failed_charges.count
     end
   end
 
   it "shows disputed charges" do
-    within('.disputed') do
+    within('.charges .disputed') do
       expect(page).to have_text("Disputed charges")
       expect(all('.charge').count).to eq disputed_charges.count
     end
   end
 
   it "shows successful charges" do
-    within('.successful') do
+    within('.charges .successful') do
       expect(page).to have_text("Successful charges")
       expect(all('.charge').count).to eq successful_charges.count
     end

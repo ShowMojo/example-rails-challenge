@@ -1,14 +1,8 @@
 .charges
   %h1 Charges list
-  .failed
-    %h1 Failed charges
-    - @failed_charges.each do |charge|
-      = render charge
-  .disputed
-    %h1 Disputed charges
-    - @disputed_charges.each do |charge|
-      = render charge
-  .successful
-    %h1 Successful charges
-    - @successful_charges.each do |charge|
-      = render charge
+
+  = render partial: 'charges/list', locals: { charges: @failed_charges, header: 'Failed charges', list_class: 'failed' }
+
+  = render partial: 'charges/list', locals: { charges: @disputed_charges, header: 'Disputed charges', list_class: 'disputed' }
+
+  = render partial: 'charges/list', locals: { charges: @successful_charges, header: 'Successful charges', list_class: 'successful' }

@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :charge do
     amount 4900
     currency "usd"
-    customer_id 1
+    association :customer
     trait :successful do
       paid true
       refunded false
