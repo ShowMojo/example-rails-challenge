@@ -18,14 +18,11 @@ group :development do
   gem 'byebug'
 end
 
-group :test do
+group :development, :test do
+  gem 'spring'
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl_rails'
   gem 'guard-rspec', require: false
   gem 'shoulda-matchers', '~> 3.1'
-end
-
-group :development, :test do
-  gem 'spring'
 end
 
