@@ -1,0 +1,23 @@
+<h1>
+  <%= t('charges.list_title', type: type.capitalize) %>
+</h1>
+
+<table class="<%= type %>-items">
+  <thead>
+    <tr class="header">
+      <th><%= t('titles.customer') %></th>
+      <th><%= t('titles.amount') %></th>
+      <th><%= t('titles.date') %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% items.each do |item| %>
+      <tr class="item">
+        <td><%= safe_customer_name(item) %></td>
+        <td><%= number_to_currency(item.amount, unit: item.currency.upcase, format: "%n %u") %></td>
+        <td><%= l(item.updated_at) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

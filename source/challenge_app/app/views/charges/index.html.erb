@@ -1,0 +1,5 @@
+<div id="charges-section">
+  <%= render partial: 'list', locals: {items: @failed_charges, type: 'failed'} %>
+  <%= render partial: 'list', locals: {items: @disputed_charges, type: 'disputed'} %>
+  <%= render partial: 'list', locals: {items: @successful_charges, type: 'successful'} %>
+</div>

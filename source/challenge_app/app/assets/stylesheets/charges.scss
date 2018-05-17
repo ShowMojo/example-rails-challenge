@@ -1,0 +1,29 @@
+// Place all the styles related to the Charges controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#charges-section {
+  table {
+    border-collapse: collapse;
+    td, th {
+      padding: 5px 30px;
+    }
+  }
+
+  table, th, td {
+    border: 1px solid black;
+  }
+
+  .failed-items {
+    tr.item {
+      background-color: #FF0000;
+    }
+  }
+
+  .disputed-items {
+    tr.item {
+      background-color: #FF5400;
+    }
+  }
+}
+
