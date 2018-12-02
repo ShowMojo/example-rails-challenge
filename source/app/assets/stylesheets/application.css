@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+
+#failed-charges { background-color: #FF0000; }
+#disputed-charges { background-color: #FF5400; }
