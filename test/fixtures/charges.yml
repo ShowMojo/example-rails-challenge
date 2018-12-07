@@ -1,0 +1,74 @@
+
+## SUCCESSFUL CHARGES
+
+<% 1.upto(5) do |i| %>
+successful_charge_johny_<%= i %>:
+  paid: true
+  amount: <%= i %>000
+  currency: "usd"
+  refunded: false
+  customer: johny
+<% end %>
+
+<% 1.upto(3) do |i| %>
+successful_charge_raj_<%= i %>:
+  paid: true
+  amount: <%= i %>000
+  currency: "usd"
+  refunded: false
+  customer: raj
+<% end %>
+
+successful_charge_andrew:
+  paid: true
+  amount: 1000
+  currency: "usd"
+  refunded: false
+  customer: andrew
+
+successful_charge_mike:
+  paid: true
+  amount: 1000
+  currency: "usd"
+  refunded: false
+  customer: mike
+
+## FAILED CHARGES
+
+<% 1.upto(3) do |i| %>
+failed_charge_andrew:
+  paid: false
+  amount: <%= i %>000
+  currency: "usd"
+  refunded: false
+  customer: andrew
+<% end %>
+
+<% 1.upto(2) do |i| %>
+failed_charge_mike:
+  paid: false
+  amount: <%= i %>000
+  currency: "usd"
+  refunded: false
+  customer : mike
+<% end %>
+
+### DISPUTED
+
+<% 1.upto(3) do |i| %>
+failed_charge_johny:
+  paid: true
+  amount: <%= i %>000
+  currency: "usd"
+  refunded: true
+  customer: johny
+<% end %>
+
+<% 1.upto(2) do |i| %>
+failed_charge_raj:
+  paid: true
+  amount: <%= i %>000
+  currency: "usd"
+  refunded: true
+  customer : raj
+<% end %>
