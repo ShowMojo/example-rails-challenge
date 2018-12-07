@@ -36,7 +36,7 @@ successful_charge_mike:
 ## FAILED CHARGES
 
 <% 1.upto(3) do |i| %>
-failed_charge_andrew:
+failed_charge_andrew_<%= i %>:
   paid: false
   amount: <%= i %>000
   currency: "usd"
@@ -45,7 +45,7 @@ failed_charge_andrew:
 <% end %>
 
 <% 1.upto(2) do |i| %>
-failed_charge_mike:
+failed_charge_mike_<%= i %>:
   paid: false
   amount: <%= i %>000
   currency: "usd"
@@ -56,7 +56,7 @@ failed_charge_mike:
 ### DISPUTED
 
 <% 1.upto(3) do |i| %>
-failed_charge_johny:
+failed_charge_johny_<%= i %>:
   paid: true
   amount: <%= i %>000
   currency: "usd"
@@ -65,7 +65,7 @@ failed_charge_johny:
 <% end %>
 
 <% 1.upto(2) do |i| %>
-failed_charge_raj:
+failed_charge_raj_<%= i %>:
   paid: true
   amount: <%= i %>000
   currency: "usd"
