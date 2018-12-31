@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<%= render partial: "charges",
+    object: @failed,
+    locals: { title: "Failed Charges", status: "failed"} %>
+
+<%= render partial: "charges",
+    object: @disputed,
+    locals: { title: "Disputed Charges", status: "disputed"} %>
+
+<%= render partial: "charges",
+    object: @successful,
+    locals: { title: "Successful Charges", status: "successful"} %>
