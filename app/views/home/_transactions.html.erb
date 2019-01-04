@@ -1,0 +1,24 @@
+<table class="table <%= status %>" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Customer Name</th>
+      <th>Amount</th>
+      <th>Paid</th>
+      <th>Currency</th>
+      <th>Refunded</th>
+      <th>Charged At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% transactions.each do |transaction| %>
+      <tr>
+        <td><a href="#"><%= transaction.customer_name %></a></td>
+        <td><%= transaction.amount %></td>
+        <td><%= transaction.paid %></td>
+        <td><%= transaction.currency.upcase %></td>
+        <td><%= transaction.refunded %></td>
+        <td><%= timeago_tag transaction.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
