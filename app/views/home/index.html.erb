@@ -1,0 +1,26 @@
+<section id="tabs" class="project-tab">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <nav>
+          <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active successful" id="nav-success-tab" data-toggle="tab" href="#nav-success" role="tab" aria-controls="nav-success" aria-selected="true">Successful Charges</a>
+            <a class="nav-item nav-link disputed" id="nav-disputed-tab" data-toggle="tab" href="#nav-disputed" role="tab" aria-controls="nav-disputed" aria-selected="false">Disputed Charges</a>
+            <a class="nav-item nav-link failed" id="nav-failed-tab" data-toggle="tab" href="#nav-failed" role="tab" aria-controls="nav-failed" aria-selected="false">Failed Charges</a>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-success" role="tabpanel" aria-labelledby="nav-success-tab">
+            <%= render 'transactions', transactions: @successful, status: 'successful' %>
+          </div>
+          <div class="tab-pane fade" id="nav-disputed" role="tabpanel" aria-labelledby="nav-disputed-tab">
+            <%= render 'transactions', transactions: @disputed, status: 'disputed' %>
+          </div>
+          <div class="tab-pane fade" id="nav-failed" role="tabpanel" aria-labelledby="nav-failed-tab">
+            <%= render 'transactions', transactions: @failed, status: 'failed' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
