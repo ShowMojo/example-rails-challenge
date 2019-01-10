@@ -8,7 +8,9 @@
     </tr>
   </thead>
 
-  <%= render @page.failed_charges %>
+  <tbody>
+    <%= render @page.failed_charges %>
+  </tbody>
 </table>
 
 <h1>Disputed Charges</h1>
@@ -21,7 +23,9 @@
     </tr>
   </thead>
 
-  <%= render @page.disputed_charges %>
+  <tbody>
+    <%= render @page.disputed_charges %>
+  </tbody>
 </table>
 
 
@@ -35,5 +39,7 @@
     </tr>
   </thead>
 
-  <%= render @page.successful_charges %>
+  <tbody>
+    <%= render @page.successful_charges %>
+  </tbody>
 </table>
