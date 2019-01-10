@@ -11,7 +11,10 @@ customers = customers_attrs.map { |attrs| Customer.find_or_create_by!(attrs) }
 
 puts '*** Seeding charges ***'
 def assign_random_charges(customer, count, status)
-  attrs = Array.new(count) { { amount: rand(100..10_000), status: status } }
+  attrs = Array.new(count) do
+    { amount: rand(100..10_000), status: status, "#{status}_at" => Time.current }
+  end
+
   customer.charges.create!(attrs)
 end
 assign_random_charges(customers[0], 5, :successful)

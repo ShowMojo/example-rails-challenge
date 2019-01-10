@@ -1,5 +1,5 @@
 <tr class="row">
   <td><%= successful.customer.first_name %></td>
   <td><%= number_to_currency(successful.amount) %></td>
-  <td><%= l successful.created_at, format: :short %></td>
+  <td><%= l successful.successful_at, format: :short, default: '' %></td>
 </tr>

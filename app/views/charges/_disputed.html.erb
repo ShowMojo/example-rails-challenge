@@ -1,5 +1,5 @@
 <tr class="row">
   <td><%= disputed.customer.first_name %></td>
   <td><%= number_to_currency(disputed.amount) %></td>
-  <td></td>
+  <td><%= l disputed.disputed_at, format: :short, default: '' %></td>
 </tr>

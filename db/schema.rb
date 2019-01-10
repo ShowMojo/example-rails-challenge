@@ -11,15 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190110112859) do
+ActiveRecord::Schema.define(version: 20190110131838) do
 
   create_table "charges", force: :cascade do |t|
-    t.integer  "amount",                      null: false
-    t.string   "currency",    default: "USD"
+    t.integer  "amount",                        null: false
+    t.string   "currency",      default: "USD"
     t.integer  "customer_id"
-    t.integer  "status",      default: 0
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.integer  "status",        default: 0
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.datetime "failed_at"
+    t.datetime "successful_at"
+    t.datetime "disputed_at"
   end
 
   add_index "charges", ["customer_id"], name: "index_charges_on_customer_id"
