@@ -8,4 +8,8 @@ class Charge < ActiveRecord::Base
   enum status: STATUS
 
   belongs_to :customer
+
+  def to_partial_path
+    status.to_s
+  end
 end
