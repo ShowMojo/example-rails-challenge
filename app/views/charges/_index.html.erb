@@ -1,25 +1,27 @@
-<div class='<%= class_type %>'>
-  <h1><%= charges_type %></h1>
+<% if charges.any? %>
+  <div class='<%= class_name %>'>
+    <h1><%= charges_type %></h1>
 
-  <table>
-    <thead>
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Amount</th>
-      <th>Date</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    <% charges.each do |charge| %>
+    <table>
+      <thead>
       <tr>
-        <td><%= charge.customer.first_name %></td>
-        <td><%= charge.customer.last_name %></td>
-        <td><%= number_to_currency(charge.number_to_usd) %></td>
-        <td><%= charge.created %></td>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Amount</th>
+        <th>Date</th>
       </tr>
-    <% end %>
-    </tbody>
-  </table>
-</div>
+      </thead>
+
+      <tbody>
+      <% charges.each do |charge| %>
+        <tr>
+          <td><%= charge.customer.first_name %></td>
+          <td><%= charge.customer.last_name %></td>
+          <td><%= number_to_currency(charge.amount_to_dolar) %></td>
+          <td><%= charge.created %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
