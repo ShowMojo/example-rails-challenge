@@ -4,7 +4,9 @@ class ChargesController < ApplicationController
   # GET /charges
   # GET /charges.json
   def index
-    @charges = Charge.all
+    @charges_failed = Charge.failed
+    @charges_disputed = Charge.disputed
+    @charges_successful = Charge.successful
   end
 
   # GET /charges/1

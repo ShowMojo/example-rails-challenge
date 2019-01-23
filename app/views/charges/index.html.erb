@@ -1,25 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Charges</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @charges.each do |charge| %>
-      <tr>
-        <td><%= link_to 'Show', charge %></td>
-        <td><%= link_to 'Edit', edit_charge_path(charge) %></td>
-        <td><%= link_to 'Destroy', charge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Charge', new_charge_path %>
+<%= render partial: 'index', locals: {charges: @charges_failed, charges_type: 'Failed Charges', class_type: 'failed'} %>
+<%= render partial: 'index', locals: {charges: @charges_disputed, charges_type: 'Disputed Charges', class_type: 'disputed'} %>
+<%= render partial: 'index', locals: {charges: @charges_successful, charges_type: 'Successful Charges', class_type: 'successful'} %>
