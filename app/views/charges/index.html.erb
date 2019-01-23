@@ -1,3 +1,6 @@
-<%= render partial: 'index', locals: {charges: @charges_failed, charges_type: 'Failed Charges', class_type: 'failed'} %>
-<%= render partial: 'index', locals: {charges: @charges_disputed, charges_type: 'Disputed Charges', class_type: 'disputed'} %>
-<%= render partial: 'index', locals: {charges: @charges_successful, charges_type: 'Successful Charges', class_type: 'successful'} %>
+<%= render partial: 'index',
+           locals: {charges: @charges_failed, charges_type: 'Failed Charges', class_name: 'failed'} %>
+<%= render partial: 'index',
+           locals: {charges: @charges_disputed, charges_type: 'Disputed Charges', class_name: 'disputed'} %>
+<%= render partial: 'index',
+           locals: {charges: @charges_successful, charges_type: 'Successful Charges', class_name: 'successful'} %>
