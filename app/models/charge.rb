@@ -9,7 +9,7 @@ class Charge < ApplicationRecord
     created_at
   end
 
-  def number_to_usd
+  def amount_to_dolar
     amount / 100.0
   end
 end
