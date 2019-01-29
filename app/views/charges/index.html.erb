@@ -1,0 +1,9 @@
+<div class="charges-container">
+
+  <div id="failed_charges"><%= render 'charges_table', charges: @failed_charges, title: 'Failed Charges' %></div>
+
+  <div id="disputed_charges"><%= render 'charges_table', charges: @disputed_charges, title: 'Disputed Charges' %></div>
+
+  <div id="successful_charges"><%= render 'charges_table', charges: @successful_charges, title: 'Successful Charges' %></div>
+
+</div>
