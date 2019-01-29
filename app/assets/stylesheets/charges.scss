@@ -1,0 +1,36 @@
+// Place all the styles related to the Charges controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.charges-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10%;
+
+    &>div {
+        margin-right: 24px;
+    }
+
+    table {
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 24px;
+
+        td,
+        th {
+            padding: 10px;
+        }
+    }
+}
+
+#failed_charges td {
+    background: #FF0000;
+}
+
+#disputed_charges td {
+    background: #FF5400;
+}
+
+#successful_charges td {
+    background: #00ff54;
+}
