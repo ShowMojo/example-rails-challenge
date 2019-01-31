@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe ChargesController, type: :controller do
+  include Capybara::DSL
+
   render_views
 
   describe "GET #index" do
@@ -14,6 +16,13 @@ RSpec.describe ChargesController, type: :controller do
       expect(response.body).to include('<h1>Failed Charges</h1>')
       expect(response.body).to include('<h1>Disputed Charges</h1>')
       expect(response.body).to include('<h1>Successful Charges</h1>')
+    end
+
+    it "has right number of list items", :aggregate_failures do
+      visit '/charges/'
+      expect(page).to have_selector('tr.successful', count: 10)
+      expect(page).to have_selector('tr.failed', count: 5)
+      expect(page).to have_selector('tr.disputed', count: 5)
     end
   end
 
