@@ -1,12 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-
 puts "*** Seeding Customers ***"
 customer1 = Customer.create!(first_name: 'Johny', last_name: 'Flow')
 customer2 = Customer.create!(first_name: 'Ra', last_name: 'Jamnis')
@@ -29,10 +20,10 @@ def create_charge(status, customer, count)
 end
 
 # Succeffull charges
-create_charge(:successfull, customer1, 5)
-create_charge(:successfull, customer2, 3)
-create_charge(:successfull, customer3, 1)
-create_charge(:successfull, customer4, 1)
+create_charge(:successful, customer1, 5)
+create_charge(:successful, customer2, 3)
+create_charge(:successful, customer3, 1)
+create_charge(:successful, customer4, 1)
 
 # Failed charges
 create_charge(:failed, customer3, 3)
