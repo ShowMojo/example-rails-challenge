@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190206171738) do
+ActiveRecord::Schema.define(version: 20190206172116) do
 
   create_table "charges", force: :cascade do |t|
     t.boolean  "paid",                  default: false
@@ -26,5 +26,12 @@ ActiveRecord::Schema.define(version: 20190206171738) do
   add_index "charges", ["customer_id"], name: "index_charges_on_customer_id"
   add_index "charges", ["paid"], name: "index_charges_on_paid"
   add_index "charges", ["refunded"], name: "index_charges_on_refunded"
+
+  create_table "customers", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
