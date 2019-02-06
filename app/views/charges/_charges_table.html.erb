@@ -1,0 +1,21 @@
+<h1><%= header %></h1>
+
+<table>
+  <tr>
+    <th>Customer Name</th>
+    <th>Charge Amount</th>
+    <th>Charge Date</th>
+  <tr>
+  <% charges.each do |charge| %>
+    <tr class="<%= css_class %>">
+      <td><%= charge.customer.full_name %></td>
+      <td>
+        <%= number_to_currency(charge.amount, 
+                                unit: "USD",
+                                delimiter: " ", 
+                                format: "%n %u") %>
+      </td>
+      <td><%= l charge.created_at, format: :long %></td>
+    </tr>
+  <% end %>
+</table>

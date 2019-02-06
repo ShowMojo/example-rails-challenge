@@ -1,0 +1,3 @@
+<%= render 'charges_table', header: 'Failed Charges', charges: @charges.failed, css_class: 'failed' %>
+<%= render 'charges_table', header: 'Disputed Charges', charges: @charges.disputed, css_class: 'disputed' %>
+<%= render 'charges_table', header: 'Successful Charges', charges: @charges.successful, css_class: 'successful' %>
