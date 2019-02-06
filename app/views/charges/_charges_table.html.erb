@@ -15,7 +15,7 @@
                                 delimiter: " ", 
                                 format: "%n %u") %>
       </td>
-      <td><%= charge.created_at.to_formatted_s(:long) %></td>
+      <td><%= l charge.created_at, format: :long %></td>
     </tr>
   <% end %>
 </table>

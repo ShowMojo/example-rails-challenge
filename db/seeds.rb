@@ -1,3 +1,7 @@
+puts "*** Cleaning Up DB ***"
+Customer.destroy_all
+Charge.destroy_all
+
 puts "*** Seeding Customers ***"
 customer1 = Customer.create!(first_name: 'Johny', last_name: 'Flow')
 customer2 = Customer.create!(first_name: 'Ra', last_name: 'Jamnis')

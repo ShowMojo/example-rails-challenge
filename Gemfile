@@ -17,6 +17,7 @@ group :development, :test do
 
   # Upwork challenge related gems
   gem 'rspec-rails'
+  gem 'capybara'
 end
 
 group :development do
