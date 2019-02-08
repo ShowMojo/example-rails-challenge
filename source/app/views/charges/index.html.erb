@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Failed Charges</h1>
+
+<ul id="failed_charges">
+  <% @failed_charges.each do |charge| %>
+    <li><%= Time.at(charge.created) %></li>
+    <li><%= charge.amount %> <%= charge.currency %></li>
+    <li><%= charge.customer.full_name %></li>
+    <hr />
+  <% end %>
+</ul>
+
+
+<h1>Disputed Charges</h1>
+
+<ul id="disputed_charges">
+  <% @disputed_charges.each do |charge| %>
+    <li><%= Time.at(charge.created) %></li>
+    <li><%= charge.amount %> <%= charge.currency %></li>
+    <li><%= charge.customer.full_name %></li>
+    <hr />
+  <% end %>
+</ul>
+
+<h1>Successfull Charges</h1>
+
+<ul id="successfull_charges">
+  <% @successfull_charges.each do |charge| %>
+    <li><%= Time.at(charge.created) %></li>
+    <li><%= charge.amount %> <%= charge.currency %></li>
+    <li><%= charge.customer.full_name %></li>
+    <hr />
+  <% end %>
+</ul>
