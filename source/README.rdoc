@@ -1,0 +1,9 @@
+== README
+
+This is the solution for the coding challenge.
+
+I made the following assumptions:
+
+* A successful charge is on that is marked as paid.
+
+* A failed charge is one where the value of paid is false.
