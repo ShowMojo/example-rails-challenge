@@ -11,3 +11,16 @@ customer2 = FactoryBot.create(:customer, first_name: 'Raj', last_name: 'Jamnis')
 customer3 = FactoryBot.create(:customer, first_name: 'Andrew', last_name: 'Chung')
 customer4 = FactoryBot.create(:customer, first_name: 'Mike', last_name: 'Smith')
 
+# Successful credit_card_charges
+5.times { FactoryBot.create(:successful, customer: customer1) }
+3.times { FactoryBot.create(:successful, customer: customer2) }
+FactoryBot.create(:successful, customer: customer3)
+FactoryBot.create(:successful, customer: customer4)
+
+# failed credit_card_charges
+3.times { FactoryBot.create(:failed, customer: customer3)}
+2.times { FactoryBot.create(:failed, customer: customer4)}
+
+# disputed credit_card_charges
+3.times { FactoryBot.create(:disputed, customer: customer1)}
+2.times { FactoryBot.create(:disputed, customer: customer2)}
