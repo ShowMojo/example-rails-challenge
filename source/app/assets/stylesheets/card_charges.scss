@@ -1,0 +1,17 @@
+// Place all the styles related to the CardCharges controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+table.charges {
+
+  width: 50vw;
+
+  &.failed tbody tr {
+    background-color: #FF0000;
+  }
+
+  &.disputed tbody tr {
+    background-color: #FF5400;
+  }
+
+}
