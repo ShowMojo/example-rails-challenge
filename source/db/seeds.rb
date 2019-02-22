@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+customer1 = FactoryBot.create(:customer, first_name: 'Johny', last_name: 'Flow')
+customer2 = FactoryBot.create(:customer, first_name: 'Raj', last_name: 'Jamnis')
+customer3 = FactoryBot.create(:customer, first_name: 'Andrew', last_name: 'Chung')
+customer4 = FactoryBot.create(:customer, first_name: 'Mike', last_name: 'Smith')
+
