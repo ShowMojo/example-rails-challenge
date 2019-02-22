@@ -1,0 +1,5 @@
+<div class="container">
+  <%= render 'list', source: @failed_charges, kind: 'failed'%>
+  <%= render 'list', source: @disputed_charges, kind: 'disputed'%>
+  <%= render 'list', source: @successful_charges, kind: 'successful'%>
+</div>
