@@ -1,3 +1,4 @@
+<% failed = @payments.failed %>
 <table class="charges failed">
     <thead>
         <tr>
@@ -5,12 +6,12 @@
         </tr>
         <tr>
             <th>Customer Name</th>
-            <th>Charge Amount (<%= @failed.first.currency.upcase %>)</th>
+            <th>Charge Amount (<%= failed.first.currency.upcase %>)</th>
             <th>Date</th>
         </tr>
     </thead>
     <tbody>
-        <% @failed.each do |payment| %>
+        <% failed.each do |payment| %>
         <tr>
             <td><%= payment.customer.name %></td>
             <td><%= payment.amount.to_f / 100 %></td>
@@ -20,6 +21,7 @@
     </tbody>
 </table>
 
+<% disputed = @payments.disputed %>
 <table class="charges disputed">
     <thead>
         <tr>
@@ -27,12 +29,12 @@
         </tr>
         <tr>
             <th>Customer Name</th>
-            <th>Charge Amount (<%= @disputed.first.currency.upcase %>)</th>
+            <th>Charge Amount (<%= disputed.first.currency.upcase %>)</th>
             <th>Date</th>
         </tr>
     </thead>
     <tbody>
-        <% @disputed.each do |payment| %>
+        <% disputed.each do |payment| %>
         <tr>
             <td><%= payment.customer.name %></td>
             <td><%= payment.amount.to_f / 100 %></td>
@@ -42,6 +44,7 @@
     </tbody>
 </table>
 
+<% successful = @payments.successful %>
 <table class="charges successful">
     <thead>
         <tr>
@@ -49,12 +52,12 @@
         </tr>
         <tr>
             <th>Customer Name</th>
-            <th>Charge Amount (<%= @successful.first.currency.upcase %>)</th>
+            <th>Charge Amount (<%= successful.first.currency.upcase %>)</th>
             <th>Date</th>
         </tr>
     </thead>
     <tbody>
-        <% @successful.each do |payment| %>
+        <% successful.each do |payment| %>
         <tr>
             <td><%= payment.customer.name %></td>
             <td><%= payment.amount.to_f / 100 %></td>
