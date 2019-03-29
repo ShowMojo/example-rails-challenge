@@ -9,6 +9,9 @@ RSpec.describe "credit_card_charges/index.html.erb", type: :view do
     render
 
     expect(rendered).to have_selector('table.charges', :count => 3)
+    expect(rendered).to match(/<h1>Successful Payments<\/h1>/)
+    expect(rendered).to match(/<h1>Disputed Payments<\/h1>/)
+    expect(rendered).to match(/<h1>Failed Payments<\/h1>/)
   end
 
   it "Contains 10 successful charges" do
