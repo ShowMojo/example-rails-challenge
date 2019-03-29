@@ -31,10 +31,10 @@ end
 ##
 
 cust = Customer.find(1)
-10.times do |i|
-  cust = Customer.find(2) if i == 5
-  cust = Customer.find(3) if i == 8
-  cust = Customer.find(4) if i == 9
+(1..10).each do |i|
+  cust = Customer.find(2) if i == 6
+  cust = Customer.find(3) if i == 9
+  cust = Customer.find(4) if i == 10
 
   CreditCardCharge.create(paid: true, amount: rand(50000), customer: cust)
 end
@@ -45,8 +45,8 @@ end
 ##
 
 cust = Customer.find(3)
-5.times do |i|
-  cust = Customer.find(4) if i == 3
+(1..5).each do |i|
+  cust = Customer.find(4) if i == 4
 
   CreditCardCharge.create(paid: false, amount: rand(50000), customer: cust)
 end
@@ -56,8 +56,8 @@ end
 ##Disputed transactions
 ##
 cust = Customer.find(1)
-5.times do |i|
-  cust = Customer.find(2) if i == 3
+(1..5).each do |i|
+  cust = Customer.find(2) if i == 4
 
   CreditCardCharge.create(paid: true, amount: rand(50000), refunded: true, customer: cust)
 end
