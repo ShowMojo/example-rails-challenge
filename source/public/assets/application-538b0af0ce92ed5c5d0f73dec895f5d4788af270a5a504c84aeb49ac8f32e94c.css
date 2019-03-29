@@ -1,3 +1,17 @@
+/* line 5, /home/jguthrie100/software_dev/upwork/example-rails-challenge/source/app/assets/stylesheets/credit_card_charges.scss */
+table .failed {
+  background-color: #f00;
+}
+
+/* line 9, /home/jguthrie100/software_dev/upwork/example-rails-challenge/source/app/assets/stylesheets/credit_card_charges.scss */
+table .disputed {
+  background-color: #ff5400;
+}
+
+/* line 13, /home/jguthrie100/software_dev/upwork/example-rails-challenge/source/app/assets/stylesheets/credit_card_charges.scss */
+table .successful {
+  background-color: #0f0;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -10,9 +24,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */
+
 
 body {
     font-family: sans-serif;

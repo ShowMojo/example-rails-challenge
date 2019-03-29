@@ -36,7 +36,7 @@ cust = Customer.find(1)
   cust = Customer.find(3) if i == 8
   cust = Customer.find(4) if i == 9
 
-  CreditCardCharge.create(paid: true, amount: rand(5000000), customer: cust)
+  CreditCardCharge.create(paid: true, amount: rand(50000), customer: cust)
 end
 
 #####
@@ -48,7 +48,7 @@ cust = Customer.find(3)
 5.times do |i|
   cust = Customer.find(4) if i == 3
 
-  CreditCardCharge.create(paid: false, amount: rand(5000000), customer: cust)
+  CreditCardCharge.create(paid: false, amount: rand(50000), customer: cust)
 end
 
 #####
@@ -59,5 +59,5 @@ cust = Customer.find(1)
 5.times do |i|
   cust = Customer.find(2) if i == 3
 
-  CreditCardCharge.create(paid: true, amount: rand(5000000), refunded: true, customer: cust)
+  CreditCardCharge.create(paid: true, amount: rand(50000), refunded: true, customer: cust)
 end
