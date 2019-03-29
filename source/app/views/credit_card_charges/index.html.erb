@@ -6,7 +6,7 @@
         </tr>
         <tr>
             <th>Customer Name</th>
-            <th>Charge Amount (<%= failed.first.currency.upcase %>)</th>
+            <th>Charge Amount (<%= failed.first&.currency&.upcase %>)</th>
             <th>Date</th>
         </tr>
     </thead>
@@ -14,7 +14,7 @@
         <% failed.each do |payment| %>
         <tr>
             <td><%= payment.customer.name %></td>
-            <td><%= payment.amount.to_f / 100 %></td>
+            <td><%= payment.decimal_amount %></td>
             <td><%= payment.date %></td>
         </tr>
         <% end %>
@@ -29,7 +29,7 @@
         </tr>
         <tr>
             <th>Customer Name</th>
-            <th>Charge Amount (<%= disputed.first.currency.upcase %>)</th>
+            <th>Charge Amount (<%= disputed.first&.currency&.upcase %>)</th>
             <th>Date</th>
         </tr>
     </thead>
@@ -37,7 +37,7 @@
         <% disputed.each do |payment| %>
         <tr>
             <td><%= payment.customer.name %></td>
-            <td><%= payment.amount.to_f / 100 %></td>
+            <td><%= payment.decimal_amount %></td>
             <td><%= payment.date %></td>
         </tr>
         <% end %>
@@ -52,7 +52,7 @@
         </tr>
         <tr>
             <th>Customer Name</th>
-            <th>Charge Amount (<%= successful.first.currency.upcase %>)</th>
+            <th>Charge Amount (<%= successful.first&.currency&.upcase %>)</th>
             <th>Date</th>
         </tr>
     </thead>
@@ -60,7 +60,7 @@
         <% successful.each do |payment| %>
         <tr>
             <td><%= payment.customer.name %></td>
-            <td><%= payment.amount.to_f / 100 %></td>
+            <td><%= payment.decimal_amount %></td>
             <td><%= payment.date %></td>
         </tr>
         <% end %>

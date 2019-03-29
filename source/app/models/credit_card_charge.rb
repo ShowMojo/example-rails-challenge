@@ -8,4 +8,8 @@ class CreditCardCharge < ActiveRecord::Base
   def date
     self.created_at.strftime("%F")
   end
+
+  def decimal_amount
+    self.amount.to_f / 100
+  end
 end
