@@ -18,8 +18,7 @@ SEED_CUSTOMERS = [
      last_name: 'Smith'
  },
 ]
-4.times do |i|
-    data = SEED_CUSTOMERS[i]
+SEED_CUSTOMERS.each do |data|
     customer = Customer.create(data)
     p "Generated #{customer.full_name}"
 end
