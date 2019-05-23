@@ -1,0 +1,19 @@
+<h1><%= "#{group.capitalize} Charges" %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Paid</th>
+      <th>Amount</th>
+      <th>Currency</th>
+      <th>Refunded</th>
+      <th>Customer</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Transaction.send(group).includes(:customer).each do |transaction| %>
+      <%= render partial: 'transaction_row', locals: { transaction: transaction } %>
+    <% end %>
+  </tbody>
+</table>

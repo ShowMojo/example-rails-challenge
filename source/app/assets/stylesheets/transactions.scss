@@ -1,0 +1,17 @@
+$failed: #FF0000;
+$disputed: #FF5400;
+$successful: #FFFFFF;
+
+.transaction {
+    &.failed {
+        background-color: $failed;
+    }
+    
+    &.disputed {
+        background-color: $disputed;
+    }
+    
+    &.successful {
+        background-color: $successful;
+    }
+}
