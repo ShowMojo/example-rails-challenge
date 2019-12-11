@@ -84,6 +84,9 @@ GEM
     execjs (2.7.0)
     factory_bot (5.1.1)
       activesupport (>= 4.2.0)
+    factory_bot_rails (5.1.1)
+      factory_bot (~> 5.1.0)
+      railties (>= 4.2.0)
     faker (2.8.1)
       i18n (>= 1.6, < 1.8)
     ffi (1.11.3)
@@ -242,10 +245,11 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.4)
   byebug
-  capybara (>= 2.15)
+  capybara (>= 3.29)
   chromedriver-helper
   coffee-rails (~> 4.2)
   factory_bot (~> 5.1)
+  factory_bot_rails
   faker (~> 2.8)
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3)
