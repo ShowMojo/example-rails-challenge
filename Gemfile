@@ -66,3 +66,9 @@ gem "bootstrap", "~> 4.4"
 gem "jquery-rails", "~> 4.3"
 
 gem "slim-rails", "~> 3.2"
+
+gem "faker", "~> 2.8"
+
+gem "factory_bot", "~> 5.1"
+
+gem "rspec-rails", "~> 3.9"
