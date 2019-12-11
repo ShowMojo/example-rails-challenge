@@ -10,6 +10,6 @@ tr data-id="#{charge.id}"
   td
     = charge.customer.full_name
   td
-    = charge.amount
+    = "$" + number_with_precision(charge.amount, :precision => 2)
   td
     = charge.created
