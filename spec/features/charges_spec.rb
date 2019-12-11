@@ -65,4 +65,14 @@ RSpec.describe "Charges list", type: :feature do
     visit "/"
     expect(page).to have_selector('.items-successful tr', count: 10)
   end
+
+  it "has 5 chages in failed section" do
+    visit "/"
+    expect(page).to have_selector('.items-failed tr', count: 5)
+  end
+
+  it "has some chages in disputed section" do
+    visit "/"
+    expect(page).to have_selector('.items-disputed tr')
+  end
 end
