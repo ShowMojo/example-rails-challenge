@@ -1,0 +1,15 @@
+/ .card.charge style="background-color: #{background} "
+/   .card-header
+/     h3
+/       = charge.customer.first_name + " " + charge.customer.last_name
+/   ul.list-group.list-group-flush
+/     .list-group-item
+/       = charge.created
+
+tr
+  td
+    = charge.customer.full_name
+  td
+    = charge.amount
+  td
+    = charge.created
