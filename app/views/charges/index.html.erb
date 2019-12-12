@@ -1,0 +1,67 @@
+<div class="container">
+    <% if Charge.failed.length > 0 %>
+    <section>
+        <h1>Failed Charges</h1>
+        <table class="table table-bordered failed-charges">
+            <thead>
+                <th>Customer</th>
+                <th>Amount</th>
+                <th>Date</th>
+            </thead>
+            <tbody>
+                <% Charge.failed.each do |charge| %>
+                    <tr>
+                        <td><%= charge.customer.full_name %></td>
+                        <td><%= number_to_currency(charge.amount / 100) %></td>
+                        <td><%= Time.at(charge.created).strftime("%Y-%m-%d") %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </section>
+    <% end %>
+    
+    <% if Charge.disputed.length > 0 %>
+    <section>
+        <h1>Disputed Charges</h1>
+        <table class="table table-bordered disputed-charges">
+            <thead>
+                <th>Customer</th>
+                <th>Amount</th>
+                <th>Date</th>
+            </thead>
+            <tbody>
+                <% Charge.disputed.each do |charge| %>
+                    <tr>
+                        <td><%= charge.customer.full_name %></td>
+                        <td><%= number_to_currency(charge.amount / 100) %></td>
+                        <td><%= Time.at(charge.created).strftime("%Y-%m-%d") %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </section>
+    <% end %>
+
+    <% if Charge.succeed.length > 0 %>
+    <section>
+        <h1>Successful Charges</h1>
+        <table class="table table-bordered succeed-charges">
+            <thead>
+                <th>Customer</th>
+                <th>Amount</th>
+                <th>Date</th>
+            </thead>
+            <tbody>
+                <% Charge.succeed.each do |charge| %>
+                    <tr>
+                        <td><%= charge.customer.full_name %></td>
+                        <td><%= number_to_currency(charge.amount / 100) %></td>
+                        <td><%= Time.at(charge.created).strftime("%Y-%m-%d") %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </section>
+    <% end %>
+</div>
