@@ -1,0 +1,16 @@
+.charges
+  .charges-block.failed
+    - unless @failed.empty?
+      h1 Failed Charges
+      ul
+        = render @failed
+  .charges-block.disputed
+    - unless @disputed.empty?
+      h1 Disputed Charges
+      ul
+        = render @disputed
+  .charges-block.successful
+    - unless @successful.empty?
+      h1 Successful Charges
+      ul
+        = render @successful          
