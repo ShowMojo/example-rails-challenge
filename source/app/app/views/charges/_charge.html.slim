@@ -1,0 +1,9 @@
+li
+  .name
+    = charge.customer.full_name
+  .ammout
+    span.currency
+      = charge.currency
+    = charge.amount
+  .date
+    = Time.at(charge.created).strftime("%Y-%m-%d")
