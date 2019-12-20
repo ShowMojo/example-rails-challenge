@@ -1,0 +1,21 @@
+.charge {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  li {
+    padding: 1rem;
+  }
+}
+
+.failed {
+  background-color: #FF0000;
+  color: #fff;
+}
+
+.disputed {
+  background-color: #FF5400;
+}
+
+.successful {
+  border: .3px solid #404040;
+}

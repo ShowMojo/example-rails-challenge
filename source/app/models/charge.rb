@@ -1,3 +1,15 @@
 class Charge < ActiveRecord::Base
   belongs_to :customer
+
+  scope :failed, -> { where(paid: false) }
+  scope :disputed, -> { where(paid: true, refunded: true) }
+  scope :successful, -> { where(paid: true, refunded: false) }
+
+  def formatted_amount
+    "#{amount / 100} #{currency.upcase}"
+  end
+
+  def date
+    Time.at(created).to_date.to_s
+  end
 end

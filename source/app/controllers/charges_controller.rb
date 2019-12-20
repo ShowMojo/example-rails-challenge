@@ -4,7 +4,11 @@ class ChargesController < ApplicationController
   # GET /charges
   # GET /charges.json
   def index
-    @charges = Charge.all
+    render locals: {
+      failed: Charge.failed,
+      disputed: Charge.disputed,
+      successful: Charge.successful,
+    }
   end
 
   # GET /charges/1
