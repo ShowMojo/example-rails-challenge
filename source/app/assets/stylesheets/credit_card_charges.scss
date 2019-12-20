@@ -1,0 +1,20 @@
+// Place all the styles related to the credit_card_charges controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+table.failed tbody tr {
+    background-color: #f00;
+}
+
+table.disputed tbody tr {
+    background-color: #ff5400;
+}
+
+table.charges {
+    width: 50vw;
+    margin-left: 25vw;
+}
+
+th, td {
+    text-align: center;
+}
