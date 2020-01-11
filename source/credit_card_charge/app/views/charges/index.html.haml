@@ -1,0 +1,23 @@
+.failed-charge
+  %h1 Failed Charges
+  - @failed_transactions.each do |charge|
+    .row
+      %p= "Customer: #{charge.customer.first_name} #{charge.customer.last_name}"
+      %p= "Amount: $#{charge.amount.to_f/100}"
+      %p= "Date: $#{charge.created_at}"
+
+.disputed-charge
+  %h1 Disputed Charges
+  - @disputed_transactions.each do |charge|
+    .row
+      %p= "Customer: #{charge.customer.first_name} #{charge.customer.last_name}"
+      %p= "Amount: $#{charge.amount.to_f/100}"
+      %p= "Date: $#{charge.created_at}"
+
+.successful-charge
+  %h1 Successful Charges
+  - @successful_transactions.each do |charge|
+    .row
+      %p= "Customer: #{charge.customer.first_name} #{charge.customer.last_name}"
+      %p= "Amount: $#{charge.amount.to_f/100}"
+      %p= "Date: $#{charge.created_at}"
