@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <th>Customer name</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% transactions.each do |fail_charge| %>
+    <tr class="<%= type %>">
+      <td><%= fail_charge.customer.full_name %></td>
+      <td><%= fail_charge.amount_in_doller%></td>
+      <td><%= fail_charge.create_date%></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

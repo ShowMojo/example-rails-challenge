@@ -1,0 +1,14 @@
+<div id="failed-charges">
+  <h1>Failed Charges</h1>
+  <%= render partial: 'transactions', locals: { transactions: @failed_charges, type: 'failed_charge'} %>
+</div>
+
+<div id="failed-charges">
+  <h1>Disputed Charges</h1>
+  <%= render partial: 'transactions', locals: { transactions: @disputed_charges, type: 'disputed_charge'} %>
+</div>
+
+<div id="failed-charges">
+  <h1>Successful Charges</h1>
+  <%= render partial: 'transactions', locals: { transactions: @success_charges, type: 'successful_charges'} %>
+</div>
