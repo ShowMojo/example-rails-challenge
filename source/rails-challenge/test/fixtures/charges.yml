@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  created: 2020-02-03 17:38:31
+  paid: false
+  amount: 9.99
+  currency: MyString
+  refunded: false
+  customer_id: 1
+
+two:
+  created: 2020-02-03 17:38:31
+  paid: false
+  amount: 9.99
+  currency: MyString
+  refunded: false
+  customer_id: 1

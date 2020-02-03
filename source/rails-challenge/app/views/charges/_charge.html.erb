@@ -1,0 +1,9 @@
+<tr class="<%= charge.refunded? ? "disputed" : "" %>">
+  <td><%= charge.id %></td>
+  <td><%= charge.customer.name %></td>
+  <td><%= charge.amount %></td>
+  <td><%= prepare_display_date(charge.created)  %></td>
+  <td><%= link_to 'Show', charge %></td>
+  <td><%= link_to 'Edit', edit_charge_path(charge) %></td>
+  <td><%= link_to 'Destroy', charge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
