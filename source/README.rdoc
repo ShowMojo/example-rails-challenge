@@ -1,0 +1,21 @@
+== NOTES
+
+Things that may need improvement:
+
+* separate time formatting into the locales file
+
+* use instance variables for credit_card_charges index view for more complex queries
+
+Assumptions:
+
+* successful transaction is paid:true refunded:true
+
+* failed transaction is paid:false refunded:false
+
+* disputed transaction is paid:true refunded: false
+
+Overkills:
+
+* used FactoryGirl for generating sample data
+
+* used Capybara for easier view spec matchers
