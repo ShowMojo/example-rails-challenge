@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: charges
+#
+#  id          :integer          not null, primary key
+#  paid        :boolean
+#  amount      :integer
+#  currency    :string
+#  refunded    :boolean
+#  customer_id :integer          not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+one:
+  paid: false
+  amount: 1
+  currency: MyString
+  refunded: false
+  customer: one
+
+two:
+  paid: false
+  amount: 1
+  currency: MyString
+  refunded: false
+  customer: two

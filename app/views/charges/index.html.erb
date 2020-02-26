@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+<section>
+  <h1>Failed Charges</h1>
+  <%= render 'table', charges: @charges.failed, klass: 'failed' %>
+  <br>
+</section>
+
+<section>
+  <h1>Disputed Charges</h1>
+  <%= render 'table', charges: @charges.disputed, klass: 'disputed' %>
+  <br>
+</section>
+
+<section>
+  <h1>Successful Charges</h1>
+  <%= render 'table', charges: @charges.successful, klass: 'successful' %>
+  <br>
+</section>
+
+<%= link_to 'New Charge', new_charge_path %>
