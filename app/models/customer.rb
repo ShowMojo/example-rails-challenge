@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: customers
@@ -9,7 +11,7 @@
 #  updated_at :datetime         not null
 #
 class Customer < ApplicationRecord
-    def full_name
-        [first_name, last_name].join(' ')
-    end
+  def full_name
+    [first_name, last_name].join(' ')
+  end
 end
