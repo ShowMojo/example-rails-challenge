@@ -1,0 +1,65 @@
+<h1>Failed Charges</h1>
+
+<table id="failed-charges">
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @failed_charges.each do |charge| %>
+      <tr>
+        <td><%= charge.customer %></td>
+        <td><%= charge.amount_in_cents %></td>
+        <td><%= charge.created_at.to_s(:db) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>Disputed Charges</h1>
+
+<table id="disputed-charges">
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @disputed_charges.each do |charge| %>
+      <tr>
+        <td><%= charge.customer %></td>
+        <td><%= charge.amount_in_cents %></td>
+        <td><%= charge.created_at.to_s(:db) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>Successful Charges</h1>
+
+<table id="successful-charges">
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @successful_charges.each do |charge| %>
+      <tr>
+        <td><%= charge.customer %></td>
+        <td><%= charge.amount_in_cents %></td>
+        <td><%= charge.created_at.to_s(:db) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
