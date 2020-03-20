@@ -1,0 +1,38 @@
+%h1 Failed Charges
+%table.table.table-bordered.failed-charges
+  %thead
+    %th Customer Name
+    %th Amount
+    %th Date
+  %tbody
+    - @charges.failed.each do |charge|
+      %tr.failed-charged-item
+        %td= charge.customer_name
+        %td= charge.display_amount
+        %td= charge.created_at.strftime('%m/%d/%Y')
+
+%h1 Disputed Charges
+%table.table.table-bordered.disputed-charges
+  %thead
+    %th Customer Name
+    %th Amount
+    %th Date
+  %tbody
+    - @charges.disputed.each do |charge|
+      %tr.disputed-charged-item
+        %td= charge.customer_name
+        %td= charge.display_amount
+        %td= charge.created_at.strftime('%m/%d/%Y')
+
+%h1 Successful Charges
+%table.table.table-bordered.successful-charges
+  %thead
+    %th Customer Name
+    %th Amount
+    %th Date
+  %tbody
+    - @charges.successful.each do |charge|
+      %tr.successful-charged-item
+        %td= charge.customer_name
+        %td= charge.display_amount
+        %td= charge.created_at.strftime('%m/%d/%Y')
