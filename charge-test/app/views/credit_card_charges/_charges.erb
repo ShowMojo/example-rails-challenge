@@ -1,0 +1,16 @@
+<table class="data-table <%= "#{status}-charges" %>">
+  <thead>
+    <th><%= t 'credit_card_charge.customer' %></th>
+    <th><%= t 'credit_card_charge.amount' %></th>
+    <th><%= t 'credit_card_charge.date' %></th>
+  </thead>
+  <tbody>
+    <% charges.each do |charge|%>
+      <tr>
+        <td><%= charge.customer.full_name %></td>
+        <td><%= display_amount(charge) %></td>
+        <td><%= l display_time(charge), :format => :sample %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

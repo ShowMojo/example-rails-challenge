@@ -1,0 +1,16 @@
+en:
+  hello: "Hello world"
+  credit_card_charge:
+    customer: Customer
+    amount: amount
+    date: date
+    charge_status:
+      failed: Failed charges
+      disputed: Disputed charges
+      successful: Successful charges
+
+  time:
+    formats:
+      sample: '%d.%m.%Y'
+
+
