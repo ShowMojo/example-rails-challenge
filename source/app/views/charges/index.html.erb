@@ -21,3 +21,26 @@
     <% end %>
   </tbody>
 </table>
+
+
+<h1>Disputed Charges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer name</th>
+      <th>Charge amount</th>
+      <th>Charge dispute date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @disputed_charges.each do |charge| %>
+      <tr class="disputed">
+        <td><%= charge.customer.full_name %></td>
+        <td><%= number_to_currency charge.amount / 100 %></td>
+        <td><%= charge.updated_at.strftime('%F') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

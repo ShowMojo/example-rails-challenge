@@ -7,6 +7,7 @@ class ChargesController < ApplicationController
     @charges = Charge.all
 
     @failed_charges = Charge.where(paid: false)
+    @disputed_charges = Charge.where(refunded: true)
   end
 
   # GET /charges/1
