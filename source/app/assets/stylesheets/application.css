@@ -32,6 +32,20 @@ body {
   border: 5px solid #CCC;
 }
 
+section {
+  margin: 20px;
+}
+
+ul {
+  margin: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #CCC;
+}
+
+ul li {
+  list-style: none;
+}
+
 h2:after {
   content: ':'
 }

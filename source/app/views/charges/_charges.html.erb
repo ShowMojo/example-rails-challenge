@@ -1,11 +1,13 @@
 <% if charges.present? %>
-  <ul class="<%= type %>">
+  <div class="<%= type %>">
     <% charges.each do |charge| %>
-      <li><%= charge.decorate.customer_name %></li>
-      <li><%= charge.decorate.amount %></li>
-      <li><%= charge.decorate.date %></li>
+      <ul>
+        <li><%= charge.decorate.customer_name %></li>
+        <li><%= charge.decorate.amount %></li>
+        <li><%= charge.decorate.date %></li>
+      </ul>
     <% end %>
-  </ul>
+  </div>
 <% else %>
   <p><%= t '.no_records' %></p>
 <% end %>
