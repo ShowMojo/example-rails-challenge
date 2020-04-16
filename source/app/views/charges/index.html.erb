@@ -1,14 +1,14 @@
 <section>
   <h2><%= t '.failed_charges' %></h2>
-  <%= render 'failed_charges' %>
+  <%= render 'charges', charges: @charges.failed, type: 'failed' %>
 </section>
 
 <section>
   <h2><%= t '.disputed_charges' %></h2>
-  <%= render 'disputed_charges' %>
+  <%= render 'charges', charges: @charges.disputed, type: 'disputed' %>
 </section>
 
 <section>
   <h2><%= t '.successful_charges' %></h2>
-  <%= render 'successful_charges' %>
+  <%= render 'charges', charges: @charges.successful, type: 'successful' %>
 </section>

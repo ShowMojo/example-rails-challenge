@@ -1,0 +1,11 @@
+<% if charges.present? %>
+  <ul class="<%= type %>">
+    <% charges.each do |charge| %>
+      <li><%= charge %></li>
+      <li><%= charge %></li>
+      <li><%= charge %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p><%= t '.no_records' %></p>
+<% end %>
