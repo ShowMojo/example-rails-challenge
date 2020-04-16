@@ -1,7 +1,7 @@
 <% if charges.present? %>
-  <div class="<%= type %>">
+  <div class="section-<%= type %>">
     <% charges.each do |charge| %>
-      <ul>
+      <ul class="<%= type %>">
         <li><%= charge.decorate.customer_name %></li>
         <li><%= charge.decorate.amount %></li>
         <li><%= charge.decorate.date %></li>
