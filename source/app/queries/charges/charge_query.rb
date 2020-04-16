@@ -2,7 +2,7 @@ module Charges
   class ChargeQuery
     attr_reader :relation
 
-    def initialize(relation = Charge.all)
+    def initialize(relation = Charge.includes(:customer))
       @relation = relation
     end
 
