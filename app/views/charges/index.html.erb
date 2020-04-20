@@ -1,0 +1,45 @@
+<h1>Failed Charges</h1>
+<table class="table table-failed">
+  <thead>
+    <tr>
+      <th>Customer name</th>
+      <th>Amount</th>
+      <th>Failed at</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @page.failed_charges %>
+  </tbody>
+</table>
+
+<h1>Disputed Charges</h1>
+<table class="table table-disputed">
+  <thead>
+    <tr>
+      <th>Customer name</th>
+      <th>Amount</th>
+      <th>Disputed at</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @page.disputed_charges %>
+  </tbody>
+</table>
+
+
+<h1>Successful Charges</h1>
+<table class="table table-successful">
+  <thead>
+    <tr>
+      <th>Customer name</th>
+      <th>Amount</th>
+      <th>Successful at</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @page.successful_charges %>
+  </tbody>
+</table>

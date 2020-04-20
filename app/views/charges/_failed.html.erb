@@ -1,0 +1,5 @@
+<tr class="row">
+  <td><%= failed.customer.first_name %></td>
+  <td><%= number_to_currency(failed.amount) %></td>
+  <td><%= l failed.failed_at, format: :short, default: '' %></td>
+</tr>
