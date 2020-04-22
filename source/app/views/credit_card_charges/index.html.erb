@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Credit Card Charges</h1>
+
+<%= render partial: "credit_card_charges/list", locals: {list_header: 'Failed Charges', list_css_class: 'failed', list_charges: @cc_failed_charges} %>
+
+<%= render partial: "credit_card_charges/list", locals: {list_header: 'Disputed Charges', list_css_class: 'disputed', list_charges: @cc_disputed_charges} %>
+
+<%= render partial: "credit_card_charges/list", locals: {list_header: 'Successful Charges', list_css_class: 'successful', list_charges: @cc_successful_charges} %>

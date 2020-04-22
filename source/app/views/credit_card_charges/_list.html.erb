@@ -1,0 +1,8 @@
+<h2><%= list_header %></h2>
+
+<ul class="charges">
+  <% list_charges.each do |charge| %>
+    <li class="charge charge-<%= list_css_class.to_s %>"><%= charge.customer.full_name %>
+      – <%= charge.format_amount %> – <%= charge.created_at.strftime("%d-%m-%Y") %></li>
+  <% end %>
+</ul>

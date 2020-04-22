@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200422050401) do
+ActiveRecord::Schema.define(version: 20200422061852) do
+
+  create_table "credit_card_charges", force: :cascade do |t|
+    t.boolean  "paid"
+    t.integer  "amount"
+    t.string   "currency"
+    t.boolean  "refunded"
+    t.integer  "customer_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "credit_card_charges", ["customer_id"], name: "index_credit_card_charges_on_customer_id"
+  add_index "credit_card_charges", ["paid", "refunded"], name: "index_credit_card_charges_on_paid_and_refunded"
+  add_index "credit_card_charges", ["paid"], name: "index_credit_card_charges_on_paid"
+  add_index "credit_card_charges", ["refunded"], name: "index_credit_card_charges_on_refunded"
 
   create_table "customers", force: :cascade do |t|
     t.string   "first_name"

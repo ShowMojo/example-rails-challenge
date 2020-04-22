@@ -1,0 +1,11 @@
+.charge {
+  list-style: none;
+
+  &-failed {
+    background: #FF0000;
+  }
+
+  &-disputed {
+    background: #FF5400;
+  }
+}
