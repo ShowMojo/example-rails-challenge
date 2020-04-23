@@ -13,10 +13,10 @@
 ActiveRecord::Schema.define(version: 2020_04_22_182321) do
 
   create_table "charges", force: :cascade do |t|
-    t.binary "paid"
+    t.boolean "paid"
     t.integer "amount"
     t.string "currency"
-    t.binary "refunded"
+    t.boolean "refunded"
     t.integer "customer_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

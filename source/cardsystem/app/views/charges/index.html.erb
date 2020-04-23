@@ -1,0 +1,26 @@
+<h1>Failed Charges</h1>
+<ul id="failed-charges">
+  <% @charges.select { |c| !c.paid }.each do |charge| %>
+    <li>
+      <%= charge.customer.first_name %> <%= charge.customer.last_name %> - <%= charge.amount %> (<%= charge.updated_at %>)
+    </li>
+  <% end %>
+</ul>
+
+<h1>Disputed Charges</h1>
+<ul id="disputed-charges">
+  <% @charges.select { |c| c.refunded }.each do |charge| %>
+    <li>
+      <%= charge.customer.first_name %> <%= charge.customer.last_name %> - <%= charge.amount %> (<%= charge.updated_at %>)
+    </li>
+  <% end %>
+</ul>
+
+<h1>Successful Charges</h1>
+<ul id="successful-charges">
+  <% @charges.select { |c| c.paid && !c.refunded }.each do |charge| %>
+    <li>
+      <%= charge.customer.first_name %> <%= charge.customer.last_name %> - <%= charge.amount %> (<%= charge.updated_at %>)
+    </li>
+  <% end %>
+</ul>

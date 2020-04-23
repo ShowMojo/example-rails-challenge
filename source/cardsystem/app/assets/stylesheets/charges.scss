@@ -1,0 +1,15 @@
+// Place all the styles related to the Charges controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+#failed-charges > li {
+  background: #ff0000;
+}
+
+#disputed-charges > li {
+  background: #FF5400;
+}
+
+#successful-charges > li {
+
+}
