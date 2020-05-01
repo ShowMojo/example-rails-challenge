@@ -6,9 +6,8 @@ class CreateCharges < ActiveRecord::Migration
       t.integer :amount
       t.string :currency
       t.boolean :refunded
-      t.bigint :created
 
-      t.timestamps null: false
+      t.integer :created_at, null: false
     end
   end
 end

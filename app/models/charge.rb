@@ -6,4 +6,8 @@ class Charge < ActiveRecord::Base
   scope :successful, -> { where(paid: true).where(refunded: false) }
   scope :disputed, -> { where(paid: true).where(refunded: true) }
   scope :failed, -> { where(paid: false) }
+
+  def created
+    Time.at(created_at)
+  end
 end

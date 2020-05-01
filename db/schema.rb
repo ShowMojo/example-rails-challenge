@@ -17,14 +17,12 @@ ActiveRecord::Schema.define(version: 20200501090844) do
   enable_extension "plpgsql"
 
   create_table "charges", force: :cascade do |t|
-    t.integer  "customer_id"
-    t.boolean  "paid"
-    t.integer  "amount"
-    t.string   "currency"
-    t.boolean  "refunded"
-    t.integer  "created",     limit: 8
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.integer "customer_id"
+    t.boolean "paid"
+    t.integer "amount"
+    t.string  "currency"
+    t.boolean "refunded"
+    t.integer "created_at",  null: false
   end
 
   add_index "charges", ["customer_id"], name: "index_charges_on_customer_id", using: :btree
