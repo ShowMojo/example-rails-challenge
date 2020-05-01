@@ -1,0 +1,10 @@
+<div class='container'>
+  <h1>Charges</h1>
+  <% lists = { failed: @failed_charges, disputed: @disputed_charges, successful: @successful_charges } %>
+  <% lists.keys.each do |list| %>
+    <div class='charge-list'>
+      <h2><%= list.capitalize %> Charges</h2>
+      <%= render 'list', charges: lists[list], name: list %>
+    </div>
+  <% end %>
+</div>
