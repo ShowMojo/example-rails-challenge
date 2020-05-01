@@ -1,0 +1,25 @@
+<div id=<%= list_id %> style="background: <%= background%>">
+  <h1><%= list_title %></h1>
+
+  <table border='1' cellspacing='1'>
+    <thead>
+      <tr>
+        <th>Customer Name</th>
+        <th>Amount</th>
+        <th>Amount</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% charges.each do |charge| %>
+        <tr class='data-row'>
+          <td><%= charge.customer.full_name %></td>
+          <td><%= charge.amount %></td>
+          <td><%= charge.currency %></td>
+          <td><%= charge.created_in_date %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
