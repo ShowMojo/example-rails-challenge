@@ -10,17 +10,17 @@ customer_4 = Customer.create(first_name: 'Mike', last_name: 'Smith')
 # Seed charges
 p "Seeding charges"
 # successful
-5.times { FactoryBot.create(:charge, paid: true, refunded: false, customer: customer_1) }
-3.times { FactoryBot.create(:charge, paid: true, refunded: false, customer_id: customer_2) }
-FactoryBot.create(:charge, paid: true, refunded: false, customer_id: customer_3)
-FactoryBot.create(:charge, paid: true, refunded: false, customer_id: customer_4)
+5.times { FactoryBot.create(:charge, :successful, customer: customer_1) }
+3.times { FactoryBot.create(:charge, :successful, customer: customer_2) }
+FactoryBot.create(:charge, :successful, customer: customer_3)
+FactoryBot.create(:charge, :successful, customer: customer_4)
 
 # failed
-3.times { FactoryBot.create(:charge, paid: false, refunded: false, customer_id: customer_3) }
-2.times { FactoryBot.create(:charge, paid: false, refunded: false, customer_id: customer_4) }
+3.times { FactoryBot.create(:charge, :failed, customer: customer_3) }
+2.times { FactoryBot.create(:charge, :failed, customer: customer_4) }
 
-# refunded
-3.times { FactoryBot.create(:charge, paid: true, refunded: true, customer_id: customer_1) }
-2.times { FactoryBot.create(:charge, paid: true, refunded: true, customer_id: customer_2) }
+# disputed
+3.times { FactoryBot.create(:charge, :disputed, customer: customer_1) }
+2.times { FactoryBot.create(:charge, :disputed, customer: customer_2) }
 
 p "Seeding completed"
