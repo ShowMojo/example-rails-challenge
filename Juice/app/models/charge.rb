@@ -3,6 +3,8 @@ class Charge < ApplicationRecord
 
   before_validation :set_created
 
+  validates :created, :amount, :currency, presence: true
+
   scope :successful, -> { where(paid: true, refunded: false) }
   scope :failed, -> { where(paid: false, refunded: false) }
   scope :disputed, -> { where(paid: true, refunded: true) }
