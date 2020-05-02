@@ -1,5 +1,6 @@
 <div class='container'>
   <h1>Charges</h1>
+  <div class='lists'>
   <% lists = { failed: @failed_charges, disputed: @disputed_charges, successful: @successful_charges } %>
   <% lists.keys.each do |list| %>
     <div class='charge-list'>
@@ -7,4 +8,5 @@
       <%= render 'list', charges: lists[list], name: list %>
     </div>
   <% end %>
+  </div>
 </div>

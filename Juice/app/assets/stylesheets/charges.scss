@@ -1,0 +1,17 @@
+.container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.lists {
+  display: flex;
+  justify-content: space-between;
+}
+
+.failed-list {
+  background: #FF0000;
+}
+
+.disputed-list {
+  background: #FF5400;
+}
