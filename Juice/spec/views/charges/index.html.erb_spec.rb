@@ -26,4 +26,14 @@ RSpec.describe "charges/index", type: :view do
     render
     assert_select 'ul.failed-list', count: 1
   end
+
+  it "renders 10 items in successful charges" do
+    render
+    assert_select "ul.successful-list>li", count: 10
+  end
+
+  it "renders 5 items in failed charges" do
+    render
+    assert_select "ul.failed-list>li", count: 5
+  end
 end
