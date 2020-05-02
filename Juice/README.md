@@ -1,24 +1,7 @@
-# README
+# Juice
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## How to
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. `db:create` && `db:migrate` && `db:seed`
+2. `rails s` to start the server
+3. `rake spec` to run specs
