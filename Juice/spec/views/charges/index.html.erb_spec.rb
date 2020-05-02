@@ -36,4 +36,12 @@ RSpec.describe "charges/index", type: :view do
     render
     assert_select "ul.failed-list>li", count: 5
   end
+
+  it "renders disputed charges with failed charges" do
+    render
+    assert_select "ul.disputed-list>li" do |items|
+      disputed_ids = items.map { |i| i["id"].to_i }
+      expect(disputed_ids).to include(*Charge.failed.pluck(:id))
+    end
+  end
 end
