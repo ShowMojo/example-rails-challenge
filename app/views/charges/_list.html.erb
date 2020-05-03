@@ -1,0 +1,15 @@
+<div class="row">&nbsp;</div>
+<div class="list-group-item <%=charge_type%>">
+  <h1><%=charge_type.to_s.titleize %> Charges</h1>
+  <% charges.each do |customer, charges| %>
+    <div class="list-group">
+      <h4><%= customer_name(customer) %></h4>
+        <% charges.each do |charge| %>
+          <div class="list-group-item"><strong>
+            <strong><%= amount(charge) %></strong>
+            at  <%=custom_datetime(charge.created_at)%>
+          </div>
+        <% end -%>
+    </div>
+  <% end -%>
+</div>

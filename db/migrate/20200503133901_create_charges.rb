@@ -3,7 +3,7 @@ class CreateCharges < ActiveRecord::Migration
     create_table :charges do |t|
       t.references :customer, index: true, foreign_key: true
       t.boolean :paid
-      t.decimal :price
+      t.decimal :amount
       t.integer :currency
       t.boolean :refunded
 
