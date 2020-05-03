@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200503133421) do
+ActiveRecord::Schema.define(version: 20200503133901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "charges", force: :cascade do |t|
+    t.integer  "customer_id"
+    t.boolean  "paid"
+    t.decimal  "amount"
+    t.integer  "currency"
+    t.boolean  "refunded"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "charges", ["customer_id"], name: "index_charges_on_customer_id", using: :btree
 
   create_table "customers", force: :cascade do |t|
     t.string   "first_name"
@@ -23,4 +35,5 @@ ActiveRecord::Schema.define(version: 20200503133421) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "charges", "customers"
 end
