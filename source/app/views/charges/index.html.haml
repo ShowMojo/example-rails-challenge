@@ -1,0 +1,5 @@
+%h1 Credit card charges
+.list-group
+  = render 'list', charges: @failed,      charge_type: :failed if @failed.present?
+  = render 'list', charges: @disputed,    charge_type: :disputed if @disputed.present?
+  = render 'list', charges: @successful,  charge_type: :successful if @successful.present?

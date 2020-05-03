@@ -1,0 +1,13 @@
+.row  
+%div{:class => "list-group-item #{charge_type}"}
+  %h1
+    = charge_type.to_s.titleize
+    Charges
+  - charges.each do |customer, charges|
+    .list-group
+      %h4= customer_name(customer)
+      - charges.each do |charge|
+        .list-group-item
+          %strong
+            %strong= amount(charge)
+            at  #{custom_datetime(charge.created_at)}
