@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200503133901) do
+ActiveRecord::Schema.define(version: 20200504102527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "charges", force: :cascade do |t|
-    t.integer  "customer_id"
-    t.boolean  "paid"
-    t.decimal  "amount"
-    t.integer  "currency"
-    t.boolean  "refunded"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "customer_id",                                          null: false
+    t.boolean  "paid",                                 default: false
+    t.decimal  "amount",      precision: 12, scale: 2, default: 0.0,   null: false
+    t.integer  "currency",                                             null: false
+    t.boolean  "refunded",                             default: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
   end
 
   add_index "charges", ["customer_id"], name: "index_charges_on_customer_id", using: :btree
