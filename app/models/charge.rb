@@ -5,4 +5,8 @@ class Charge < ActiveRecord::Base
   validates :created, presence: true
 
   enum status: [:successful, :failed, :disputed]
+
+  def converted_amount
+    self.amount.to_f / 100
+  end
 end

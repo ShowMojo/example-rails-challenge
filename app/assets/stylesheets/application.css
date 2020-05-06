@@ -13,3 +13,46 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  padding: 0 20px 20px 20px;
+  margin: 0;
+}
+
+table {
+  border-collapse: collapse;
+  min-width: 500px;
+}
+
+
+table td, table th {
+  border: none;
+  padding: 8px;
+}
+  
+table tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #545454;
+  color: white;
+}
+
+.table-failed {}
+
+.table-failed td {
+  background: #FF0000;
+  color: white;
+}
+
+.table-disputed td {
+  background: #FF5400;
+}
