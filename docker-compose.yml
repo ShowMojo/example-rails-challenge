@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  web:
+    stdin_open: true
+    tty: true
+    build:
+      context: ./source
+      target: rails_app
+    volumes:
+      - ./source:/home/rails/myapp
+    ports:
+      - "3000:3000"
+

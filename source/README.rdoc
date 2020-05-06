@@ -18,3 +18,5 @@
 ###### Run Test case using
 * `rspec`
 
+##### run app using docker
+* `make up`
