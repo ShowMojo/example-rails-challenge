@@ -2,14 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "charges/edit", type: :view do
   before(:each) do
-    @charge = assign(:charge, Charge.create!(
-      :created => 1,
-      :paid => false,
-      :amount => 1,
-      :refunded => false,
-      :currency => "MyString",
-      :customer => nil
-    ))
+    @charge = assign(:charge, FactoryBot.create(:charge))
   end
 
   it "renders the edit charge form" do

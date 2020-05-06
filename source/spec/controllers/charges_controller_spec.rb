@@ -29,11 +29,14 @@ RSpec.describe ChargesController, type: :controller do
   # Charge. As you add validations to Charge, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+   {
+    created: 1573170720, paid: false, amount: 4309, refunded: false,
+     currency: "usd", customer_id: FactoryBot.create(:customer).id
+    }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {created: 1573170720, paid: false, customer_id: nil }
   }
 
   # This should return the minimal set of values that should be in the session
@@ -97,14 +100,17 @@ RSpec.describe ChargesController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {
+          created: 1373170720, paid: false, amount: 1000, refunded: false,
+          currency: "usd", customer_id: FactoryBot.create(:customer).id
+        }
       }
 
       it "updates the requested charge" do
         charge = Charge.create! valid_attributes
         put :update, {:id => charge.to_param, :charge => new_attributes}, valid_session
         charge.reload
-        skip("Add assertions for updated state")
+        expect(charge.created).to eq(1373170720)
       end
 
       it "redirects to the charge" do
