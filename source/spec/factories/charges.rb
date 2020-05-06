@@ -1,10 +1,10 @@
 FactoryBot.define do
   factory :charge do
-    created { 1 }
+    created { Time.parse(Faker::Time.between(from: 1.years.ago , to: DateTime.now, format: :long)).to_i }
     paid { false }
-    amount { 1 }
+    amount { Faker::Number.between(from: 10, to: 10000) }
     refunded { false }
-    currency { "MyString" }
-    customer { nil }
+    currency { 'usd' }
+    association :customer, factory: :customer, strategy: :build
   end
 end
