@@ -1,0 +1,24 @@
+<h1><%= "#{title} Charges" %></h1>
+<div class="table-responsive">
+  <table class="table <%= title.downcase %>">
+    <thead>
+      <tr>
+        <th>Customer</th>
+        <th>Amount</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% charges.each do |charge| %>
+        <tr class="<%= title.downcase %>">
+          <td><%= charge.customer.name %></td>
+          <td><%= charge.formated_amount %></td>
+          <td><%= charge.formated_date %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>

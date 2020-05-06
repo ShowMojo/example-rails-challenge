@@ -4,7 +4,7 @@ class ChargesController < ApplicationController
   # GET /charges
   # GET /charges.json
   def index
-    @charges = Charge.all
+    @charges = Charge.all.includes(:customer)
   end
 
   # GET /charges/1
