@@ -1,6 +1,7 @@
 require 'factory_bot_rails'
 require 'shoulda-matchers'
 require 'database_cleaner'
+require 'capybara/rspec'
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
@@ -20,5 +21,18 @@ RSpec.configure do |config|
   end
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
+
+  config.before(:suite) do
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.before(:each) do |example|
+    DatabaseCleaner.start
+  end
+
+  config.append_after(:each) do
+    DatabaseCleaner.clean
+  end
+
   config.include FactoryBot::Syntax::Methods
 end
