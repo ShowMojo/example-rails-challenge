@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+# Seed 4 customers
+
+@customer_1 = FactoryBot.create(:customer)
+@customer_2 = FactoryBot.create(:customer)
+@customer_3 = FactoryBot.create(:customer)
+@customer_4 = FactoryBot.create(:customer)
