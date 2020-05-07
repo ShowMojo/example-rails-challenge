@@ -1,14 +1,11 @@
 <%= render(partial: 'charges/list',
            locals: { title: 'Failed Charges',
-                     style: 'background-color: #ff0000; color: #fff',
                      data: @list_failed }) %>
 
 <%= render(partial: 'charges/list',
            locals: { title: 'Disputed Charges',
-                     style: 'background-color: #FF5400; color: #fff',
                      data: @list_disputed }) %>
 
 <%= render(partial: 'charges/list',
            locals: { title: 'Successful Charges',
-                     style: 'background-color: #4caf50; color: #fff',
                      data: @list_success }) %>

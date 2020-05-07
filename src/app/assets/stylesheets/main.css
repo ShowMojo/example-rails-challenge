@@ -1,0 +1,15 @@
+.list .item {
+    color: #fff
+}
+
+.list .state-success {
+    background-color: #4caf50;
+}
+
+.list .state-failed {
+    background-color: #ff0000;
+}
+
+.list .state-disputed {
+    background-color: #FF5400
+}
