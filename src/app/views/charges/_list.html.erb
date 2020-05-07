@@ -1,0 +1,10 @@
+<h1><%= title %></h1>
+<ul>
+  <% data.each do |item| %>
+    <li style="<%= style %>">
+      <%= item.customer.name %>, <%= item.amount / 100.0 %>
+      <%= item.currency %>
+      <%= item.created_at.strftime('%m/%d/%Y at %I:%M%p') %>
+    </li>
+  <% end %>
+</ul>
