@@ -5,6 +5,7 @@ class CreateCharges < ActiveRecord::Migration
       t.integer :amount
       t.string :currency, default: 'USD'
       t.boolean :refunded, default: false
+      t.boolean :paid, default: false
 
       t.integer :state, default: 0
 

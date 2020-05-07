@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20200507120102) do
     t.integer  "amount"
     t.string   "currency",    default: "USD"
     t.boolean  "refunded",    default: false
+    t.boolean  "paid",        default: false
     t.integer  "state",       default: 0
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false

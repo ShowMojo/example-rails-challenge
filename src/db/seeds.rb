@@ -20,9 +20,11 @@ script_map.each do |state, value|
   value.each do |total, customer_n|
     total.times do
       customer_id = customers_ids[customer_n - 1]
-      charge = Charge.find_or_initialize_by(customer_id: customer_id, state: state)
-      charge.amount = [*1000..5000].sample
+      charge          = Charge.find_or_initialize_by(customer_id: customer_id, state: state)
+      charge.amount   = [*1000..5000].sample
       charge.refunded = [true, false].sample
+      charge.paid     = [true, false].sample
+
       charge.save
     end
   end
