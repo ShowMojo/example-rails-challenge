@@ -1,0 +1,9 @@
+<ul class="charges-list failed">
+  <% @failed.each do |charge| %>
+    <li>
+      <%= charge.customer.name %>,
+      <%= charge.amount %>,
+      <%= charge.created_at %>
+    </li>
+  <% end %>
+</ul>
