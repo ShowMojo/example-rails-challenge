@@ -5,6 +5,7 @@ class ChargesController < ApplicationController
   # GET /charges.json
   def index
     @failed_charges = Charge.where(paid: false)
+    @disputed_charges = Charge.where(refunded: false)
   end
 
   # GET /charges/1
