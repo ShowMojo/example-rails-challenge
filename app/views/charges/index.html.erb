@@ -16,7 +16,7 @@
     <% @failed_charges.each do |charge| %>
       <tr class='failed_charges'>
         <td><%= charge.full_name %></td>
-        <td><%= number_to_currency charge.amount %></td>
+        <td><%= number_to_currency charge.amount / 100 %></td>
         <td><%= charge.updated_at.strftime('%F') %></td>
       </tr>
     <% end %>
@@ -41,7 +41,32 @@
     <% @disputed_charges.each do |charge| %>
       <tr class='disputed_charges'>
         <td><%= charge.full_name %></td>
-        <td><%= number_to_currency charge.amount %></td>
+        <td><%= number_to_currency charge.amount / 100 %></td>
+        <td><%= charge.updated_at.strftime('%F') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h1>Successful Charges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer name</th>
+      <th>Charge amount</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @successful_charges.each do |charge| %>
+      <tr>
+        <td><%= charge.full_name %></td>
+        <td><%= number_to_currency charge.amount / 100 %></td>
         <td><%= charge.updated_at.strftime('%F') %></td>
       </tr>
     <% end %>

@@ -6,6 +6,7 @@ class ChargesController < ApplicationController
   def index
     @failed_charges = Charge.where(paid: false)
     @disputed_charges = Charge.where(refunded: false)
+    @successful_charges = Charge.where(paid: true, refunded: false)
   end
 
   # GET /charges/1
