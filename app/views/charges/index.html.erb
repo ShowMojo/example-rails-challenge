@@ -2,7 +2,7 @@
 
 <h1>Failed Charges</h1>
 
-<table>
+<table class='failed_charges_list'>
   <thead>
     <tr>
       <th>Customer name</th>
@@ -16,7 +16,7 @@
     <% @failed_charges.each do |charge| %>
       <tr class='failed_charges'>
         <td><%= charge.full_name %></td>
-        <td><%= number_to_currency charge.amount / 100 %></td>
+        <td><%= number_to_currency charge.amount_in_dollars %></td>
         <td><%= charge.updated_at.strftime('%F') %></td>
       </tr>
     <% end %>
@@ -27,7 +27,7 @@
 
 <h1>Disputed Charges</h1>
 
-<table>
+<table class='disputed_charges_list'>
   <thead>
     <tr>
       <th>Customer name</th>
@@ -40,8 +40,10 @@
   <tbody>
     <% @disputed_charges.each do |charge| %>
       <tr class='disputed_charges'>
-        <td><%= charge.full_name %></td>
-        <td><%= number_to_currency charge.amount / 100 %></td>
+        <td class="<%= 'failed' if charge.failed? %>">
+          <%= charge.full_name %>
+        </td>
+        <td><%= number_to_currency charge.amount_in_dollars %></td>
         <td><%= charge.updated_at.strftime('%F') %></td>
       </tr>
     <% end %>
@@ -52,7 +54,7 @@
 
 <h1>Successful Charges</h1>
 
-<table>
+<table class='successful_charges_list'>
   <thead>
     <tr>
       <th>Customer name</th>
@@ -64,9 +66,9 @@
 
   <tbody>
     <% @successful_charges.each do |charge| %>
-      <tr>
+      <tr class='successful_charges'>
         <td><%= charge.full_name %></td>
-        <td><%= number_to_currency charge.amount / 100 %></td>
+        <td><%= number_to_currency charge.amount_in_dollars %></td>
         <td><%= charge.updated_at.strftime('%F') %></td>
       </tr>
     <% end %>
