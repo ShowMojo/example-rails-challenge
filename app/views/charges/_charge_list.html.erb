@@ -1,0 +1,25 @@
+<table class="table <%= css_classes %>">
+  <thead>
+  <tr class="header">
+    <th>Customer</th>
+    <th>Amount</th>
+    <th>Date</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% charges.each do |charge| %>
+    <tr class="customer">
+      <td><%= charge.customer.full_name %></td>
+      <td><%= number_to_currency(charge.amount) %></td>
+      <td><%= time_ago_in_words(charge.created_at) %></td>
+      <td><%= link_to 'Show', charge, class: 'btn btn-primary' %></td>
+      <td><%= link_to 'Edit', edit_charge_path(charge), class: 'btn btn-warning' %></td>
+      <td><%= link_to 'Destroy', charge, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
