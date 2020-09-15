@@ -42,6 +42,7 @@ group :development, :test do
   gem 'guard-rspec', require: false
   gem 'annotate'
   gem 'pry-rails'
+  gem 'faker'
 end
 
 group :development do
