@@ -11,10 +11,13 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
-factory :charge do
-  customer
-  paid { true }
-  amount { rand(9..99) }
-  currency { 'usd' }
-  refunded { false }
+
+FactoryBot.define do
+  factory :charge do
+    customer
+    paid { true }
+    amount { rand(9..99) }
+    currency { 'usd' }
+    refunded { false }
+  end
 end

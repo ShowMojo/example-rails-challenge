@@ -37,7 +37,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails', '3.9.1'
-  gem 'factory_bot', '5.2.0'
+  gem 'factory_bot_rails'
   gem 'rubocop', '0.91.0'
   gem 'guard-rspec', require: false
   gem 'annotate'

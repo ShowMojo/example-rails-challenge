@@ -1,6 +1,6 @@
 <table class="table <%= css_classes %>">
   <thead>
-  <tr>
+  <tr class="header">
     <th>Customer</th>
     <th>Paid</th>
     <th>Amount</th>
@@ -12,7 +12,7 @@
 
   <tbody>
   <% charges.each do |charge| %>
-    <tr>
+    <tr class="customer">
       <td><%= charge.customer.full_name %></td>
       <td><%= charge.paid %></td>
       <td><%= charge.amount %></td>
