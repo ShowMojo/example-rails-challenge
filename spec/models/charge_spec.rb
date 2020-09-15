@@ -14,5 +14,21 @@
 require 'rails_helper'
 
 RSpec.describe Charge, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'associations' do
+    it { should belong_to(:customer) }
+  end
+
+  describe 'validations' do
+    it { should validate_presence_of(:customer) }
+    it { should validate_presence_of(:amount) }
+  end
+
+  describe 'attributes' do
+
+    let(:charge) { create(:charge, paid: true, refunded: false) }
+
+    it 'has all expected attributes with the right data' do
+      expect(charge).to have_attributes(paid: true, refunded: false, amount: charge.amount)
+    end
+  end
 end
