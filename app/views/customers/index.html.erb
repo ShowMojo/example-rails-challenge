@@ -2,7 +2,7 @@
 
 <h1>Listing Customers</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>First name</th>
@@ -26,4 +26,5 @@
 
 <br>
 
-<%= link_to 'New Customer', new_customer_path %>
+<%= link_to 'New Customer', new_customer_path, class: 'btn btn-primary' %>
+<%= link_to 'Transactions', charges_path, class: 'btn btn-warning' %>

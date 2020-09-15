@@ -62,7 +62,7 @@ end
 
 puts "--------------------- Disputed transactions"
 
-disputed_transaction = {paid: false, currency: 'usd', refunded: true}
+disputed_transaction = {paid: true, currency: 'usd', refunded: true}
 
 3.times do
   customers[0].charges.create(disputed_transaction.merge!(amount: rand(9..99)))

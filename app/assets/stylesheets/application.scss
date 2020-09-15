@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+table.table.failed tr {
+  background-color: #FF0000;
+}
+
+table.table.disputed tr {
+  background-color: #FF5400;
+}
