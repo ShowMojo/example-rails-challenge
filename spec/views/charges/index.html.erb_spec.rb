@@ -17,4 +17,16 @@ RSpec.describe 'charges/index', type: :view do
     assert_select 'tr.customer', count: 10
     assert_select 'tr.header', count: 3
   end
+
+  it 'render a list of five failed transactions' do
+    assert_select '.table.failed tr.customer', count: 5
+  end
+
+  it 'render a list of three successful transactions' do
+    assert_select '.table.successful tr.customer', count: 3
+  end
+
+  it 'render a list of two disputed transactions' do
+    assert_select '.table.disputed tr.customer', count: 2
+  end
 end

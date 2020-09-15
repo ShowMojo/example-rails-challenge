@@ -1,12 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Failed Charges</h1>
+<h1>Transactions Report</h1>
+
+<h1 class="lead">Failed Transactions</h1>
 <%= render 'charge_list', charges: @charges.failed, css_classes: 'failed' %>
 
-<h1>Disputed Charges</h1>
+<h1 class="lead">Disputed Transactions</h1>
 <%= render 'charge_list', charges: @charges.disputed, css_classes: 'disputed' %>
 
-<h1>Successful Charges</h1>
+<h1 class="lead">Successful Transactions</h1>
 <%= render 'charge_list', charges: @charges.successful, css_classes: 'successful' %>
 
 <%= link_to 'Customers', customers_path, class: 'btn btn-warning' %>
