@@ -41,6 +41,7 @@ group :development, :test do
   gem 'rubocop', '0.91.0'
   gem 'guard-rspec', require: false
   gem 'annotate'
+  gem 'pry-rails'
 end
 
 group :development do
