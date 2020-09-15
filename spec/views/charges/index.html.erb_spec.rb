@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "charges/index", type: :view do
+RSpec.describe 'charges/index', type: :view do
   before do
     create_list(:charge, 5, paid: false)
     create_list(:charge, 3, paid: true, refunded: false)
@@ -13,7 +13,7 @@ RSpec.describe "charges/index", type: :view do
     assert_select 'h1', count: 3
   end
 
-  it "renders a list of charges" do
+  it 'renders a list of charges' do
     assert_select 'tr.customer', count: 10
     assert_select 'tr.header', count: 3
   end

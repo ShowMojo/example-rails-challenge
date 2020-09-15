@@ -9,7 +9,6 @@
 #  updated_at :datetime         not null
 #
 class Customer < ActiveRecord::Base
-
   has_many :charges, dependent: :destroy
 
   validates_presence_of :first_name, :last_name
