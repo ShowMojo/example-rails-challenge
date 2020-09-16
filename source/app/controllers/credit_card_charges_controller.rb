@@ -4,7 +4,9 @@ class CreditCardChargesController < ApplicationController
   # GET /credit_card_charges
   # GET /credit_card_charges.json
   def index
-    @credit_card_charges = CreditCardCharge.all
+    @successful_charges = CreditCardCharge.includes(:customer).successful
+    @disputed_charges = CreditCardCharge.includes(:customer).disputed
+    @failed_charges = CreditCardCharge.includes(:customer).failed
   end
 
   # GET /credit_card_charges/1
