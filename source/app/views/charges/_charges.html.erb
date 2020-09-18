@@ -11,7 +11,7 @@
     <% charges.each do |charge| %>
       <tr class='<%= charge.status %>'>
         <td><%= charge.customer_name%></td>
-        <td><%= charge.amount %></td>
+        <td><%= number_to_currency(charge.amount/100, :unit => "USD") %></td>
         <td><%= charge.created_at %></td>
       </tr>
     <% end %>

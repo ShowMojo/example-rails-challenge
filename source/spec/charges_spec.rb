@@ -3,13 +3,13 @@ feature 'Charges' do
   background do
     customer = Customer.create(first_name: 'John', last_name: 'Doe')
     10.times do
-      Charge.create(status: 'success', customer_id: customer.id)
+      Charge.create(status: 'success', customer_id: customer.id, amount: 4900)
     end
     5.times do
-      Charge.create(status: 'failed', customer_id: customer.id)
+      Charge.create(status: 'failed', customer_id: customer.id, amount: 4900)
     end
     5.times do
-      Charge.create(status: 'disputed', customer_id: customer.id)
+      Charge.create(status: 'disputed', customer_id: customer.id, amount: 4900)
     end
   end
 
