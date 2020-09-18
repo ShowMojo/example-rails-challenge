@@ -1,0 +1,19 @@
+<table class="<%= css_class %>">
+  <thead>
+    <tr>
+      <th class="customer">Customer</th>
+      <th class="amount">Amount</th>
+      <th class="created">Created</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% charges.each do |charge| %>
+      <tr>
+        <td class="customer"><%= charge.customer.full_name %></td>
+        <td class="amount"><%= charge.display_amount %></td>
+        <td class="created"><%= charge.display_created %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
