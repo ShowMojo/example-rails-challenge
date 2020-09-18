@@ -1,10 +1,10 @@
 <h1>Failed Charges</h1>
-<%= render partial: 'charges', locals: {charges: @failed_charges} %>
+<%= render partial: 'charges', locals: {charges: @failed_charges, charge_status: 'failed'} %>
 <br>
 
 <h1>Disputed Charges</h1>
-<%= render partial: 'charges', locals: {charges: @disputed_charges} %>
+<%= render partial: 'charges', locals: {charges: @disputed_charges, charge_status: 'disputed'} %>
 <br>
 
 <h1>Successful Charges</h1>
-<%= render partial: 'charges', locals: {charges: @successful_charges} %>
+<%= render partial: 'charges', locals: {charges: @successful_charges, charge_status: 'successful'} %>
