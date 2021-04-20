@@ -11,3 +11,11 @@
  *= require_self
  *= require_tree .
  */
+
+.danger {
+  background-color: #FF0000;
+}
+
+.salmon {
+  background-color: #FF5400;
+}
