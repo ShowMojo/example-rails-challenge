@@ -20,4 +20,8 @@ class Charge < ActiveRecord::Base
   def failed?
     not paid
   end
+
+  def to_s
+    "#{'%.2f' % (amount / 100.0)} #{currency.upcase} --- #{updated_at.strftime("%Y, %B %d")}"
+  end
 end
