@@ -14,3 +14,22 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
+
+# Rails stuff
+/source/.bundle
+/source/vendor/bundle/
+/source/doc
+/source/log/*
+/source/tmp
+
+# various artifacts
+**.war
+/source/public/cache
+/source/public/stylesheets/compiled
+/source/public/uploads
+/source/public/system
+/source/spec/tmp/*
+/source/cache
+
+# Mac finder artifacts
+.DS_Store
