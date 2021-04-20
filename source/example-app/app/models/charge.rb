@@ -3,7 +3,7 @@ class Charge < ActiveRecord::Base
 
   # we can put indexes on columns to make the queries faster
 
-  scope :failed, -> { where("NOT paid") }
-  scope :disputed, -> { where("refunded") }
-  scope :successful, -> { where("paid") }
+  scope :failed, -> { where(paid: false) }
+  scope :disputed, -> { where(paid: true, refunded: true) }
+  scope :successful, -> { where(paid: true, refunded: false) }
 end
