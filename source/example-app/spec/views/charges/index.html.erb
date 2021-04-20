@@ -1,0 +1,18 @@
+
+<%# we can extract the titles from the scope to assign them to the titles in the partial %>
+
+<h1>Failed Charges</h1>
+
+<%= render partial: 'charges', locals: {charges: @charges.failed} %>
+
+<h1>Disputed Charges</h1>
+
+<%= render partial: 'charges', locals: {charges: @charges.disputed} %>
+
+<h1>Successful Charges</h1>
+
+<%= render partial: 'charges', locals: {charges: @charges.successful} %>
+
+<br>
+
+<%= link_to 'New Charge', new_charge_path %>

@@ -1,0 +1,12 @@
+<tr>
+  <td><%= charge.created %></td>
+  <td><%= charge.paid %></td>
+  <td><%= charge.amount %></td>
+  <td><%= charge.currency %></td>
+  <td><%= charge.refunded %></td>
+  <%# full name can go in a helper %>
+  <td><%= charge.customer.first_name %></td>
+  <td><%= link_to 'Show', charge %></td>
+  <td><%= link_to 'Edit', edit_charge_path(charge) %></td>
+  <td><%= link_to 'Destroy', charge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

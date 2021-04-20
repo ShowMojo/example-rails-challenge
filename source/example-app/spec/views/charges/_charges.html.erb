@@ -1,0 +1,18 @@
+<table id=<%=id%>>
+  <thead>
+    <tr>
+      <th>Created</th>
+      <th>Paid</th>
+      <th>Amount</th>
+      <th>Currency</th>
+      <th>Refunded</th>
+      <th>Customer</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+    <tbody>
+    <%= render partial: 'charge', collection: charges %>
+  </tbody>
+</table>
