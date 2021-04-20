@@ -11,9 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20210420033157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "customers", force: true do |t|
+    t.string   "firstName",  limit: 50, null: false
+    t.string   "lastName",   limit: 50, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "transactions", force: true do |t|
+    t.integer  "created",                     null: false
+    t.boolean  "paid",        default: false, null: false
+    t.decimal  "amount"
+    t.string   "currency",                    null: false
+    t.boolean  "refunded",    default: false, null: false
+    t.integer  "customer_id",                 null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "transactions", ["customer_id"], name: "index_transactions_on_customer_id", using: :btree
 
 end
