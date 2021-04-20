@@ -1,7 +1,7 @@
 <tr class="charge-item <%= row_class %>">
-  <td><%= "#{charge.customer.first_name} #{charge.customer.last_name}" %>
+  <td><%= format_full_name(charge.customer) %>
   <td><%= "#{charge.amount} #{charge.currency}" %></td>
-  <td><%= charge.created %></td>
+  <td><%= epoch_to_date(charge.created) %></td>
 
   <td><%= link_to 'Show', charge %></td>
   <td><%= link_to 'Edit', edit_charge_path(charge) %></td>
