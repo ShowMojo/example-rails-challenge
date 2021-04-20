@@ -19,8 +19,8 @@ development:
   encoding: unicode
   database: exampleApp_development
   pool: 5
-  username: exampleApp
-  password:
+  username: postgres
+  password: 123456
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -48,13 +48,13 @@ test:
   encoding: unicode
   database: exampleApp_test
   pool: 5
-  username: exampleApp
-  password:
+  username: postgres
+  password: 123456
 
 production:
   adapter: postgresql
   encoding: unicode
   database: exampleApp_production
   pool: 5
-  username: exampleApp
-  password:
+  username: postgres
+  password: 123456
