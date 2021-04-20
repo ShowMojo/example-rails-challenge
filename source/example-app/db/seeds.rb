@@ -47,5 +47,5 @@ Charge.create(paid: false, amount: 45, currency: 'usd', refunded: true, customer
 #   - 3 should be linked to Customer 1
 #   - 2 should be linked to customer 2
 
-Charge.create(paid: false, amount: 45, currency: 'usd', refunded: true, customer_id: 1)
-Charge.create(paid: false, amount: 45, currency: 'usd', refunded: true, customer_id: 2)
+Charge.create(paid: true, amount: 45, currency: 'usd', refunded: true, customer_id: 1)
+Charge.create(paid: true, amount: 45, currency: 'usd', refunded: true, customer_id: 2)
