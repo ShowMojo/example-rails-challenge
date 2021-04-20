@@ -1,5 +1,8 @@
 class CreateCharges < ActiveRecord::Migration
   def change
+    # some of the default values and constraints might not apply for this case
+    # need more information about them, just guessed
+  
     create_table :charges do |t|
       t.integer :created, null: false
       t.boolean :paid, null: false, default: false

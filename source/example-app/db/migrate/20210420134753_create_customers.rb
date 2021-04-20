@@ -4,6 +4,7 @@ class CreateCustomers < ActiveRecord::Migration
       t.string :first_name, null: false, limit: 50
       t.string :last_name, null: false, limit: 50
 
+      # I didn't see in the specifications these columns, but I'm going to keep them
       t.timestamps
     end
   end
