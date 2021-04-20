@@ -1,3 +1,4 @@
+<h1><%= title %></h1>
 <table id=<%=id%>>
   <thead>
     <tr>
@@ -13,6 +14,6 @@
     </tr>
   </thead>
     <tbody>
-    <%= render partial: 'charge', collection: charges %>
+    <%= render partial: 'charge', collection: charges, locals: {row_class: row_class} %>
   </tbody>
 </table>

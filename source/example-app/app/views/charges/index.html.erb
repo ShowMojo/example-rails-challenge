@@ -1,17 +1,29 @@
 
 <%# we can extract the titles from the scope to assign them to the titles in the partial %>
 
-<h1>Failed Charges</h1>
+<%= render partial: 'not_successful_charges',
+  locals: {
+    id: 'failed-charges',
+    title: 'Failed Charges',
+    charges: @charges.failed,
+    row_class: 'danger'
+  } %>
 
-<%= render partial: 'charges', locals: {id: 'failed-charges', charges: @charges.failed} %>
+<%= render partial: 'not_successful_charges',
+  locals: {
+    id: 'disputed-charges',
+    title: 'Disputed Charges',
+    charges: @charges.disputed,
+    row_class: 'salmon'
+  } %>
 
-<h1>Disputed Charges</h1>
-
-<%= render partial: 'charges', locals: {id: 'disputed-charges', charges: @charges.disputed} %>
-
-<h1>Successful Charges</h1>
-
-<%= render partial: 'charges', locals: {id: 'successful-charges', charges: @charges.successful} %>
+<%= render partial: 'charges',
+  locals: {
+    id: 'successful-charges',
+    title: 'Successful Charges',
+    charges: @charges.successful,
+    row_class: ''
+    } %>
 
 <br>
 
