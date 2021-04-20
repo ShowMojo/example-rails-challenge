@@ -17,12 +17,12 @@ ActiveRecord::Schema.define(version: 20210420134839) do
   enable_extension "plpgsql"
 
   create_table "charges", force: true do |t|
-    t.integer  "created"
-    t.boolean  "paid"
+    t.integer  "created",                     null: false
+    t.boolean  "paid",        default: false, null: false
     t.decimal  "amount"
-    t.string   "currency"
-    t.boolean  "refunded"
-    t.integer  "customer_id"
+    t.string   "currency",                    null: false
+    t.boolean  "refunded",    default: false, null: false
+    t.integer  "customer_id",                 null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 20210420134839) do
   add_index "charges", ["customer_id"], name: "index_charges_on_customer_id", using: :btree
 
   create_table "customers", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "first_name", limit: 50, null: false
+    t.string   "last_name",  limit: 50, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
