@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210420030808) do
+ActiveRecord::Schema.define(version: 20210420031843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "credit_cards", force: true do |t|
+    t.integer  "created",                     null: false
+    t.boolean  "paid",        default: false, null: false
+    t.decimal  "amount"
+    t.string   "currency",                    null: false
+    t.boolean  "refunded",    default: false, null: false
+    t.integer  "customer_id",                 null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "credit_cards", ["customer_id"], name: "index_credit_cards_on_customer_id", using: :btree
 
   create_table "customers", force: true do |t|
     t.string   "firstName",  limit: 50, null: false
