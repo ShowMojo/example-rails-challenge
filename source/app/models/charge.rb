@@ -8,4 +8,16 @@ class Charge < ActiveRecord::Base
   def refund!
     update!(refunded: true)
   end
+
+  def successful?
+    paid and not refunded
+  end
+
+  def disputed?
+    paid and refunded
+  end
+
+  def failed?
+    not paid
+  end
 end

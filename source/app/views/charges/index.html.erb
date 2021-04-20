@@ -1,0 +1,20 @@
+<h1>Failed Charges</h1>
+<ul>
+  <% @charges.select(&:failed?).each do |charge| %>
+    <li><%= charge.inspect %></li>
+  <% end %>
+</ul>
+
+<h1>Disputed Charges</h1>
+<ul>
+  <% @charges.select(&:disputed?).each do |charge| %>
+    <li><%= charge.inspect %></li>
+  <% end %>
+</ul>
+
+<h1>Successful Charges</h1>
+<ul>
+  <% @charges.select(&:successful?).each do |charge| %>
+    <li><%= charge.inspect %></li>
+  <% end %>
+</ul>
