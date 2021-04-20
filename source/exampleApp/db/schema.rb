@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20210420034344) do
   end
 
   create_table "transactions", force: true do |t|
-    t.integer  "created",     default: 0,     null: false
+    t.integer  "created",                     null: false
     t.boolean  "paid",        default: false, null: false
     t.decimal  "amount"
     t.string   "currency",                    null: false
