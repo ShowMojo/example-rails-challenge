@@ -11,19 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210420034344) do
+ActiveRecord::Schema.define(version: 20210420045643) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "customers", force: true do |t|
-    t.string   "first_name", limit: 50, null: false
-    t.string   "last_name",  limit: 50, null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "transactions", force: true do |t|
+  create_table "charges", force: true do |t|
     t.integer  "created",                     null: false
     t.boolean  "paid",        default: false, null: false
     t.decimal  "amount"
@@ -34,6 +27,13 @@ ActiveRecord::Schema.define(version: 20210420034344) do
     t.datetime "updated_at"
   end
 
-  add_index "transactions", ["customer_id"], name: "index_transactions_on_customer_id", using: :btree
+  add_index "charges", ["customer_id"], name: "index_charges_on_customer_id", using: :btree
+
+  create_table "customers", force: true do |t|
+    t.string   "first_name", limit: 50, null: false
+    t.string   "last_name",  limit: 50, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

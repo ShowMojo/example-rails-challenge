@@ -1,0 +1,37 @@
+<h1>Listing charges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Created</th>
+      <th>Paid</th>
+      <th>Amount</th>
+      <th>Currency</th>
+      <th>Refunded</th>
+      <th>Customer</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @charges.each do |charge| %>
+      <tr>
+        <td><%= charge.created %></td>
+        <td><%= charge.paid %></td>
+        <td><%= charge.amount %></td>
+        <td><%= charge.currency %></td>
+        <td><%= charge.refunded %></td>
+        <td><%= charge.customer %></td>
+        <td><%= link_to 'Show', charge %></td>
+        <td><%= link_to 'Edit', edit_charge_path(charge) %></td>
+        <td><%= link_to 'Destroy', charge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Charge', new_charge_path %>
