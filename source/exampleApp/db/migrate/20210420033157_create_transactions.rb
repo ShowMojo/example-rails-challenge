@@ -1,6 +1,6 @@
-class CreateCreditCards < ActiveRecord::Migration
+class CreateTransactions < ActiveRecord::Migration
   def change
-    create_table :credit_cards do |t|
+    create_table :transactions do |t|
       t.integer :created, null: false
       t.boolean :paid, null: false, default: false
       t.decimal :amount
