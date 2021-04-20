@@ -3,15 +3,15 @@
 
 <h1>Failed Charges</h1>
 
-<%= render partial: 'charges', locals: {charges: @charges.failed} %>
+<%= render partial: 'charges', locals: {id: 'failed-charges', charges: @charges.failed} %>
 
 <h1>Disputed Charges</h1>
 
-<%= render partial: 'charges', locals: {charges: @charges.disputed} %>
+<%= render partial: 'charges', locals: {id: 'disputed-charges', charges: @charges.disputed} %>
 
 <h1>Successful Charges</h1>
 
-<%= render partial: 'charges', locals: {charges: @charges.successful} %>
+<%= render partial: 'charges', locals: {id: 'successful-charges', charges: @charges.successful} %>
 
 <br>
 
