@@ -34,7 +34,8 @@ group :doc do
 end
 
 group :development do
-  gem 'rspec', '3.10'
+  # bundle exec rake doc:rails generates the API under doc/api.
+  gem 'rspec-rails', '3.9.1'
 end
 
 # Use ActiveModel has_secure_password
