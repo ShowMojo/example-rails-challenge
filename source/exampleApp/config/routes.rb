@@ -1,4 +1,6 @@
 ExampleApp::Application.routes.draw do
+  resources :credit_cards
+
   resources :customers
 
   # The priority is based upon order of creation: first created -> highest priority.

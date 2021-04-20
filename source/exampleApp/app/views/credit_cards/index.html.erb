@@ -1,0 +1,37 @@
+<h1>Listing credit_cards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Created</th>
+      <th>Paid</th>
+      <th>Amount</th>
+      <th>Currency</th>
+      <th>Refunded</th>
+      <th>Customer</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @credit_cards.each do |credit_card| %>
+      <tr>
+        <td><%= credit_card.created %></td>
+        <td><%= credit_card.paid %></td>
+        <td><%= credit_card.amount %></td>
+        <td><%= credit_card.currency %></td>
+        <td><%= credit_card.refunded %></td>
+        <td><%= credit_card.customer %></td>
+        <td><%= link_to 'Show', credit_card %></td>
+        <td><%= link_to 'Edit', edit_credit_card_path(credit_card) %></td>
+        <td><%= link_to 'Destroy', credit_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Credit card', new_credit_card_path %>
