@@ -24,39 +24,52 @@ end
 
 # transactions ##
 # success
-success_charge = {
-  paid: true,
-  amount: rand(1000),
+charge = {
   currency: 'usd',
   refunded: false,
   created: Time.current.to_i
 }
 
+paid_charge = charge.merge({
+  amount: rand(1000),
+  paid: true
+})
+
 5.times do
-  customers[0].charges.create(success_charge)
+  customers[0].charges.create(paid_charge)
 end
 
 3.times do
-  customers[1].charges.create(success_charge)
+  customers[1].charges.create(paid_charge)
 end
 
-customers[2].charges.create(success_charge)
-customers[3].charges.create(success_charge)
+customers[2].charges.create(paid_charge)
+customers[3].charges.create(paid_charge)
 
 # failed
+failed_charge = charge.merge({
+  amount: rand(1000),
+  paid: false
+})
 3.times do
-  customers[2].charges.create(success_charge.merge!(paid: false))
+  customers[2].charges.create(failed_charge)
 end
 
 2.times do
-  customers[3].charges.create(success_charge.merge!(paid: false))
+  customers[3].charges.create(failed_charge)
 end
 
 # disputed
+disputed_charge = charge.merge({
+  amount: rand(1000),
+  paid: true,
+  refunded: true,
+  refunded_at: rand(40).day.ago
+})
 3.times do
-  customers[0].charges.create(success_charge.merge!(refunded: true))
+  customers[0].charges.create(disputed_charge)
 end
 
 2.times do
-  customers[1].charges.create(success_charge.merge!(refunded: true))
+  customers[1].charges.create(disputed_charge)
 end

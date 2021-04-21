@@ -1,0 +1,64 @@
+<h1>Failed Charges</h1>
+
+<div class='failed'>
+  <table>
+    <thead>
+      <th>Customer</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </thead>
+
+    <tbody>
+      <% Charge.failed.each do |charge| %>
+        <tr class='row'>
+          <td><%= charge.customer.name %></td>
+          <td><%= number_to_currency(charge.amount / 100) %></td>
+          <td><%= Time.at(charge.created).strftime('%d/%m/%Y') %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+<h1>Disputed/Refunded Charges</h1>
+<div class='disputed'>
+  <table>
+    <thead>
+      <th>Customer</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </thead>
+
+    <tbody>
+      <% Charge.disputed.each do |charge| %>
+        <tr class='row'>
+          <td><%= charge.customer.name %></td>
+          <td><%= number_to_currency(charge.amount / 100) %></td>
+          <td><%= charge.refunded_at.strftime('%d/%m/%Y') %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<h1>Successful Charges</h1>
+<div class='paid'>
+  <table>
+    <thead>
+      <th>Customer</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </thead>
+
+    <tbody>
+      <% Charge.success.each do |charge| %>
+        <tr class='row'>
+          <td><%= charge.customer.name %></td>
+          <td><%= number_to_currency(charge.amount / 100) %></td>
+          <td><%= Time.at(charge.created).strftime('%d/%m/%Y') %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
