@@ -1,0 +1,9 @@
+<tr class="charge-item <%= row_class %>">
+  <td><%= format_full_name(charge.customer) %>
+  <td><%= "#{charge.amount} #{charge.currency}" %></td>
+  <td><%= epoch_to_date(charge.created) %></td>
+
+  <td><%= link_to 'Show', charge %></td>
+  <td><%= link_to 'Edit', edit_charge_path(charge) %></td>
+  <td><%= link_to 'Destroy', charge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

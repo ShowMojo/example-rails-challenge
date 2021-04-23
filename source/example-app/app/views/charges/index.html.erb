@@ -1,0 +1,30 @@
+
+<%# we can extract the titles from the scope to assign them to the titles in the partial %>
+
+<%= render partial: 'not_successful_charges',
+  locals: {
+    id: 'failed-charges',
+    title: 'Failed Charges',
+    charges: @charges.failed,
+    row_class: 'danger'
+  } %>
+
+<%= render partial: 'not_successful_charges',
+  locals: {
+    id: 'disputed-charges',
+    title: 'Disputed Charges',
+    charges: @charges.disputed,
+    row_class: 'salmon'
+  } %>
+
+<%= render partial: 'charges',
+  locals: {
+    id: 'successful-charges',
+    title: 'Successful Charges',
+    charges: @charges.successful,
+    row_class: ''
+    } %>
+
+<br>
+
+<%= link_to 'New Charge', new_charge_path %>

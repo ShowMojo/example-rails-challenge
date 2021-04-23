@@ -1,0 +1,16 @@
+<h1><%= title %></h1>
+<table id=<%=id%>>
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Amount</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+    <tbody>
+    <%= render partial: 'not_successful_charge', collection: charges, as: :charge, locals: {row_class: row_class} %>
+  </tbody>
+</table>
