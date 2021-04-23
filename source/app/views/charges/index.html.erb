@@ -1,0 +1,32 @@
+<div>
+  <h1>Failed Charges</h1>
+  <ul>
+    <% @charges.select(&:failed?).each do |charge| %>
+      <li class='failed-charge'>
+        <%= "#{charge.customer.name} --- #{charge}" %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div>
+  <h1>Disputed Charges</h1>
+  <ul>
+    <% @charges.select(&:disputed?).each do |charge| %>
+      <li class='disputed-charge'>
+        <%= "#{charge.customer.name} --- #{charge}" %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div>
+  <h1>Successful Charges</h1>
+  <ul>
+    <% @charges.select(&:successful?).each do |charge| %>
+      <li class='successful-charge'>
+        <%= "#{charge.customer.name} --- #{charge}" %>
+      </li>
+    <% end %>
+  </ul>
+</div>

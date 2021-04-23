@@ -1,0 +1,42 @@
+version: '3.7'
+
+volumes:
+  db_data:
+  gem_cache:
+
+services:
+  web:
+    build:
+      context: .dockerdev
+      dockerfile: Dockerfile
+      args:
+        RUBY_VERSION: '2.3.8'
+        PG_MAJOR: '11'
+        NODE_MAJOR: '10'
+        BUNDLER_VERSION: '1.17.3'
+    command: bundle exec rails server -b 0.0.0.0
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./source:/app
+      - gem_cache:/usr/local/bundle
+    env_file:
+      - .dockerdev/env/web
+      - .dockerdev/env/database
+    depends_on:
+      - database
+      # - redis
+    tty: true
+    stdin_open: true
+    tmpfs:
+      - /tmp
+
+  database:
+    image: postgres:11
+    env_file:
+      - .dockerdev/env/database
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  # redis:
+  #   image: redis:5.0
