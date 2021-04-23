@@ -1,0 +1,68 @@
+<ul>
+  <li><h1>Failed Charges</h1></li>
+  <table class='failed-charges'>
+    <thead>
+      <tr>
+        <th>Customer</th>
+        <th>Amount</th>
+        <th>Failed Date</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @failed_charges.each do |charge| %>
+        <tr style="background-color:#FF0000;color:#ffffff;">
+          <td><%= charge.customer.full_name %></td>
+          <td><%= number_to_currency(charge.amount_in_dollars) %></td>
+          <td><%= charge.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <li><h1>Disputed Charges</h1></li>
+  <table class='disputed-charges'>
+    <thead>
+      <tr>
+        <th>Customer</th>
+        <th>Amount</th>
+        <th>Disputed Date</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @disputed_charges.each do |charge| %>
+        <tr style="background-color:#FF5400;color:#ffffff;">
+          <td><%= charge.customer.full_name %></td>
+          <td><%= number_to_currency(charge.amount_in_dollars) %></td>
+          <td><%= charge.updated_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <li><h1>Successful Charges</h1></li>
+  <table class='successful-charges'>
+    <thead>
+      <tr>
+        <th>Customer</th>
+        <th>Amount</th>
+        <th>Created</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @successful_charges.each do |charge| %>
+        <tr>
+          <td><%= charge.customer.full_name %></td>
+          <td><%= number_to_currency(charge.amount_in_dollars) %></td>
+          <td><%= charge.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</ul>
