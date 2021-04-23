@@ -1,0 +1,38 @@
+// Place all the styles related to the CreditCardCharges controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+table {
+  &#failed, &#disputed, &#successful, &#customers {
+    tr td {
+      margin: 0;
+      padding: 5px;
+      line-height: 20px;
+      min-width: 110px;
+      text-align: center;
+    }
+  }
+  &#failed {
+    border: 2px solid #FF0000;
+    tr {
+      background: #FF0000;
+    }
+  }
+  &#disputed {
+    border: 2px solid #FF5400;
+    tr {
+      background: #FF5400;
+    }
+  }
+  &#successful {
+    border: 2px solid #b9ff55;
+    tr {
+      background: #b9ff55;
+    }
+  }
+  &#customers {
+    border: 2px solid #8cdbff;
+    tr td:nth-child(-n+2){
+      background: #8cdbff;
+    }
+  }
+}

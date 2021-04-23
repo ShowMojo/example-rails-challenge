@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<section>
+  <h1>Failed Charges</h1>
+  <table id='failed'>
+    <% @failed.each do |charge| %>
+        <tr>
+          <td><%= charge.customer.full_name %></td>
+          <td><%= number_to_currency(charge.amount / 100.0) %></td>
+          <td><%= charge.created_at.strftime('%m.%d.%Y') %></td>
+        </tr>
+    <% end %>
+  </table>
+</section>
+
+<section>
+  <h1>Disputed Charges</h1>
+  <table id='disputed'>
+    <% @disputed.each do |charge| %>
+        <tr>
+          <td><%= charge.customer.full_name %></td>
+          <td><%= number_to_currency(charge.amount / 100.0) %></td>
+          <td><%= charge.created_at.strftime('%m.%d.%Y') %></td>
+        </tr>
+    <% end %>
+  </table>
+</section>
+
+<section>
+  <h1>Successful Charges</h1>
+  <table id='successful'>
+    <% @successful.each do |charge| %>
+        <tr>
+          <td><%= charge.customer.full_name %></td>
+          <td><%= number_to_currency(charge.amount / 100.0) %></td>
+          <td><%= charge.created_at.strftime('%m.%d.%Y') %></td>
+        </tr>
+    <% end %>
+  </table>
+</section>
+
+<%= link_to 'New Charge', new_credit_card_charge_path %> | <%= link_to 'Customers', customers_path %>
+
