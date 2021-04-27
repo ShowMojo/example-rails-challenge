@@ -1,0 +1,9 @@
+<h1>Failed Charges</h1>
+<%= render 'table', charges: @failed, date_header: 'Failed at', css_class: 'failed' %>
+
+<h1>Disputed Charges</h1>
+<%= render 'table', charges: @failed, date_header: 'Disputed at', css_class: 'disputed' %>
+
+<h1>Successful Charges</h1>
+<%= render 'table', charges: @successful, date_header: 'Paid at', css_class: 'successful' %>
+
