@@ -1,0 +1,21 @@
+<table class="<%= css_class %>">
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Amount</th>
+      <th><%= date_header %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% charges.each do |charge| %>
+      <tr class="charge">
+        <td><%= charge.customer_name %></td>
+        <td><%= charge.amount %></td>
+        <td><%= charge.created %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
