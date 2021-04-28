@@ -14,3 +14,5 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
+/source/credit_card_charge/.idea/*
+/source/credit_card_charge/config/database.yml

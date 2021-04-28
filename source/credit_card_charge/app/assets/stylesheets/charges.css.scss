@@ -1,0 +1,21 @@
+// Place all the styles related to the charges controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.failed-charge, .disputed-charge, .successful-charge {
+  .row {
+    margin: 20px 0;
+    padding: 10px;
+  }
+  .p {
+    line-height: 0;
+  }
+}
+
+.failed-charge .row {
+  background-color: #FF0000;
+}
+
+.disputed-charge .row {
+  background-color: #FF5400;
+}
+
