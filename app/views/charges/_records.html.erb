@@ -1,0 +1,23 @@
+<h1><%= title %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody class="charges-<%=title%>" style="background-color: <%= bg_color %>">
+    <% unless charges.blank? %>
+      <% charges.each do |charge| %>
+        <tr>
+          <td><%= charge.customer.full_name %></td>
+          <td><%= in_dollar(charge.amount) %></td>
+          <td><%= charge.updated_at.strftime('%Y/%m/%d') %></td>
+        </tr>
+      <% end %>
+    <% end %> 
+  </tbody>
+</table>
