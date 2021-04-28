@@ -1,0 +1,80 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Failed Charges</h1>
+
+<table class='failed_charges_list'>
+  <thead>
+    <tr>
+      <th>Customer name</th>
+      <th>Charge amount</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @failed_charges.each do |charge| %>
+      <tr class='failed_charges'>
+        <td><%= charge.full_name %></td>
+        <td><%= number_to_currency charge.amount_in_dollars %></td>
+        <td><%= charge.updated_at.strftime('%F') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h1>Disputed Charges</h1>
+
+<table class='disputed_charges_list'>
+  <thead>
+    <tr>
+      <th>Customer name</th>
+      <th>Charge amount</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @disputed_charges.each do |charge| %>
+      <tr class='disputed_charges'>
+        <td class="<%= 'failed' if charge.failed? %>">
+          <%= charge.full_name %>
+        </td>
+        <td><%= number_to_currency charge.amount_in_dollars %></td>
+        <td><%= charge.updated_at.strftime('%F') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h1>Successful Charges</h1>
+
+<table class='successful_charges_list'>
+  <thead>
+    <tr>
+      <th>Customer name</th>
+      <th>Charge amount</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @successful_charges.each do |charge| %>
+      <tr class='successful_charges'>
+        <td><%= charge.full_name %></td>
+        <td><%= number_to_currency charge.amount_in_dollars %></td>
+        <td><%= charge.updated_at.strftime('%F') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Charge', new_charge_path %>
