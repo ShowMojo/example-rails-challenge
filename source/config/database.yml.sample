@@ -1,0 +1,24 @@
+defaults: &defaults
+  adapter: postgresql
+  encoding: unicode
+  reconnect: false
+  pool: 5
+  host: localhost
+
+development:
+  <<: *defaults
+  database: exampleapp_development
+  username: 
+  password: 
+
+test:
+  <<: *defaults
+  database: exampleapp_test
+  username: 
+  password: 
+
+production:
+  <<: *defaults
+  database: exampleapp
+  username: 
+  password: 

@@ -1,0 +1,17 @@
+h1 Failed Charges
+ul.charges_list.failed
+  - @failed_charges.each do |charge|
+    li
+      | #{charge.customer.full_name}: #{charge.amount} #{charge.currency} at #{charge.created_at}
+
+h1 Disputed Charges
+ul.charges_list.disputed
+  - @disputed_charges.each do |charge|
+    li
+      | #{charge.customer.full_name}: #{charge.amount} #{charge.currency} at #{charge.created_at}
+
+h1 Successful Charges
+ul.charges_list.successful
+  - @successful_charges.each do |charge|
+    li
+      | #{charge.customer.full_name}: #{charge.amount} #{charge.currency} at #{charge.created_at}
