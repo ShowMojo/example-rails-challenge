@@ -1,0 +1,18 @@
+.charges {
+    display: flex;
+}
+.charges_block {
+    flex: 1;
+}
+
+.charges_block__list_failed {
+    background-color: #FF0000
+}
+
+.charges_block__list_disputed {
+    background-color: #FF5400
+}
+
+.charges_block__title {
+    text-align: center;
+}
