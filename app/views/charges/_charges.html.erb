@@ -1,0 +1,13 @@
+<div class="charges_block" id=<%= id %>>
+  <h3 class="charges_block__title"><%= title %></h3>
+
+  <ul>
+    <% charges.each do |charge| %>
+      <li class=<%= list_class %>>
+        <%= charge.customer_name %>
+        <%= charge.amount %>
+        <%= charge.created %>
+      </li>
+    <% end %>
+  </ul>
+</div>
