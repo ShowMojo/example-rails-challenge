@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Charges</h1>
+<br>
+<hr>
+<br>
+<%= render 'charge', charges: @failed, title: 'Failed Charges', bg_color: '#FF0000' %>
+<%= render 'charge', charges: @disputed, title: 'Disputed Charges', bg_color: '#FF5400' %>
+<%= render 'charge', charges: @successful, title: 'Successful Charges', bg_color: '' %> 
+
+<br>
+
+<%= link_to 'New Charge', new_charge_path %>
