@@ -1,0 +1,5 @@
+<%= render partial: 'list', locals: { charges: @failed_charges, color: '#FF0000', title: 'Failed Charges' } %>
+
+<%= render partial: 'list', locals: { charges: @disputed_charges, color: '#FF5400', title: 'Disputed Charges' } %>
+
+<%= render partial: 'list', locals: { charges: @successful_charges, title: 'Successful Charges' } %>

@@ -1,0 +1,12 @@
+<h1><%= title %></h1>
+
+<ol>
+  <% charges.each do |charge| %>
+    <li style='background: <%= color rescue 'transparent' %>'>
+      Customer: <%= charge.customer.full_name %><%= %>
+      <br>
+      Amount: <%= number_to_currency charge.amount.to_d / 100 %>
+      <br>
+      Date: <%= l Time.at(charge.created).to_date %>
+  <% end %>
+</ol>
