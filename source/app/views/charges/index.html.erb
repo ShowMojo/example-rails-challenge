@@ -1,0 +1,32 @@
+<section class="list">
+  <h1>Failed Charges</h1>
+  <%- failed.each do |charge| %>
+    <ul class="charge failed">
+      <li><%= charge.customer.name %></li>
+      <li><%= charge.formatted_amount %></li>
+      <li><%= charge.date %></li>
+    </ul>
+  <% end %>
+</section>
+
+<section class="list">
+  <h1>Disputed Charges</h1>
+  <%- disputed.each do |charge| %>
+    <ul class="charge disputed">
+      <li><%= charge.customer.name %></li>
+      <li><%= charge.formatted_amount %></li>
+      <li><%= charge.date %></li>
+    </ul>
+  <% end %>
+</section>
+
+<section class="list">
+  <h1>Successful Charges</h1>
+  <%- successful.each do |charge| %>
+    <ul class="charge successful">
+      <li><%= charge.customer.name %></li>
+      <li><%= charge.formatted_amount %></li>
+      <li><%= charge.date %></li>
+    </ul>
+  <% end %>
+</section>
