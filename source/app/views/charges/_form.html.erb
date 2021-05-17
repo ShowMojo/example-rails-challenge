@@ -1,0 +1,47 @@
+<%= form_with(model: charge) do |form| %>
+  <% if charge.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(charge.errors.count, "error") %> prohibited this charge from being saved:</h2>
+
+      <ul>
+        <% charge.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :created %>
+    <%= form.number_field :created %>
+  </div>
+
+  <div class="field">
+    <%= form.label :paid %>
+    <%= form.check_box :paid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.number_field :amount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :currency %>
+    <%= form.text_field :currency %>
+  </div>
+
+  <div class="field">
+    <%= form.label :refunded %>
+    <%= form.check_box :refunded %>
+  </div>
+
+  <div class="field">
+    <%= form.label :customer_id %>
+    <%= form.number_field :customer_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

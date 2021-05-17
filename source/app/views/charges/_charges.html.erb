@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% items.each do |charge| %>
+      <tr>
+        <td><%= charge.customer.name %></td>
+        <td><%= charge.amount %></td>
+        <td><%= charge.created %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
