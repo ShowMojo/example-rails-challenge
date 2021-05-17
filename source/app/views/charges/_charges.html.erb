@@ -1,4 +1,4 @@
-<table>
+<table class="<%= type %>">
   <thead>
     <tr>
       <th>Customer</th>
@@ -11,8 +11,8 @@
     <% items.each do |charge| %>
       <tr>
         <td><%= charge.customer.name %></td>
-        <td><%= charge.amount %></td>
-        <td><%= charge.created %></td>
+        <td><%= show_amount(charge.amount, charge.currency) %></td>
+        <td><%= Time.at(charge.created) %></td>
       </tr>
     <% end %>
   </tbody>

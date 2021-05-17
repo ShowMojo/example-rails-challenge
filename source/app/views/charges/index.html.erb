@@ -2,8 +2,6 @@
 
 <h1>Failed Charges</h1>
 
-<%= @charges.length %>
-
 <%= render partial: 'charges', locals: { items: @charges.failed, type: 'failed' } %>
 
 <h1>Disputed Charges</h1>
