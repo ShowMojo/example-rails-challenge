@@ -1,25 +1,24 @@
+# Ruby version
 
-* Ruby version
+-2.7.2
 
-2.7.2
-
-* System dependencies
+# System dependencies
 
 - Ruby on Rails 6.1.3.2
 - RSpec
 - Capybara
 - FactoryBot
 
-* Configuration
+# Configuration
 
 - `bundle install`
 - `yarn install`
 
-* Database setup
+# Database setup
 
 - `rails db:setup`
 
-* How to run the test suite
+# How to run the test suite
 
 - `bundle exec rspec`
 
