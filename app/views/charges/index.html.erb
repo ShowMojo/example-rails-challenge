@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-md-8 mx-auto">
+    <h1>Successful Charges</h1>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Customer Name</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Created</th>
+      </tr>
+      </thead>
+      <% @charges.successful.each do |charge| %>
+        <tbody>
+        <tr>
+          <th scope="row"><%= charge.id %></th>
+          <td><%= charge.customer_first_name %></td>
+          <td><%= charge.amount %></td>
+          <td><%= charge.created_at %></td>
+        </tr>
+        </tbody>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8 mx-auto">
+    <h1>Failed Charges</h1>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Customer Name</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Created</th>
+      </tr>
+      </thead>
+      <% @charges.failed.each do |charge| %>
+        <tbody style="background-color: #ff0000">
+        <tr>
+          <th scope="row"><%= charge.id %></th>
+          <td><%= charge.customer.first_name %></td>
+          <td><%= charge.amount %></td>
+          <td><%= charge.created_at %></td>
+        </tr>
+        </tbody>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8 mx-auto">
+    <h1>Disputed Charges</h1>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Customer Name</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Created</th>
+      </tr>
+      </thead>
+      <% @charges.disputed.each do |charge| %>
+        <tbody style="background-color: #ff5400">
+        <tr>
+          <th scope="row"><%= charge.id %></th>
+          <td><%= charge.customer.first_name %></td>
+          <td><%= charge.amount %></td>
+          <td><%= charge.created_at %></td>
+        </tr>
+        </tbody>
+      <% end %>
+    </table>
+  </div>
+</div>
+
