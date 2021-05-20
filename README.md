@@ -74,10 +74,8 @@ After installing appropriate Ruby & Rails versions
     Customer 4: 
       First Name: Mike
       Last Name: Smith
-
   
 ##### Seed 20 transactions (charges) into the system:
-
     10 Should be successful transactions:
       - 5 Should be linked to Customer 1
       - 3 Should be linked to Customer 2
@@ -91,7 +89,6 @@ After installing appropriate Ruby & Rails versions
     5 should be disputed:
       - 3 should be linked to Customer 1
       - 2 should be linked to customer 2
-
 
 ##### Create a Visual Representation of Different Charges:
 
