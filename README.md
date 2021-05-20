@@ -1,3 +1,26 @@
+# README
+
+Rails Challenge
+
+# Tech Stack
+- Ruby => `3.0.0`
+- Rails => `6.1.3`
+
+# Dependencies
+- `PostgreSQL` database.
+- `Rspec` for testing
+- `Bootstrap` for testing
+
+# Project Setup
+After installing appropriate Ruby & Rails versions
+
+1. Run `bundle install` in the project directory
+2. Run `rails db:create`, do update/add the `database.yml` with your credentials before running this...
+3. Run `rails db:migrate` to run database migrations
+4. Run `rails db:seed` to populate the database
+5. Run `rails db:seed RAILS_ENV=test` to populate the test database database
+6. Run `rails server` to run the rails server on `localhost:3000`
+
 # Rails Programming Task
 
 ### In order to be considered for a Rails position, you must complete the following steps.
@@ -51,10 +74,8 @@
     Customer 4: 
       First Name: Mike
       Last Name: Smith
-
   
 ##### Seed 20 transactions (charges) into the system:
-
     10 Should be successful transactions:
       - 5 Should be linked to Customer 1
       - 3 Should be linked to Customer 2
@@ -68,7 +89,6 @@
     5 should be disputed:
       - 3 should be linked to Customer 1
       - 2 should be linked to customer 2
-
 
 ##### Create a Visual Representation of Different Charges:
 
@@ -96,9 +116,3 @@ Create the following RSpec tests:
 ## Once Complete
 1. Commit and Push your code to your new repository
 2. Send us a pull request. We will review your code and get back to you
-
-
-
-
-
-
