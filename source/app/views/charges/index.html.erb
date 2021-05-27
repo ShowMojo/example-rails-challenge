@@ -1,0 +1,6 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <%= render partial: 'charges', locals: { title: 'Failed', charges: @charges.failed } %>
+  <%= render partial: 'charges', locals: { title: 'Disputed', charges: @charges.disputed } %>
+  <%= render partial: 'charges', locals: { title: 'Successful', charges: @charges.successful } %>
+<div>

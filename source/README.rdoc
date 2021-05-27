@@ -1,0 +1,22 @@
+# README
+
+* Ruby version 2.5.1
+
+* Rails version 4.2.11
+
+#### Instriction to run app
+###### To setup DB Run:
+* `rake db:create`
+* `rake db:migrate`
+
+###### To seed customers and charges:
+* `rake db:seed`
+
+###### Run rails app using
+* `rails s`
+
+###### Run Test case using
+* `rspec`
+
+##### run app using docker
+* `make up`

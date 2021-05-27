@@ -1,0 +1,26 @@
+AllCops:
+  Exclude:
+  # Rubocop defaults
+  - Gemfile
+  - vendor/**/*
+  - tmp/**/*
+  # Framework generated configuration files
+  - config/boot.rb
+  - config/application.rb
+  - config/environment.rb
+  - config/environments/*
+  - config/initializers/*
+  - bin/**/*
+  - script/**/*
+  - db/schema.rb
+  - Rakefile
+ # rspec generated files
+  - spec/spec_helper.rb
+  - spec/rails_helper.rb
+# auto genrate scafold files
+  - spec/controllers/*
+  - spec/routing/*
+  - spec/requests/*
+  - spec/views/**/*
+  - app/controllers/*
+  - app/views/**/*
