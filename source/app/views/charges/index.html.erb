@@ -1,0 +1,18 @@
+<% background_colors = ['#fffff', '#FF0000', '#FF5400'] %>
+
+<div>
+  <% @charges.each_with_index do |charge, index| %>
+    <div style="padding: 1rem 0 0 1rem;background-color: <%=background_colors[index]%>">
+      <h1><%= charge[:status] %> Charges</h1>
+      <ul>
+        <% charge[:data].each do |data_item| %>
+          <li>
+            <strong>Customer Name:</strong> <%= data_item.customer.full_name %>
+            <strong>, Charge amount:</strong> <%= data_item.amount %>
+            <strong>, Charge date:</strong> <%= data_item.created_at %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>

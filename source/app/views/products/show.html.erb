@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Created:</strong>
+  <%= @product.created %>
+</p>
+
+<p>
+  <strong>Paid:</strong>
+  <%= @product.paid %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @product.amount %>
+</p>
+
+<p>
+  <strong>Currency:</strong>
+  <%= @product.currency %>
+</p>
+
+<p>
+  <strong>Refunded:</strong>
+  <%= @product.refunded %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @product.customer_id %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
