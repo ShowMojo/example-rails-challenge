@@ -1,0 +1,9 @@
+.failed {
+  background-color: #FF0000;
+}
+.disputed {
+  background-color: #FF5400;
+}
+.failed, .disputed {
+  color: white;
+}
