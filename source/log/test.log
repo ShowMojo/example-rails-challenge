@@ -1,0 +1,473 @@
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "charges"[0m
+  [1m[35m (210.1ms)[0m  [1m[35mCREATE TABLE "charges" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created" integer, "paid" boolean, "amount" integer, "currency" varchar, "refunded" boolean, "customer_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "status" integer)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "customers"[0m
+  [1m[35m (180.8ms)[0m  [1m[35mCREATE TABLE "customers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (122.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (105.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210528203725)[0m
+  [1m[35m (98.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210528194722),
+(20210528194850);
+
+[0m
+  [1m[35m (122.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2021-05-28 21:47:29.432748"], ["updated_at", "2021-05-28 21:47:29.432748"]]
+  [1m[35m (156.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "0a9483c9f5057527b385ab180b2b3cea70f90044"], ["created_at", "2021-05-28 21:47:29.604843"], ["updated_at", "2021-05-28 21:47:29.604843"]]
+  [1m[35m (109.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Jonny"], ["last_name", "Flow"], ["created_at", "2021-05-28 22:40:46.931845"], ["updated_at", "2021-05-28 22:40:46.931845"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Jonny"], ["last_name", "Flow"], ["created_at", "2021-05-28 22:40:46.933275"], ["updated_at", "2021-05-28 22:40:46.933275"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Raj"], ["last_name", "Jamnis"], ["created_at", "2021-05-28 22:40:46.934244"], ["updated_at", "2021-05-28 22:40:46.934244"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Andrew"], ["last_name", "Chung"], ["created_at", "2021-05-28 22:40:46.935069"], ["updated_at", "2021-05-28 22:40:46.935069"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Mike"], ["last_name", "Smith"], ["created_at", "2021-05-28 22:40:46.935852"], ["updated_at", "2021-05-28 22:40:46.935852"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Creating scope :successful. Overwriting existing method Charge.successful.
+Creating scope :failed. Overwriting existing method Charge.failed.
+Creating scope :disputed. Overwriting existing method Charge.disputed.
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.2ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389638241], ["paid", 1], ["amount", 7000], ["currency", "usd"], ["refunded", 0], ["customer_id", 2], ["created_at", "2021-05-28 22:40:46.946602"], ["updated_at", "2021-05-28 22:40:46.946602"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389648241], ["paid", 1], ["amount", 8000], ["currency", "usd"], ["refunded", 0], ["customer_id", 2], ["created_at", "2021-05-28 22:40:46.948030"], ["updated_at", "2021-05-28 22:40:46.948030"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389658241], ["paid", 1], ["amount", 9000], ["currency", "usd"], ["refunded", 0], ["customer_id", 2], ["created_at", "2021-05-28 22:40:46.949151"], ["updated_at", "2021-05-28 22:40:46.949151"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389668241], ["paid", 1], ["amount", 10000], ["currency", "usd"], ["refunded", 0], ["customer_id", 3], ["created_at", "2021-05-28 22:40:46.950171"], ["updated_at", "2021-05-28 22:40:46.950171"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389678241], ["paid", 1], ["amount", 11000], ["currency", "usd"], ["refunded", 0], ["customer_id", 3], ["created_at", "2021-05-28 22:40:46.951299"], ["updated_at", "2021-05-28 22:40:46.951299"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389688241], ["paid", 1], ["amount", 12000], ["currency", "usd"], ["refunded", 0], ["customer_id", 3], ["created_at", "2021-05-28 22:40:46.952350"], ["updated_at", "2021-05-28 22:40:46.952350"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389698241], ["paid", 1], ["amount", 13000], ["currency", "usd"], ["refunded", 0], ["customer_id", 4], ["created_at", "2021-05-28 22:40:46.953422"], ["updated_at", "2021-05-28 22:40:46.953422"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389608241], ["paid", 1], ["amount", 14000], ["currency", "usd"], ["refunded", 0], ["customer_id", 5], ["created_at", "2021-05-28 22:40:46.954395"], ["updated_at", "2021-05-28 22:40:46.954395"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389608241], ["paid", 0], ["amount", 3000], ["currency", "usd"], ["refunded", 0], ["customer_id", 4], ["created_at", "2021-05-28 22:40:46.955320"], ["updated_at", "2021-05-28 22:40:46.955320"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389618241], ["paid", 0], ["amount", 4000], ["currency", "usd"], ["refunded", 0], ["customer_id", 4], ["created_at", "2021-05-28 22:40:46.956196"], ["updated_at", "2021-05-28 22:40:46.956196"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389628241], ["paid", 0], ["amount", 5000], ["currency", "usd"], ["refunded", 0], ["customer_id", 4], ["created_at", "2021-05-28 22:40:46.957059"], ["updated_at", "2021-05-28 22:40:46.957059"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389638241], ["paid", 0], ["amount", 6000], ["currency", "usd"], ["refunded", 0], ["customer_id", 5], ["created_at", "2021-05-28 22:40:46.957911"], ["updated_at", "2021-05-28 22:40:46.957911"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389648241], ["paid", 0], ["amount", 7000], ["currency", "usd"], ["refunded", 0], ["customer_id", 5], ["created_at", "2021-05-28 22:40:46.958795"], ["updated_at", "2021-05-28 22:40:46.958795"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389648241], ["paid", 0], ["amount", 3000], ["currency", "usd"], ["refunded", 1], ["customer_id", 4], ["created_at", "2021-05-28 22:40:46.959760"], ["updated_at", "2021-05-28 22:40:46.959760"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389658241], ["paid", 0], ["amount", 4000], ["currency", "usd"], ["refunded", 1], ["customer_id", 4], ["created_at", "2021-05-28 22:40:46.960649"], ["updated_at", "2021-05-28 22:40:46.960649"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389668241], ["paid", 0], ["amount", 5000], ["currency", "usd"], ["refunded", 1], ["customer_id", 4], ["created_at", "2021-05-28 22:40:46.961751"], ["updated_at", "2021-05-28 22:40:46.961751"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389678241], ["paid", 0], ["amount", 6000], ["currency", "usd"], ["refunded", 1], ["customer_id", 5], ["created_at", "2021-05-28 22:40:46.962630"], ["updated_at", "2021-05-28 22:40:46.962630"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389688241], ["paid", 0], ["amount", 7000], ["currency", "usd"], ["refunded", 1], ["customer_id", 5], ["created_at", "2021-05-28 22:40:46.963462"], ["updated_at", "2021-05-28 22:40:46.963462"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.3ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Jonny"], ["last_name", "Flow"], ["created_at", "2021-05-28 22:46:42.745582"], ["updated_at", "2021-05-28 22:46:42.745582"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Jonny"], ["last_name", "Flow"], ["created_at", "2021-05-28 22:46:42.747282"], ["updated_at", "2021-05-28 22:46:42.747282"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Raj"], ["last_name", "Jamnis"], ["created_at", "2021-05-28 22:46:42.748597"], ["updated_at", "2021-05-28 22:46:42.748597"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Andrew"], ["last_name", "Chung"], ["created_at", "2021-05-28 22:46:42.749772"], ["updated_at", "2021-05-28 22:46:42.749772"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Mike"], ["last_name", "Smith"], ["created_at", "2021-05-28 22:46:42.750866"], ["updated_at", "2021-05-28 22:46:42.750866"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Creating scope :successful. Overwriting existing method Charge.successful.
+Creating scope :failed. Overwriting existing method Charge.failed.
+Creating scope :disputed. Overwriting existing method Charge.disputed.
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.2ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389638241], ["paid", 1], ["amount", 7000], ["currency", "usd"], ["refunded", 0], ["customer_id", 2], ["created_at", "2021-05-28 22:46:42.761855"], ["updated_at", "2021-05-28 22:46:42.761855"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389648241], ["paid", 1], ["amount", 8000], ["currency", "usd"], ["refunded", 0], ["customer_id", 2], ["created_at", "2021-05-28 22:46:42.763384"], ["updated_at", "2021-05-28 22:46:42.763384"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389658241], ["paid", 1], ["amount", 9000], ["currency", "usd"], ["refunded", 0], ["customer_id", 2], ["created_at", "2021-05-28 22:46:42.764804"], ["updated_at", "2021-05-28 22:46:42.764804"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389668241], ["paid", 1], ["amount", 10000], ["currency", "usd"], ["refunded", 0], ["customer_id", 3], ["created_at", "2021-05-28 22:46:42.766168"], ["updated_at", "2021-05-28 22:46:42.766168"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389678241], ["paid", 1], ["amount", 11000], ["currency", "usd"], ["refunded", 0], ["customer_id", 3], ["created_at", "2021-05-28 22:46:42.767294"], ["updated_at", "2021-05-28 22:46:42.767294"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389688241], ["paid", 1], ["amount", 12000], ["currency", "usd"], ["refunded", 0], ["customer_id", 3], ["created_at", "2021-05-28 22:46:42.768337"], ["updated_at", "2021-05-28 22:46:42.768337"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389698241], ["paid", 1], ["amount", 13000], ["currency", "usd"], ["refunded", 0], ["customer_id", 4], ["created_at", "2021-05-28 22:46:42.769420"], ["updated_at", "2021-05-28 22:46:42.769420"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389608241], ["paid", 1], ["amount", 14000], ["currency", "usd"], ["refunded", 0], ["customer_id", 5], ["created_at", "2021-05-28 22:46:42.770485"], ["updated_at", "2021-05-28 22:46:42.770485"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389608241], ["paid", 0], ["amount", 3000], ["currency", "usd"], ["refunded", 0], ["customer_id", 4], ["created_at", "2021-05-28 22:46:42.771613"], ["updated_at", "2021-05-28 22:46:42.771613"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389618241], ["paid", 0], ["amount", 4000], ["currency", "usd"], ["refunded", 0], ["customer_id", 4], ["created_at", "2021-05-28 22:46:42.772681"], ["updated_at", "2021-05-28 22:46:42.772681"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389628241], ["paid", 0], ["amount", 5000], ["currency", "usd"], ["refunded", 0], ["customer_id", 4], ["created_at", "2021-05-28 22:46:42.773750"], ["updated_at", "2021-05-28 22:46:42.773750"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389638241], ["paid", 0], ["amount", 6000], ["currency", "usd"], ["refunded", 0], ["customer_id", 5], ["created_at", "2021-05-28 22:46:42.774811"], ["updated_at", "2021-05-28 22:46:42.774811"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389648241], ["paid", 0], ["amount", 7000], ["currency", "usd"], ["refunded", 0], ["customer_id", 5], ["created_at", "2021-05-28 22:46:42.775967"], ["updated_at", "2021-05-28 22:46:42.775967"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389648241], ["paid", 0], ["amount", 3000], ["currency", "usd"], ["refunded", 1], ["customer_id", 4], ["created_at", "2021-05-28 22:46:42.777115"], ["updated_at", "2021-05-28 22:46:42.777115"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389658241], ["paid", 0], ["amount", 4000], ["currency", "usd"], ["refunded", 1], ["customer_id", 4], ["created_at", "2021-05-28 22:46:42.778353"], ["updated_at", "2021-05-28 22:46:42.778353"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389668241], ["paid", 0], ["amount", 5000], ["currency", "usd"], ["refunded", 1], ["customer_id", 4], ["created_at", "2021-05-28 22:46:42.779491"], ["updated_at", "2021-05-28 22:46:42.779491"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389678241], ["paid", 0], ["amount", 6000], ["currency", "usd"], ["refunded", 1], ["customer_id", 5], ["created_at", "2021-05-28 22:46:42.780557"], ["updated_at", "2021-05-28 22:46:42.780557"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389688241], ["paid", 0], ["amount", 7000], ["currency", "usd"], ["refunded", 1], ["customer_id", 5], ["created_at", "2021-05-28 22:46:42.781643"], ["updated_at", "2021-05-28 22:46:42.781643"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Jonny"], ["last_name", "Flow"], ["created_at", "2021-05-28 22:47:11.649844"], ["updated_at", "2021-05-28 22:47:11.649844"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Jonny"], ["last_name", "Flow"], ["created_at", "2021-05-28 22:47:11.651231"], ["updated_at", "2021-05-28 22:47:11.651231"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Raj"], ["last_name", "Jamnis"], ["created_at", "2021-05-28 22:47:11.652338"], ["updated_at", "2021-05-28 22:47:11.652338"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Andrew"], ["last_name", "Chung"], ["created_at", "2021-05-28 22:47:11.653445"], ["updated_at", "2021-05-28 22:47:11.653445"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Mike"], ["last_name", "Smith"], ["created_at", "2021-05-28 22:47:11.654434"], ["updated_at", "2021-05-28 22:47:11.654434"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Creating scope :successful. Overwriting existing method Charge.successful.
+Creating scope :failed. Overwriting existing method Charge.failed.
+Creating scope :disputed. Overwriting existing method Charge.disputed.
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.2ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389638241], ["paid", 1], ["amount", 7000], ["currency", "usd"], ["refunded", 0], ["customer_id", 2], ["created_at", "2021-05-28 22:47:11.666002"], ["updated_at", "2021-05-28 22:47:11.666002"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389648241], ["paid", 1], ["amount", 8000], ["currency", "usd"], ["refunded", 0], ["customer_id", 2], ["created_at", "2021-05-28 22:47:11.667532"], ["updated_at", "2021-05-28 22:47:11.667532"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389658241], ["paid", 1], ["amount", 9000], ["currency", "usd"], ["refunded", 0], ["customer_id", 2], ["created_at", "2021-05-28 22:47:11.668911"], ["updated_at", "2021-05-28 22:47:11.668911"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389668241], ["paid", 1], ["amount", 10000], ["currency", "usd"], ["refunded", 0], ["customer_id", 3], ["created_at", "2021-05-28 22:47:11.670230"], ["updated_at", "2021-05-28 22:47:11.670230"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389678241], ["paid", 1], ["amount", 11000], ["currency", "usd"], ["refunded", 0], ["customer_id", 3], ["created_at", "2021-05-28 22:47:11.671497"], ["updated_at", "2021-05-28 22:47:11.671497"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389688241], ["paid", 1], ["amount", 12000], ["currency", "usd"], ["refunded", 0], ["customer_id", 3], ["created_at", "2021-05-28 22:47:11.672757"], ["updated_at", "2021-05-28 22:47:11.672757"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389698241], ["paid", 1], ["amount", 13000], ["currency", "usd"], ["refunded", 0], ["customer_id", 4], ["created_at", "2021-05-28 22:47:11.674019"], ["updated_at", "2021-05-28 22:47:11.674019"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389608241], ["paid", 1], ["amount", 14000], ["currency", "usd"], ["refunded", 0], ["customer_id", 5], ["created_at", "2021-05-28 22:47:11.675163"], ["updated_at", "2021-05-28 22:47:11.675163"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389608241], ["paid", 0], ["amount", 3000], ["currency", "usd"], ["refunded", 0], ["customer_id", 4], ["created_at", "2021-05-28 22:47:11.676305"], ["updated_at", "2021-05-28 22:47:11.676305"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389618241], ["paid", 0], ["amount", 4000], ["currency", "usd"], ["refunded", 0], ["customer_id", 4], ["created_at", "2021-05-28 22:47:11.677485"], ["updated_at", "2021-05-28 22:47:11.677485"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389628241], ["paid", 0], ["amount", 5000], ["currency", "usd"], ["refunded", 0], ["customer_id", 4], ["created_at", "2021-05-28 22:47:11.678615"], ["updated_at", "2021-05-28 22:47:11.678615"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389638241], ["paid", 0], ["amount", 6000], ["currency", "usd"], ["refunded", 0], ["customer_id", 5], ["created_at", "2021-05-28 22:47:11.679779"], ["updated_at", "2021-05-28 22:47:11.679779"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389648241], ["paid", 0], ["amount", 7000], ["currency", "usd"], ["refunded", 0], ["customer_id", 5], ["created_at", "2021-05-28 22:47:11.680939"], ["updated_at", "2021-05-28 22:47:11.680939"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389648241], ["paid", 0], ["amount", 3000], ["currency", "usd"], ["refunded", 1], ["customer_id", 4], ["created_at", "2021-05-28 22:47:11.682163"], ["updated_at", "2021-05-28 22:47:11.682163"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389658241], ["paid", 0], ["amount", 4000], ["currency", "usd"], ["refunded", 1], ["customer_id", 4], ["created_at", "2021-05-28 22:47:11.683429"], ["updated_at", "2021-05-28 22:47:11.683429"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389668241], ["paid", 0], ["amount", 5000], ["currency", "usd"], ["refunded", 1], ["customer_id", 4], ["created_at", "2021-05-28 22:47:11.684606"], ["updated_at", "2021-05-28 22:47:11.684606"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389678241], ["paid", 0], ["amount", 6000], ["currency", "usd"], ["refunded", 1], ["customer_id", 5], ["created_at", "2021-05-28 22:47:11.685754"], ["updated_at", "2021-05-28 22:47:11.685754"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389688241], ["paid", 0], ["amount", 7000], ["currency", "usd"], ["refunded", 1], ["customer_id", 5], ["created_at", "2021-05-28 22:47:11.686870"], ["updated_at", "2021-05-28 22:47:11.686870"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Jonny"], ["last_name", "Flow"], ["created_at", "2021-05-28 22:58:37.262248"], ["updated_at", "2021-05-28 22:58:37.262248"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Jonny"], ["last_name", "Flow"], ["created_at", "2021-05-28 22:58:37.263683"], ["updated_at", "2021-05-28 22:58:37.263683"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Raj"], ["last_name", "Jamnis"], ["created_at", "2021-05-28 22:58:37.264700"], ["updated_at", "2021-05-28 22:58:37.264700"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Andrew"], ["last_name", "Chung"], ["created_at", "2021-05-28 22:58:37.265662"], ["updated_at", "2021-05-28 22:58:37.265662"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Mike"], ["last_name", "Smith"], ["created_at", "2021-05-28 22:58:37.266533"], ["updated_at", "2021-05-28 22:58:37.266533"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Creating scope :successful. Overwriting existing method Charge.successful.
+Creating scope :failed. Overwriting existing method Charge.failed.
+Creating scope :disputed. Overwriting existing method Charge.disputed.
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389638241], ["paid", 1], ["amount", 7000], ["currency", "usd"], ["refunded", 0], ["customer_id", 2], ["created_at", "2021-05-28 22:58:37.277249"], ["updated_at", "2021-05-28 22:58:37.277249"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389648241], ["paid", 1], ["amount", 8000], ["currency", "usd"], ["refunded", 0], ["customer_id", 2], ["created_at", "2021-05-28 22:58:37.278523"], ["updated_at", "2021-05-28 22:58:37.278523"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389658241], ["paid", 1], ["amount", 9000], ["currency", "usd"], ["refunded", 0], ["customer_id", 2], ["created_at", "2021-05-28 22:58:37.279503"], ["updated_at", "2021-05-28 22:58:37.279503"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389668241], ["paid", 1], ["amount", 10000], ["currency", "usd"], ["refunded", 0], ["customer_id", 3], ["created_at", "2021-05-28 22:58:37.280458"], ["updated_at", "2021-05-28 22:58:37.280458"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389678241], ["paid", 1], ["amount", 11000], ["currency", "usd"], ["refunded", 0], ["customer_id", 3], ["created_at", "2021-05-28 22:58:37.281364"], ["updated_at", "2021-05-28 22:58:37.281364"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389688241], ["paid", 1], ["amount", 12000], ["currency", "usd"], ["refunded", 0], ["customer_id", 3], ["created_at", "2021-05-28 22:58:37.282306"], ["updated_at", "2021-05-28 22:58:37.282306"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389698241], ["paid", 1], ["amount", 13000], ["currency", "usd"], ["refunded", 0], ["customer_id", 4], ["created_at", "2021-05-28 22:58:37.283360"], ["updated_at", "2021-05-28 22:58:37.283360"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389608241], ["paid", 1], ["amount", 14000], ["currency", "usd"], ["refunded", 0], ["customer_id", 5], ["created_at", "2021-05-28 22:58:37.284301"], ["updated_at", "2021-05-28 22:58:37.284301"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389608241], ["paid", 0], ["amount", 3000], ["currency", "usd"], ["refunded", 0], ["customer_id", 4], ["created_at", "2021-05-28 22:58:37.285291"], ["updated_at", "2021-05-28 22:58:37.285291"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389618241], ["paid", 0], ["amount", 4000], ["currency", "usd"], ["refunded", 0], ["customer_id", 4], ["created_at", "2021-05-28 22:58:37.286189"], ["updated_at", "2021-05-28 22:58:37.286189"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389628241], ["paid", 0], ["amount", 5000], ["currency", "usd"], ["refunded", 0], ["customer_id", 4], ["created_at", "2021-05-28 22:58:37.287095"], ["updated_at", "2021-05-28 22:58:37.287095"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389638241], ["paid", 0], ["amount", 6000], ["currency", "usd"], ["refunded", 0], ["customer_id", 5], ["created_at", "2021-05-28 22:58:37.288003"], ["updated_at", "2021-05-28 22:58:37.288003"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389648241], ["paid", 0], ["amount", 7000], ["currency", "usd"], ["refunded", 0], ["customer_id", 5], ["created_at", "2021-05-28 22:58:37.288982"], ["updated_at", "2021-05-28 22:58:37.288982"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389648241], ["paid", 0], ["amount", 3000], ["currency", "usd"], ["refunded", 1], ["customer_id", 4], ["created_at", "2021-05-28 22:58:37.289928"], ["updated_at", "2021-05-28 22:58:37.289928"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389658241], ["paid", 0], ["amount", 4000], ["currency", "usd"], ["refunded", 1], ["customer_id", 4], ["created_at", "2021-05-28 22:58:37.290831"], ["updated_at", "2021-05-28 22:58:37.290831"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389668241], ["paid", 0], ["amount", 5000], ["currency", "usd"], ["refunded", 1], ["customer_id", 4], ["created_at", "2021-05-28 22:58:37.291735"], ["updated_at", "2021-05-28 22:58:37.291735"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389678241], ["paid", 0], ["amount", 6000], ["currency", "usd"], ["refunded", 1], ["customer_id", 5], ["created_at", "2021-05-28 22:58:37.292670"], ["updated_at", "2021-05-28 22:58:37.292670"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCharge Create (0.1ms)[0m  [1m[32mINSERT INTO "charges" ("created", "paid", "amount", "currency", "refunded", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created", 1389688241], ["paid", 0], ["amount", 7000], ["currency", "usd"], ["refunded", 1], ["customer_id", 5], ["created_at", "2021-05-28 22:58:37.293635"], ["updated_at", "2021-05-28 22:58:37.293635"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
