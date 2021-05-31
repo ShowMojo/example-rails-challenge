@@ -6,5 +6,20 @@ FactoryBot.define do
     currency { "usd" }
     refunded { false }
     customer
+
+    trait :successful do
+      paid { true }
+      refunded { false }
+    end
+
+    trait :failed do
+      paid { false }
+      refunded { false }
+    end
+
+    trait :disputed do
+      paid { true }
+      refunded { true }
+    end
   end
 end

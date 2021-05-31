@@ -7,4 +7,8 @@ class Charge < ApplicationRecord
   validates :refunded, inclusion: {in: [true, false]}
 
   belongs_to :customer
+
+  scope :successful, -> { where(paid: true, refunded: false) }
+  scope :failed, -> { where(paid: false, refunded: false) }
+  scope :disputed, -> { where(paid: true, refunded: true) }
 end
