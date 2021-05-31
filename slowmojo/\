@@ -1,0 +1,13 @@
+<div>
+  <h1><%= title %></h1>
+
+  <ul class=<%= css_class %>>
+    <% charges.each do |charge| %>
+      <li>
+        <td> <%= customer_full_name(charge) %></td>
+        <td> <%= amount(charge) %></td>
+        <td> <%= created(charge) %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

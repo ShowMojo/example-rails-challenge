@@ -16,5 +16,7 @@ RSpec.describe Charge, type: :model do
     let!(:disputed) { FactoryBot.create_list :charge, 2, :disputed}
 
     specify { expect(described_class.successful).to match_array(successful) }
+    specify { expect(described_class.disputed).to match_array(disputed) }
+    specify { expect(described_class.failed).to match_array(failed + disputed) }
   end
 end
