@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Failed Charges</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Customer Name</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @card_charges.where(paid: false).each do |card_charge| %>
+      <tr class="failed-charges">
+        <td><%= "#{card_charge.customer.firstname} #{card_charge.customer.lastname}" %></td>
+        <td><%= humanized_money_with_symbol card_charge.amount_cents/100 %></td>
+        <td><%= card_charge.created_at.to_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>Disputed Charges</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Customer Name</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @card_charges.where(refunded: true).each do |card_charge| %>
+      <tr class="disputed-charges">
+        <td><%= "#{card_charge.customer.firstname} #{card_charge.customer.lastname}" %></td>
+        <td><%= humanized_money_with_symbol card_charge.amount_cents/100 %></td>
+        <td><%= card_charge.created_at.to_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>Successful Charges</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Customer Name</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @card_charges.where(paid: true, refunded: false).each do |card_charge| %>
+      <tr class="successful-charges">
+        <td><%= "#{card_charge.customer.firstname} #{card_charge.customer.lastname}" %></td>
+        <td><%= humanized_money_with_symbol card_charge.amount_cents/100 %></td>
+        <td><%= card_charge.created_at.to_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
