@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Card Charges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Paid</th>
+      <th>Amount</th>
+      <th>Refunded</th>
+      <th>Customer</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @card_charges.each do |card_charge| %>
+      <tr>
+        <td><%= card_charge.paid %></td>
+        <td><%= card_charge.amount %></td>
+        <td><%= card_charge.refunded %></td>
+        <td><%= card_charge.customer_id %></td>
+        <td><%= link_to 'Show', card_charge %></td>
+        <td><%= link_to 'Edit', edit_card_charge_path(card_charge) %></td>
+        <td><%= link_to 'Destroy', card_charge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Card Charge', new_card_charge_path %>
