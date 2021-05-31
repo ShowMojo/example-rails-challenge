@@ -6,7 +6,7 @@ class CreateCharges < ActiveRecord::Migration[6.1]
       t.integer :amount
       t.string :currency
       t.boolean :refunded
-      t.references :customers, foreign_key: true, index: true
+      t.references :customer, foreign_key: true, index: true
 
       t.timestamps
 

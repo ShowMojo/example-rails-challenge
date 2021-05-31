@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 2021_05_31_125015) do
     t.integer "amount"
     t.string "currency"
     t.boolean "refunded"
-    t.integer "customers_id"
+    t.integer "customer_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["customers_id"], name: "index_charges_on_customers_id"
+    t.index ["customer_id"], name: "index_charges_on_customer_id"
     t.index ["paid", "refunded"], name: "index_charges_on_paid_and_refunded"
   end
 
@@ -32,5 +32,5 @@ ActiveRecord::Schema.define(version: 2021_05_31_125015) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "charges", "customers", column: "customers_id"
+  add_foreign_key "charges", "customers"
 end
