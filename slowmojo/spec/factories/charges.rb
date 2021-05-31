@@ -18,7 +18,7 @@ FactoryBot.define do
     end
 
     trait :disputed do
-      paid { true }
+      paid { false }
       refunded { true }
     end
   end
