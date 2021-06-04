@@ -10,4 +10,11 @@ RSpec.describe "charges/index" do
     expect(rendered).to have_selector('table.disputed-charges')
     expect(rendered).to have_selector('table.successful-charges')
   end
+
+  it "verify charges count" do
+    render
+    expect(rendered).to have_xpath(".//table[@class='successful-charges']//tbody//tr", count: 10)
+    expect(rendered).to have_xpath(".//table[@class='failed-charges']//tbody//tr", count: 5)
+    expect(rendered).to have_xpath(".//table[@class='disputed-charges']//tbody//tr", count: 5)
+  end
 end
