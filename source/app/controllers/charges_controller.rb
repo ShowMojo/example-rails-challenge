@@ -3,7 +3,6 @@ class ChargesController < ApplicationController
 
   # GET /charges or /charges.json
   def index
-    @charges = Charge.all
   end
 
   # GET /charges/1 or /charges/1.json
