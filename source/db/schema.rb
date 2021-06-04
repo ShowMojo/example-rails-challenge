@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_04_073530) do
+ActiveRecord::Schema.define(version: 2021_06_04_074005) do
+
+  create_table "charges", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "created"
+    t.boolean "paid", default: true
+    t.integer "amount", default: 0
+    t.string "currency", limit: 3, default: "usd"
+    t.boolean "refunded", default: false
+    t.bigint "customer_id"
+    t.index ["customer_id"], name: "index_charges_on_customer_id"
+  end
 
   create_table "customers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "first_name", limit: 50, null: false
