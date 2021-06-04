@@ -42,8 +42,8 @@ for i in 1..2 do
 end
 
 for i in 1..3 do
-  c1.charges.create(created: Time.now.to_i, paid: false, amount: rand(10000), refunded: true)
+  c1.charges.create(created: Time.now.to_i, paid: true, amount: rand(10000), refunded: true)
 end
 for i in 1..2 do
-  c2.charges.create(created: Time.now.to_i, paid: false, amount: rand(10000), refunded: true)
+  c2.charges.create(created: Time.now.to_i, paid: true, amount: rand(10000), refunded: true)
 end
