@@ -1,0 +1,19 @@
+== README
+
+As there's no clear definition of failed, disputed, successful charges, I define
+them as follows
+
+*failed* when +paid+ = +false+ and +refunded+ = +true+
+
+*disputed* when +paid+ = +false+ and +refunded+ = +false+
+
+*successful* when +paid+ = +true+ and +refunded+ = +false+
+
+With the above logic, failed charges and disputed charges are not related, the
+following test doesn't make sense in my case so it was not implemented
+
+<em>"Verify that in the disputed charges list there are failed charges."</em>
+
+The required spec can be executed as follows
+
+<tt>$ rspec --format documentation spec/views/charges/index.html.erb_spec.rb</tt>

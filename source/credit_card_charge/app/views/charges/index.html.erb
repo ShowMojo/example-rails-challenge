@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Failed Charges</h1>
+<%= render partial: 'charges', locals: { charges: @failed_charges, css_class: 'failed' } %>
+
+<h1>Disputed Charges</h1>
+<%= render partial: 'charges', locals: { charges: @disputed_charges, css_class: 'disputed' } %>
+
+<h1>Successful Charges</h1>
+<%= render partial: 'charges', locals: { charges: @successful_charges, css_class: 'successful' } %>

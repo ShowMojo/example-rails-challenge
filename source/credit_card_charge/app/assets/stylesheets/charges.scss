@@ -1,0 +1,33 @@
+// Place all the styles related to the charges controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+table {
+  border-spacing: 0 2px;
+  width: 50%;
+
+  tr th, tr td {
+    padding: 2px 4px;
+  }
+
+  tr th.customer, tr td.customer {
+    width: 30%;
+    text-align: left;
+  }
+  tr th.amount, tr td.amount {
+    width: 20%;
+    text-align: right;
+  }
+  tr th.created, tr td.created {
+    width: 50%;
+    text-align: left;
+  }
+}
+
+table.failed tbody tr {
+  background-color: #FF0000;
+}
+
+table.disputed tbody tr {
+  background-color: #FF5400;
+}
