@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<% %w(failed disputed successful).each do |type| %>
+  <h1><%=type.capitalize %> Charges</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% instance_variable_get("@#{type}_charges").each do |credit_card_charge| %>
+      <tr class=<%= type%>>
+        <td><%= credit_card_charge.customer.full_name %></td>
+        <td><%= credit_card_charge.amount %></td>
+        <td><%= credit_card_charge.created_at.to_formatted_s(:short) %></td>
+        <td><%= link_to 'Show', credit_card_charge %></td>
+        <td><%= link_to 'Edit', edit_credit_card_charge_path(credit_card_charge) %></td>
+        <td><%= link_to 'Destroy', credit_card_charge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+
+<br>
+
+<%= link_to 'New Credit card charge', new_credit_card_charge_path %>
