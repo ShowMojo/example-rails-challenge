@@ -1,0 +1,6 @@
+%h3.failed Failed
+= render partial: 'charges', locals: { charges: @failed, table_class: 'failed'}
+%h3.failed Disputed
+= render partial: 'charges', locals: { charges: @disputed, table_class: 'disputed'}
+%h3.failed Successful
+= render partial: 'charges', locals: { charges: @successful, table_class: 'successful'}

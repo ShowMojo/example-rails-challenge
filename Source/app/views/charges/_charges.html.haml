@@ -1,0 +1,12 @@
+%table.table{ class: table_class }
+  %thead
+    %tr
+      %th Customer
+      %th Money
+      %th Date
+  %tbody.table.tbody{ class: table_class }
+    -charges.each do |charge|
+      %tr.table.tbody.tr{ class: table_class }
+        %td= charge.customer_name
+        %td= charge.cents.to_s + charge.cents.currency.to_s
+        %td= charge.created
