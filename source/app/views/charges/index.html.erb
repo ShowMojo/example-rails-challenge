@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Failed Charges</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Customers name</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @charges.failed.each do |charge| %>
+      <tr class='failed'>
+        <td><%= charge.customer.full_name %></td>
+        <td><%= number_to_currency(charge.amount_in_usd) %></td>
+        <td><%= charge.created_at.strftime('%m-%d-%Y') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<h1>Disputed Charges</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Customers name</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @charges.disputed.each do |charge| %>
+      <tr class='disputed'>
+        <td><%= charge.customer.full_name %></td>
+        <td><%= number_to_currency(charge.amount_in_usd) %></td>
+        <td><%= charge.created_at.strftime('%m-%d-%Y') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<h1>Successful Charges</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @charges.successfull.each do |charge| %>
+      <tr class='successful'>
+        <td><%= number_to_currency(charge.amount_in_usd) %></td>
+        <td><%= charge.created_at.strftime('%m-%d-%Y') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+<%= link_to 'New Charge', new_charge_path %>
