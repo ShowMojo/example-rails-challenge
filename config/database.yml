@@ -1,0 +1,28 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  database: challenge_development
+  pool: 5
+  username: postgres
+  password: postgres
+  host: localhost
+test:
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  database: challenge_test
+  pool: 5
+  username: postgres
+  password: postgres
+  host: localhost
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  database: challenge_production
+  pool: 5
+  username: postgres
+  password: postgres
+  host: localhost
