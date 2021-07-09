@@ -1,0 +1,15 @@
+/ .card.charge style="background-color: #{background} "
+/   .card-header
+/     h3
+/       = charge.customer.first_name + " " + charge.customer.last_name
+/   ul.list-group.list-group-flush
+/     .list-group-item
+/       = charge.created
+
+tr data-id="#{charge.id}"
+  td
+    = charge.customer.full_name
+  td
+    = "$" + number_with_precision(charge.amount, :precision => 2)
+  td
+    = charge.created

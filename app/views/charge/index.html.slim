@@ -1,0 +1,11 @@
+.jumbotron  
+  .h1.center Charges
+.top-container.container.charges.charges-index
+  .row
+    .col-md-8
+      / .page-header
+      / .panel panel-default
+
+  == render 'charge/items', charges: @failed, title: "Failed", type: "failed"
+  == render 'charge/items', charges: @disputed, title: "Disputed", type: "disputed"
+  == render 'charge/items', charges: @successful, title: "Successful", type: "successful"

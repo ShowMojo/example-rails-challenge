@@ -1,0 +1,22 @@
+.container.charges.charge-items
+  .row
+    .col-md-8
+      .page-header
+        h1.center
+          = title
+
+  .row
+    .col-md-8
+      table.table
+        thead.thead-dark
+          tr
+            th scope="col"
+              | Customer
+            th scope="col"
+              | Amount
+            th scope="col"
+              | Date
+        tbody class="items-#{type}"
+          - charges.each do |charge|
+            == render 'charge/item', charge: charge
+  
