@@ -1,0 +1,16 @@
+<p id='notice'><%= notice %></p>
+
+<%= render 'list', list_id: 'failed-charges',
+                   list_title: 'Failed Charges',
+                   charges: @charges[:failed], background: '#FF0000' %>
+
+<%= render 'list', list_id: 'disputed-charges',
+                   list_title: 'Disputed Charges',
+                   charges: @charges[:disputed], background: '#FF5400' %>
+
+<%= render 'list', list_id: 'successful-charges',
+                   list_title: 'Successful Charges',
+                   charges: @charges[:paid], background: 'none' %>
+
+<br />
+<%= link_to 'New Charge', new_charge_path %>
