@@ -1,0 +1,28 @@
+%h1 Failed Charges
+%ol.failed-charges
+  - @charges.where(paid: false).each do |charge|
+    %li
+      = charge.customer.first_name
+      = charge.customer.last_name
+      = charge.amount
+      = charge.created
+
+%h1 Disputed Charges
+%ol.disputed-charges
+  - @charges.where(paid: true, refunded: true).each do |charge|
+    %li
+      = charge.customer.first_name
+      = charge.customer.last_name
+      = charge.amount
+      = charge.created
+
+%h1 Successful Charges
+%ol.successful-charges
+  - @charges.where(paid: true, refunded: false).each do |charge|
+    %li
+      = charge.customer.first_name
+      = charge.customer.last_name
+      = charge.amount
+      = charge.created
+
+= link_to 'New Charge', new_charge_path
