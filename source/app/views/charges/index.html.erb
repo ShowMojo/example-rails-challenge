@@ -1,0 +1,75 @@
+<div id="charges-failed">
+    <h1>Failed Charges</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Amount</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @failed.each do |charge| %>
+          <tr>
+            <td><%= charge.customer.name %></td>
+            <td><%= charge.amount %></td>
+            <td><%= charge.created_at %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+
+<br>
+
+<div id="charges-disputed">
+    <h1>Disputed Charges</h1>
+
+    <table>
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Date</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @disputed.each do |charge| %>
+          <tr>
+            <td><%= charge.customer.name %></td>
+            <td><%= charge.amount %></td>
+            <td><%= charge.created_at %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+</div>
+
+<br>
+
+<div id="charges-successful">
+    <h1>Successful Charges</h1>
+
+    <table>
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Date</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @successful.each do |charge| %>
+          <tr>
+            <td><%= charge.customer.name %></td>
+            <td><%= charge.amount %></td>
+            <td><%= charge.created_at %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+</div>
